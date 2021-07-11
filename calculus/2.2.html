@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="../css/0.1.css">
+        <title>2.2 — Finding Derivatives </title>
+        <meta charset="UTF-8">
+        <meta name="author" content="Valerie">
+    <!--Toggle Solution Functions-->
+        <script>
+            function toggle1(){
+                var clicked = document.getElementById("solution1");
+                if (clicked.style.display === "none") {
+                    clicked.style.display = "block";
+                } else {
+                    clicked.style.display = "none";
+                }
+            }
+            function toggle2(){
+                var clicked = document.getElementById("solution2");
+                if (clicked.style.display === "none") {
+                    clicked.style.display = "block";
+                } else {
+                    clicked.style.display = "none";
+                }
+            }
+            function toggle3(){
+                var clicked = document.getElementById("solution3");
+                if (clicked.style.display === "none") {
+                    clicked.style.display = "block";
+                } else {
+                    clicked.style.display = "none";
+                }
+            }
+            function toggle4(){
+                var clicked = document.getElementById("solution4");
+                if (clicked.style.display === "none") {
+                    clicked.style.display = "block";
+                } else {
+                    clicked.style.display = "none";
+                }
+            }
+            function toggle5(){
+                var clicked = document.getElementById("solution5");
+                if (clicked.style.display === "none") {
+                    clicked.style.display = "block";
+                } else {
+                    clicked.style.display = "none";
+                }
+            }
+        </script>
+    </head>
+    <!--Top Button Panel-->
+    <header>
+        <div class="top-links" style="font-family:Georgia, 'Times New Roman', Times, serif">
+            <a href="../index.html" class="button_top">Home</a> 
+            <a href="../about.html" class="button_top">About Me</a> 
+            <a href="../faq.html" class="button_top">FAQ</a>
+            <a href="../contact.html" class="button_top">Contact Me</a>
+        </div>                                  
+    </header>
+    <!--Section Tabs-->
+    <div class="tab">
+        <a href="2.2.html" class="tab-button">Notes</a>
+        <a href="2.2-exercises.html" class="tab-button">Exercises</a>
+        <a href="2.2-applications.html" class="tab-button">Applications</a>
+        <a href="calculus.html" class="tab-button">Back to Calculus</a>
+    </div>
+    <body class="background">
+        <section>
+                <!--Section Title-->
+                <p class="background__title">2.2 — Finding Derivatives </p>
+                <!--Section Body-->
+                <div class="background__text">
+                    <hr>
+                    <p> 
+                        In section 
+                        <a href="2.1.html" target="_blank" rel="noreferrer noopener" style="color:plum">2.1</a>,
+                        we introduced differentiation, which we defined as the instantaneous rate of change at a given instant.
+                        Now, as necessary, it is time to learn how to find derivatives. 
+                        There are various rules for differentiation, whose derivations will be featured at the end of the section.
+                    </p>
+                    <p>
+                        We first need to formulate an equation for the tangent line to a function \(f\) at a given point \((x_0, f(x_0))\).
+                        Recall, using the point-slope form for a line, that 
+                        $$ y - y_0 = m(x - x_0).$$
+                        For a tangent line, the derivative represents its slope at a given point; 
+                        that is, \(\displaystyle m = f'(x_0)\).
+                        We can therefore rewrite the formula as
+                        <div class="highlight">
+                            $$ y = f(x_0) + f'(x_0) (x - x_0). $$
+                        </div>
+                        <!--Fig. 2.2-1-->
+                        <p>
+                            <img src="../images/Calculus/2/2.2/2.2-1.jpg" class="image-center" alt="">
+                            <p class="image-caption">
+                                Fig. 2.2-1. The tangent line to \(f\) at the point \(P(x_0, f(x_0))\) is shown.
+                                The slope of the tangent line is given by \(f'(x_0)\).
+                            </p>
+                        </p>
+                        <p> 
+                            We will be using this formula for linear approximations, which we will discuss briefly in this section.
+                        </p>
+                    </p>
+                    <p>
+                        The first fundamental rule is the <u>power rule</u>, shown below. 
+                        <p class="highlight">
+                            $$ \frac{\textrm{d}}{\textrm{d} x} (x^n) = nx^{n - 1},  $$
+                        </p>
+                        where \(n\) is a constant. Take, as examples, the following derivatives to illustrate this rule.
+                        $$ \frac{\textrm{d}}{\textrm{d}x}(x^3) = 3x^2. $$
+                        $$ \frac{\textrm{d}}{\textrm{d}x}(x^7) = 7x^6. $$
+                        $$ \frac{\textrm{d}}{\textrm{d}x}(x^{10}) = 10x^9. $$
+                        $$ \frac{\textrm{d}}{\textrm{d}x}(x^{\frac{3}{2}}) = \frac{3}{2}x^{\frac{1}{2}}. $$
+
+                    </p>
+                    <!--Example 1-->
+                    <div class="example">
+                        <div class="example__heading"> <b>Example 1</b> </div>
+                        <p class="example__problem"> 
+                            Write the equation of the line tangent to the graph of \(\displaystyle f(x) = x^2\) at \(\displaystyle x = 5\).
+                        </p>
+                        <button onclick="toggle1()" class="solution__button"> Show Solution ▼ </button>
+                        <div id="solution1" class="solution">
+                            <p> 
+                                We will use the equation 
+                                $$ y - f(x_0) = f'(x_0) (x - x_0), $$
+                                where \(\displaystyle x_0 = 5\) in this case.
+                            </p>
+                            <p>
+                                We therefore have 
+                                $$ y - 25 = f'(5)(x - 5), $$
+                                and we now need \(f'(5)\).
+                                From the power rule,
+                                $$ f'(x) = \frac{\textrm{d}}{\textrm{d} x} \left(x^2\right) = 2x^{2-1} = 2x. $$
+                                $$ f'(5) = 2(5) = 10.$$
+                            </p>
+                            <p>
+                                Therefore, the equation of the tangent line is
+                                $$ y - 25 = 10(x - 5). $$
+                            </p>
+                        </div>
+                    </div>
+                    <p>
+                        Let us now feature the fundamental rules of differentiation.
+                        Using the power rule, we can show that the derivative of any constant is \(0\).
+                        Suppose that \(k\) is a constant. Then,
+                        $$ \frac{\textrm{d}}{\textrm{d}x} \left( k \right) = 0. $$
+                        Furthermore, if there is a constant within the expression that we are differentiating, then we can pull it out.
+                        That is, $$ \frac{\textrm{d}}{\textrm{d} x} \Big(k f(x)\Big) = k \frac{\textrm{d}}{\textrm{d} x} \Big(f(x)\Big). $$
+                        The linearity of differentiation shows that 
+                    </p>
+                    <div class="highlight">
+                        $$ \Big(f(x) \pm g(x) \Big)' = f'(x) \pm g'(x). $$
+                    </div>
+                    <p></p>
+                    <!--Example 2-->
+                    <div class="example">
+                        <div class="example__heading"> <b>Example 2</b> </div>
+                        <p class="example__problem"> 
+                            Evaluate \(\displaystyle \frac{\textrm{d}}{\textrm{d}x} \left(2x^3 - 7x^2 + 9x - 16\right)\).
+                        </p>
+                        <button onclick="toggle2()" class="solution__button"> Show Solution ▼ </button>
+                        <div id="solution2" class="solution">
+                            <p> 
+                                From the linearity of differentiation, we can apply the derivative operator to all of the terms in the polynomial expression.
+                                Doing so yields
+                                $$ \frac{\textrm{d}}{\textrm{d}x} \left(2x^3 - 7x^2 + 9x - 16\right) = 
+                                2(3)x^2 - 7(2)x + 9 - 0$$
+                                $$ = \bbox[border: 2px solid white, 2pt]{6x^2 - 14x + 9.} $$
+                            </p>
+                        </div>
+                    </div>
+                    <!--sin'(x)-->
+                    <p>
+                        Now let us derive some key derivatives, one of which is the derivative of \(\sin(x)\). 
+                        Applying the limit definition of \(\sin'(x)\) gives
+                        <p style="text-align:center;"> 
+                            \(\displaystyle \sin'(x) = \lim_{h \to 0} \frac{\sin(x+h) - \sin(x)}{h}\). 
+                            <span style="float: right"> \((1)\) </span>
+                        </p>
+                        Using the addition identity that 
+                        \(\displaystyle \sin(\alpha + \beta) = \sin(\alpha) \cos(\beta) + \cos(\alpha) \sin(\beta)\),
+                        we can rewrite the difference quotient as
+                        <p style="text-align: center;">
+                            \(\displaystyle \sin'(x) = \lim_{h \to 0} \frac{\sin(x)\cos(h) + \sin(h) \cos(x) - \sin(x)}{h} \).
+                            <span style="float:right"> \((2)\) </span>
+                        </p>
+                        Further rewriting yields
+                        <p style="text-align: center;">
+                            \(\displaystyle \lim_{h \to 0} \frac{\sin(h) \cos(x)}{h} + \lim_{h \to 0} \frac{\sin(x) \cos(h) - \sin(x)}{h}\).
+                            <span style="float:right"> \((3)\) </span>
+                        </p>
+                        Notice that all of the terms with \(x\)'s are constants and can be factored out, which will give
+                        <p style="text-align: center;">
+                            \(\displaystyle \cos(x) \lim_{h \to 0} \frac{\sin(h)}{h} + \sin(x) \lim_{h \to 0} \frac{\cos(h) - 1}{h} \).
+                            <span style="float:right"> \((4)\) </span>
+                        </p>
+                        Recall, from 
+                        <a href="1.7.html" target="_blank" rel="noreferrer noopener" style="color:plum"> 1.7 (Important Limits)</a>,
+                        that \(\displaystyle \lim_{h \to 0} \frac{\sin(h)}{h} = 1\) and 
+                        \(\displaystyle \lim_{h \to 0} \frac{1 - \cos(h)}{h} = 0 \). 
+                        Substituting these values gives
+                        <p style="text-align: center;">
+                            \(\displaystyle \cos(x) \underbrace{\lim_{h \to 0} \frac{\sin(h)}{h}}_{1} - \sin(x) \underbrace{\lim_{h \to 0} \frac{1 - \cos(h)}{h}}_{0} \),
+                            <span style="float:right"> \((5)\) </span>
+                        </p>
+                        from which we obtain
+                        <p style="text-align: center;" class="highlight">
+                            \(\displaystyle \sin'(x) = \cos(x)\).
+                        </p>
+                        $$\tag*{$\blacksquare$}$$
+                    </p>  
+                    <!--cos'(x)-->
+                    <p>
+                        Now we will derive the derivative of \(\cos(x)\). 
+                        Applying the limit definition for \(\cos'(x)\) gives
+                        <p style="text-align: center;">
+                            \(\displaystyle \cos'(x) = \lim_{h \to 0} \frac{\cos(x+h) - \cos(x)}{h} \).
+                            <span style="float:right"> \((1)\) </span>
+                        </p>
+                        We can use the addition identity for cosine,
+                        \(\displaystyle \cos(\alpha + \beta) = \cos(\alpha) \cos(\beta) - \sin(\alpha) \sin(\beta) \),
+                        to rewrite the difference quotient as
+                        <p style="text-align: center;">
+                            \(\displaystyle \cos'(x) = \lim_{h \to 0} \frac{\cos(x) \cos(h) - \sin(x) \sin(h) -\cos(x)}{h} \)
+                            <span style="float:right"> \((2)\) </span>
+                        </p>
+                        and again as
+                        <p style="text-align: center;">
+                            \(\displaystyle \cos(x) \lim_{h \to 0} \frac{\cos(h) - 1}{h} - \sin(x) \lim_{h \to 0} \frac{\sin(h)}{h} \).
+                            <span style="float:right"> \((3)\) </span>
+                        </p>
+                        Now we can simplify the expression using the fundamental limits, as we did with the derivation of \(\sin'(x)\):
+                        <p style="text-align: center;">
+                            \(\displaystyle -\cos(x) \underbrace{\lim_{h \to 0} \frac{1 - \cos(h) }{h}}_{0} - \sin(x) \underbrace{\lim_{h \to 0} \frac{\sin(h)}{h}}_{1} \),
+                            <span style="float:right"> \((5)\) </span>
+                        </p>
+                        and we see that
+                        <p class="highlight">
+                            $$ \cos'(x) = -\sin(x). $$
+                        </p>
+                        $$\tag*{$\blacksquare$}$$
+                    </p> 
+                    <!--e^x-->
+                    <p>
+                        The last transcendental function whose derivative we will derive is \(e^x\). 
+                        Starting from the limit definition, we can write 
+                        <p style="text-align: center;">
+                            \(\displaystyle \left(e^x\right)' = \lim_{h \to 0} \frac{e^{x+h} - e^x}{h} \),
+                            <span style="float:right"> \((1)\) </span>
+                        </p>  
+                        which we can rewrite, using exponent properties, as 
+                        <p style="text-align: center;">
+                            \(\displaystyle \lim_{h \to 0} \frac{e^x e^h - e^x}{h} \).
+                            <span style="float:right"> \((2)\) </span>
+                        </p>  
+                        We notice here that the \(e^x\) is a constant, so we can factor it out, giving
+                        <p style="text-align: center;">
+                            \(\displaystyle e^x \lim_{h \to 0} \frac{e^h - 1}{h} \).
+                            <span style="float:right"> \((3)\) </span>
+                        </p> 
+                        We also know that \(\displaystyle \lim_{h \to 0} \frac{e^h - 1}{h} = 1\), leaving us with
+                        <p class="highlight">
+                            $$ (e^x)' = e^x. $$
+                        </p>
+                        $$\tag*{$\blacksquare$}$$
+                    </p>    
+                    <!--Example 3-->
+                    <div class="example">
+                        <div class="example__heading"> <b>Example 3</b> </div>
+                        <p class="example__problem"> 
+                            Evaluate \(\displaystyle \frac{\textrm{d}}{\textrm{d}x} \left( -4\cos(x) + 2\sin(x) - k^2 e^x + \frac{1}{2}x^4 \right)\), 
+                            where \(k\) is a constant.
+                        </p>
+                        <button onclick="toggle3()" class="solution__button"> Show Solution ▼ </button>
+                        <div id="solution3" class="solution">
+                            <p> 
+                                From the linearity of differentiation, we can apply the derivative operator to all of the terms in the polynomial expression.
+                                Doing so yields
+                                $$  -4 (-\sin(x)) + 2(\cos(x)) - k^2 (e^x) + \frac{1}{2}(4)x^3   $$
+                                $$ = \bbox[border: 2px solid white, 2pt]{4\sin(x) + 2\cos(x) - k^2 e^x + 2x^3.} $$
+                                Notice that, because \(k\) was a constant, we left \(k^2\) alone.
+                            </p>
+                        </div>
+                    </div>
+                    <!--linear approximations-->
+                    <p>
+                        Now let us discuss linear approximations. Consider, in Fig. 2-2.2, the function \(f\). 
+                        The function \(T\) represents the tangent line to \(f\) at the point \(P(x_0, f(x_0))\).
+                        <img class="image-center" src="../images/Calculus/2/2.2/2.2-2.jpg" alt="">
+                        <!--Fig. 2-2.2-->
+                        <p class="image-caption"> 
+                            Fig. 2-2.2. 
+                            The tangent line to the function \(f\) at the point \(P(x_0, f(x_0)\), \(T\), is drawn.
+                            Its approximation of the value \(f(x_1)\) is \(T(x_1)\). 
+                        </p>
+                        The equation of the tangent line, \(T\), is given by
+                        $$ T(x) = f(x_0) + f'(x_0)(x - x_0). $$
+                        We can use the tangent line to approximate nearby values of \(f\), such as the value of \(f(x_1)\), as shown in Fig. 2-2.2.
+                        These numeric approximations are useful for values close to \(P\) but start to lose accuracy for points farther away from it.
+                        Using the tangent line, the approximation for \(f(x_1)\) is given by
+                        $$ f(x_1) \approx T(x_1) = f(x_0) + f'(x_0) (x_1 - x_0), $$ 
+                        which is derived from the point-slope form of a line that we discussed at the start of the section.
+                    </p>     
+                    <!--Example 4-->
+                    <div class="example">
+                        <div class="example__heading"> <b>Example 4</b> </div>
+                        <p class="example__problem"> 
+                            Use a tangent line to the function \(y = \sqrt{x}\) at \(x = 16\) to approximate the value of \(\sqrt{17}\).
+                            Then, use a calculator to determine the percent error in the approximation. (The true value of \(\sqrt{17} \approx 4.123\).) 
+                        </p>
+                        <button onclick="toggle4()" class="solution__button"> Show Solution ▼ </button>
+                        <div id="solution4" class="solution">
+                            <p> 
+                                The equation of the tangent line to \(y = \sqrt{x}\) at \(x = 16\) is given by
+                                $$ y = \sqrt{16} + y'(16)(x - 16). $$
+                                We now need \(y'(16)\). We can see, from the product rule, that
+                                $$ \frac{\textrm{d}}{\textrm{d} x} \left(\sqrt{x}\right) =  
+                                   \frac{\textrm{d}}{\textrm{d} x} \left(x^{\frac{1}{2}}\right) = \frac{1}{2} x^{-\frac{1}{2}} = \frac{1}{2 \sqrt{x}}.
+                                $$
+                                $$ y'(16) = \frac{1}{2 \sqrt{16}} = \frac{1}{8}. $$
+                                Thus, using the tangent line approximation yields
+                                $$ \sqrt{17} \approx 4 + \frac{1}{8}(17 - 16) = \bbox[border: 2px solid white, 2pt]{4.125.} $$
+                                The percent error is given by
+                                $$ \frac{\left|\textrm{observed} - \textrm{expected} \right|}{\textrm{expected}}$$
+                                $$ = \frac{\left| 4.125 - 4.123 \right|}{4.123}$$ 
+                                $$ = 0.000485 $$
+                                The estimate of \(\sqrt{17}\) using the tangent line to \(\sqrt{x}\) at \(x = 16\) yielded an estimate with an error of \(0.0485\) 
+                                percent—not bad!
+                            </p>
+                        </div>
+                    </div>  
+                    <!--section summary-->
+                    <p>
+                        <p style="text-align: center; font-size: 150%;">
+                            <u> SECTION SUMMARY </u>
+                            <ul>
+                                <li style="padding-bottom: 20px;"> 
+                                    The equation of the tangent line to a function \(f\) at the point \((x_0,f(x_0))\) is given by 
+                                    \(\displaystyle y = f(x_0) + f'(x_0)(x - x_0)\).
+                                </li>
+                                <li style="padding-top: 20px; padding-bottom: 20px;">
+                                    A tangent line approximation for \(f(x)\), centered at the point \((x_0, f(x_0))\), is given by 
+                                    \(\displaystyle f(x) \approx f(x_0) + f'(x_0)(x - x_0)\).
+                                </li>
+                                <li style="padding-top: 20px; padding-bottom: 20px;">
+                                    The power rule is given by \(\displaystyle \frac{\textrm{d}}{\textrm{d} x} \left(x^n\right) = nx^{n-1} \),
+                                    where \(n\) is a constant.
+                                </li>
+                                <li style="padding-top: 20px; padding-bottom: 20px;">
+                                    \(\displaystyle \frac{\textrm{d}}{\textrm{d}x} \Big(f(x) \pm g(x) \Big) = 
+                                    \frac{\textrm{d}}{\textrm{d}x} \left(f(x) \right) \pm \frac{\textrm{d}}{\textrm{d}x}(g(x)) \).
+                                </li>
+                                <li style="padding-top: 20px; padding-bottom: 20px;">
+                                    The derivative of a constant is \(0\); i.e. \(\displaystyle \frac{\textrm{d}}{\textrm{d} x}(k) = 0\).
+                                </li>
+                                <li style="padding-top: 20px; padding-bottom: 20px;">
+                                    \(\displaystyle \frac{\textrm{d}}{\textrm{d}x}(kf(x)) = k \frac{\textrm{d}}{\textrm{d}x}(f(x)) \).
+                                </li>
+                                <li style="padding-top: 20px; padding-bottom: 20px;">
+                                    \(\displaystyle \frac{\textrm{d}}{\textrm{d}x}(\sin(x)) = \cos(x) \).
+                                </li>
+                                <li style="padding-top: 20px; padding-bottom: 20px;">
+                                    \(\displaystyle \frac{\textrm{d}}{\textrm{d}x}(\cos(x)) = -\sin(x) \).
+                                </li>
+                                <li style="padding-top: 20px; padding-bottom: 20px;">
+                                    \(\displaystyle \frac{\textrm{d}}{\textrm{d}x}(e^x) = e^x \).
+                                </li>
+                            </ul>    
+                        </p>
+                    </p>
+                </div>
+            <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+            <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3.0.1/es5/tex-mml-chtml.js"></script>
+            <script id="AMSmath" async src="TeX/AMSmath.js"></script>
+            <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+        </section>
+    </body>

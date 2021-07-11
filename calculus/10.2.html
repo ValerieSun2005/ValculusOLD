@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="../css/0.1.css">
+        <title>10.2 — Infinite Geometric Series</title>
+        <meta charset="UTF-8">
+        <meta name="author" content="Valerie">
+    </head>
+    <!--Top Button Panel-->
+    <header>
+        <div class="top-links" style="font-family:Georgia, 'Times New Roman', Times, serif">
+            <a href="../index.html" class="button_top">Home</a> 
+            <a href="../about.html" class="button_top">About Me</a> 
+            <a href="../faq.html" class="button_top">FAQ</a>
+            <a href="../contact.html" class="button_top">Contact Me</a>
+        </div>                                  
+    </header>
+    <!--Section Tabs-->
+    <div class="tab">
+        <a href="10.2.html" class="tab-button">Notes</a>
+        <a href="10.2-exercises.html" class="tab-button">Exercises</a>
+        <a href="10.2-applications.html" class="tab-button">Applications</a>
+        <a href="calculus.html" class="tab-button">Back to Calculus</a>
+    </div>
+    <body class="background">
+        <section>
+                <!--Section Title-->
+                <p class="background__title">10.2 — Infinite Geometric Series</p>
+                <!--Section Body-->
+                <div class="background__text">
+                    <hr>
+                    <p>
+                        We have seen finite geometric series and their applications, so now let us step up and discuss infinite geometric series.  
+                        An infinite geometric series is in the form 
+                        $$ \sum_{n=k}^{\infty} ar^n = ar^k + ar^{k+1} + ar^{k+2} + \cdots , k = 0, 1, 2, 3, \dots, $$
+                        where \(r\) is the common ratio (the multiple by which each term varies from each other). 
+                        The defining feature of a geometric series is that, for any sufficiently large \(n\), \(\displaystyle r = \frac{a_{n + 1}}{a_n}\).
+                        This definition asserts that the terms in a geometric series vary by a multiple, \(r\), in this case. 
+                        It seems paradoxical at first to have convergence in a sum of numbers that change exponentially, 
+                        but upon further inspection it is clear that convergence can only occur if the terms are decreasing; i.e., \(|r| \lt 1\).
+                        If \(|r| \lt 1\), then \(\displaystyle \lim_{n \to \infty} r^n = 0 \).
+                        This result agrees with the divergence test, which states that a series \(\sum a_n\) diverges if \(\displaystyle \lim_{n \to \infty} a_n \ne 0\). 
+                    </p>
+                    <p>
+                        We know that the value to which a finite geometric series,
+                        \(\displaystyle \sum_{i = 0}^n ar^i\), converges
+                        is given by 
+                        $$ \frac{a \left(1 - r^n\right)}{1 - r}. $$
+                        In this case, for an infinite geometric series, we will consider the limit as \(n\) approaches infinity.
+                        We also let \(|r|\) be less than \(1\) to establish convergence for the series. 
+                        Taking the limit and considering \(|r| \lt 1 \), we obtain 
+                        $$ 
+                            \begin{aligned}
+                            \sum_{n = 0}^\infty a r^n &= \lim_{n \to \infty} \frac{a \left(1 - r^n\right)}{1 - r} \\
+                            &= \frac{a}{1 - r}. 
+                            \end{aligned}
+                        $$
+                        $$\tag*{$\blacksquare$}$$
+                        To generalize this result for any starting index, we notice that \(a\) is the first term when dealing with the starting index \(n = 0\).
+                        We can account for any disparity in the starting index by writing the general form 
+                        $$ \frac{\textrm{FIRST TERM}}{1 - r}. $$
+                    </p>
+
+                    <br>
+                    
+                    <!--geometric series formula-->
+                    <div class="box-title"> FORMULA FOR AN INFINITE GEOMETRIC SERIES </div>
+                    <div class="box">
+                        <p style="text-align:center">
+                            $$ \sum_{n = k}^\infty a r^n = \frac{ar^k}{1 - r} = \frac{\textrm{FIRST TERM}}{1 - r}. $$
+                        </p>
+                        $$\tag*{$\blacksquare$}$$
+                    </div>
+
+                    <br>
+
+                    <!--Example 1-->
+                    <div class="example">
+                        <div class="example__heading"><b>Example 1</b></div>
+                        <p class="example__problem">
+                            Determine whether each of the following series converges or diverges. If a series converges, evaluate the sum.
+                            <div style="margin-left:5%">
+                                <ol type="I" style="padding-top: 20px; padding-bottom: 20px; line-height: 3; font-style: normal;">
+                                    <!--I-->
+                                    <li style="padding-left: 20px;">
+                                        \(\displaystyle \sum_{n = 0}^{\infty} \left(\frac{1}{5} \right)^n \)
+                                    </li>
+                                    <!--II-->
+                                    <li style="padding-left: 20px;">
+                                        \(\displaystyle \sum_{n = 1}^\infty \frac{2}{8^n} \)
+                                    </li>
+                                    <!--III-->
+                                    <li style="padding-left: 20px;">
+                                        \(\displaystyle \sum_{n = 1}^{\infty} 4^n \cdot e^{-n} \)
+                                    </li> 
+                                    <!--IV-->  
+                                    <li style="padding-left: 20px;">
+                                        \(\displaystyle 2 - \frac{2}{3} + \frac{2}{9} - \frac{2}{27} + \cdots\)
+                                    </li>
+                                    <!--V-->
+                                    <li style="padding-left: 20px;">
+                                        \(\displaystyle \frac{5}{16} + \frac{5}{64} + \frac{5}{256} + \frac{5}{1024} + \cdots \)
+                                    </li> 
+                                    <!--VI-->
+                                    <li style="padding-left: 20px;">
+                                        \(\displaystyle \sum_{n = 0}^\infty \frac{2^{n - 2}}{3^n} \)
+                                    </li> 
+                                </ol>
+                            </div>
+                        </p>
+                        <button onclick="toggle1()" class="solution__button">Show Solution ▼ </button>
+                        <div id="solution1" class="solution">
+                            <div style="margin-left:5%">
+                                <ol type="I" style="padding-top: 20px; padding-bottom: 20px; line-height: 3; font-style: normal;">
+                                    <!--I answer-->
+                                    <li style="padding-left: 20px;">
+                                        We can use the given formula for a geometric series to evaluate this sum, 
+                                        as we notice that the common ratio, \(r\), is \(\displaystyle \frac{1}{5}\) in this case, 
+                                        less than \(1\). Therefore, we know that the sum is convergent, 
+                                        and to find the value to which it converges, we plug in to get
+                                        $$ \frac{\textrm{FIRST TERM}}{1-r} = \frac{1(\frac{1}{5})^0}{1-\frac{1}{5}} = 
+                                        \bbox[border: 2px solid white, 2pt]{\frac{5}{4}}. $$ 
+                                        $$\tag*{$\blacksquare$}$$
+                                    </li>
+                                    <hr>
+                                    <!--II answer-->
+                                    <li style="padding-left: 20px;">
+                                        We can rewrite the sum as \(\displaystyle \sum_{n = 1}^\infty 2 \left(\displaystyle \frac{1}{8}\right)^n\).
+                                        We notice that the common ratio, \(r\), is \(\frac{1}{8}\), which is less between \(-1\) and \(1\).
+                                        Therefore, the series converges to the value 
+                                        $$ 
+                                        \frac{\textrm{FIRST TERM}}{1 - r}  
+                                        $$
+                                        $$
+                                        = \frac{2 \left(\frac{1}{8}\right)}{1 - \frac{1}{8}} 
+                                        = \bbox[border: 2px solid white, 2pt]{\frac{2}{7}}.
+                                        $$
+                                        $$\tag*{$\blacksquare$}$$
+                                    </li>
+                                    <hr>
+                                    <!--III answer-->
+                                    <li style="padding-left: 20px;">
+                                        This series can be rewritten as \(\displaystyle \sum_{n = 1}^\infty \left(\frac{4}{e}\right)^n\).
+                                        We notice immediately that the common ratio, \(r\), is \(\displaystyle \frac{4}{e}\) in this case.
+                                        Because \(|r| \gt 1\), we conclude that the series diverges.
+                                        $$\tag*{$\blacksquare$}$$
+                                        
+                                    </li>   
+                                    <hr>
+                                    <!--IV answer-->
+                                    <li style="padding-left: 20px;">
+                                        To find the common ratio \(r\), we can utilize the defining property of a geometric series, 
+                                        \(\displaystyle r = \frac{a_{n + 1}}{a_n}\). 
+                                        In this case, we see that \(r\) can be found by evaluating \(\displaystyle \frac{-2/3}{2}\), 
+                                        which is \(\displaystyle -\frac{1}{3}\). 
+                                        We can now rewrite the terms using summation notation as 
+                                        $$ \sum_{n = 0}^{\infty} 2 \Big(-\frac{1}{3}\Big)^n, $$ 
+                                        which has a common ratio of \(\displaystyle r = -\frac{1}{3}\), whose absolute value is less than \(1\).
+                                        Therefore, we plug into the formula to obtain
+                                        $$ \frac{\textrm{FIRST TERM}}{1-r} = \frac{2(-\frac{1}{3})^0}{1-(-\frac{1}{3})} = 
+                                        \bbox[border: 2px solid white, 2pt]{\frac{3}{2}}. $$
+                                        $$\tag*{$\blacksquare$}$$
+                                    </li>
+                                    <hr>
+                                    <!--V answer-->
+                                    <li style="padding-left: 20px;">
+                                        We can either rewrite the sum using summation notation as 
+                                        \(\displaystyle 5\sum_{n = 2}^\infty \left(\frac{1}{4} \right)^n \), or we can rearrange the series as 
+                                        $$ \frac{5}{16} \left(1 + \frac{1}{4} + \frac{1}{16} + \frac{1}{64} + \cdots \right), $$
+                                        which can be written using summation notation as 
+                                        \(\displaystyle \frac{5}{16} \sum_{n = 0}^\infty \frac{1}{4^n} \).
+                                        Either way, we will obtain 
+                                        $$ \frac{5/16}{1 - \frac{1}{4}} = \bbox[border: 2px solid white, 2pt]{\frac{5}{12}}.$$
+                                        $$\tag*{$\blacksquare$}$$
+                                    </li> 
+                                    <!--V answer-->
+                                    <li style="padding-left: 20px;">
+                                        Using exponent properties, we can rewrite the sum as 
+                                        $$ \sum_{n = 0}^\infty \frac{2^n \cdot 2^{-2}}{3^n} $$
+                                        $$ = \frac{1}{4} \sum_{n = 0}^\infty \left(\frac{2}{3}\right)^n $$
+                                        $$ = \frac{1/4}{1 - \frac{2}{3}} = \bbox[border: 2px solid white, 2pt]{\frac{3}{4}}.$$
+                                        $$\tag*{$\blacksquare$}$$
+                                    </li> 
+                                </ol>
+                            </div>
+                        </div>
+                    </div>
+
+                    <br>
+
+                    <p>
+                        We should be a cautious for disguised geometric series. 
+                        Beware of any series that do not start at index \(n = 0\)—in 
+                        these cases, it is advisable to factor out a coefficient to obtain a starting term of \(1\), as we did in part V of example \(1\).
+                        To test whether a series \(\displaystyle \sum a_n\) is geometric, utilize the property that 
+                        $$ \frac{a_{n + 1}}{a_n} = r. $$
+                        It is also important to use the exponent properties 
+                        $$ \left(\frac{1}{b}\right)^n = \frac{1}{b^n} \, \, \, \, \textrm{and} \, \, \, \, a^n \cdot b^{n} = \left(ab\right)^n, $$
+                        as shown by parts II. and IV. of example 1, respectively.
+                        $$\tag*{$\blacksquare$}$$
+                    </p>
+
+                    <!--Example 2-->
+                    <div class="example">
+                        <div class="example__heading"><b>Example 2</b></div>
+                        <p class="example__problem">
+                            Find the values of \(k\) for which the series \(\displaystyle \sum_{n=2}^{\infty} \left(\frac{k^2 + 1}{5}\right)^n\) converges. 
+                            Derive an expression for the value of the convergent series in terms of \(k\). </p>
+                        <button onclick="toggle2()" class="solution__button">Show Solution ▼ </button>
+                        <div id="solution2" class="solution">
+                            <p> 
+                                We know that the series will converge if \(|r| \lt 1 \). 
+                                Setting up this inequality shows that 
+                                $$ \frac{k^2 + 1}{5} \lt 1 \implies k^2 \lt 4. $$ 
+                                $$ |k| \lt 2 \implies -2 \lt k \lt 2. $$ 
+                                Additionally, the series converges to the value 
+                                $$ \frac{(\frac{k^2+1}{5})^2}{1-\frac{k^2+1}{5}} = \frac{(k^2+1)^2}{25-5(k^2+1)} \, \, \mathrm{for} \, -2 \lt k \lt 2. $$ 
+                                $$\tag*{$\blacksquare$}$$
+                            </p>
+                        </div>
+                    </div>
+
+                    <br>
+
+                    Now let us discuss how to express repeating decimals in terms of fractions. 
+                    Consider, for example, the repeating decimal \(\displaystyle 0.5\overline{3}\).
+                    We can rewrite the decimal as the series 
+                    $$ 0.5 + 0.03 + 0.003 + 0.0003 + \cdots, $$
+                    which we can rewrite using summation notation as 
+                    $$ 0.5 + 0.03\sum_{n = 0}^{\infty} \left(0.1\right)^n. $$
+                    The common ratio, \(r\), in this case, is \(0.1\). 
+                    Therefore, the series converges to the value 
+                    $$ 0.5 + \frac{0.03}{1 - 0.1} $$
+                    $$ = \frac{1}{2} + \frac{3/100}{9/10} $$
+                    $$ = \frac{1}{2} + \frac{1}{30} $$
+                    $$ = \bbox[border: 2px solid white, 2pt]{\frac{8}{15}}. $$
+                    $$\tag*{$\blacksquare$}$$
+                    <br>
+
+                    <!--Example 3-->
+                    <div class="example">
+                        <div class="example__heading"><b>Example 3</b></div>
+                        <p class="example__problem">
+                            Express the following repeating decimals as fractions.
+                            <div style="margin-left:5%">
+                                <ol type="I" style="padding-top: 20px; padding-bottom: 20px; line-height: 3; font-style: normal;">
+                                    <!--I-->
+                                    <li style="padding-left: 20px;">
+                                        \(0.7\overline{6}\)
+                                    </li>
+                                    <!--II-->
+                                    <li style="padding-left: 20px;">
+                                        \(0.64\overline{1}\)
+                                    </li>
+                                    <!--III-->
+                                    <li style="padding-left: 20px;">
+                                        \(0.1\overline{2}\)
+                                    </li> 
+                                </ol>
+                            </div>
+                        </p>
+                        <button onclick="toggle3()" class="solution__button">Show Solution ▼ </button>
+                        <div id="solution3" class="solution">
+                            <p> 
+                                <div style="margin-left:5%">
+                                    <ol type="I" style="padding-top: 20px; padding-bottom: 20px; line-height: 3; font-style: normal;">
+                                        <!--I answer-->
+                                        <li style="padding-left: 20px;">
+                                            $$
+                                            \begin{aligned}
+                                            0.7\overline{6} &= 0.7 + 0.06 + 0.006 + 0.0006 + \cdots \\
+                                            &= 0.7 + 0.06\sum_{n = 0}^\infty \left(0.1\right)^n \\
+                                            &= 0.7 + \frac{0.06}{1 - 0.1} \\
+                                            &= 0.7 + \frac{6/100}{9/10} \\
+                                            &= \frac{7}{10} + \frac{1}{15} \\
+                                            &= \bbox[border: 2px solid white, 2pt]{\frac{23}{30}}.\\
+                                            \end{aligned}
+                                            $$
+                                            $$\tag*{$\blacksquare$}$$
+                                        </li>
+                                        <hr>
+                                        <!--II-->
+                                        <li style="padding-left: 20px;">
+                                            $$
+                                            \begin{aligned}
+                                            0.64\bar{1} &= 0.64 + 0.001 + 0.0001 + 0.00001 + \cdots \\
+                                            &= 0.64 + 0.001\sum_{n = 0}^\infty \left(0.1\right)^n \\
+                                            &= 0.64 + \frac{0.001}{1 - 0.1} \\
+                                            &= 0.64 + \frac{1/1000}{9/10} \\
+                                            &= \frac{64}{100} + \frac{1}{900} \\
+                                            &= \bbox[border: 2px solid white, 2pt]{\frac{577}{900}}.\\
+                                            \end{aligned}
+                                            $$
+                                            $$\tag*{$\blacksquare$}$$
+                                        </li>
+                                        <hr>
+                                        <!--III answser-->
+                                        <li style="padding-left: 20px;">
+                                            $$
+                                            \begin{aligned}
+                                            0.1\overline{2} &= 0.1 + 0.02 + 0.002 + 0.0002 + \cdots \\
+                                            &= 0.1 + 0.02\sum_{n = 0}^\infty \left(0.1\right)^n \\
+                                            &= 0.1 + \frac{0.02}{1 - 0.1} \\
+                                            &= 0.1 + \frac{2/100}{9/10} \\
+                                            &= \frac{1}{10} + \frac{1}{45} \\
+                                            &= \bbox[border: 2px solid white, 2pt]{\frac{11}{90}}.\\
+                                            \end{aligned}
+                                            $$
+                                            $$\tag*{$\blacksquare$}$$
+                                        </li> 
+
+                                    </ol>
+                                </div>
+                            </p>
+                        </div>
+                    </div>
+
+                    <br>
+
+                    <!--section summary-->
+                    <p>
+                        <p style="text-align: center; font-size: 150%;">
+                            <u> SECTION SUMMARY </u>
+                        </p>
+                            <ul>
+                                <li style="padding-bottom: 20px;"> 
+                                    An infinite geometric series is in the form 
+                                    \(\displaystyle \sum_{n = k}^\infty ar^n = ar^k + ar^{k + 1} + ar^{k + 2} + \cdots\).
+                                </li>
+                                <li style="padding-bottom: 20px;"> 
+                                    An infinite geometric series \(\displaystyle \sum_{n = k}^\infty ar^n\) converges if \(|r| \lt 1\), 
+                                    and its sum is given by the formula 
+                                    \(\displaystyle \frac{\textrm{FIRST TERM}}{1 - r}\).
+                                </li>
+                                <li style="padding-bottom: 20px;"> 
+                                    For disguised geometric series, utilize the properties that \(\displaystyle \frac{1}{b^n} = \left(\frac{1}{b}\right)^n\),
+                                    where \(b\) is non-zero, and \(\displaystyle a^n b^n = \left(ab\right)^n\).
+                                </li>
+                                <li style="padding-bottom: 20px;"> 
+                                    The common ratio is given by \(\displaystyle \frac{a_{n + 1}}{a_n}\).
+                                </li>
+                                <li style="padding-bottom: 20px;"> 
+                                    Geometric series can be used to write repeating decimals as fractions. 
+                                </li>
+                            </ul>    
+                        </p>
+                    </p>
+                </div>
+            <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+            <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3.0.1/es5/tex-mml-chtml.js"></script>
+            <script id="AMSmath" async src="TeX/AMSmath.js"></script>
+            <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+            <!--These functions control the "Show Solution" button to the example problems.-->
+            <script>
+                function toggle1(){
+                    var clicked = document.getElementById("solution1");
+                    if (clicked.style.display === "none") {
+                        clicked.style.display = "block";
+                    } else {
+                        clicked.style.display = "none";
+                    }
+                }
+                function toggle2(){
+                    var clicked = document.getElementById("solution2");
+                    if (clicked.style.display === "none") {
+                        clicked.style.display = "block";
+                    } else {
+                        clicked.style.display = "none";
+                    }
+                }
+                function toggle3(){
+                    var clicked = document.getElementById("solution3");
+                    if (clicked.style.display === "none") {
+                        clicked.style.display = "block";
+                    } else {
+                        clicked.style.display = "none";
+                    }
+                }
+                function toggle4(){
+                    var clicked = document.getElementById("solution4");
+                    if (clicked.style.display === "none") {
+                        clicked.style.display = "block";
+                    } else {
+                        clicked.style.display = "none";
+                    }
+                }
+                function toggle5(){
+                    var clicked = document.getElementById("solution5");
+                    if (clicked.style.display === "none") {
+                        clicked.style.display = "block";
+                    } else {
+                        clicked.style.display = "none";
+                    }
+                }
+                function toggle6(){
+                    var clicked = document.getElementById("solution6");
+                    if (clicked.style.display === "none") {
+                        clicked.style.display = "block";
+                    } else {
+                        clicked.style.display = "none";
+                    }
+                }
+                function toggle7(){
+                    var clicked = document.getElementById("solution7");
+                    if (clicked.style.display === "none") {
+                        clicked.style.display = "block";
+                    } else {
+                        clicked.style.display = "none";
+                    }
+                }
+            </script>
+        </section>
+    </body>

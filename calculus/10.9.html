@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link href="https://fonts.googleapis.com/css?family=Cardo:400,700|Oswald" rel="stylesheet">
+        <link rel="stylesheet" href="../css/0.1.css">
+        <title> 10.8 — Integral Test </title>
+        <meta charset="UTF-8">
+        
+    <!--Toggle Solution Functions-->
+        <script>
+            function toggle1(){
+                var clicked = document.getElementById("solution1");
+                if (clicked.style.display === "none") {
+                    clicked.style.display = "block";
+                } else {
+                    clicked.style.display = "none";
+                }
+            }
+            function toggle2(){
+                var clicked = document.getElementById("solution2");
+                if (clicked.style.display === "none") {
+                    clicked.style.display = "block";
+                } else {
+                    clicked.style.display = "none";
+                }
+            }
+            function toggle3(){
+                var clicked = document.getElementById("solution3");
+                if (clicked.style.display === "none") {
+                    clicked.style.display = "block";
+                } else {
+                    clicked.style.display = "none";
+                }
+            }
+        </script>
+    </head>
+    <!--Top Button Panel-->
+    <!--FINISH EXAMPLE 2-->
+    <!--FINISH EXAMPLE 2-->
+    <!--FINISH EXAMPLE 2-->
+    <!--FINISH EXAMPLE 2-->
+    <!--FINISH EXAMPLE 2-->
+    <!--FINISH EXAMPLE 2-->
+    <!--FINISH EXAMPLE 2-->
+    <!--FINISH EXAMPLE 2-->
+    <!--FINISH EXAMPLE 2-->
+    <!--FINISH EXAMPLE 2-->
+    <!--FINISH EXAMPLE 2-->
+    <!--FINISH EXAMPLE 2-->
+    <header>
+        <div class="top-links" style="font-family:Georgia, 'Times New Roman', Times, serif">
+            <a href="../index.html" class="button_top">Home</a> 
+            <a href="../about.html" class="button_top">About Me</a> 
+            <a href="../faq.html" class="button_top">FAQ</a>
+            <a href="../contact.html" class="button_top">Contact Me</a>
+        </div>                                  
+    </header>
+    <!--Section Tabs-->
+    <div class="tab">
+        <a href="9.3.html" class="tab-button">Notes</a>
+        <a href="9.3-exercises.html" class="tab-button">Exercises</a>
+        <a href="9.3-applications.html" class="tab-button">Applications</a>
+        <a href="calculus.html" class="tab-button">Back to Calculus</a>
+    </div>
+    <body class="background">
+        <section>
+                <!--Section Title-->
+                <p class="background__title"> 10.8 — Integral Test </p>
+                <!--Section Body-->
+                <div class="background__text">
+                    <hr>
+                    <p>
+                        In this section we will discuss the Integral Test, which can be thought of as a last-resort convergence test for when other methods are inconclusive. 
+                        We will first be introduced with the test and then prove it at the end of the section. 
+                        The integral test is used to show that the harmonic series, which we introduced all the way back in the start of this chapter, diverges. 
+                    </p>
+                    <!--Highlighted Definition-->
+                    <div class="highlight">
+                        <p style="text-align: center;"><b>INTEGRAL TEST:</b></p>
+                        <p> 
+                            Let \(f(x)\) be a continuous, positive, and monotonically decreasing function on the interval \([k, \infty)\) such that \(f(n) = a_n\). 
+                        </p>
+                            $$ \textrm{If} \int_{k}^{\infty} f(x) \, \textrm{d} x \, \, \textrm{diverges, then so does} \sum_{n = k}^{\infty} a_n. $$
+                            $$ \textrm{If} \int_{k}^{\infty} f(x) \, \textrm{d} x \, \, \textrm{converges, then so does} \sum_{n = k}^{\infty} a_n. $$
+                    </div>
+                    <p></p>
+                    <!--Example 1-->
+                    <div class="example">
+                        <div class="example__heading"><b>Example 1</b></div>
+                        <p class="example__problem"> Determine whether the following series converges or diverges: $$ \sum_{n=2}^{\infty} n^{2}e^{-n^3}. $$ </p>
+                        <button onclick="toggle1()" class="solution__button">Show Solution ▼ </button>
+                        <div id="solution1" class="solution">
+                            <p> 
+                                For this problem notice that the function \(x^{2}e^{-x^3}\) is continuous, positive for all \(x\), 
+                                and monotonically decreasing on the interval \([2, \infty)\). 
+                                If we were not sure if the function was decreasing, we could have taken its derivative to verify that it is always negative on our interval: 
+                                $$ \frac{\textrm{d}}{\textrm{d} x}\left(x^{2}e^{-x^3}\right) = 2xe^{-x^3} - 3x^{4} e^{-x^3} $$ 
+                                $$ = xe^{-x^3}\underbrace{(2-3x^3).}_{< 0 \, \textrm{for all} \, x \geq 2 } $$ 
+                                We can therefore use the integral test for this problem: 
+                                $$ \int_{2}^{\infty} x^2 e^{-x^3} \, \textrm{d} x. $$ 
+                                Remember—if this improper integral converges, then the series also converges; 
+                                if the integral diverges, then the series also diverges. 
+                                $$ = \lim_{\beta \to \infty} \int_{2}^{\beta} x^2 e^{-x^3} \, \textrm{d} x. $$ 
+                                $$ \textrm{Let} \, u = x^3 \implies \textrm{d} u = 3x^2 \, \textrm{d} x \implies \textrm{d} x = \frac{\textrm{d} u}{3x^2}. $$ 
+                                $$ = \lim_{\beta \to \infty} \int_{8}^{\beta} e^{-u} \, \textrm{d}u. $$ 
+                                $$ = -\lim_{\beta \to 8} \frac{1}{e^u} \Big]_{8}^{\beta} = -\lim_{\beta \to \infty}\Big(\frac{1}{e^{\beta}} - \frac{1}{8}\Big) = \frac{1}{8}. $$ 
+                            </p>
+                            <p> The improper integral converges, so by the integral test the series also converges. </p>
+                        </div>
+                    </div>
+                    <p></p>
+                    <div class="example">
+                        <div class="example__heading"><b>Example 2</b></div>
+                        <p class="example__problem"> Determine whether the following series converges or diverges: $$ \sum_{n=2}^{\infty} \frac{1}{n\ln{(n)}}. $$  </p>
+                        <button onclick="toggle2()" class="solution__button">Show Solution ▼ </button>
+                        <div id="solution2" class="solution">
+                            <p> 
+                                For this problem let \(\displaystyle f(x) = \frac{1}{x\ln{(x)}} \). 
+                                Notice that \(f(x)\) is continuous and positive for \(x \in [2, \infty)\). 
+                                To determine whether \(f(x)\) is decreasing on the interval, we see that 
+                                $$ f'(x) = \frac{-1-\ln{(x)}}{(x\ln{(x)})^2} < 0 \, \, \mathrm{for} \, x \in [e, \infty). $$ 
+                            </p>
+                            <p> 
+                                Now let's compare the the series to the improper integral of \(f\): 
+                                $$ \int_{2}^{\infty} f(x) \, \textrm{d} x = \int_{2}^{\infty} \frac{1}{x \ln(x)} \, \textrm{d} x, $$
+                                which we may evaluate by performing a substitution with \(\displaystyle u = \ln(x)\).
+                                $$ \int_{2}^{\infty} \frac{1}{x \ln(x)} \, \textrm{d} x = \int_{\ln(2)}^{\infty} \frac{1}{u} \, \textrm{d} u $$
+                                $$ = \ln(u) \Big]_{\ln(2)}^{\infty} \implies \textrm{diverges.} $$
+                            </p>
+                            <p>
+                                Because \(\displaystyle \int_{2}^{\infty} f(x) \, \textrm{d} x\) diverges, 
+                                so does \(\displaystyle \sum_{n = 2}^{\infty} \frac{1}{n \ln(n)}\) by the integral test.
+                            </p>
+                        </div>
+                    </div>
+                    <p></p>
+                    <!--Example 3-->
+                    <div class="example">
+                        <div class="example__heading"><b>Example 3</b></div>
+                        <p class="example__problem"> Let \(\displaystyle a_n = \frac{1}{n^p}\). 
+                            Verify that if \(p \leq 1\), then \(\displaystyle \sum a_n\) diverges and that if \(p > 1\), then \(\displaystyle \sum a_n\) converges.  
+                        </p>
+                        <button onclick="toggle3()" class="solution__button">Show Solution ▼ </button>
+                        <div id="solution3" class="solution">
+                            <p> 
+                                We'll now be showing why the harmonic series diverges! 
+                                Let's consider the case where \(p > 1\): \(a_n\) will be positive and monotonically decreasing for all \(n \geq 1\). 
+                                Now we consider the improper integral 
+                                $$ \int_{a}^{\infty} \frac{1}{x^p} \, \textrm{d} x, $$ 
+                                where \(a\) is a positive integer and whose convergence or divergence is analogous to those of \(\displaystyle \sum a_n\). 
+                                When \(p > 1\), the improper integral can be evaluated as 
+                                $$ \lim_{\beta \to \infty} \frac{1}{1-p} x^{1-p} \Big]_{a}^{\beta} = \frac{1}{1-p} \lim_{\beta \to \infty} \Big( \frac{1}{{\beta}^{p-1}} - \frac{1}{a^{p-1}} \Big) $$ $$ = -\frac{1}{1-p}\Big(\frac{1}{a^{p-1}}\Big) $$ 
+                                $$ \implies \textrm{converges}. $$ 
+                            <p> We've now proven that a \(p\)-series with \(p > 1\) will converge because the improper integral converges. 
+                                Now let's consider the case where \(p \lt 1\). 
+                                Again we'll be looking at the improper integral to determine convergence or divergence: 
+                                $$ \int_{a}^{\infty} \frac{1}{x^p} \, \textrm{d} x $$ 
+                                $$ = \frac{1}{1-p} \lim_{\beta \to \infty} x^{1-p} \Big]_{a}^{\beta} = \frac{1}{1-p} \lim_{\beta \to \infty} \Big( \beta^{1-p} - a^{1-p} \Big) $$ 
+                                $$ \implies \textrm{diverges}. $$ </p> 
+                            <p> 
+                                We have one more scenario to consider: when \(p = 1\). 
+                                $$ \int_{a}^{\infty} \frac{1}{x^p} \, \textrm{d} x $$ 
+                                $$ = \lim_{\beta \to \infty} \int_{a}^{\infty} \frac{1}{x} \, \textrm{d}x = \lim_{\beta \to \infty} \ln{(x)} \Big]_{a}^{\beta} $$ 
+                                $$ = \lim_{\beta \to \infty} \ln{\Big( \frac{\beta}{a} \Big)} $$ 
+                                $$ \implies \textrm{diverges}. $$ </p>
+                            <p> 
+                                We've now proven the conditions of the \(p\)-series—that when \(p \leq 1\) the series diverges and when \(p > 1 \) the series converges.   
+                            </p>
+                        </div>
+                    </div>
+                    <!--Example 2-->
+                </div>
+            <!--also guys nobody tells you this, but you can go to the park and take the ducks home for free :D-->
+            <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+            <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3.0.1/es5/tex-mml-chtml.js"></script>
+            <script id="AMSmath" async src="TeX/AMSmath.js"></script>
+            <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+        </section>
+    </body>

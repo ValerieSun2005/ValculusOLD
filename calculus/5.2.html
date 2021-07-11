@@ -1,0 +1,661 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="../css/0.1.css">
+        <title> 5.2 — Trigonometric Integrals </title>
+        <meta charset="UTF-8">
+        <meta name="author" content="Valerie">
+    </head>
+    <!--top button panel-->
+    <header>
+        <div class="top-links" style="font-family:Georgia, 'Times New Roman', Times, serif">
+            <a href="../index.html" class="button_top">Home</a> 
+            <a href="../about.html" class="button_top">About Me</a> 
+            <a href="../faq.html" class="button_top">FAQ</a>
+            <a href="../contact.html" class="button_top">Contact Me</a>
+        </div>                                  
+    </header>
+    <!--section tabs-->
+    <div class="tab">
+        <a href="5.2.html" class="tab-button">Notes</a>
+        <a href="5.2-exercises.html" class="tab-button">Exercises</a>
+        <a href="5.2-applications.html" class="tab-button">Applications</a>
+        <a href="calculus.html" class="tab-button">Back to Calculus</a>
+    </div>
+    <body class="background">
+        <section>
+            <!--section title-->
+            <p class="background__title">5.2 — Trigonometric Integrals </p>
+            <!--section body-->
+            <div class="background__text">
+                <hr>
+                <p>
+                    In this section, we will look discuss how to integrate trigonometric integrals.
+                    Before we begin, however, we need to review a table of fundamental integrals of trigonometric functions.
+                    <!--table of trig integrals-->
+                    <div class="box-title"> INTEGRALS OF TRIGONOMETRIC FUNCTIONS </div>
+                    <div class="box">
+                        <div style="float:left; width: 50%;">
+                            <p> \(\displaystyle \int \sin(x) \, \textrm{d}x = -\cos(x) + C \) </p>
+                            <p> \(\displaystyle \int \cos(x) \, \textrm{d}x = \sin(x) + C \) </p>
+                            <p> \(\displaystyle \int \tan(x) \, \textrm{d}x = \ln{|\sec(x)|} + C \) </p>
+                        </div>
+                        <div style="float:right; width: 50%;">
+                            <p> \(\displaystyle \int \csc(x) \, \textrm{d}x = -\ln{|\csc(x) + \cot(x)|} + C \) </p>
+                            <p> \(\displaystyle \int \sec(x) \, \textrm{d}x = \ln{|\sec(x) + \tan(x)|} + C \) </p>
+                            <p> \(\displaystyle \int \cot(x) \, \textrm{d}x = \ln{|\sin(x)|} + C \) </p> 
+                        </div>
+                        <p style="opacity: 0%;"> hi <3 </p> <!--This invisible text permits the box to cover all of the text.-->
+                    </div> 
+                </p>
+                <p> 
+                    Let us begin with integrals in the following forms:
+                    <!--integral forms-->
+                    $$ \int \sin^n(x) \, \textrm{d} x $$
+                    $$ \int \cos^n(x) \, \textrm{d} x. $$
+                    <!--sin^n(), cos^n(); n odd-->
+                    We know that an integral in the form
+                    \(\displaystyle \int \sin^n(x) \cos(x) \, \textrm{d} x \)
+                    can be evaluated with a simple substitution of \(u = \sin(x)\). 
+                    Similarly, an integral in the form
+                    \(\displaystyle \int \cos^n(x) \sin(x) \, \textrm{d} x \)
+                    can be evaluated with a simple substitution of \(u = \cos(x)\).
+                </p>
+                <!--example int sin^3(x) dx -->
+                <p>
+                    Using these principles, let us take a look at the following example integral:
+                    
+                    $$ \int \cos^3(x) \, \textrm{d} x. $$
+                    <p style="text-align: right;"> \((1)\) </p>
+                    Using the Pythagorean identity, we can rewrite the integral as
+                    $$ \int \cos(x) \cos^2(x)  \, \textrm{d} x $$
+                    $$ = \int \cos(x) \left(1 - \sin^2(x)\right) \, \textrm{d} x. $$
+                    <p style="text-align: right;"> \((2)\) </p>
+                    We will now perform the substitution \(u = \sin(x)\) to get
+                    $$ u = \sin(x) \implies \textrm{d} u = \cos(x) \textrm{d} x $$
+                    $$ \int \cos(x) \left(1 - \sin^2(x)\right) \, \textrm{d} x $$
+                    $$ = \int \cancel{\cos(x)} \left(1 - u^2 \right) \, \Big(\frac{1}{\cancel{\cos(x)}} \Big) \, \textrm{d} u $$
+                    $$ = \int \left(1 - u^2\right) \, \textrm{d} u $$
+                    $$ = u - \frac{u^3}{3} + C. $$
+                    <p style="text-align: right;"> \((3)\) </p>
+                    Substituting \(\sin(x)\) back in for \(u\) yields
+                    $$ \sin(x) - \frac{\sin^3(x)}{3} + C. $$
+                    <p style="text-align: right;"> \((4)\) </p>
+                    $$\tag*{$\blacksquare$}$$
+                </p>
+                <!--table on how to integrate sin^n() and cos^n()-->
+                <div class="box-title"> INTEGRATING \(\displaystyle \int \sin^n(x) \, \textrm{d} x\) and \(\displaystyle \int \cos^n(x) \, \textrm{d} x\): </div>
+                <div class="box">
+                    For sufficiently large, odd \(n\): 
+                    $$ \int \sin^n(x) \, \textrm{d}x = \int \sin(x) \left(1 - \cos^2(x)\right)^{\frac{n - 1}{2}} \, \textrm{d} x. $$
+                    <p style="text-align: center;"> Let \(\displaystyle u = \cos(x)\). </p>
+                    $$ \int \cos^n(x) \, \textrm{d}x = \int \cos(x) \left(1 - \sin^2(x)\right)^{\frac{n - 1}{2}} \, \textrm{d} x. $$
+                    <p style="text-align: center;"> Let \(\displaystyle u = \sin(x)\). </p>
+                    For even \(n\):
+                    Apply power-reduction formulas, as appropriate.
+                    $$\tag*{$\blacksquare$}$$
+                </div>
+                <p></p>
+                <!--example 1-->
+                <div class="example">
+                    <div class="example__heading"> <b>Example 1</b> </div>
+                    <p class="example__problem"> 
+                        Evaluate the following integral:
+                        $$ \int \sin^5(x) \, \textrm{d} x. $$
+                    </p>
+                    <button onclick="toggle1()" class="solution__button"> Show Solution ▼ </button>
+                    <div id="solution1" class="solution">
+                        <p> 
+                            The integral can be rewritten as 
+                            $$ \int \sin(x) \sin^4(x) \, \textrm{d} x. $$
+                            <p style="text-align: right;"> \((1)\) </p>
+                            From here, we can use the Pythagorean identity to further rewrite it as 
+                            $$ \int \sin(x) \left(1 - \cos^2(x)\right)^2 \, \textrm{d} x. $$
+                            <p style="text-align: right;"> \((2)\) </p>
+                            Now, we can perform the substitution \(u = \cos(x)\).
+                            $$ \textrm{Let} \, u = \cos(x) $$
+                            $$ \textrm{d} u = - \sin(x) \textrm{d} x. $$
+                            $$  \int \cancel{\sin(x)}  \left(1 - u^2\right)^2 \Big(\frac{-1}{\cancel{\sin(x)}}\Big) \, \textrm{d}u $$
+                            $$ = - \int \left(1 - 2u^2 + u^4 \right) \, \textrm{d} u$$
+                            $$ = -\frac{u^5}{5} + \frac{2u^3}{3} - u +C $$
+                            <p style="text-align: right;"> \((3)\) </p>
+                            Substituting back, we obtain
+                            $$ \bbox[border: 2px solid white, 2pt]{- \frac{\cos^5(x)}{5} + \frac{2 \cos^3(x)}{3} - \cos(x) + C.} $$
+                            <p style="text-align: right;"> \((4)\) </p>
+                            $$\tag*{$\blacksquare$}$$
+                        </p>
+                    </div>
+                </div>    
+                <!--sin^n(), cos^(); n even-->
+                <p>
+                    Now let us consider the case in which \(n\) is even.
+                    For these cases, it is not as easy—we cannot perform a convenient substitution, as you may verify.
+                    Instead, our strategy, in this case, will be to utilize reduction formulas.
+                    <!--cos(2x)-->
+                    We know, from the double-angle identity for cosine, that
+                    $$ \cos(2x) = \cos^2(x) - \sin^2(x). $$
+                    Performing some algebra and utilizing the Pythagorean identity, we obtain
+                    $$ \cos(2x) = \cos^2(x) - \left(1 - \cos^2(x) \right)$$
+                    $$ \cos(2x) = 2 \cos^2(x) - 1 $$
+                    $$ \therefore \cos^2(x) = \frac{1}{2}\left(1 + \cos(2x) \right). $$
+                    $$\tag*{$\blacksquare$}$$
+                    <!--sin(2x)-->
+                    We can also derive a reduction formula for \(\sin^2(x)\) by performing the same algebraic and trigonometric manipulation.
+                    $$ \cos(2x) = \cos^2(x) - \sin^2(x). $$
+                    Using the Pythagorean identity,
+                    $$ \cos(2x) = \left(1 - \sin^2(x)\right) - \sin^2(x) $$
+                    $$ \cos(2x) = 1 - 2 \sin^2(x) $$
+                    $$ \therefore \sin^2(x) = \frac{1}{2} \left(1 - \cos(2x)\right).$$
+                    $$\tag*{$\blacksquare$}$$
+                </p>
+                <p>
+                    These reduction formulas permit us to simplify integrals involving trigonometric functions of even powers. 
+                    For example, using the power-reduction formula, we can rewrite 
+                    $$ \int \cos^2(x) \, \textrm{d}x $$
+                    as 
+                    $$ \int \frac{1}{2} \left(1 + \cos(2x) \right) \, \textrm{d} x, $$
+                    which can be easily evaluated with a substitution.
+                    $$\tag*{$\blacksquare$}$$
+                </p>
+                <p></p>
+
+                <!--example 2-->
+                <!--This example demonstrates the process of using the power-reduction formula for cosine — the integral of cos^4().-->
+                <div class="example">
+                    <div class="example__heading"> <b>Example 2</b> </div>
+                    <p class="example__problem"> 
+                        Evaluate the following integral:
+                        $$ \int \cos^4(x) \, \textrm{d} x. $$
+                    </p>
+                    <button onclick="toggle2()" class="solution__button"> Show Solution ▼ </button>
+                    <div id="solution2" class="solution">
+                        <p> 
+                            We will rewrite the integral as 
+                            $$ \int \left(\cos^2(x)\right)^2 \, \textrm{d} x $$
+                            so that we can apply the power-reduction formula for cosine to get
+                            $$ \int \left(\frac{1}{2}\left(1 + \cos(2x) \right)\right)^2 \, \textrm{d} x. $$
+                            <p style="text-align: right;"> \((1)\) </p>
+                            Expanding, we obtain
+                            $$ \frac{1}{4} \int \left(1 + 2 \cos(2x) + \cos^2(2x) \right) \, \textrm{d} x. $$
+                            We now need to apply the power-reduction formula a second time to obtain
+                            $$ \cos^2(x) = \frac{1}{2}\left(1 + \cos(2x) \right), $$
+                            $$ \therefore \cos^2(2x) = \frac{1}{2}\left(1 + \cos(4x) \right).$$
+                            <p style="text-align: right;"> \((2)\) </p>
+                            Substituting gives
+                            $$ \frac{1}{4} \int \left(1 + 2 \cos(2x) + \frac{1}{2}(1 + \cos(4x)) \right) \, \textrm{d} x $$
+                            $$ = \frac{1}{4} \int \left(\frac{3}{2} + 2 \cos(2x) + \frac{1}{2} \cos(4x) \right) \, \textrm{d} x $$
+                            $$ = \bbox[border: 2px solid white, 2pt]{\frac{3}{8}x + \frac{1}{4} \sin(2x) + \frac{1}{32} \sin(4x) + C.} $$
+                            <p style="text-align: right;"> \((3)\) </p>
+                            $$\tag*{$\blacksquare$}$$
+                        </p>
+                    </div>
+                </div>    
+                <p></p>
+                <!--family of integrals sin^m() cos^n()-->
+                <p>
+                    Now let us analyze the family of integrals 
+                    $$ \int \sin^m(x) \cos^n(x) \, \textrm{d} x, $$
+                    where \(m\) and \(n\) are positive constants.
+                    If \(m\) is odd, then the integral can be rewritten as
+                    $$ \int \sin(x) \sin^{m - 1}(x) \cos^n(x) \, \textrm{d}x $$
+                    $$ = \int \sin(x) \left(1 - \cos^2(x)\right)^{\frac{m - 1}{2}} \cos^n(x) \, \textrm{d} x, $$
+                    for which we can perform the substitution \(u = \cos(x)\) and convert the integral into a polynomial expression.
+                    On the other hand, if \(m\) is even and \(n\) is odd, then the integral can be rewritten as 
+                    $$ \int \sin^m(x) \cos(x) \cos^{n-1}(x) \, \textrm{d} x $$
+                    $$ = \int \sin^m(x) \cos(x) \left(1 - \sin^2(x)\right)^{\frac{n - 1}{2}} \, \textrm{d} x, $$ 
+                    which we can evaluate using the substitution \(u = \sin(x)\).
+                    However, if \(m\) and \(n\) are both even, then the integral can be rewritten as 
+                    $$ \int \left(1 - \cos^2(x)\right)^{\frac{m}{2}} \cos^n(x) \, \textrm{d} x, $$
+                    which can be expanded and simplified using power-reduction formulas, as appropriate.
+                </p>
+                $$\tag*{$\blacksquare$}$$
+                <!--example 3-->
+                <!--This problem is an example of how to evaluate integrals in the form sin^m() cos^n(). int.-->
+                <div class="example">
+                    <div class="example__heading"> <b>Example 3</b> </div>
+                    <p class="example__problem"> 
+                        Evaluate the following integral:
+                        $$ \int \sin^2(x) \cos^3(x) \, \textrm{d} x. $$
+                    </p>
+                    <button onclick="toggle3()" class="solution__button"> Show Solution ▼ </button>
+                    <div id="solution3" class="solution">
+                        <p> 
+                            We can rewrite the integral, using the Pythagorean identity, as 
+                            $$ \int \sin^2(x) \left(1 - \sin^2(x)\right) \cos(x) \, \textrm{d} x. $$
+                            <p style="text-align: right;"> \((1)\) </p>
+                            We can now perform the substitution \(u = \sin(x)\) because we have an extra \(\cos(x)\) term in the integrand.
+                            $$ u = \sin(x) $$
+                            $$ \textrm{d} u = \cos(x) \, \textrm{d} x. $$
+                            Thus, we obtain 
+                            $$ \int u^2 \left(1 - u^2 \right) \cancel{\cos(x)} \Big(\frac{1}{\cancel{\cos(x)}}\Big) \textrm{d} u $$
+                            $$ = \int \left(u^2 - u^4\right) \, \textrm{d} u $$
+                            $$ = \frac{u^3}{3} - \frac{u^5}{5} + C. $$
+                            <p style="text-align: right;"> \((2)\) </p>
+                            Substituting back gives 
+                            $$ \bbox[border: 2px solid white, 2pt]{\frac{\sin^3(x)}{3} - \frac{\sin^5(x)}{5} + C.} $$
+                            <p style="text-align: right;"> \((3)\) </p>
+                            $$\tag*{$\blacksquare$}$$
+                        </p>
+                    </div>
+                </div>    
+                <p>
+                    Let us now discuss integrals involving other trigonometric functions—those consisting 
+                    of (1) tangent and secant and (2) cotangent and cosecant.
+                    The key strategy for evaluating these integrals involves utilizing the Pythagorean identity. 
+                    We will be using these forms of the identity:
+                    $$ \tan^2(x) + 1 = \sec^2(x) $$
+                    $$ \cot^2(x) + 1 = \csc^2(x). $$
+                </p>
+                <p>
+                    <!-- example integral sec^4() tan^3() -->
+                    For example, consider the integral 
+                    $$ \int \sec^4(x) \tan^3(x) \, \textrm{d} x. $$
+                    Using the Pythagorean identity, we can rewrite the integrand as 
+                    $$ \int \sec^2(x) \left(1 + \tan^2(x)\right) \tan^3(x) \, \textrm{d} x.  $$
+                    <p style="text-align: right;"> \((1)\) </p>         
+                    Now, we can perform the substitution \(u = \tan(x)\). We know that \(\textrm{d} u = \sec^2(x) \, \textrm{d} x\),
+                    which is helpful in our case because we have a spare \(\sec^2(x)\) factor lying around. 
+                    We will then get, after performing the substitution,
+                    $$ \int \left(1 + u^2\right) \cdot u^3 \, \textrm{d} u. $$
+                    <p style="text-align: right;"> \((2)\) </p> 
+                    Expanding, we obtain 
+                    $$ \int \left(u^3 + u^5\right) \, \textrm{d} u $$
+                    $$ = \frac{\tan^4(x)}{4} + \frac{\tan^6(x)}{6} + C. $$
+                    <p style="text-align: right;"> \((3)\) </p> 
+                    $$\tag*{$\blacksquare$}$$
+                </p>
+                <p>
+                    To generalize this procedure, let us consider the family of integrals 
+                    $$\int \sec^m(x) \tan^n(x) \, \textrm{d} x, $$
+                    where \(m\) and \(n\) are positive constants.
+                </p>
+                <p>
+                    For sufficiently large, even \(m\), 
+                    $$ \int \sec^m(x) \tan^n(x) \, \textrm{d} x  $$
+                    $$ = \int \sec^2(x) \sec^{m - 2}(x) \tan^n(x) \, \textrm{d} x $$
+                    $$ = \int \sec^2(x) \left(1 + \tan^2(x) \right)^{\frac{m - 2}{2}} \tan^n(x) \, \textrm{d} x, $$
+                    which can be evaluated using the substitution \(u = \tan(x)\) to strip the \(\sec^2(x)\) term.
+                </p>
+                $$\tag*{$\blacksquare$}$$
+                <p>
+                    For sufficiently large, odd \(n\),
+                    $$ \int \sec^m(x) \tan^n(x) \, \textrm{d} x  $$
+                    $$ = \int \sec(x) \sec^{m - 1}(x) \tan(x) \tan^{n - 1}(x) \, \textrm{d} x $$
+                    $$ = \int \sec(x) \tan(x) \sec^{m - 1}(x) \left(\sec^2(x) - 1 \right)^{\frac{n - 1}{2}} \, \textrm{d} x, $$
+                    which can be evaluated using the substitution \(u = \sec(x)\) to strip the \(\sec(x) \tan(x)\).
+                </p>
+                <p>
+
+                </p>
+                $$\tag*{$\blacksquare$}$$
+                <!--table for how to integrate sec^m() tan^n()-->
+                <div class="box-title"> INTEGRATING \(\displaystyle \int \sec^m(x) \tan^n(x) \, \textrm{d}x: \) </div>
+                <div class="box">
+                    For sufficiently large, even \(m\):
+                    $$ \int \sec^m(x) \tan^n(x) \, \textrm{d} x  $$
+                    $$ = \int \sec^2(x) \left(1 + \tan^2(x) \right)^{\frac{m - 2}{2}} \tan^n(x) \, \textrm{d} x. $$
+                    <p style="text-align: center;"> Let \(u = \tan(x)\). </p>
+                    For sufficiently large, odd \(n\):
+                    $$ \int \sec^m(x) \tan^n(x) \, \textrm{d} x  $$
+                    $$ = \int \sec(x) \tan(x) \sec^{m - 1}(x) \left(\sec^2(x) - 1 \right)^{\frac{n - 1}{2}} \, \textrm{d} x. $$
+                    <p style="text-align: center;"> Let \(u = \sec(x)\). </p>
+                    $$\tag*{$\blacksquare$}$$
+                </div> 
+                <p></p>
+                <!--example 4-->
+                <!--This problem is an example of how to evaluate integrals in the form sec^m() tan^n(). int. sec^4(x) tan^4(x) dx -->
+                <div class="example">
+                    <div class="example__heading"> <b>Example 4</b> </div>
+                    <p class="example__problem"> 
+                        Evaluate the following integral:
+                        $$ \int \sec^4(x) \tan^4(x) \, \textrm{d} x. $$
+                    </p>
+                    <button onclick="toggle4()" class="solution__button"> Show Solution ▼ </button>
+                    <div id="solution4" class="solution">
+                        <p> 
+                            Using the Pythagorean identity, the integral can be rewritten as 
+                            $$ \int \sec^2(x) \left(1 + \tan^2(x)\right) \tan^4(x) \, \textrm{d} x. $$
+                            <p style="text-align: right;"> \((1)\) </p>
+                            We can now perform the substitution \(u = \tan(x)\) to account for the \(\sec^2(x)\) in the integral:
+                            $$ u = \tan(x) $$
+                            $$ \textrm{d} u = \sec^2(x) \, \textrm{d} x. $$
+                            We then have 
+                            $$ \int \cancel{\sec^2(x)} \left(1 + u^2 \right) u^4  \Big(\frac{1}{\cancel{\sec^2(x)}}\Big) \textrm{d} u $$
+                            $$ \int \left(u^4 + u^6 \right) \, \textrm{d} u $$
+                            $$ = \frac{u^5}{5} + \frac{u^7}{7} + C. $$
+                            <p style="text-align: right;"> \((2)\) </p>
+                            Substituting back gives 
+                            $$ \bbox[border: 2px solid white, 2pt]{\frac{1}{5} \tan^5(x) + \frac{1}{7} \tan^7(x) + C.} $$
+                            <p style="text-align: right;"> \((3)\) </p>
+                            $$\tag*{$\blacksquare$}$$
+                        </p>
+                    </div>
+                </div>  
+                <p>
+                    You may verify that the same procedures that we used for integrating 
+                    \(\displaystyle \int \sec^m(x) \tan^n(x) \, \textrm{d}x\)
+                    also apply to the family of integrals 
+                    $$ \int \csc^m(x) \cot^n(x) \, \textrm{d} x, $$
+                    where \(m\) and \(n\) are positive integers; that is, consider the following table. 
+                    <div class="box-title"> INTEGRATING \(\displaystyle \int \csc^m(x) \cot^n(x) \, \textrm{d}x: \) </div>
+                    <div class="box">
+                        For sufficiently large, even \(m\):
+                        $$ \int \csc^m(x) \cot^n(x) \, \textrm{d} x  $$
+                        $$ = \int \csc^2(x) \left(1 + \cot^2(x) \right)^{\frac{m - 2}{2}} \cot^n(x) \, \textrm{d} x. $$
+                    <p style="text-align: center;"> Let \(u = \cot(x)\). </p>
+                        For sufficiently large, odd \(n\):
+                        $$ \int \csc^m(x) \cot^n(x) \, \textrm{d} x  $$
+                        $$ = \int \csc(x) \cot(x) \csc^{m - 1}(x) \left(\csc^2(x) - 1 \right)^{\frac{n - 1}{2}} \, \textrm{d} x. $$
+                    <p style="text-align: center;"> Let \(u = \csc(x)\). </p>
+                        $$\tag*{$\blacksquare$}$$
+                </div> 
+                </p> 
+                <!--example 5-->
+                <!--This problem is an example of how to evaluate integrals in the form csc^m() cot^n(). int. csc^8(x) cot^5(x) dx -->
+                <div class="example">
+                    <div class="example__heading"> <b>Example 5</b> </div>
+                    <p class="example__problem"> 
+                        Evaluate the following integral:
+                        $$ \int \csc^{8}(x) \cot^5(x) \, \textrm{d} x. $$
+                    </p>
+                    <button onclick="toggle5()" class="solution__button"> Show Solution ▼ </button>
+                    <div id="solution5" class="solution">
+                        <p> 
+                            We start by rewriting, as recommended in the table of procedures, the integral as 
+                            $$ \int \csc^2(x) \left(1 + \cot^2(x)\right)^3 \cot^5(x) \, \textrm{d} x. $$
+                            <p style="text-align: right;"> \((1)\) </p>
+                            At this point we will perform the substitution \(u = \cot(x)\) to eliminate the 
+                            \(\csc^2(x)\) in the beginning of the integral:
+                            $$ u = \cot(x) $$
+                            $$ \textrm{d} u = -\csc^2(x) \, \textrm{d} x. $$
+                            We then have 
+                            $$ \int \cancel{\csc^2(x)} \left(1 + u^2 \right)^3 u^5  \Big(\frac{-1}{\cancel{\csc^2(x)}}\Big) \textrm{d} u $$
+                            $$ -\int \left(u^{11} + 3u^9 + 3u^7 + u^5 \right) \, \textrm{d} u $$
+                            $$ = -\frac{u^{12}}{12} - \frac{3u^{10}}{10} - \frac{3u^8}{8} - \frac{u^6}{6} + C. $$
+                            <p style="text-align: right;"> \((2)\) </p>
+                            Substituting back gives 
+                            $$ \bbox[border: 2px solid white, 2pt]{-\frac{1}{12} \cot^{12}(x) - \frac{3}{10} \cot^{10}(x) - \frac{3}{8} \cot^8(x) - \frac{1}{6} \cot^6(x) + C.} $$
+                            <p style="text-align: right;"> \((3)\) </p>
+                            $$\tag*{$\blacksquare$}$$
+                        </p>
+                    </div>
+                </div>  
+                <p>
+                    <!--integrals in form sec^n(x), n even-->
+                    For integrals in the form \(\displaystyle \sec^n(x) \, \textrm{d} x\), where \(n\) is a positive, even integer,
+                    they can be rewritten as 
+                    $$ \int \sec^2(x) \sec^{n - 2}(x) \, \textrm{d} x $$ 
+                    $$ = \int \sec^2(x) \left(1 + \tan^2(x)\right)^{\frac{n - 2}{2}} \, \textrm{d} x, $$
+                    for which the substitution \(u = \tan(x)\) will strip the \(\sec^2(x)\) factor.
+                    $$\tag*{$\blacksquare$}$$
+                </p>
+                <p>
+                    <!--integrals in form csc^n(x), n even-->
+                    Similarly, for integrals in the form \(\displaystyle \csc^n(x) \, \textrm{d} x\), where \(n\) is a positive, even integer,
+                    they can be rewritten as 
+                    $$ \int \csc^2(x) \csc^{n - 2}(x) \, \textrm{d} x $$ 
+                    $$ = \int \csc^2(x) \left(1 + \cot^2(x)\right)^{\frac{n - 2}{2}} \, \textrm{d} x $$
+                    and evaluated using the substitution \(u = \cot(x)\) to address the \(\csc^2(x)\) factor.
+                    $$\tag*{$\blacksquare$}$$
+                </p>
+                <p>
+                    <!--integrals in form sec^n(x) or csc^n(x), n odd-->
+                    However, for odd \(n\), it is not as simple. 
+                    These integrals cannot be evaluated using a clean substitution, so we will mainly use integration by parts to handle these cases.
+                    <!--sec^3(x) example-->
+                    Consider, for example, the integral of 
+                    \(\displaystyle \int \sec^3(x) \, \textrm{d} x\).
+                    We will integrate by parts by rewriting the expression as 
+                    $$ \int \sec^3(x) \, \textrm{d} x = \int \sec(x) \sec^2(x) \textrm{d} x. $$
+                    <p style="text-align: right;"> \((1)\) </p>
+                    We will choose to differentiate \(\sec(x)\) and integrate \(\sec^2(x)\). 
+                    Thus, using the integration by parts formula, 
+                    $$ \int f(x) g'(x) \, \textrm{d} x = f(x) g(x) - \int f'(x) g(x) \, \textrm{d} x, $$
+                    we let \(f(x) = \sec(x)\) and \(g'(x) = \sec^2(x) \). 
+                    Then, \(f'(x) = \sec(x) \tan(x)\) and \(g(x) = \tan(x)\).
+                    Thus, 
+                    $$ \int \sec^3(x) \, \textrm{d} x = \sec(x) \tan(x) - \int \sec(x) \tan^2(x) \, \textrm{d} x. $$
+                    <p style="text-align: right;"> \((2)\) </p>
+                    Using the Pythagorean identity, we can rewrite \(\tan^2(x)\) as \(\sec^2(x) - 1\). We then get 
+                    $$ \sec(x) \tan(x) - \int \sec(x) \left(\sec^2(x) - 1\right) \, \textrm{d} x $$
+                    $$ \sec(x) \tan(x) - \int \left(\sec^3(x) - \sec(x) \right) \, \textrm{d} x. $$
+                    $$ \therefore \int \sec^3(x) \, \textrm{d} x = \sec(x) \tan(x) - \int \sec^3(x) \, \textrm{d} x + \int \sec(x) \, \textrm{d} x $$
+                    <p style="text-align: right;"> \((3)\) </p>
+                    Adding \(\displaystyle \int \sec^3(x) \, \textrm{d} x \) to both sides of the equation yields 
+                    $$ 2 \int \sec^3(x) \, \textrm{d} x = \sec(x) \tan(x) + \int \sec(x) \, \textrm{d} x $$
+                    $$ \int \sec^3(x) \, \textrm{d} x = \frac{1}{2} \left[\sec(x) \tan(x) + \int \sec(x) \, \textrm{d} x \right]. $$
+                    <p style="text-align: right;"> \((4)\) </p>
+                    We know that \(\int \sec(x) \, \textrm{d} x = \ln|\sec(x) + \tan(x)| \), so we get 
+                    $$ \bbox[border: 2px solid white, 2pt]{\int \sec^3(x) \, \textrm{d} x = \frac{1}{2} \Big[\sec(x) \tan(x) + \ln \left|\sec(x) + \tan(x) \right| \Big] + C.} $$
+                    <p style="text-align: right;"> \((5)\) </p>
+                    $$\tag*{$\blacksquare$}$$
+                </p>
+
+                <!--table for how to integrate sec^n() and csc^n()-->
+                <div class="box-title"> INTEGRATING \(\displaystyle \int \sec^n(x) \, \textrm{d}x\) AND \(\displaystyle \int \csc^n(x) \, \textrm{d}x\): </div>
+                <div class="box">
+                    For sufficiently large, even \(n\):
+                    $$ \int \sec^n(x) \, \textrm{d} x  $$
+                    $$ = \int \sec^2(x) \left(1 + \tan^2(x)\right)^{\frac{n - 2}{2}} \, \textrm{d} x. $$
+                    <p style="text-align: center;"> Let \(u = \tan(x)\). </p>
+                    For sufficiently large, even \(n\):
+                    $$ \int \csc^n(x) \, \textrm{d} x  $$
+                    $$ \int \csc^2(x) \left(1 + \cot^2(x)\right)^{\frac{n - 2}{2}} \, \textrm{d} x. $$
+                    <p style="text-align: center;"> Let \(u = \cot(x)\). </p>
+                    For odd \(n\):
+                    Attempt to integrate by parts, as appropriate.
+                    $$\tag*{$\blacksquare$}$$
+                </div> 
+                <p></p>
+                <!--example 6-->
+                <!--This problem is an example of how to evaluate integrals in the form sec^n(). int sec^6(x) dx -->
+                <div class="example">
+                    <div class="example__heading"> <b>Example 6</b> </div>
+                    <p class="example__problem"> 
+                        Evaluate the following integral:
+                        $$ \int \sec^6(x) \, \textrm{d} x. $$
+                    </p>
+                    <button onclick="toggle6()" class="solution__button"> Show Solution ▼ </button>
+                    <div id="solution6" class="solution">
+                        <p> 
+                            We can rewrite the integral as 
+                            $$ \int \sec^2(x) \sec^4(x) \, \textrm{d} x $$
+                            $$ \int \sec^2(x) \left(\tan^2(x) + 1\right)^2 \, \textrm{d} x. $$
+                            <p style="text-align: right;"> \((1)\) </p>
+                            At this point we will perform the substitution \(u = \tan(x)\) to eliminate the 
+                            \(\sec^2(x)\) in the beginning of the integral:
+                            $$ u = \tan(x) $$
+                            $$ \textrm{d} u = \sec^2(x) \, \textrm{d} x. $$
+                            We then have 
+                            $$ \int \cancel{\sec^2(x)} \left(u^2 + 1 \right)^2 \Big(\frac{1}{\cancel{\sec^2(x)}}\Big) \textrm{d} u $$
+                            $$ \int \left(u^4 + 2u^2 + 1\right) \, \textrm{d} u $$
+                            $$ = \frac{u^5}{5} + \frac{2u^3}{3} + u + C. $$
+                            <p style="text-align: right;"> \((2)\) </p>
+                            Substituting back gives 
+                            $$ \bbox[border: 2px solid white, 2pt]{\frac{1}{5} \tan^5(x) + \frac{2}{3} \tan^3(x) + \tan(x) + C.} $$
+                            <p style="text-align: right;"> \((3)\) </p>
+                            $$\tag*{$\blacksquare$}$$
+                        </p>
+                    </div>
+                </div>  
+                <p>
+                    <!--integrals of sin(ax)sin(bx), cos(ax)cos(bx) and sin(ax)cos(bx)-->
+                    The next families of integrals that we will cover involve the forms 
+                    $$ \int \sin(m x) \sin(n x) \, \textrm{d} x $$
+                    $$ \int \cos(m x) \cos(n x) \, \textrm{d} x $$
+                    $$ \int \sin(m x) \cos(n x) \, \textrm{d} x. $$
+                    Recall the following sum-to-product trigonometric identities:
+                    $$ \sin(\alpha)\sin(\beta) = \frac{1}{2} \left[\cos(\alpha - \beta) - \cos(\alpha + \beta)\right] $$
+                    $$ \cos(\alpha)\cos(\beta) = \frac{1}{2} \left[\cos(\alpha + \beta) + \cos(\alpha - \beta)\right] $$
+                    $$ \sin(\alpha)\cos(\beta) = \frac{1}{2} \left[\sin(\alpha + \beta) + \sin(\alpha - \beta)\right] $$
+                </p>
+                <!--table for how to integrate sin(a) sin(b), cos(a) cos(b) and sin(a) cos(b)-->
+                <div class="box-title"> INTEGRATING PRODUCTS OF SINUSOIDAL FUNCTIONS </div>
+                <div class="box">
+                    $$ \int \sin(m x)\sin(n x) \, \textrm{d} x = \int \frac{1}{2} \left[\cos(mx - nx) - \cos(mx + nx)\right] \, \textrm{d} x $$
+                    $$ \int \cos(m x)\cos(n x) \, \textrm{d} x = \int \frac{1}{2} \left[\cos(mx + nx) + \cos(mx - nx)\right] \, \textrm{d} x $$
+                    $$ \int \sin(m x)\cos(n x) \, \textrm{d} x = \int \frac{1}{2} \left[\sin(mx + nx) + \sin(mx - nx)\right] \, \textrm{d} x $$
+                    $$\tag*{$\blacksquare$}$$
+                </div> 
+                <p></p>
+                <!--example 7-->
+                <!--This problem is an example of how to evaluate integrals in the form sin(a)sin(b). int. sin(8x)sin(4x) dx -->
+                <div class="example">
+                    <div class="example__heading"> <b>Example 7</b> </div>
+                    <p class="example__problem"> 
+                        Evaluate the following integral:
+                        $$ \int \sin(8x)\sin(4x) \, \textrm{d} x. $$
+                    </p>
+                    <button onclick="toggle7()" class="solution__button"> Show Solution ▼ </button>
+                    <div id="solution7" class="solution">
+                        <p> 
+                            Using the table of identities mentioned before, we rewrite the integrand as 
+                            $$ \int \frac{1}{2}\left[\cos(8x - 4x) - \cos(8x + 4x) \right] \, \textrm{d} x $$
+                            $$ = \int \frac{1}{2} \left[\cos(4x) - \cos(12x) \right] \, \textrm{d} x. $$
+                            <p style="text-align: right;"> \((1)\) </p>
+                            Evaluating gives 
+                            $$ \bbox[border: 2px solid white, 2pt]{\frac{1}{8} \sin(4x) - \frac{1}{24} \sin(12x) + C.} $$
+                            <p style="text-align: right;"> \((2)\) </p>
+                            $$\tag*{$\blacksquare$}$$
+                        </p>
+                    </div>
+                </div>  
+                <!--section summary-->
+                <p>
+                    <p style="text-align: center; font-size: 150%;">
+                        <u> SECTION SUMMARY </u>
+                        <ul>
+                            <li style="padding-bottom: 20px;"> 
+                                For positive, odd, sufficiently large \(n\),  
+                                \(\displaystyle \int \sin^n(x) \, \textrm{d} x \) and \(\displaystyle \int \cos^n(x) \, \textrm{d} x\)
+                                can be written as \( \displaystyle \int\sin(x) \left(1 - \cos^2(x)\right)^{\frac{n - 1}{2}} \, \textrm{d} x \) and 
+                                \( \displaystyle \int \cos(x) \left(1 - \sin^2(x)\right)^{\frac{n - 1}{2}} \, \textrm{d} x \), respectively. 
+                                The substitutions \(u = \cos(x)\) and \(u = \sin(x)\) should be performed to evaluate each respective integral. 
+                            </li>
+                            <li style="padding-top: 20px; padding-bottom: 20px;">
+                                For positive, even, sufficiently large \(n\), 
+                                \(\displaystyle \int \sin^n(x) \, \textrm{d} x \) and \(\displaystyle \int \cos^n(x) \, \textrm{d} x\)
+                                should be evaluated using the power-reduction formulas 
+                                \(\displaystyle \sin^2(x) = \frac{1}{2} \left[1 - \cos(2x)\right]\) and 
+                                \(\displaystyle \cos^2(x) = \frac{1}{2} \left[1 + \cos(2x)\right]\), as appropriate.
+                            </li>
+                            <li style="padding-top: 20px; padding-bottom: 20px;">
+                                For the family of integrals \(\displaystyle \int \sin^m(x) \cos^n(x) \, \textrm{d} x\), where \(m\) and \(n\) are positive constants,
+                                try to rewrite the integrand using the Pythagorean identity, \(\sin^2(x) + \cos^2(x) = 1\). 
+                                Utilize the fact that \(\sin'(x) = \cos(x)\) and \(\cos'(x) = -\sin(x)\) to perform the appropriate substitution.
+                            </li>
+                            <li style="padding-top: 20px; padding-bottom: 20px;">
+                                For the family of integrals \(\displaystyle \int \sec^m(x) \tan^n(x) \, \textrm{d} x\), where \(m\) and \(n\) are positive constants,
+                                try to rewrite the integrand using the form of the Pythagorean identity \(\tan^2(x) + 1 = \sec^2(x)\). 
+                                Utilize the fact that \(\sec'(x) = \sec(x) \tan(x)\) and \(\tan'(x) = \sec^2(x)\) to perform the appropriate substitution.
+                            </li>
+                            <li style="padding-top: 20px; padding-bottom: 20px;">
+                                For the family of integrals \(\displaystyle \int \csc^m(x) \cot^n(x) \, \textrm{d} x\), where \(m\) and \(n\) are positive constants,
+                                try to rewrite the integrand using the form of the Pythagorean identity \(\cot^2(x) + 1 = \csc^2(x)\). 
+                                Utilize the fact that \(\csc'(x) = - \csc(x) \cot(x)\) and \(\cot'(x) = -\csc^2(x)\) to perform the appropriate substitution.
+                            </li>
+                            <li style="padding-top: 20px; padding-bottom: 20px;">
+                                For positive, even, sufficiently large \(n\),  
+                                \(\displaystyle \int \sec^n(x) \, \textrm{d} x \) and \(\displaystyle \int \csc^n(x) \, \textrm{d} x\)
+                                can be written as \( \displaystyle \int \sec^2(x) \left(1 + \tan^2(x)\right)^{\frac{n - 2}{2}} \, \textrm{d} x \) and 
+                                \( \displaystyle \int \csc^2(x) \left(1 + \cot^2(x)\right)^{\frac{n - 2}{2}} \, \textrm{d} x \), respectively. 
+                                The substitutions \(u = \tan(x)\) and \(u = \cot(x)\) should be performed to evaluate each respective integral.
+                            </li>
+                            <li style="padding-top: 20px; padding-bottom: 20px;">
+                                For positive, odd, sufficiently large \(n\), evaluating 
+                                \(\displaystyle \int \sec^n(x) \, \textrm{d} x \) and \(\displaystyle \int \csc^n(x) \, \textrm{d} x\)
+                                may require integration by parts, as appropriate.
+                            </li>
+                            <li style="padding-top: 20px; padding-bottom: 20px;">
+                                <p> 
+                                    \(\displaystyle \int \sin(mx)\sin(nx) \, \textrm{d} x = 
+                                    \int \frac{1}{2} \left[\cos(mx - nx) - \cos(mx + nx)\right] \, \textrm{d} x \).
+                                </p>
+                            </li>
+                            <li style="padding-top: 20px; padding-bottom: 20px;">
+                                <p>
+                                    \(\displaystyle \int \cos(mx)\cos(nx) \, \textrm{d} x = 
+                                    \int \frac{1}{2} \left[\cos(mx + nx) + \cos(mx - nx)\right] \, \textrm{d} x \).
+                                </p>
+                            </li>    
+                            <li style="padding-top: 20px; padding-bottom: 20px;">
+                                <p>
+                                    \(\displaystyle \int \sin(mx)\cos(nx) \, \textrm{d} x = 
+                                    \int \frac{1}{2} \left[\sin(mx + nx) + \sin(mx - nx)\right] \, \textrm{d} x \).
+                                </p>
+                            </li>
+                            <li style="padding-top: 20px; padding-bottom: 20px;">
+                                These formulas should be considered strategies and guidelines for integration, not equations to memorize!
+                            </li>
+                        </ul>    
+                    </p>
+                </p>
+            </div>
+            <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+            <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3.0.1/es5/tex-mml-chtml.js"></script>
+            <script id="AMSmath" async src="TeX/AMSmath.js"></script>
+            <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+            <!--These functions control the "Show Solution" button to the example problems.-->
+            <script>
+                function toggle1(){
+                    var clicked = document.getElementById("solution1");
+                    if (clicked.style.display === "none") {
+                        clicked.style.display = "block";
+                    } else {
+                        clicked.style.display = "none";
+                    }
+                }
+                function toggle2(){
+                    var clicked = document.getElementById("solution2");
+                    if (clicked.style.display === "none") {
+                        clicked.style.display = "block";
+                    } else {
+                        clicked.style.display = "none";
+                    }
+                }
+                function toggle3(){
+                    var clicked = document.getElementById("solution3");
+                    if (clicked.style.display === "none") {
+                        clicked.style.display = "block";
+                    } else {
+                        clicked.style.display = "none";
+                    }
+                }
+                function toggle4(){
+                    var clicked = document.getElementById("solution4");
+                    if (clicked.style.display === "none") {
+                        clicked.style.display = "block";
+                    } else {
+                        clicked.style.display = "none";
+                    }
+                }
+                function toggle5(){
+                    var clicked = document.getElementById("solution5");
+                    if (clicked.style.display === "none") {
+                        clicked.style.display = "block";
+                    } else {
+                        clicked.style.display = "none";
+                    }
+                }
+                function toggle6(){
+                    var clicked = document.getElementById("solution6");
+                    if (clicked.style.display === "none") {
+                        clicked.style.display = "block";
+                    } else {
+                        clicked.style.display = "none";
+                    }
+                }
+                function toggle7(){
+                    var clicked = document.getElementById("solution7");
+                    if (clicked.style.display === "none") {
+                        clicked.style.display = "block";
+                    } else {
+                        clicked.style.display = "none";
+                    }
+                }
+            </script>
+        </section>
+    </body>
+</html>
+<!--All the examples in this section have been double-checked to be correct.-->
+<!--valerie stop worrying . . . -->

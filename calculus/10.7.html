@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link href="https://fonts.googleapis.com/css?family=Cardo:400,700|Oswald" rel="stylesheet">
+        <link rel="stylesheet" href="../css/0.1.css">
+        <title> 10.10 — Absolute and Conditional Convergence </title>
+        <meta charset="UTF-8">
+    
+    <!--Toggle Solution Functions-->
+        <script>
+            function toggle1(){
+                var clicked = document.getElementById("solution1");
+                if (clicked.style.display === "none") {
+                    clicked.style.display = "block";
+                } else {
+                    clicked.style.display = "none";
+                }
+            }
+            function toggle2(){
+                var clicked = document.getElementById("solution2");
+                if (clicked.style.display === "none") {
+                    clicked.style.display = "block";
+                } else {
+                    clicked.style.display = "none";
+                }
+            }
+            function toggle3(){
+                var clicked = document.getElementById("solution3");
+                if (clicked.style.display === "none") {
+                    clicked.style.display = "block";
+                } else {
+                    clicked.style.display = "none";
+                }
+            }
+            function toggle4(){
+                var clicked = document.getElementById("solution4");
+                if (clicked.style.display === "none") {
+                    clicked.style.display = "block";
+                } else {
+                    clicked.style.display = "none";
+                }
+            }
+        </script>
+    </head>
+    <!--Top Button Panel-->
+    <header>
+        <div class="top-links" style="font-family:Georgia, 'Times New Roman', Times, serif">
+            <a href="../index.html" class="button_top">Home</a> 
+            <a href="../about.html" class="button_top">About Me</a> 
+            <a href="../faq.html" class="button_top">FAQ</a>
+            <a href="../contact.html" class="button_top">Contact Me</a>
+        </div>                                  
+    </header>
+    <!--Section Tabs-->
+    <div class="tab">
+        <a href="10.10.html" class="tab-button">Notes</a>
+        <a href="10.10-exercises.html" class="tab-button">Exercises</a>
+        <a href="10.10-applications.html" class="tab-button">Applications</a>
+        <a href="calculus.html" class="tab-button">Back to Calculus</a>
+    </div>
+    <body class="background">
+        <section>
+                <!--Section Title-->
+                <p class="background__title"> 10.10 — Absolute and Conditional Convergence </p>
+                <!--Section Body-->
+                <div class="background__text">
+                    <hr>
+                    <p>
+                        In this section we will discuss absolute and conditional convergence,
+                        which are descriptions of the types of convergence for series.
+                        These descriptors are important, as we will see in further sections, for determining how "strong" a particular type of convergence is.
+                        <b> Absolute convergence </b> describes a series whose absolute value converges, 
+                        while <b> conditional convergence </b> describes a series that converges but not absolutely (its absolute value diverges.)
+                    </p>
+                    <div class="highlight">
+                        <p> 
+                            If \(\sum|a_n|\) converges, then \(\sum a_n\) is <b> absolutely convergent.</b> 
+                        </p>
+                        <p> If \(\sum a_n\) converges but \(\sum |a_n|\) diverges, then \(\sum a_n\) is <b> conditionally convergent. </b> </p>
+                    </div>
+                    <p>
+                        Determining whether a series is absolutely convergent can be another convergence test for series.
+                        If the convergence of \(\sum a_n\) is unknown, but it is known that \(\sum |a_n|\) converges, then it can be said that \(\sum a_n\) converges, too. 
+                        We will showcase a proof of this statement at the end of this section. 
+                    </p>
+                    <div class="highlight">
+                        <p>
+                            <b> Theorem About Absolute Convergence </b>
+                            <p> If \(\sum|a_n|\) converges, then so does \(\sum a_n\). </p>
+                        </p>
+                    </div>
+                    <p></p>
+<!--PUMPKIN PUMPKIN PUMPKIN PUMPKIN PUMPKIN PUMPKIN PUMPKIN PUMPKIN PUMPKIN PUMPKIN PUMPKIN PUMPKIN PUMPKIN PUMPKIN PUMPKIN PUMPKIN PUMPKIN PUMPKIN PUMPKIN PUMPKIN PUMPKIN PUMPKIN PUMPKIN PUMPKIN PUMPKIN PUMPKIN PUMPKIN PUMPKIN PUMPKIN PUMPKIN PUMPKIN PUMPKIN PUMPKIN PUMPKIN PUMPKIN PUMPKIN PUMPKIN PUMPKIN PUMPKIN PUMPKIN PUMPKIN PUMPKIN PUMPKIN PUMPKIN PUMPKIN PUMPKIN PUMPKIN PUMPKIN PUMPKIN PUMPKIN PUMPKIN PUMPKIN PUMPKIN PUMPKIN PUMPKIN PUMPKIN PUMPKIN PUMPKIN PUMPKIN PUMPKIN PUMPKIN PUMPKIN PUMPKIN PUMPKIN PUMPKIN PUMPKIN PUMPKIN PUMPKIN PUMPKIN PUMPKIN PUMPKIN PUMPKIN PUMPKIN PUMPKIN PUMPKIN PUMPKIN PUMPKIN PUMPKIN PUMPKIN PUMPKIN PUMPKIN PUMPKIN PUMPKIN PUMPKIN PUMPKIN PUMPKIN PUMPKIN PUMPKIN PUMPKIN PUMPKIN PUMPKIN PUMPKIN PUMPKIN PUMPKIN PUMPKIN PUMPKIN PUMPKIN PUMPKIN PUMPKIN PUMPKIN PUMPKIN PUMPKIN PUMPKIN PUMPKIN PUMPKIN PUMPKIN PUMPKIN PUMPKIN PUMPKIN PUMPKIN PUMPKIN PUMPKIN PUMPKIN PUMPKIN PUMPKIN PUMPKIN PUMPKIN PUMPKIN PUMPKIN PUMPKIN PUMPKIN PUMPKIN PUMPKIN PUMPKIN PUMPKIN PUMPKIN PUMPKIN PUMPKIN PUMPKIN PUMPKIN PUMPKIN PUMPKIN PUMPKIN PUMPKIN PUMPKIN PUMPKIN PUMPKIN PUMPKIN PUMPKIN PUMPKIN PUMPKIN PUMPKIN PUMPKIN PUMPKIN PUMPKIN -->
+                    <!--Example 1-->
+                    <div class="example">
+                        <div class="example__heading"><b> Example 1 </b></div>
+                        <p class="example__problem">
+                            Determine if the following series converges conditionally, converges absolutely, or diverges.
+                             \[\sum_{n = 3}^{\infty} a_n = \sum_{n = 3}^{\infty} \frac{(-1)^n}{\sqrt{n}}.\]
+                        </p>
+                        <button onclick="toggle1()" class="solution__button"> Show Solution ▼ </button>
+                        <div id="solution1" class="solution">
+                            <p>
+                                Notice that the terms of {\(a_n\)} are alternating and decrease in magnitude to zero. 
+                                Furthermore, \(\displaystyle \lim_{n \to \infty} \left(\frac{1}{\sqrt{n}}\right)^n = 0\), so we conclude that \(\sum a_n\) converges by the alternating series test.
+                                <p>However, now let us consider \(\sum |a_n|\), which is \(\sum \frac{1}{\sqrt{n}}\) in this case. 
+                                This series is a p-series with \( p = 0.5 \lt 1\) and therefore diverges. 
+                                Therefore, we know that \(\sum a_n\) converges but that \(\sum |a_n|\) diverges, 
+                                so we conclude that the series 
+                                \(\displaystyle \sum_{n = 3}^{\infty} \frac{(-1)^n}{\sqrt{n}}\)
+                                converges conditionally.
+                                </p>
+                            </p>
+                        </div>
+                    </div>
+                    <p></p>
+                    <!--Example 2-->
+                    <div class="example">
+                        <div class="example__heading"><b> Example 2 </b></div>
+                        <p class="example__problem">
+                            Determine whether the series \( \displaystyle \sum_{n = 1}^{\infty} \frac{\sin(n)}{n^2}\) converges or diverges.
+                        </p>
+                        <button onclick="toggle2()" class="solution__button"> Show Solution ▼ </button>
+                        <div id="solution2" class="solution">
+                            <p>
+                               Let us first consider the series \(\displaystyle \sum_{n = 1}^{\infty} \left| \frac{\sin(n)}{n^2} \right| \). 
+                               We can determine easily the convergence of this series by performing a direct comparison with \(\displaystyle \sum_{n = 1}^{\infty} \frac{1}{n^2} \).
+                               $$ 0 \leq \sum_{n = 1}^{\infty} \left| \frac{\sin(n)}{n^2} \right| \leq \underbrace{\sum_{n = 1}^{\infty} \frac{1}{n^2}}_{\textrm{converges}}. $$
+                               Thus, \( \displaystyle \sum_{n = 1}^{\infty} \left| \frac{\sin(n)}{n^2} \right|\) converges by direct comparison.
+                               <p>
+                                   We therefore note that, because \(\displaystyle \sum_{n = 1}^{\infty} \left| \frac{\sin(n)}{n^2} \right|\) converges,
+                                   so does \( \displaystyle \sum_{n = 1}^{\infty} \frac{\sin(n)}{n^2}\) by the definition of absolute convergence.
+                               </p>
+                            </p>
+                        </div>
+                    </div>
+                    <!--Example 3-->
+                    <div class="example">
+                        <div class="example__heading"><b> Example 3 </b></div>
+                        <p class="example__problem">
+                            Determine whether the series \(\displaystyle \sum_{n = 1}^{\infty} \frac{1}{\sin(n)}\) converges conditionally, converges absolutely, or diverges. 
+                        </p>
+                        <button onclick="toggle3()" class="solution__button"> Show Solution ▼ </button>
+                        <div id="solution3" class="solution">
+                            <p>
+                               Let us first consider the series \(\displaystyle \sum_{n = 1}^{\infty} \left| \frac{\sin(n)}{n^2} \right| \). 
+                               We can determine easily the convergence of this series by performing a direct comparison with \(\displaystyle \sum_{n = 1}^{\infty} \frac{1}{n^2} \).
+                               $$ 0 \leq \sum_{n = 1}^{\infty} \left| \frac{\sin(n)}{n^2} \right| \leq \underbrace{\sum_{n = 1}^{\infty} \frac{1}{n^2}}_{\textrm{converges}}. $$
+                               Thus, \( \displaystyle \sum_{n = 1}^{\infty} \left| \frac{\sin(n)}{n^2} \right|\) converges by direct comparison.
+                               <p>
+                                   We therefore note that, because \(\displaystyle \sum_{n = 1}^{\infty} \left| \frac{\sin(n)}{n^2} \right|\) converges,
+                                   so does \( \displaystyle \sum_{n = 1}^{\infty} \frac{\sin(n)}{n^2}\) by the definition of absolute convergence.
+                               </p>
+                            </p>
+                        </div>
+                    </div>
+                    <!--Example 4-->
+                    <div class="example">
+                        <div class="example__heading"><b>Example 4</b></div>
+                        <p class="example__problem"> 
+                            Let \(\displaystyle a_n = \frac{1}{\sqrt[3]{n^4}}\). Determine whether the series 
+                            \(\displaystyle \sum_{n = 1}^{\infty} a_n \cos(n \pi)\) converges conditionally, converges absolutely, or diverges.
+                        </p>
+                        <button onclick="toggle4()" class="solution__button">Show Solution ▼ </button>
+                        <div id="solution4" class="solution">
+                            
+                        </div>
+                    </div>
+                </div>
+            <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+            <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3.0.1/es5/tex-mml-chtml.js"></script>
+            <script id="AMSmath" async src="TeX/AMSmath.js"></script>
+            <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+        </section>
+    </body>

@@ -1,0 +1,189 @@
+hi<!DOCTYPE html>
+<html>
+    <head>
+        <link href="https://fonts.googleapis.com/css?family=Cardo:400,700|Oswald" rel="stylesheet">
+        <link rel="stylesheet" href="../css/0.1.css">
+        <title> 8.8 — The Cross Product </title>
+        <meta charset="UTF-8">
+    <!--Toggle Solution Functions-->
+        <script>
+            function toggle1(){
+                var clicked = document.getElementById("solution1");
+                if (clicked.style.display === "none") {
+                    clicked.style.display = "block";
+                } else {
+                    clicked.style.display = "none";
+                }
+            }
+            function toggle2(){
+                var clicked = document.getElementById("solution2");
+                if (clicked.style.display === "none") {
+                    clicked.style.display = "block";
+                } else {
+                    clicked.style.display = "none";
+                }
+            }
+            function toggle3(){
+                var clicked = document.getElementById("solution3");
+                if (clicked.style.display === "none") {
+                    clicked.style.display = "block";
+                } else {
+                    clicked.style.display = "none";
+                }
+            }
+        </script>
+    </head>
+    <!--Top Button Panel-->
+    <header>
+        <div class="top-links" style="font-family:Georgia, 'Times New Roman', Times, serif">
+            <a href="../index.html" class="button_top">Home</a> 
+            <a href="../about.html" class="button_top">About Me</a> 
+            <a href="../faq.html" class="button_top">FAQ</a>
+            <a href="../contact.html" class="button_top">Contact Me</a>
+        </div>                                  
+    </header>
+    <!--Section Tabs-->
+    <div class="tab">
+        <a href="8.8.html" class="tab-button">Notes</a>
+        <a href="8.8-exercises.html" class="tab-button">Exercises</a>
+        <a href="8.8-applications.html" class="tab-button">Applications</a>
+        <a href="calculus.html" class="tab-button">Back to Calculus</a>
+    </div>
+    <body class="background">
+        <section>
+            <div>
+                <!--Section Title-->
+                <p class="background__title"> 8.8 — The Cross Product </p>
+                <!--Section Body-->
+                <div class="background__text">
+                    <hr>                    
+                    <p> 
+                        In this section we will discuss one of the operations for vector multiplication—the cross product. 
+                        In section <a href="8.7.html" style="color:plum"> 8.7 </a> we discussed the dot product, another operation for vector multiplication.
+                        Suppose that \(\vec{A}\) and \(\vec{B}\) are vectors in a three-dimensional space. The cross product is then denoted as 
+                        $$\vec{A} \times \vec{B},$$ 
+                        and unlike the dot product, which produces a scalar quantity, the cross product produces a vector orthogonal (forming right angles) to both \(\vec{A}\)  and \(\vec{B}\).
+                        The magnitude of this orthogonal vector is given by
+                        $$ |\vec{A} \times \vec{B}| = |\vec{A}| |\vec{B}| \sin(\theta), $$
+                        where \(\theta\) denotes the angle between \(\vec{A}\) and \(\vec{B}\). 
+                    </p>
+                    <img src="../images/Calculus/8/8.8/8.8-1.jpg" class="image-center" alt="">
+                    <p class="image-caption"> 
+                        The vector \(\vec{A} \times \vec{B}\) is orthogonal to vectors \(\vec{A}\) and \(\vec{B}\). 
+                        (Attribution: own work)
+                    </p>
+                    <p>
+                        Geometrically, the magnitude of the vector formed by the cross product \(\vec{A} \times \vec{B}\) represents the area of the parallelogram formed by lengths \(A\) and \(B\), as shown in the following figure.  
+                    </p>
+                    <img src="../images/Calculus/8/8.8/8.8-2.jpg" class="image-center" alt="">
+                    <p>
+                        A nice mnemonic device for finding the direction of the vector \(\vec{A} \times \vec{B}\) is the right-hand rule. 
+                        Point your index finger in the direction of \(\vec{A}\) and your middle finger in the direction of \(\vec{B}\); 
+                        your thumb will point in the direction of \(\vec{A} \times \vec{B}\). 
+                    </p>
+                    <img src="../images/Calculus/8/8.8/8.8-3.jpg" class="image-center" alt="">
+                    <p class="image-caption"> 
+                        Point your index finger in the direction of \(\vec{A}\) and your middle finger in the direction of \(\vec{B}\). 
+                        Your thumb will point in the direction of \(\vec{A} \times \vec{B}\). 
+                        (Attribution: own work)
+                    </p>
+                    <p>
+                        An alternate way to compute cross products is with determinants. 
+                        Suppose that vector \( \vec{A} \) has components {\(a_1, a_2, a_3\)} and that vector \(\vec{B}\) has components {\({b_1, b_2, b_3}\)}. 
+                        The vector \(\vec{A} \times \vec{B}\) can be expressed with the determinant
+                        $$ 
+                            \begin{vmatrix} 
+                            \hat{i} & \hat{j} & \hat{k} \\
+                            a_1 & a_2 & a_3 \\
+                            b_1 & b_2 & b_3 \\
+                            \end{vmatrix},
+                        $$  
+                        which can be computed as 
+                        $$
+                            \begin{vmatrix} 
+                            a_2 & a_3 \\
+                            b_2 & b_3 \\
+                            \end{vmatrix}
+                            \hat{i} -
+                            \begin{vmatrix}
+                            a_1 & a_3 \\
+                            b_1 & b_3 \\
+                            \end{vmatrix}
+                            \hat{j} + 
+                            \begin{vmatrix}
+                            a_1 & a_2 \\
+                            b_1 & b_2 \\
+                            \end{vmatrix}
+                            \hat{k}= 
+                        $$
+                        $$
+                            (a_2 b_3 - a_3 b_2) \hat{i} - (a_1 b_3 - a_3 b_1) \hat{j} + (a_1 b_2 - a_2 b_1) \hat{k}.
+                        $$
+                    </p>
+                    <!--Example 1-->
+                    <div class="example">
+                        <div class="example__heading"> <b>Example 1</b> </div>
+                        <p class="example__problem"> 
+                            Let \(\vec{A} = \left\langle 3, 4, -6 \right\rangle\) and let \(\vec{B} = \left\langle -1, 3, 9 \right\rangle \). 
+                            Find the vector components of \(\vec{A} \times \vec{B}\) and its magnitude.
+                        </p>
+                        <button onclick="toggle1()" class="solution__button"> Show Solution ▼ </button>
+                        <div id="solution1" class="solution">
+                            <p> 
+                                The vector components of \(\vec{A} \times \vec{B}\) can be found with the determinant
+                                $$
+                                \begin{vmatrix} 
+                                    \hat{i} & \hat{j} & \hat{k} \\
+                                    3 & 4 & -6 \\
+                                    -1 & 3 & 9 \\
+                                \end{vmatrix} 
+                                $$
+                                $$
+                                =
+                                \begin{vmatrix} 
+                                    4 & -6 \\
+                                    3 & 9 \\
+                                \end{vmatrix}
+                                \hat{i} -
+                                \begin{vmatrix}
+                                    3 & -6 \\
+                                    -1 & 9 \\
+                                \end{vmatrix}
+                                \hat{j} + 
+                                \begin{vmatrix}
+                                    3 & 4 \\
+                                    -1 & 3 \\
+                                \end{vmatrix}
+                                \hat{k}
+                            $$
+                            $$
+                                = 54 \hat{i} - 21 \hat{j} + 13 \hat{k}.
+                            $$
+                                The magnitude of this vector can be found by evaluating 
+                                $$ \sqrt{(54)^2 + (-21)^2 + (13)^2} = \sqrt{3526}. $$
+                            </p>
+                        </div>
+                    </div>
+                    <!--Example 2-->
+                    <div class="example">
+                        <div class="example__heading"> <b>Example 2</b> </div>
+                        <p class="example__problem"> 
+                            Let \(\vec{A} = \left\langle 3, 4, -6 \right\rangle\) and let \(\vec{B} = \left\langle -1, 3, 9 \right\rangle \). 
+                            Find the vector components of \(\vec{A} \times \vec{B}\) and its magnitude.
+                        </p>
+                        <button onclick="toggle2()" class="solution__button"> Show Solution ▼ </button>
+                        <div id="solution2" class="solution">
+                            <p> 
+                                
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+            <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+            <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3.0.1/es5/tex-mml-chtml.js"></script>
+            <script id="AMSmath" async src="TeX/AMSmath.js"></script>
+            <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+        </section>
+    </body>
+</html>

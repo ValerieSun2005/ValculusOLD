@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="../css/0.1.css">
+        <title>10.8 — Ratio and Root Tests </title>
+        <meta charset="UTF-8">
+        <meta name="author" content="Valerie">
+    </head>
+    <!--Top Button Panel-->
+    <header>
+        <div class="top-links" style="font-family:Georgia, 'Times New Roman', Times, serif">
+            <a href="../index.html" class="button_top">Home</a> 
+            <a href="../about.html" class="button_top">About Me</a> 
+            <a href="../faq.html" class="button_top">FAQ</a>
+            <a href="../contact.html" class="button_top">Contact Me</a>
+        </div>                                  
+    </header>
+    <!--Section Tabs-->
+    <div class="tab">
+        <a href="10.8.html" class="tab-button">Notes</a>
+        <a href="10.8-exercises.html" class="tab-button">Exercises</a>
+        <a href="10.8-applications.html" class="tab-button">Applications</a>
+        <a href="calculus.html" class="tab-button">Back to Calculus</a>
+    </div>
+    <body class="background">
+        <section>
+                <!--Section Title-->
+                <p class="background__title"> 10.8 — Ratio and Root Tests </p>
+                <!--Section Body-->
+                <div class="background__text">
+                    <hr>
+                    <p>
+                        In this brief section, we will discuss the ratio test. 
+                        Consider the series \(\displaystyle \sum_{n = k}^\infty a_n\). 
+                        To determine its convergence, we consider  
+                        $$ \lim_{n \to \infty} \left|\frac{a_{n + 1}}{a_n}\right|, $$
+                        whose value we will call "\(L\)".
+                    </p>
+                    <p>
+                        The ratio test states that
+                        if \(L \lt 1\), then \(\displaystyle \sum_{n = k}^\infty a_n\) converges absolutely; 
+                        if \(L \gt 1\), then \(\displaystyle \sum_{n = k}^\infty a_n\) diverges; 
+                        and 
+                        if \(L = 1\), then the test is indeterminate.
+                    </p>
+
+                    <br>
+
+                    <!--ratio test table-->
+                    <div class="box-title"> RATIO TEST </div>
+                    <div class="box">
+                        <p style="text-align: center"> Let \(\displaystyle L = \lim_{n \to \infty} \left| \frac{a_{n + 1}}{a_n} \right| \). </p> 
+                        <ol type="a" style="padding-top: 20px; padding-bottom: 20px;">
+                            <li style="padding-top: 20px; padding-bottom: 20px; padding-left: 20px; line-height: 3;">
+                                If \(L \lt 1\), then \(\displaystyle \sum_{n = k}^\infty a_n\) is absolutely convergent.
+                            </li>
+                            <li style="padding-top: 20px; padding-bottom: 20px; padding-left: 20px; line-height: 3;">
+                                If \(L \gt 1\), then \(\displaystyle \sum_{n = k}^\infty a_n\) diverges.
+                            </li>
+                            <li style="padding-top: 20px; padding-bottom: 20px; padding-left: 20px; line-height: 3;">
+                                If \(L = 1\), then the test is indeterminate.
+                            </li>
+                        </ol>
+                    </div>
+
+                    <br>
+
+                    <p>
+                        Many of the example problems that we will do involve factorials. 
+                        In those cases, it is important to remember the property that, for sufficiently large \(n\),
+                        $$ n! = n (n - 1)! .$$
+                    </p>
+
+                    <br>
+                    <!--example 1-->
+                    <div class="example">
+                        <div class="example__heading"> <b>Example 1</b> </div>
+                        <p class="example__problem"> 
+                            Use the ratio test to determine whether each of the following series converge or diverge.
+                            <div style="margin-left:5%">
+                                <ol type="I" style="padding-top: 20px; padding-bottom: 20px; line-height: 3; font-style: normal;">
+                                    <li style="padding-left: 20px;">
+                                        \(\displaystyle \sum_{n = 1}^\infty \frac{e^n}{n!} \)
+                                    </li>
+                                    <li style="padding-left: 20px;">
+                                        \(\displaystyle \sum_{n = 0}^\infty \frac{3^{2n}}{8^n + 3} \)
+                                    </li>   
+                                    <li style="padding-left: 20px;">
+                                        \(\displaystyle \sum_{n = 1}^\infty \frac{(-1)^n }{n^2 + 2} \)
+                                    </li>
+                                </ol>
+                            </div>
+                        </p>
+                        <button onclick="toggle1()" class="solution__button"> Show Solution ▼ </button>
+                        <div id="solution1" class="solution">
+                            <p> 
+                                <ol type="I" style="padding-top: 20px; padding-bottom: 20px; line-height: 3; font-style: normal;">
+                                    <li style="padding-left: 20px;">
+                                        We will consider 
+                                        \(\displaystyle L = \lim_{n \to \infty} \left|\frac{a_{n + 1}}{a_n}\right|\), 
+                                        where \(\displaystyle a_n = \frac{e^n}{n!} \) in this case. 
+                                        Therefore, 
+                                        $$ 
+                                        \begin{align}
+                                        \lim_{n \to \infty} \left|\frac{a_{n + 1}}{a_n} \right| 
+                                        &= \lim_{n \to \infty} \left|\frac{e^{n + 1}}{(n + 1)!} \div \frac{e^n}{n!} \right| \\
+                                        &= \lim_{n \to \infty} \left|\frac{e^n \cdot e}{(n + 1) n!} \cdot \frac{n!}{e^n} \right| \\ 
+                                        &= \lim_{n \to \infty} \left|\frac{e}{n + 1} \right| \\
+                                        &= e \lim_{n \to \infty} \left|\frac{1}{n + 1} \right| \\
+                                        &= 0.
+                                        \end{align}
+                                        $$
+                                        Because \(L \lt 1 \), we conclude that the series is absolutely convergent (and therefore converges).
+                                    </li>
+                                    <hr>
+                                    <li style="padding-left: 20px;">
+                                        In this case, we let
+                                        \(\displaystyle a_n = \frac{3^{2n}}{8^n + 3}\).
+                                        Thus,
+                                        $$
+                                        \begin{align} 
+                                        \lim_{n \to \infty} \left|\frac{a_{n + 1}}{a_n}\right| 
+                                        &= \lim_{n \to \infty} \left|\frac{3^{2(n + 1)}}{8^{n + 1} + 3} \div \frac{3^{2n}}{8^n + 3} \right| \\
+                                        &= \lim_{n \to \infty} \left|\frac{3^{2n + 2}}{8^{n + 1} + 3} \cdot \frac{8^n + 3}{3^{2n}} \right| \\
+                                        &= \lim_{n \to \infty} \left|\frac{9^n \cdot 9}{8^n \cdot 8 + 3} \cdot \frac{8^n + 3}{9^n} \right| \\
+                                        &= 9 \lim_{n \to \infty} \left|\frac{8^n + 3}{8^n \cdot 8 + 3} \cdot  \right| \\
+                                        &= \frac{9}{8} \lim_{n \to \infty} \left| \frac{8^n + 3}{8^n + 3/8}\right| \\
+                                        &= \frac{9}{8}.
+                                        \end{align}
+                                        $$
+                                        Because \(L \gt 1 \), we conclude that the series diverges.
+                                    </li>   
+                                    <hr>
+                                    <li style="padding-left: 20px;">
+                                        We notice that the term \(\displaystyle (-1)^n\) is an alternator—it simply changes the sign of each term.
+                                        When we consider \(\displaystyle \lim_{n \to \infty} \left| \frac{a_{n + 1}}{a_n} \right|\),
+                                        where \(\displaystyle a_n = \frac{(-1)^n }{n^2 + 2}\) in this case, 
+                                        we can simply neglect it (it will be in absolute value bars and therefore always be positive.)
+                                        We then get 
+                                        $$
+                                        \begin{align} 
+                                        \lim_{n \to \infty} \left|\frac{a_{n + 1}}{a_n}\right| 
+                                        &= \lim_{n \to \infty} \left| \frac{1}{(n + 1)^2 + 2} \div \frac{1}{n^2 + 2} \right| \\
+                                        &= \lim_{n \to \infty} \left| \frac{1}{n^2 + 2n + 1} \cdot \frac{n^2 + 2}{1} \right| \\
+                                        &= \lim_{n \to \infty} \left| \frac{n^2 + 2}{n^2 + 2n + 1} \right| \\
+                                        &= 1.
+                                        \end{align}
+                                        $$
+                                        Because \(L = 1\), the test is inconclusive. We cannot use the ratio test to determine whether or not this series converges.
+                                        
+                                    </li>
+                                    <li style="padding-left: 20px;">
+                                        \(\displaystyle \lim_{n \to \infty} \frac{3n^2 - 4}{7n^2 + 1} = \frac{3}{7}\), 
+                                        so \(\{a_n\}\) converges to \(\displaystyle \frac{3}{7}\). 
+                                    </li> 
+                                </ol>
+                            </p>
+                        </div>
+                    </div>
+
+                    <br>
+
+                    <!--example 2-->
+                    <div class="example">
+                        <div class="example__heading"> <b>Example 2</b> </div>
+                        <p class="example__problem"> 
+                            <div style="margin-left:5%">
+                                Determine the values of \(k\) for which 
+                                \(\displaystyle \sum_{n = 2}^\infty (-1)^n \frac{k^{3n}}{e^{n + 4}} \)
+                                converges.
+                            </div>
+                        </p>
+                        <button onclick="toggle2()" class="solution__button"> Show Solution ▼ </button>
+                        <div id="solution2" class="solution">
+                            <p> 
+                                
+                            </p>
+                        </div>
+                    </div>
+
+                    
+
+                    <!--section summary-->
+                    <p>
+                        <p style="text-align: center; font-size: 150%;">
+                            <u> SECTION SUMMARY </u>
+                        </p>
+                            <ul>
+                                <li style="padding-bottom: 20px;"> 
+                                    An infinite geometric series is in the form 
+                                    \(\displaystyle \sum_{n = k}^\infty ar^n = ar^k + ar^{k + 1} + ar^{k + 2} + \cdots\).
+                                </li>
+                                <li style="padding-bottom: 20px;"> 
+                                    An infinite geometric series \(\displaystyle \sum_{n = k}^\infty ar^n\) converges if \(|r| \lt 1\), 
+                                    and its sum is given by the formula 
+                                    \(\displaystyle \frac{\textrm{FIRST TERM}}{1 - r}\).
+                                </li>
+                                <li style="padding-bottom: 20px;"> 
+                                    For disguised geometric series, utilize the properties that \(\displaystyle \frac{1}{b^n} = \left(\frac{1}{b}\right)^n\),
+                                    where \(b\) is non-zero, and \(\displaystyle a^n b^n = \left(ab\right)^n\).
+                                </li>
+                                <li style="padding-bottom: 20px;"> 
+                                    The common ratio is given by \(\displaystyle \frac{a_{n + 1}}{a_n}\).
+                                </li>
+                                <li style="padding-bottom: 20px;"> 
+                                    Geometric series can be used to write repeating decimals as fractions. 
+                                </li>
+                            </ul>    
+                        </p>
+                    </p>
+                </div>
+            <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+            <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3.0.1/es5/tex-mml-chtml.js"></script>
+            <script id="AMSmath" async src="TeX/AMSmath.js"></script>
+            <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+            <!--These functions control the "Show Solution" button to the example problems.-->
+            <script>
+                function toggle1(){
+                    var clicked = document.getElementById("solution1");
+                    if (clicked.style.display === "none") {
+                        clicked.style.display = "block";
+                    } else {
+                        clicked.style.display = "none";
+                    }
+                }
+                function toggle2(){
+                    var clicked = document.getElementById("solution2");
+                    if (clicked.style.display === "none") {
+                        clicked.style.display = "block";
+                    } else {
+                        clicked.style.display = "none";
+                    }
+                }
+                function toggle3(){
+                    var clicked = document.getElementById("solution3");
+                    if (clicked.style.display === "none") {
+                        clicked.style.display = "block";
+                    } else {
+                        clicked.style.display = "none";
+                    }
+                }
+                function toggle4(){
+                    var clicked = document.getElementById("solution4");
+                    if (clicked.style.display === "none") {
+                        clicked.style.display = "block";
+                    } else {
+                        clicked.style.display = "none";
+                    }
+                }
+                function toggle5(){
+                    var clicked = document.getElementById("solution5");
+                    if (clicked.style.display === "none") {
+                        clicked.style.display = "block";
+                    } else {
+                        clicked.style.display = "none";
+                    }
+                }
+                function toggle6(){
+                    var clicked = document.getElementById("solution6");
+                    if (clicked.style.display === "none") {
+                        clicked.style.display = "block";
+                    } else {
+                        clicked.style.display = "none";
+                    }
+                }
+                function toggle7(){
+                    var clicked = document.getElementById("solution7");
+                    if (clicked.style.display === "none") {
+                        clicked.style.display = "block";
+                    } else {
+                        clicked.style.display = "none";
+                    }
+                }
+            </script>
+        </section>
+    </body>

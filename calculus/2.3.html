@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="../css/0.1.css">
+        <title>2.3 — The Product and Quotient Rules </title>
+        <meta charset="UTF-8">
+        <meta name="author" content="Valerie">
+    <!--Toggle Solution Functions-->
+        <script>
+            function toggle1(){
+                var clicked = document.getElementById("solution1");
+                if (clicked.style.display === "none") {
+                    clicked.style.display = "block";
+                } else {
+                    clicked.style.display = "none";
+                }
+            }
+            function toggle2(){
+                var clicked = document.getElementById("solution2");
+                if (clicked.style.display === "none") {
+                    clicked.style.display = "block";
+                } else {
+                    clicked.style.display = "none";
+                }
+            }
+            function toggle3(){
+                var clicked = document.getElementById("solution3");
+                if (clicked.style.display === "none") {
+                    clicked.style.display = "block";
+                } else {
+                    clicked.style.display = "none";
+                }
+            }
+            function toggle4(){
+                var clicked = document.getElementById("solution4");
+                if (clicked.style.display === "none") {
+                    clicked.style.display = "block";
+                } else {
+                    clicked.style.display = "none";
+                }
+            }
+            function toggle5(){
+                var clicked = document.getElementById("solution5");
+                if (clicked.style.display === "none") {
+                    clicked.style.display = "block";
+                } else {
+                    clicked.style.display = "none";
+                }
+            }
+        </script>
+    </head>
+    <!--Top Button Panel-->
+    <header>
+        <div class="top-links" style="font-family:Georgia, 'Times New Roman', Times, serif">
+            <a href="../index.html" class="button_top">Home</a> 
+            <a href="../about.html" class="button_top">About Me</a> 
+            <a href="../faq.html" class="button_top">FAQ</a>
+            <a href="../contact.html" class="button_top">Contact Me</a>
+        </div>                                  
+    </header>
+    <!--Section Tabs-->
+    <div class="tab">
+        <a href="2.3.html" class="tab-button">Notes</a>
+        <a href="2.3-exercises.html" class="tab-button">Exercises</a>
+        <a href="2.3-applications.html" class="tab-button">Applications</a>
+        <a href="calculus.html" class="tab-button">Back to Calculus</a>
+    </div>
+    <body class="background">
+        <section>
+                <!--Section Title-->
+                <p class="background__title">2.3 — The Product and Quotient Rules </p>
+                <!--Section Body-->
+                <div class="background__text">
+                    <hr>
+                    <p>
+                        In section
+                        <a href="2.2.html" target="_blank" rel="noreferrer noopener" style="color:plum">2.2</a>,
+                        we introduced the basic rules for differentiation—the property of linearity and the power rule—and 
+                        covered the derivatives of the transcendental functions \(\sin(x), \cos(x)\), and \(e^x\).
+                        In this section, we will present the product and quotient rules.
+                        For the remainder of this section, we will refer to \(f(x)\) and \(g(x)\) as \(f\) and \(g\), respectively, to make our formulas easier to comprehend.
+                    </p>
+                    <p>
+                        Let us analyze a geometric interpretation of the product rule. 
+                        Consider Fig. 2-3.1, in which a rectangle with dimensions \(f\) by \(g\) is drawn, with an area \(A\). 
+                        Changes in the length of the sides, \(\Delta f\) and \(\Delta g\), cause a change \(\Delta A\) in the area.
+                    </p>
+                    <p>
+                        <!--Fig. 2-3.1-->
+                        <img src="../images/Calculus/2/2.3/2.3-1.jpg" class="image-center" alt="">
+                        <p class="image-caption"> 
+                            Fig. 2.3-1. A rectangle of dimensions \(f\) by \(g\) has an area \(A\). 
+                            Changes in the sides of the rectangle, \(\Delta f\) and \(\Delta g\), create a change in the area \(\Delta A\). 
+                        </p>
+                    </p>
+                    <p>
+                        We can therefore write the change in area, \(\Delta A\), of the rectangle as
+                        <p style="text-align: center;"> 
+                            \(\displaystyle \Delta A = f \Delta g + g \Delta f + \Delta f \Delta g\). 
+                            <span style="float:right"> \((1)\) </span>
+                        </p>
+                        Dividing by \(\Delta x\) gives 
+                        <p style="text-align: center;"> 
+                            \(\displaystyle \frac{\Delta A}{\Delta x} = f \frac{\Delta g}{\Delta x} + g \frac{\Delta f}{\Delta x} +  \frac{\Delta f \Delta g}{\Delta x}\). 
+                            <span style="float:right"> \((2)\) </span>
+                        </p>
+                        Now let us consider the case in which \(\Delta x\) is made infinitely small. 
+                        Recall that, using Leibniz notation, 
+                        \(\displaystyle \frac{\textrm{d} f}{\textrm{d}x}\) 
+                        can be written as 
+                        \(\displaystyle\lim_{\Delta x \to 0} \frac{\Delta f}{\Delta x} \).
+                        Fig. 2.3-2 shows the effect of shrinking \(\Delta x\). 
+                    </p>
+                    <p>
+                        <!--Fig. 2-3.2-->
+                        <p>
+                            <img src="../images/Calculus/2/2.3/2.3-2.jpg" class="image-center" alt="">
+                            <p class="image-caption">
+                                Fig. 2-3.2. A reduction in \(\Delta x\) shrinks the size of \(\Delta f\) and \(\Delta g\),
+                                and, as \(\Delta x\) approaches \(0\), the infinitely small quantities \(\Delta f\) and \(\Delta g\) 
+                                are represented by \(\textrm{d} f\) and \(\textrm{d} g\), respectively. 
+                            </p>
+                        </p>
+                        We can therefore say that 
+                        <p style="text-align: center;"> 
+                            \(\displaystyle 
+                            \lim_{\Delta x \to 0} \frac{\Delta A}{\Delta x}  
+                            = \lim_{\Delta x \to 0} \left( f \frac{\Delta g}{\Delta x} + g \frac{\Delta f}{\Delta x} + \Delta f \frac{ \Delta g}{\Delta x} \right) \). 
+                        </p>
+                        <p style="text-align: center;"> 
+                            \(\displaystyle \frac{\textrm{d}A}{\textrm{d}x}
+                            = f\frac{\textrm{d} g}{\textrm{d} x} + g \frac{\textrm{d} f}{\textrm{d} g} + \frac{\textrm{d} f \textrm{d} g}{\textrm{d}x}
+                            \).
+                            <span style="float:right"> \((3)\) </span>
+                        </p>
+                        Notice that the quantity \(\textrm{d}f \textrm{d}g\) is shrinking in two dimensions and is therefore extremely small. 
+                        We will thus neglect the term \(\displaystyle \frac{\textrm{d} f \textrm{d} g}{\textrm{d}x}\). 
+                        More rigorously, however, consider the fact that 
+                        \(\displaystyle \lim_{\Delta x \to 0 } \Delta f = 0\) because the length \(\Delta f\) will freely converge to \(0\),
+                        so \(\displaystyle \lim_{\Delta x \to 0 } \Delta f \frac{\Delta g}{\Delta x} = 0\). 
+                        Either way, we rewrite the expression as
+                        <p style="text-align: center;"> 
+                            $$ \frac{\textrm{d}A}{\textrm{d}x}
+                            = f\frac{\textrm{d} g}{\textrm{d} x} + g \frac{\textrm{d} f}{\textrm{d} g} $$
+                            \(\displaystyle \frac{\textrm{d}A}{\textrm{d}x}
+                            = f'g + fg' 
+                            \).
+                            <span style="float:right"> \((4)\) </span>
+                        </p>
+                        Recall that \(A = fg\), so we now have 
+                    </p>
+                    <!--PRODUCT RULE HIGHLIGHT-->
+                    <div class="highlight" style="text-align: center; line-height: 0.5;">
+                        <p style="text-align:center"> <u>PRODUCT RULE</u> </p>
+                        <p> \(\displaystyle \left(fg\right)' = f'g + fg'\), </p>
+                    </div>
+                    assuming that \(f\) and \(g\) are both differentiable.
+                    $$\tag*{$\blacksquare$}$$
+                    <!--Example 1-->
+                    <div class="example">
+                        <div class="example__heading"> <b>Example 1</b> </div>
+                        <p class="example__problem"> 
+                            Evaluate \(\displaystyle \frac{\textrm{d}}{\textrm{d} x} \left[x^2 \cdot x \right]\) using the product rule. 
+                        </p>
+                        <button onclick="toggle1()" class="solution__button"> Show Solution ▼ </button>
+                        <div id="solution1" class="solution">
+                            <p> 
+                                We know that the expected answer is \(3x^2\) 
+                                if we rewrite the expression as \(\displaystyle \frac{\textrm{d}}{\textrm{d}x}[x^3]\) and use the power rule.
+                            </p>
+                            <p>
+                                However, using the power rule, we obtain
+                                $$ \frac{\textrm{d}}{\textrm{d} x} \left[x^2 \cdot x \right]
+                                = \frac{\textrm{d}}{\textrm{d} x}[x^2] \cdot x + x^2 \cdot \frac{\textrm{d}}{\textrm{d} x}[x]
+                                $$
+                                $$ = 2x^2 + x^2 = 3x^2, $$
+                                exactly what we expected. Note, furthermore, that \((fg)' \ne f' g'\) ! 
+                                We clearly see that \((x^2 \cdot x)' = 3x^2 \ne 2x \cdot 1\), so we should be careful to avoid this mistake!
+                            </p>
+                        </div>
+                    </div>
+                    <p></p>
+                    <!--Example 2-->
+                    <div class="example">
+                        <div class="example__heading"> <b>Example 2</b> </div>
+                        <p class="example__problem"> 
+                            Evaluate \(\displaystyle \frac{\textrm{d}}{\textrm{d} x} \left[3e^x \cos(x) \right]\). 
+                        </p>
+                        <button onclick="toggle2()" class="solution__button"> Show Solution ▼ </button>
+                        <div id="solution2" class="solution">
+                            <p> 
+                                Using the product rule, we see that
+                                $$ \frac{\textrm{d}}{\textrm{d} x} \left[3e^x \cos(x) \right] = 
+                                3 \Big(\frac{\textrm{d}}{\textrm{d} x}[e^x] \cdot \cos(x) + e^x \cdot \frac{\textrm{d}}{\textrm{d} x}[\cos(x)] \Big) $$
+                                $$ = 3 \Big(e^x \cos(x) - e^x \sin(x) \Big)$$
+                                $$ = \bbox[border: 2px solid white, 2pt]{3e^x \Big(\cos(x) - \sin(x)\Big).} $$
+                            </p>
+                        </div>
+                    </div>
+                    <p>
+                        Now let us introduce the quotient rule, which can be used for differentiating fractions. 
+                    </p>
+                    <!--QUOTIENT RULE HIGHLIGHT-->
+                    <div class="highlight" style="text-align: center; line-height: 0.5;">
+                        <p style="text-align:center"> <u>QUOTIENT RULE</u> </p>
+                        <p> \(\displaystyle \left( \frac{f}{g} \right)' = \frac{f'g - fg'}{g^2}\),
+                    </div>
+                    assuming that \(f\) and \(g\) are both differentiable and \(g \ne 0\).
+                    <p>
+                        We can now derive the derivatives for the remaining trigonometric functions. 
+                        We will start with the derivative of \(\tan(x)\).
+                    </p>
+                    <!--tan'(x)-->
+                    <p>
+                        <p style="text-align: center;"> 
+                            \(\displaystyle \frac{\textrm{d}}{\textrm{d}x}[\tan(x)] = \frac{\textrm{d}}{\textrm{d}x}\left[\frac{\sin(x)}{\cos(x)}\right]\). 
+                            <span style="float:right"> \((1)\) </span>
+                        </p>
+                        <p style="text-align: center;"> 
+                            \(\displaystyle \frac{\textrm{d}}{\textrm{d}x}\left[\frac{\sin(x)}{\cos(x)}\right] 
+                            = \frac{\left(\frac{\textrm{d}}{\textrm{d}x}[\sin(x)] \cdot \cos(x) \right) 
+                            - \left(\sin(x) \cdot \frac{\textrm{d}}{\textrm{d}x}[\cos(x)]\right)}{\cos^2(x)} \)
+                            <span style="float:right"> \((2)\) </span>
+                        </p>
+                        <p style="text-align: center;"> 
+                            \(\displaystyle = \frac{\cos^2(x) + \sin^2(x)}{\cos^2(x)} \)
+                            <span style="float:right"> \((3)\) </span>
+                        </p>
+                        <p style="text-align: center;"> 
+                            \(\displaystyle = \frac{1}{\cos^2(x)} \).
+                            <span style="float:right"> \((4)\) </span>
+                        </p>
+                    </p>
+                    <p class="highlight" style="text-align: center;">
+                        \(\displaystyle \frac{\textrm{d}}{\textrm{d}x}[\tan(x)] = \sec^2(x) \). 
+                    </p>
+                    $$\tag*{$\blacksquare$}$$
+                    <p></p>
+                    <!--Example 3-->
+                    <div class="example">
+                        <div class="example__heading"> <b>Example 3</b> </div>
+                        <p class="example__problem"> 
+                            Find the derivative of \(\sec(x)\).
+                        </p>
+                        <button onclick="toggle3()" class="solution__button"> Show Solution ▼ </button>
+                        <div id="solution3" class="solution">
+                            <p> 
+                                Recall that \(\displaystyle \sec(x) = \frac{1}{\cos(x)}\).
+                                Thus, applying the quotient rule gives
+                                $$ \frac{\textrm{d}}{\textrm{d}x} \left[\frac{1}{\cos(x)}\right] 
+                                = \frac{\frac{\textrm{d}}{\textrm{d}x}(1)\cdot \cos(x) - 1 \cdot \frac{\textrm{d}}{\textrm{d}x}[\cos(x)]}{\cos^2(x)}
+                                $$
+                                $$ = \frac{0 + \sin(x)}{\cos^2(x)} $$
+                                $$ = \bbox[border: 2px solid white, 2pt]{\sec(x) \tan(x).} $$
+                            </p>
+                        </div>
+                    </div>
+                    <p>
+                        As an exercise for you, find the derivatives of the remaining trigonometric functions, \(\csc(x)\) and \(\cot(x)\).
+                        The procedure for doing so is homogeneous to what we did with \(\tan(x)\) and \(\sec(x)\) with the quotient rule.
+                        We should now have a table of the derivatives for all of the trigonometric functions.
+                    </p>
+                    <!--trig derivatives-->
+                    <div class="highlight">
+                        <div style="float:left; width: 50%; padding-bottom: 10px;">
+                            <p> \(\displaystyle \frac{\textrm{d}}{\textrm{d}x}[\sin(x)] = \cos(x)\) </p>
+                            <p> \(\displaystyle \frac{\textrm{d}}{\textrm{d}x}[\cos(x)] = -\sin(x)\) </p>
+                            <p> \(\displaystyle \frac{\textrm{d}}{\textrm{d}x}[\tan(x)] = \sec^2(x)\) </p>
+                        </div>
+                        <div style="float:right; width: 50%; padding-bottom: 10px;">
+                            <p> \(\displaystyle \frac{\textrm{d}}{\textrm{d}x}[\csc(x)] = -\csc(x)\cot(x)\) </p>
+                            <p> \(\displaystyle \frac{\textrm{d}}{\textrm{d}x}[\sec(x)] = \sec(x)\tan(x)\) </p>
+                            <p> \(\displaystyle \frac{\textrm{d}}{\textrm{d}x}[\cot(x)] = -\csc^2(x)\) </p> 
+                        </div>
+                        <p style="text-align: center;"> DERIVATIVES OF TRIGONOMETRIC FUNCTIONS </p>
+                    </div>
+                    <p></p>
+                    <!--Example 4-->
+                    <div class="example">
+                        <div class="example__heading"> <b>Example 4</b> </div>
+                        <p class="example__problem"> 
+                            Find the derivative of \(\displaystyle \frac{\sec(x)}{e^x}\).
+                        </p>
+                        <button onclick="toggle4()" class="solution__button"> Show Solution ▼ </button>
+                        <div id="solution4" class="solution">
+                            <p> 
+                                From the quotient rule, we see that
+                                $$ \frac{\textrm{d}}{\textrm{d}x} \left[\frac{\sec(x)}{e^x}\right] $$ 
+                                $$ = \frac{\frac{\textrm{d}}{\textrm{d}x}[\sec(x)] \cdot e^x - \sec(x) \cdot \frac{\textrm{d}}{\textrm{d}x}[e^x]}{\left(e^x\right)^2} $$
+                                $$ = \frac{\sec(x)\tan(x) e^x - \sec(x) e^x}{e^{2x}} $$
+                                $$ = \frac{\sec(x)e^x \left(\tan(x) - 1\right)}{e^{2x}} $$
+                                $$ = \bbox[border: 2px solid white, 2pt]{\frac{\sec(x)\left(\tan(x) - 1 \right)}{e^x}.} $$
+                            </p>
+                        </div>
+                    </div>
+                    <!--section summary-->
+                    <p>
+                        <p style="text-align: center; font-size: 150%;">
+                            <u> SECTION SUMMARY </u>
+                            <ul>
+                                <li style="padding-bottom: 20px;"> 
+                                    The product rule states that \(\displaystyle \left(fg\right)' = f'g + fg'\), 
+                                    assuming that \(f\) and \(g\) are both differentiable.
+                                </li>
+                                <li style="padding-top: 20px; padding-bottom: 20px;">
+                                    The quotient rule states that \(\displaystyle \left(\frac{f}{g}\right)' = \frac{f'g - fg'}{g^2}\),
+                                    assuming that \(f\) and \(g\) are both differentiable and \(g \ne 0\). 
+                                </li>
+                                <li style="padding-top: 20px; padding-bottom: 20px;">
+                                    It is necessary to memorize the derivatives of the six trigonometric functions that we discussed in this section.
+                                    It may help to look through a Quizlet set of these derivatives, as necessary. 
+                                    <a href="https://quizlet.com/_9yci3w?x=1jqt&i=29pkak" target="_blank" rel="noreferrer noopener" style="color:plum">Here</a> 
+                                    is one such set.
+                                </li>
+                            </ul>    
+                        </p>
+                    </p>
+                </div>
+            <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+            <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3.0.1/es5/tex-mml-chtml.js"></script>
+            <script id="AMSmath" async src="TeX/AMSmath.js"></script>
+            <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+        </section>
+    </body>

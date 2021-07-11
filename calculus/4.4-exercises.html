@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link href="https://fonts.googleapis.com/css?family=Cardo:400,700|Oswald" rel="stylesheet">
+        <link rel="stylesheet" href="../css/0.1.css">
+        <title> 4.4 Exercises </title>
+        <meta charset="UTF-8">
+        <meta name="description" content="Real World Applications of Algebra, Geometry, Trigonometry, and Calculus.">
+        <meta name="Valerie" content="Applications of Calculus">
+        <meta name="keywords" content="Math, Math Tutorial, Real World Uses of Math, Real World Uses of Calculus, Real World Uses of Algbera, Real World Uses of Geometry, How is Math Used In the Real World, Applications of Math, Applications of Algebra, Applications of Calculus">
+    <!--Toggle Solution Functions-->
+        <script>
+            function toggle1(){
+                var clicked = document.getElementById("solution1");
+                if (clicked.style.display === "none") {
+                    clicked.style.display = "block";
+                } else {
+                    clicked.style.display = "none";
+                }
+            }
+            function toggle2(){
+                var clicked = document.getElementById("solution2");
+                if (clicked.style.display === "none") {
+                    clicked.style.display = "block";
+                } else {
+                    clicked.style.display = "none";
+                }
+            }
+            function toggle3(){
+                var clicked = document.getElementById("solution3");
+                if (clicked.style.display === "none") {
+                    clicked.style.display = "block";
+                } else {
+                    clicked.style.display = "none";
+                }
+            }
+        </script>
+    </head>
+    <!--Top Button Panel-->
+    <header>
+        <div class="top-links" style="font-family:Georgia, 'Times New Roman', Times, serif">
+            <a href="../index.html" class="button_top">Home</a> 
+            <a href="../about.html" class="button_top">About Me</a> 
+            <a href="../faq.html" class="button_top">FAQ</a>
+            <a href="../contact.html" class="button_top">Contact Me</a>
+        </div>                                  
+    </header>
+    <!--Section Tabs-->
+    <div class="tab">
+        <a href="4.4.html" class="tab-button">Notes</a>
+        <a href="4.4-exercises.html" class="tab-button">Exercises</a>
+        <a href="4.4-applications.html" class="tab-button">Applications</a>
+        <a href="calculus.html" class="tab-button">Back to Calculus</a>
+    </div>
+    <body class="background">
+        <section>
+                <p class="background__title"> 4.4 Exercises (Fundamental Theorem of Calculus) </p>
+                <div class="background__text">
+                    <hr>
+                    <p> <b>(1)</b> Find the value of \(\int_{1}^{4} \sqrt{x} \, dx \). </p>
+                    <p> <b>(2)</b> Find the value of \(\int_{0}^{\pi} 2\cos(x) \, dx \). </p>
+                    <p> <b>(3)</b> Find the value of \(\int_{0}^{\pi/4} \frac{2}{3\cos^2(x)} \, dx \). </p>
+                    <p> <b>(4)</b> Find the value of \(\int_{1}^{e^2} \frac{1}{x} \, dx \). </p>
+                    <p> <b>(5)</b> Explain why the following integral cannot be evaluated: \(\int_{-2}^{4} \frac{1}{x^2 - 7x + 10} \, dx \). </p>
+                    <p> <b>(6)</b> Explain why the following integral cannot be evaluated: \(\int_{4}^{6} \frac{2}{x-4} \, dx \). </p>
+                    <p> <b>(7)</b> Let \(f(x) = \int_{0}^{x} \sin{(t^2+\pi)} \, dt \). Find the value of \(f'(\sqrt{\pi})\). </p>
+                    <p> <b>(8)</b> Let \(g(x) = \int_{2}^{x} \log_{2}(t) \, dt \). Find the value of \(g \, '(16)\). </p>
+                    <p> <b>(9)</b> Let \(v(x) = \int_{2}^{3x} t^2 \, dt \). Find the value of \(v \, '(1)\). </p>
+                    <p> <b>(10)</b> Let \(f(x) = \int_{\sin(x)}^{x} \cos{(t)} \, dt \). Find \(f'(x)\). </p>
+                    <p> <b>(11)</b> Let \(I = \int_{\cos{(x)}}^{x^3-4} \ln{(u)} \, du \). Find \(\frac{dI}{dx}\).  </p>
+                <!--andrew ur a fake grammar nazi and u fake "carlsen magnus" doodoo pc also if ur some random person looking through this im so sorry :'( it's just that my friend andrew likes watery ketchup-->
+                    <p> <b>(12)</b> Sam attempted to evaluate the following integral, and their steps are shown below. Explain why Sam's result is incorrect and find the answer they should have gotten instead. $$ \int_{-1}^{1} \frac{1}{x^2} \, dx $$ $$ = -\frac{1}{x} \Big]_{-1}^{1} $$ $$ = -\Big[\frac{1}{(1)} - \frac{1}{(-1)}\Big] = -2. $$  </p>
+                    <p> <b>(13)</b> Let region \(R\) be the area bounded by the \(x\)-axis, the line \(x = 2\), and by the parabola \(y = x^2\). Derive an expression for the rate of change of \(R\) in terms of \(x\). </p>
+                    <p> <b>(14)</b> Let region \(P\) be the area bounded by the \(x\)-axis, the line \(y\)-axis, and the function \(y = \sqrt{x}\). Find the rate at which \(P\) is changing at \(x = 4\). </p>
+                    <p> <b>(15)</b> The number of texts that Valerie sends per hour is given by the function \(T(t)\), where \(T(t) \, \) is measured in texts per hour and \(t\) is measured in hours since 8:00 AM. Using correct units, interpret the meaning of \(\int_{2}^{5} T(t) \, dt\) in context. </p>
+                    <p> <b>(16)</b> A car travels with velocity given by \(v(t)\), where \(v\) is measured in miles per hour and \(t\) is measured in hours. Using correct units, interpret the meaning of \(\int_{0}^{0.8} |v(t)| \, dt \) in context. </p>
+                    <p class="calculator-msg"><i>A calculator is required for Questions 17–24. </i> </p>
+                    <p> <b>(17)</b> A particle moves along the \(x\)-axis with a velocity given by \(v(t) = t^2 - 4t\), where \(t\) is measured in hours and \(v\) is measured in meters per hour. At \(t = 1\), the particle is located \(5\) meters right of the origin. Find the particle's position at \(t = 5\).   </p>
+                    <p> <b>(18)</b> Water is pumped into a swimming pool at a rate given by the function \(p(t) = t^3 - 4t + 8\), where \(t\) is measured in minutes and \(p(t)\) is measured in milliliters per minute. The swimming pool is originally empty. Using correct units, find the amount of water in the pool at \(t = 3\) minutes.  </p>
+                    <p> <b>(19)</b> Andrew is given a \(300\) milliliter juice box. The rate at which he drinks the juice is modeled by the function \(A(t) = 2t - 2\sin{(\frac{\pi t}{20})} \), where \(t\) is measured in minutes and \(A(t)\) is measured in milliliters per minute. How long will it take Andrew to drink the entire box?  </p>
+                    <p> <b>(20)</b> People leave an airport terminal at a constant rate of \(0.9\) person per minute. People enter the terminal at a rate given by \(E(t) = \frac{t^2+2t}{60} + \cos{(\frac{2t}{5})}\), where \(E(t)\) is measured in people per hour and \(t\) is measured in minutes. At \(t = 0\), there are \(2000\) people in the terminal. How many people are in the terminal at \(t = 40\)? </p>
+                    <p> <b>(21)</b> Sheep enter a barn at a rate of \(S(t) = t^2 + \sin{(t)}e^{-t} + 30 \, \) for \( \, 0 < t < 5\), where \(S(t)\) is measured in sheep per hour and \(t\) is measured in hours. For \(t > 5\), no sheep enter the barn. A team of farmers removes sheep from the barn to shear them at a constant rate of 50 sheep per hour but does not place them back. There are 300 sheep in the barn at \(t = 0\). Assuming that the sheared sheep do not return to the barn, how many sheep are in the barn at \(t = 8\)?  </p>
+                    <p> <b>(22)</b> A \(1000\) milliliter milk carton is thrown out after there is \(0.8\) milliliter left. Milk is drunk at a rate given by \(m(t) = 50t^3 - 70t^2 + 10t + 20\), where \(m(t)\) is measured in milliliters per day and \(t\) is measured in days. How many days will elapse before the milk is thrown away? </p>
+                    <p> <b>(23)</b> At a fast food restaurant, customers take napkins at a rate of \(n(t) = |150\cos(\frac{\pi t}{10})|\), where \(n(t)\) is measured in napkins per hour and \(t\) is measured in hours. The manager restocks the napkin dispenser with 140 napkins every hour. For \(0 < t < 8\), when is the number of napkins in the dispenser at a minimum? </p>
+                    <p> <b>(24)</b> At a supermarket, pumpkins are stocked at a rate of \(s(t) = 150\sin{(\frac{2t\pi}{55})} + 300\), where \(s(t)\) is measured in pumpkins per hour and \(t\) is measured in hours. It is Halloween, so customers flock to the supermarket to buy pumpkins. Pumpkins are bought at a constant rate of \(200\) pumpkins per hour. For \(0 < t < 40\), when is the number of pumpkins in stock at a maximum? </p>
+                    <p> <b>(25)</b> The number of bacteria in a petri dish grows at an initial rate of \(0.4\) bacterium per second. This growth rate increases at a rate of \(0.02\) bacterium per square second. There are initially \(80\) bacteria in the petri dish. How many bacteria are in the petri dish after \(1\) hour has elapsed? </p>
+                    <p> <b>(26)</b> The following table displays values of \(f(x)\), \(g(x)\), and \(h(x)\). Using the table, find the value of \(\frac{d}{dx}\int_{f(x^2+1)}^{g(x-4)} h(t) \, dt \) at \(x = 5\). </p>
+                    <!--Table for #26-->   
+                    <table class="center">
+                        <!--Heading-->
+                        <tr>
+                            <th style="border-left: none;">\(x\)</th>
+                            <th>\(f\)</th>
+                            <th>\(g\)</th>
+                            <th style="border-right: none;">\(h\)</th>
+                        </tr>
+                        <!--x = 1-->
+                        <tr>
+                            <td style="border-left: none;">\(1\)</td>
+                            <td>\(-19\)</td>
+                            <td>\(3\)</td>
+                            <td style="border-right: none;">\(2\)</td>
+                        </tr>
+                        <!--x = 3-->
+                        <tr>
+                            <td style="border-left: none;">\(3\)</td>
+                            <td>\(6\)</td>
+                            <td>\(3\)</td>
+                            <td style="border-right: none;">\(-4\)</td>
+                        </tr>
+                        <!--x = 5-->
+                        <tr>
+                            <td style="border-left: none;">\(5\)</td>
+                            <td>\(-2\)</td>
+                            <td>\(-13\)</td>
+                            <td style="border-right: none;">\(-12\)</td>
+                        </tr>
+                        <!--x = 17-->
+                        <tr>
+                            <td style="border-left: none;">\(17\)</td>
+                            <td>\(-4\)</td>
+                            <td>\(-8\)</td>
+                            <td style="border-right: none;">\(3\)</td>
+                        </tr>
+                        <!--x = 26-->
+                        <tr>
+                            <td style="border-left: none; border-bottom: none;">\(26\)</td>
+                            <td style="border-bottom: none;">\(17\)</td>
+                            <td style="border-bottom: none;">\(-5\)</td>
+                            <td style="border-right: none; border-bottom: none;">\(-1\)</td>
+                        </tr>
+                    </table>
+                    <p> <b>(27)</b> An object falls at an initial speed \(v_0\) and final speed \(v_f\) (the speed right before it hits the ground) after the time \(t\) has elapsed. It is known that the acceleration due to gravity is the constant \(g = 9.8 m/s^2\). Neglecting air resistance, derive an expression for \(v_f\) in terms of \(v_0\), \(t\), and \(g\). (Hint: Use the fact that \(a = \frac{dv}{dt}\), where \(v\) denotes velocity, \(a\) denotes acceleration, and \(t\) denotes time.) </p>
+                    <!--Gordon Ramsay is a pressure cooker; am I right?-->
+                    <p> <b>(28)</b> Newton's Second Law states that \(F = ma\), where \(F\) denotes the net force applied on the object, \(m\) denotes the object's mass, and \(a\) denotes its acceleration as a function of time. An object, originally at rest, is located \(2\) meters from its starting point after time \(t = 5\) seconds. Assume that the net force stays constant. Derive an expression for the position function of the object in terms of \(F\), \(m\), \(a\), \(t\), and physical constants, as appropriate. </p>
+            <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+            <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3.0.1/es5/tex-mml-chtml.js"></script>
+            <script id="AMSmath" async src="TeX/AMSmath.js"></script>
+            <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+        </section>
+    </body>

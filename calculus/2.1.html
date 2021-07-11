@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="../css/0.1.css">
+        <title>2.1 — Defining a Derivative</title>
+        <meta charset="UTF-8">
+        <meta name="author" content="Valerie">
+    <!--Toggle Solution Functions-->
+        <script>
+            function toggle1(){
+                var clicked = document.getElementById("solution1");
+                if (clicked.style.display === "none") {
+                    clicked.style.display = "block";
+                } else {
+                    clicked.style.display = "none";
+                }
+            }
+            function toggle2(){
+                var clicked = document.getElementById("solution2");
+                if (clicked.style.display === "none") {
+                    clicked.style.display = "block";
+                } else {
+                    clicked.style.display = "none";
+                }
+            }
+            function toggle3(){
+                var clicked = document.getElementById("solution3");
+                if (clicked.style.display === "none") {
+                    clicked.style.display = "block";
+                } else {
+                    clicked.style.display = "none";
+                }
+            }
+            function toggle4(){
+                var clicked = document.getElementById("solution4");
+                if (clicked.style.display === "none") {
+                    clicked.style.display = "block";
+                } else {
+                    clicked.style.display = "none";
+                }
+            }
+            function toggle5(){
+                var clicked = document.getElementById("solution5");
+                if (clicked.style.display === "none") {
+                    clicked.style.display = "block";
+                } else {
+                    clicked.style.display = "none";
+                }
+            }
+        </script>
+    </head>
+    <!--Top Button Panel-->
+    <header>
+        <div class="top-links" style="font-family:Georgia, 'Times New Roman', Times, serif">
+            <a href="../index.html" class="button_top">Home</a> 
+            <a href="../about.html" class="button_top">About Me</a> 
+            <a href="../faq.html" class="button_top">FAQ</a>
+            <a href="../contact.html" class="button_top">Contact Me</a>
+        </div>                                  
+    </header>
+    <!--Section Tabs-->
+    <div class="tab">
+        <a href="2.1.html" class="tab-button">Notes</a>
+        <a href="2.1-exercises.html" class="tab-button">Exercises</a>
+        <a href="2.1-applications.html" class="tab-button">Applications</a>
+        <a href="calculus.html" class="tab-button">Back to Calculus</a>
+    </div>
+    <body class="background">
+        <section>
+                <!--Section Title-->
+                <p class="background__title">2.1 — Defining a Derivative</p>
+                <!--Section Body-->
+                <div class="background__text">
+                    <hr>
+                    <p> 
+                        Let's now introduce the second fundamental tool of calculus, the derivative, which measures a function's 
+                        <u>sensitivity to change</u>. Derivatives can be thought of as the "instantaneous rate of change" at a certain point.
+                    </p>
+                    <p>
+                        As a geometric interpretation, consider the function \(f\), shown below.
+                    </p>
+                    <!-- Fig. 2.1-1-->
+                    <img class="image-center" src="../images/Calculus/2/2.1/2.1-1.jpg" alt="">
+                    <p class="image-caption"> 
+                        Fig. 2.1-1. A function \(f\) is shown in the first quadrant. 
+                    </p>
+
+                    <p>
+                        Now let's draw a tangent line to \(f\) at any point \((x, f(x))\), as done in the figure below.
+                    </p>
+                    <!-- Fig. 2.1-2-->
+                    <img class="image-center" src="../images/Calculus/2/2.1/2.1-2.jpg" alt="">
+                    <p class="image-caption"> 
+                        Fig. 2.1-2. A tangent line to a point on the graph of \(f\) is shown in orange. 
+                        The line touches, but does not intersect, \(f\) at that point.
+                    </p>
+
+                    <p>
+                        For the moment, a working definition of a tangent line is a line that "just touches" the curve at a certain point on it.
+                        The tangent line touches, but does not intersect, the curve at points close to it.
+                        The <u> slope</u> of this tangent line represents the <u> derivative</u> of \(f\) at that point.
+                    </p>
+                    <p> 
+                        There are various notations for derivatives, as shown below.
+                    </p>
+                    <!--Derivative notation-->
+                    <div class="highlight">
+                        <!--1-->
+                        <p style="text-align: center;">
+                            <span style="float: left;">
+                                \((1)\)
+                            </span>  
+                            <span style="float:inherit"> 
+                            \(\displaystyle \frac{\textrm{d} y}{\textrm{d} x} \)     
+                             </span> 
+                        </p>
+                        <!--2-->
+                        <p style="text-align: center;">
+                            <span style="float: left;">
+                                \((2)\)
+                            </span>         
+                            \(\displaystyle y' \)      
+                        </p>
+                        <!--3-->
+                        <p style="text-align: center;">
+                            <span style="float: left;">
+                                \((3)\)
+                            </span>         
+                            \(\displaystyle \dot{y} \)      
+                        </p>
+                    </div>
+                    <p>
+                        For an introductory calculus class, we will mainly be using the first and second notations, which are named after Leibniz and Lagrange, respectively.
+                        The third notation, named after Newton, is more commonly seen in physics contexts and is only used to denote differentiation with respect to time.
+                    </p>
+                    <p>
+                        How can we calculate the slope of the tangent line? 
+                        Take a minute to think about this problem, which had stumped mathematicians for millennia.
+                        The answer is, as per the theme of calculus, to approximate! 
+                        Let's draw a secant line, which is a line that passes through (at a minimum) two points of the graph. 
+                    </p>
+
+                    <!-- Fig. 2.1-3-->
+                    <img class="image-center" src="../images/Calculus/2/2.1/2.1-3.jpg" alt="">
+                    <p class="image-caption"> 
+                        Fig. 2.1-3. A secant line of \(f\) is shown, whose slope is given by the difference quotient 
+                        \(\displaystyle \frac{f(x + h) - f(x)}{h} \).
+                    </p>
+
+                    <p>
+                        The slope of the secant line can be expressed as the difference quotient
+                        $$ \frac{\textrm{change in} \, y}{\textrm{change in} \, x} = \frac{f(x + h) - f(x)}{h}, $$
+                        where \((x, f(x))\) is the point at which we seek the derivative 
+                        and \(h\) is the horizontal distance between the two points.
+                        Notice, from Fig. 2.1-3, that if \(h\) is made smaller, then the points will be closer together, and
+                        if \(h\) is made infinitely small, then the secant line will collapse into a tangent line, as shown by the following animation.
+                    </p>
+                    <!--definition-->
+                    <p>
+                        We can therefore write the definition of a derivative as 
+                        <p class="highlight">
+                            $$ \frac{\textrm{d} y}{\textrm{d} x} = \lim_{h \to 0} \frac{f(x + h) - f(x)}{h}, $$
+                        </p>
+                    </p>
+                    <p>
+                        which is the limit of the difference quotient we introduced previously, or, for a certain point \(a\), as
+                    </p>
+                    <p class="highlight">
+                        $$ \frac{\textrm{d} y}{\textrm{d} x} \Big |_{x = a} = \lim_{x \to a} \frac{f(x) - f(a)}{x - a} $$
+                    </p>
+                        The quantity \(\textrm{d} x\)—called a differential—represents an infinitely small change in \(x\), 
+                        and the term \(\displaystyle \frac{\textrm{d} y}{\textrm{d} x}\) can be thought of as a ratio of infinitely small changes in \(y\) and \(x\).
+                        This notion of treating \(\displaystyle \frac{\textrm{d} y}{\textrm{d} x}\) as a fraction of differentials raises questions of rigor, 
+                        but it is an effective way to first grasp the concept of differentiation.
+                    </p>
+                    <p> 
+                        The interpretation of a derivative is, as mentioned at the start of this section, the change in a function at a certain instant.
+                        Compare this to the average rate of change, which is the slope of the secant line over a defined interval, 
+                        to a derivative—the rate of change at an exact moment. 
+                        It is therefore necessary to assert that a function must be continuous for it to be differentiable.
+                        Additionally, if there is a sharp turn, peak, or horizontal tangent, then the derivative does not exist at that point.
+                    </p>
+                    <!--derivative facts-->
+                    <div class="box">
+                        <u> FACTS</u>:
+                        A function \(f\) must be continuous for \(f'\) to be defined. 
+                        If \(f\) has a sharp turn, peak, or horizontal tangent, then \(f'\) is undefined. 
+                        A function is not differentiable at endpoints.
+                    </div>
+                    <p>
+                        Consider, as an example, the function \(\displaystyle y = |x|\), which has a sharp turn at \(x = 0\).
+                    </p>
+                    <!--Fig. 2.1-5-->
+                    <img class="image-center" src="../images/Calculus/2/2.1/2.1-4.jpg" alt="">
+                    <p class="image-caption">
+                        Fig. 2.1-5. The graph of the function \(y = |x|\).
+                    </p>
+                    <p>
+                        Try to draw a tangent line to \(\displaystyle |x|\) at \(x = 0\).
+                    </p>
+                    <!--Fig. 2.1-6-->
+                    <img class="image-center" src="../images/Calculus/2/2.1/2.1-5.jpg" alt="">
+                    <p class="image-caption">
+                        Fig. 2.1-6. Two possible tangent lines can be drawn, represented as \(A\) and \(B\), with slopes of \(1\) and \(-1\), respectively. 
+                    </p>
+                    <p>
+                        There are two potential ways to draw the tangent line. 
+                        Notice, from Fig. 2.1-6, that line \(A\) has a slope of \(1\), while line \(B\) has a slope of \(-1\).
+                        Because of this disagreement, 
+                        it can be said that \(\displaystyle \frac{\textrm{d} |x|}{\textrm{d} x} \Big|_{x = 0}\) is undefined.
+                        The notion of the slopes of the left- and right-hand side tangent lines is analogous to the criteria we introduced for 
+                        continuity—both sides must be equivalent.
+                    </p>
+                    <!--Example 1-->
+                    <div class="example">
+                        <div class="example__heading"> <b>Example 1</b> </div>
+                        <p class="example__problem"> 
+                            The water level in a pool as a function of time is given by 
+                            \(\displaystyle w(t)\), where \(w\) is measured in liters and \(t\) is measured in hours.
+                            It is known that \(w'(6) = -0.2\). What does this quantity represent? 
+                        </p>
+                        <button onclick="toggle1()" class="solution__button"> Show Solution ▼ </button>
+                        <div id="solution1" class="solution">
+                            \(w'(6)\) is the derivative of \(w(t)\) at \(t = 6\).
+                            This represents the instantaneous rate of change of \(w\)—the rate by which the water level is changing—at \(t = 6\).
+                            Therefore, \(w'(6) = -0.2\) means that the water level is decreasing at a rate of \(0.2\) liter per hour after \(6\) hours have elapsed.
+                        </div>
+                    </div>
+                    <p></p>
+                    <!--Example 2-->
+                    <div class="example">
+                        <div class="example__heading"> <b>Example 2</b> </div>
+                        <p class="example__problem"> 
+                            Consider the following graph of \(f\).
+                            <img class="image-center" src="../images/Calculus/2/2.1/2.1-6.jpg" alt="">
+                            Use the graph to find the values of \(f'(0), f'(1),\) and \(f'(4)\).
+                        </p>
+                        <button onclick="toggle2()" class="solution__button"> Show Solution ▼ </button>
+                        <div id="solution2" class="solution">
+                            <p> \(f'(0)\) is undefined because \(f\) has a sharp turn at \(x = 0\). </p>
+                            <p>
+                                \(f'(1)\) is equivalent to the slope of the line segment from \(x = 0\) to \(x = 2\), which is 
+                                \(\displaystyle \frac{4 - 0}{2 - 0} = 2. \)
+                            </p>
+                            <p>
+                                \(f'(4)\) is undefined because \(f\) cannot be differentiable at the endpoints, as there cannot be a tangent line drawn.
+                            </p>
+                        </div>
+                    </div>
+                    <p></p>
+                    <!--Example 3-->
+                    <div class="example">
+                        <div class="example__heading"> <b>Example 3</b> </div>
+                        <p class="example__problem"> 
+                            Let \(g(x) = x^2\). Find and interpret \(g'(3)\).
+                        </p>
+                        <button onclick="toggle3()" class="solution__button"> Show Solution ▼ </button>
+                        <div id="solution3" class="solution">
+                            Using the limit definition of a derivative, 
+                            $$ \frac{\textrm{d} g}{\textrm{d} x} = \lim_{h \to 0} \frac{g(x + h) - g(x)}{h}, $$
+                            we can write \(g'(x)\) as 
+                            $$ \lim_{h \to 0} \frac{(x + h)^2 - x^2}{h}. $$
+                            Expanding gives 
+                            $$ \lim_{h \to 0} \frac{(x^2 + 2xh + h^2) - x^2}{h} $$
+                            $$ = \lim_{h \to 0} \frac{2x h + h^2}{h} $$ 
+                            $$ = \lim_{h \to 0} \left(2x + h\right) $$
+                            $$ = 2x. $$
+                            This is our expression for \(g'(x)\). 
+                            To find \(g'(3)\), we plug in \(x = 3\): 
+                            $$ g'(3) = 2(3) = \bbox[border: 2px solid white, 2pt]{6.} $$ 
+                            If a tangent line to \(g(x) = x^2\) is drawn at \(x = 3\), its slope will be \(6\).
+                        </div>
+                    </div>
+                </div>
+            <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+            <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3.0.1/es5/tex-mml-chtml.js"></script>
+            <script id="AMSmath" async src="TeX/AMSmath.js"></script>
+            <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+        </section>
+    </body>

@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="../css/0.1.css">
+        <title>2.4 — The Chain Rule </title>
+        <meta charset="UTF-8">
+        <meta name="author" content="Valerie">
+    <!--These functions control the "Show Solution" button to the example problems.-->
+        <script>
+            function toggle1(){
+                var clicked = document.getElementById("solution1");
+                if (clicked.style.display === "none") {
+                    clicked.style.display = "block";
+                } else {
+                    clicked.style.display = "none";
+                }
+            }
+            function toggle2(){
+                var clicked = document.getElementById("solution2");
+                if (clicked.style.display === "none") {
+                    clicked.style.display = "block";
+                } else {
+                    clicked.style.display = "none";
+                }
+            }
+            function toggle3(){
+                var clicked = document.getElementById("solution3");
+                if (clicked.style.display === "none") {
+                    clicked.style.display = "block";
+                } else {
+                    clicked.style.display = "none";
+                }
+            }
+            function toggle4(){
+                var clicked = document.getElementById("solution4");
+                if (clicked.style.display === "none") {
+                    clicked.style.display = "block";
+                } else {
+                    clicked.style.display = "none";
+                }
+            }
+            function toggle5(){
+                var clicked = document.getElementById("solution5");
+                if (clicked.style.display === "none") {
+                    clicked.style.display = "block";
+                } else {
+                    clicked.style.display = "none";
+                }
+            }
+            function toggle6(){
+                var clicked = document.getElementById("solution6");
+                if (clicked.style.display === "none") {
+                    clicked.style.display = "block";
+                } else {
+                    clicked.style.display = "none";
+                }
+            }
+            function toggle7(){
+                var clicked = document.getElementById("solution7");
+                if (clicked.style.display === "none") {
+                    clicked.style.display = "block";
+                } else {
+                    clicked.style.display = "none";
+                }
+            }
+        </script>
+    </head>
+    <!--top button panel-->
+    <header>
+        <div class="top-links" style="font-family:Georgia, 'Times New Roman', Times, serif">
+            <a href="../index.html" class="button_top">Home</a> 
+            <a href="../about.html" class="button_top">About Me</a> 
+            <a href="../faq.html" class="button_top">FAQ</a>
+            <a href="../contact.html" class="button_top">Contact Me</a>
+        </div>                                  
+    </header>
+    <!--section tabs-->
+    <div class="tab">
+        <a href="2.4.html" class="tab-button">Notes</a>
+        <a href="2.4-exercises.html" class="tab-button">Exercises</a>
+        <a href="2.4-applications.html" class="tab-button">Applications</a>
+        <a href="calculus.html" class="tab-button">Back to Calculus</a>
+    </div>
+    <body class="background">
+        <section>
+                <!--section title-->
+                <p class="background__title">2.4 — The Chain Rule </p>
+                <!--section body-->
+                <div class="background__text">
+                    <hr>
+                    <p>
+                        Up to this point, we have seen the power, product, and quotient rules. 
+                        However, the one form we have yet to discuss is the derivative of a composite function, \(f(g(x))\).
+                        After this section, we will be able to differentiate every single-variable function
+                        using a combination of the rules that we have learned so far.
+                    </p>
+                    <p>
+                        Suppose that we were given the function \(\sin(2x)\) and sought to differentiate it. 
+                        How would we do so? We cannot simply write "\(\cos(2x)\)," 
+                        as we are working with a composite function and therefore require a new tool—the chain rule.
+                        Suppose that we have the composite function \(y = f(g(x))\). 
+                        If we interpret the rate of change of \(y\) as \(y'\), then we notice that 
+                        the rate of change depends (1) on the outer function, \(f\), and (2) on the inner function, \(g\).
+                        In our case, the rate of change of \(\sin(2x)\) is affected by the inner function, \(2x\).
+                        We know, analytically, that the coefficient of \(2\) doubles the frequency of the parent function \(\sin(x)\) and thus doubles the rate of change.
+                        Therefore, it is logical to say that 
+                        $$ \sin'(2x) = \cos(2x) \cdot \frac{\textrm{d}}{\textrm{d}x}(2x) = 2 \cos(2x). $$
+                        This rule can be generalized by following form:
+                        <!--chain rule-->
+                        <div class="box-title"> <u>CHAIN RULE</u></div>
+                        <div class="box">    
+                            $$ \Big(f(g(x))\Big)' = f'(g(x)) g'(x). $$
+                            Alternatively, written in Leibniz notation, let \(u = g(x)\). Then
+                            $$ \frac{\textrm{d}y}{\textrm{d}x} = \frac{\textrm{d}y}{\textrm{d}u} \cdot \frac{\textrm{d}u}{\textrm{d}x}, $$
+                            where \(y = f(g(x))\).
+                        </div>
+                        
+                    </p>
+                    <p>
+                        Written in words, the chain rule instructs us to first differentiate the outer function with respect to the inner function. 
+                        That is, let \(u\) be the inner function, and differentiate the outer function with respect to \(u\). 
+                        Then, differentiate the inner function \(u\) with respect to \(x\).
+                        In the case of \(\sin(2x)\), we let \(u = 2x\). Then,
+                        $$ \frac{\textrm{d}}{\textrm{d}x}[\sin(2x)] = \frac{\textrm{d}}{\textrm{d} u}[\sin(u)] \cdot \frac{\textrm{d}}{\textrm{d} x}[u] $$
+                        $$ = \cos(u) \cdot \frac{\textrm{d}}{\textrm{d} x}[2x]$$
+                        $$ = 2 \cos(2x). $$
+                    </p>
+                    <!--example 1-->
+                    <div class="example">
+                        <div class="example__heading"> <b>Example 1</b> </div>
+                        <p class="example__problem"> 
+                            Evaluate \(\displaystyle \frac{\textrm{d}}{\textrm{d} x} [\cos(x^2)]\). 
+                        </p>
+                        <button onclick="toggle1()" class="solution__button"> Show Solution ▼ </button>
+                        <div id="solution1" class="solution">
+                            <p> 
+                                For this problem, let \(u = x^2\). Then
+                                $$ \frac{\textrm{d}}{\textrm{d} x} [\cos(x^2)] = \frac{\textrm{d}}{\textrm{d} u}[\cos(u)] \cdot \frac{\textrm{d}}{\textrm{d} x}[u]$$
+                                $$ -\sin(u) \cdot \frac{\textrm{d}}{\textrm{d} x}[x^2] $$
+                                $$ -\sin(x^2) \cdot 2x $$
+                                $$ = \bbox[border: 2px solid white, 2pt]{-2x\sin(x^2).}$$
+                            </p>
+                        </div>
+                    </div>
+                    <p></p>
+                    <!--example 2-->
+                    <div class="example">
+                        <div class="example__heading"> <b>Example 2</b> </div>
+                        <p class="example__problem"> 
+                            Evaluate \(\displaystyle \frac{\textrm{d}}{\textrm{d} x} \left[e^{-x^2 + 3x - 4}\right]\). 
+                        </p>
+                        <button onclick="toggle2()" class="solution__button"> Show Solution ▼ </button>
+                        <div id="solution2" class="solution">
+                            <p> 
+                                For this problem, the inner function is \(u = -x^2 + 3x - 4\). Then
+                                $$ \frac{\textrm{d}}{\textrm{d} x} [e^{-x^2 + 3x - 4}] = 
+                                    \frac{\textrm{d}}{\textrm{d} u}[e^u] \cdot \frac{\textrm{d}}{\textrm{d} x}[u]
+                                $$
+                                $$ e^u \cdot \frac{\textrm{d}}{\textrm{d} x}[-x^2 + 3x - 4] $$
+                                $$ e^{-x^2 + 3x - 4} \cdot (-2x + 3) $$
+                                $$ = \bbox[border: 2px solid white, 2pt]{(3 -2x)e^{-x^2 + 3x - 4}.}$$
+                            </p>
+                        </div>
+                    </div>
+                    <p></p>
+                    <!--example 3-->
+                    <div class="example">
+                        <div class="example__heading"> <b>Example 3</b> </div>
+                        <p class="example__problem"> 
+                            Evaluate \(\displaystyle \frac{\textrm{d}}{\textrm{d} x} [\sin^3(x)]\). 
+                        </p>
+                        <button onclick="toggle3()" class="solution__button"> Show Solution ▼ </button>
+                        <div id="solution3" class="solution">
+                            <p> 
+                                We should rewrite the function as \( \displaystyle \left(\sin(x)\right)^3\),
+                                which will make it clear that the inner function, \(u\), is \(\sin(x)\).
+                                Therefore,
+                                $$ \frac{\textrm{d}}{\textrm{d} x} \left[ \left(\sin(x)\right)^3 \right] = 
+                                    \frac{\textrm{d}}{\textrm{d} u}[u^3] \cdot \frac{\textrm{d}}{\textrm{d} x}[u]
+                                $$
+                                $$ 3u^2 \cdot \frac{\textrm{d}}{\textrm{d} x}[\sin(x)] $$
+                                $$ 3\sin^2(x) \cdot \cos(x) $$
+                                $$ = \bbox[border: 2px solid white, 2pt]{3 \sin^2(x) \cos(x).} $$
+                            </p>
+                        </div>
+                    </div>
+                    <p>
+                        Now we can differentiate various families of functions. 
+                        <!--(b^x)'-->
+                        Let us start with the derivative of \(b^x\), where \(b\) is a positive constant.
+                        Using logarithmic properties, we know that
+                        $$ \frac{\textrm{d}}{\textrm{d}x}\left(b^x\right) = \frac{\textrm{d}}{\textrm{d}x} \left[e^{x\ln(b)} \right]. $$
+                        Letting \(u = x \ln(b)\), we obtain, using the chain rule,
+                        $$ \frac{\textrm{d}}{\textrm{d}x} \left[e^{x\ln(b)} \right] 
+                        = \frac{\textrm{d}}{\textrm{d}u}\left(e^u\right) \cdot \frac{\textrm{d}}{\textrm{d}x}(u) $$
+                        $$ = e^{u} \cdot \frac{\textrm{d}}{\textrm{d}x}\left[{x \ln(b)}\right]$$
+                        $$ = e^{x \ln(b)} \cdot \ln(b) $$
+                        $$ = \bbox[border: 2px solid white, 2pt]{b^x \ln(b).} $$
+                        <!--sin'(ax), cos'(ax) and (e^{ax})'-->
+                        Applying the same procedure for other functions, we have the derivatives of the following family of functions:
+                        $$ \frac{\textrm{d}}{\textrm{d}x} \left[\sin(ax) \right] = a \cos(ax). $$
+                        $$ \frac{\textrm{d}}{\textrm{d}x} \left[\cos(ax) \right] = -a \sin(ax). $$
+                        $$ \frac{\textrm{d}}{\textrm{d}x} \left[e^{ax}\right] = ae^{ax}. $$
+                    </p>
+                    <p></p>
+                    <!--example 4-->
+                    <div class="example">
+                        <div class="example__heading"> <b>Example 4</b> </div>
+                        <p class="example__problem"> 
+                            Find the \(n\)th derivative of \(f(x) = e^{5x} \). 
+                        </p>
+                        <button onclick="toggle4()" class="solution__button"> Show Solution ▼ </button>
+                        <div id="solution4" class="solution">
+                            <p> 
+                                If we write out a few derivatives, we see that
+                                $$ f'(x) = 5 e^{5x} $$
+                                $$ f''(x) = 5^2 e^{5x} $$
+                                $$ f'''(x) = 5^3 e^{5x} $$
+                                $$ f^{(4)}(x) = 5^4 e^{5x }$$
+                                $$ \cdots $$
+                                We notice that every additional derivative is multiplied by \(5\).
+                                The recursive formula is 
+                                $$ f^{(n)}(x) = 5f^{(n-1)}(x), $$
+                                and the explicit formula is 
+                                $$ \bbox[border: 2px solid white, 2pt] {f^{(n)}(x) = 5^n e^x.} $$
+                            </p>
+                        </div>
+                    </div>
+                    <!--birds by lake example to illustrate composite rates-->
+                    <p>
+                        Let us now introduce contextual applications to the chain rule. 
+                        Suppose that the number of birds by a lake depends on how many fish are in the lake.
+                        The number of fish in the lake as a function of time is modeled by \(F(t)\), 
+                        and the number of birds is, as an example, modeled by the composite function \(B(F(t))\).
+                        Therefore, the expression for the rate at which the number of birds is changing with respect to time is given by 
+                        $$ \frac{\textrm{d}B}{\textrm{d}t} = \frac{\textrm{d}B}{\textrm{d}F} \cdot \frac{\textrm{d}F}{\textrm{d}t}. $$
+                        The chain rule permits us to break up \(\displaystyle \frac{\textrm{d}B}{\textrm{d}t}\) into 
+                        two meaningful and known quantities, \(\displaystyle \frac{\textrm{d}B}{\textrm{d}F}\) and \(\displaystyle \frac{\textrm{d}F}{\textrm{d}t}\).
+                        We modeled the number of birds by the lake as a function of fish in the lake, and we modeled the number of fish in the lake as a function of time.
+                        The chain rule enabled us to combine those functions to determine \(\displaystyle \frac{\textrm{d}B}{\textrm{d}F}\),
+                        which was previously unknown.
+                        The easy way to remember the chain rule is to imagine "canceling out," in this case, the \(\textrm{d}F\) terms as if 
+                        \(\displaystyle \frac{\textrm{d}B}{\textrm{d}F}\) and \(\displaystyle \frac{\textrm{d}F}{\textrm{d}t}\) were fractions.
+                        However, it is important to remember that 
+                        \(\displaystyle \frac{\textrm{d}B}{\textrm{d}F}\) and \(\displaystyle \frac{\textrm{d}F}{\textrm{d}t}\)
+                        are meaningful expressions that should not actually be considered fractions.
+                    </p>
+                    <p></p>
+                    <!--example 5-->
+                    <div class="example">
+                        <div class="example__heading"> <b>Example 5</b> </div>
+                        <p class="example__problem"> 
+                            The number of people outside, \(N\), is modeled as a function of the temperature on a given day, \(T(t)\),
+                            where \(t\) represents hours after 8 AM. 
+                            At \(t = 3\), the temperature is changing at a rate of \(3.4\) degrees Fahrenheit per hour, 
+                            and the number of people outside is changing at a rate of \(0.8\) person per degree Fahrenheit.
+                            What is the rate of change of the number of people outside with respect to time at \(11\) AM?
+                        </p>
+                        <button onclick="toggle5()" class="solution__button"> Show Solution ▼ </button>
+                        <div id="solution5" class="solution">
+                            <p> 
+                                From the question, we know that \(N\) is modeled as \(N(T(t))\). 
+                                We want to find \(\displaystyle \frac{\textrm{d}N}{\textrm{d}t}\), and we are given
+                                \(\displaystyle \frac{\textrm{d}N}{\textrm{d}T}\) and \(\displaystyle \frac{\textrm{d}T}{\textrm{d}t}\).
+                                Thus, by the chain rule,
+                                $$ \frac{\textrm{d}N}{\textrm{d}t} = \frac{\textrm{d}N}{\textrm{d}T} \cdot \frac{\textrm{d}T}{\textrm{d}t}. $$
+                                $$ \frac{\textrm{d}N}{\textrm{d}t} = 
+                                \left(0.8 \, \frac{\textrm{person}}{\cancel{^{\circ}\textrm{F}}} \right) \left(3.4 \, \frac{\cancel{^{\circ}\textrm{F}}}{\textrm{hr}}\right)
+                                $$
+                                $$ = \bbox[border: 2px solid white, 2pt]{2.72 \frac{\textrm{person}}{\textrm{hr}}.} $$
+                                At \(11\) AM, the number of people outside is increasing at a rate of \(2.72\) people per hour.
+                            </p>
+                        </div>
+                    </div>
+                    <p></p>
+                    <!--example 6-->
+                    <div class="example">
+                        <div class="example__heading"> <b>Example 6</b> </div>
+                        <p class="example__problem"> 
+                            In a zoo, it is known that every animal on display brings \(2\) visitors into the zoo. 
+                            Throughout the day, the number of animals wandering in public display areas is given by
+                            \(\displaystyle A(t) = 300 + \frac{104}{\pi}\sin{\left( \frac{\pi}{6} t \right)}\), where \(t\) is measured in hours since \(6\) AM. 
+                            What is the rate at which the number of visitors is changing with respect to time at \(12\) PM?
+                        </p>
+                        <button onclick="toggle6()" class="solution__button"> Show Solution ▼ </button>
+                        <div id="solution6" class="solution">
+                            <p> 
+                                For this problem, let \(V\) represent the number of visitors. 
+                                We need \(\displaystyle \frac{\textrm{d}V}{\textrm{d}t}\). In this case,
+                                $$ \frac{\textrm{d}V}{\textrm{d}t} = \frac{\textrm{d}V}{\textrm{d}A} \cdot \frac{\textrm{d}A}{\textrm{d}t} $$
+                                $$ \frac{\textrm{d}V}{\textrm{d}t}\Big|_{t = 6}= 
+                                2 \cdot \frac{\textrm{d}}{\textrm{d}t} \left[300 + \frac{104}{\pi}\sin{\left(\frac{\pi}{6} t \right)}\right]_{t = 6}$$
+                                $$ = 2 \cdot \left(\frac{\pi}{6} \right)  \frac{104}{\pi}  \cos(\pi) $$
+                                $$ = -\frac{104}{3} $$
+                                $$ \approx \bbox[border: 2px solid white, 2pt]{-34.667.} $$
+                                People are leaving the zoo at a rate of \(34.667\) people per hour at \(12\) PM.
+                            </p>
+                        </div>
+                    </div>
+                    <p></p>
+                    <!--example 7-->
+                    <div class="example">
+                        <div class="example__heading"> <b>Example 7</b> </div>
+                        <p class="example__problem"> 
+                            Evaluate \(\displaystyle \frac{\textrm{d}}{\textrm{d}x} \left[\sin^2(3x^4)\right] \).
+                        </p>
+                        <button onclick="toggle7()" class="solution__button"> Show Solution ▼ </button>
+                        <div id="solution7" class="solution">
+                            <p> 
+                                For this problem, notice that we need to use the chain rule twice.
+                                It may be easier to rewrite the expression as 
+                                $$ \frac{\textrm{d}}{\textrm{d}x} \left[\left(\sin(3x^4)\right)^2\right]. $$
+                                This problem is in the form \(\displaystyle y = f(g(h(x))),\)
+                                where \(\displaystyle h(x) = 3x^4, g(x) = \sin(x),\) and \(\displaystyle f(x) = x^2\).
+                                Thus, the derivative is given by
+                                $$ \frac{\textrm{d}y}{\textrm{d}x} = \frac{\textrm{d}f}{\textrm{d}g} \frac{\textrm{d}g}{\textrm{d}h} \frac{\textrm{d}h}{\textrm{d}x}. $$
+                                We will therefore have 
+                                $$ f'(g(h(x)) \cdot g'(h(x)) \cdot h'(x) $$
+                                $$ 2 \left(\sin(3x^4)\right) \cdot \cos(3x^4) \cdot 12x^3 $$
+                                $$ \bbox[border: 2px solid white, 2pt]{24x^3 \sin(3x^4) \cos(3x^4).}$$
+                            </p>
+                        </div>
+                    </div>
+                    <!--section summary-->
+                    <p>
+                        <p style="text-align: center; font-size: 150%;">
+                            <u> SECTION SUMMARY </u>
+                            <ul>
+                                <li style="padding-bottom: 20px;"> 
+                                    The chain rule is used to differentiate composite functions in the form \(\displaystyle f\left(g(x)\right)\).
+                                </li>
+                                <li style="padding-top: 20px; padding-bottom: 20px;">
+                                    \(\displaystyle \Big(f\left(g(x)\right)\Big)' = f'(g(x)) g'(x)\).
+                                </li>
+                                <li style="padding-top: 20px; padding-bottom: 20px;">
+                                    Using Leibniz notation, if \(\displaystyle u = g(x)\) and \(\displaystyle y = f\left(g(x)\right) \), then 
+                                    \(\displaystyle \frac{\textrm{d}y}{\textrm{d}x} = \frac{\textrm{d}y}{\textrm{d}u} \cdot \frac{\textrm{d}u}{\textrm{d}x}\).
+                                </li>
+                                <li style="padding-top: 20px; padding-bottom: 20px;">
+                                    The chain rule can be used to create a composition of known rates. 
+                                </li>
+                            </ul>    
+                        </p>
+                    </p>
+                </div>
+            <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+            <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3.0.1/es5/tex-mml-chtml.js"></script>
+            <script id="AMSmath" async src="TeX/AMSmath.js"></script>
+            <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+        </section>
+    </body>

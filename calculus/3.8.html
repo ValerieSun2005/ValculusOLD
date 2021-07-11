@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link href="https://fonts.googleapis.com/css?family=Cardo:400,700|Oswald" rel="stylesheet">
+        <link rel="stylesheet" href="../css/0.1.css">
+        <title>3.8 — Optimization</title>
+        <meta charset="UTF-8">
+        <meta name="description" content="Real World Applications of Algebra, Geometry, Trigonometry, and Calculus.">
+        <meta name="Valerie" content="Applications of Calculus">
+        <meta name="keywords" content="Math, Math Tutorial, Real World Uses of Math, Real World Uses of Calculus, Real World Uses of Algbera, Real World Uses of Geometry, How is Math Used In the Real World, Applications of Math, Applications of Algebra, Applications of Calculus">
+    <!--Toggle Solution Functions-->
+        <script>
+            function toggle1(){
+                var clicked = document.getElementById("solution1");
+                if (clicked.style.display === "none") {
+                    clicked.style.display = "block";
+                } else {
+                    clicked.style.display = "none";
+                }
+            }
+            function toggle2(){
+                var clicked = document.getElementById("solution2");
+                if (clicked.style.display === "none") {
+                    clicked.style.display = "block";
+                } else {
+                    clicked.style.display = "none";
+                }
+            }
+            function toggle3(){
+                var clicked = document.getElementById("solution3");
+                if (clicked.style.display === "none") {
+                    clicked.style.display = "block";
+                } else {
+                    clicked.style.display = "none";
+                }
+            }
+        </script>
+    </head>
+    <!--Top Button Panel-->
+    <header>
+        <div class="top-links" style="font-family:Georgia, 'Times New Roman', Times, serif">
+            <a href="../index.html" class="button_top"> Home </a> 
+            <a href="../about.html" class="button_top"> About Me </a> 
+            <a href="../faq.html" class="button_top"> FAQ </a>
+            <a href="../contact.html" class="button_top"> Contact Me </a>
+        </div>                                  
+    </header>
+    <!--Section Tabs-->
+    <div class="tab">
+        <a href="3.8.html" class="tab-button">Notes</a>
+        <a href="3.8-exercises.html" class="tab-button">Exercises</a>
+        <a href="3.8-applications.html" class="tab-button">Applications</a>
+        <a href="calculus.html" class="tab-button">Back to Calculus</a>
+    </div>
+    <body class="background">
+        <section>
+            <div>
+                <!--Section Title-->
+                <p class="background__title">3.8 — Optimization</p>
+                <!--Section Body-->
+                <div class="background__text">
+                    <hr>                    
+                    <p>
+                        Optimization is a mathematical procedure that applies absolute extrema, which we covered in section
+                        <a href="3.4.html" style="color:plum">3.4</a>, to real-world problems. 
+                        The scope of optimization in calculus includes problems such as maximizing fence area, minimizing surface area, inscribing shapes, and minimizing distance. 
+                        Let us do an example to illustrate the procedure. 
+                    </p>
+                    <p>
+                        Suppose that a farmer has \(40\) feet of fence to build a pen for her animals. She uses the side of her barn as one side of the pen. 
+                        The farmer wants to find the dimensions that maximize the area of the pen; how should she do so?
+                        To answer this question let's draw a picture to represent the problem. 
+                        Your picture of course does not need to be perfect; just a simple sketch will suffice. 
+                        For this problem let \(x\) denote the width of the pen, and let \(y\) denote the length of the pen.
+                        <img src="../images/Calculus/3/3.8/3.8-1.jpg" class="image-center">
+                    </p>
+                    <!--Example 1-->
+                    <div class="example">
+                        <div class="example__heading"><b>Example 1</b></div>
+                        <p class="example__problem"> 
+                            A farmer has \(40\) feet of fence and must build a pen for her pumpkin farm. 
+                            She uses the side of her barn as one side of the pen. 
+                            What dimensions should she make the pen to maximize its area? 
+                        </p>
+                        <button onclick="toggle1()" class="solution__button"> Show Solution ▼ </button>
+                        <div id="solution1" class="solution">
+                            <p>
+                                For optimization problems it's always a good idea to make a quick sketch. 
+                                Your picture of course doesn't need to be perfect; just a simple model will do. 
+                                For this problem let \(x\) denote the width of the barn and let \(y\) denote the length. 
+                            </p>
+                            <img src="../images/Calculus/3/3.8/3.8-1.jpg" class="image-center">
+                            <p>
+                                Now let's construct a system of equations. Let \(A\) denote the area of the barn. 
+                                We know that $$ 2x + y = 40 $$ $$ A = xy. $$ 
+                                From the first equation, we see that \(y = 40 - 2x\) and can thus plug it into the expression for \(A\): 
+                                $$ A = xy = x(40 - 2x) = 40x - 2x^2. $$ 
+                                We now have a function of \(A\) composed solely of \(x\), so we can take its derivative to find its critical numbers: 
+                                $$ \frac{dA}{dx} = 40 - 4x = 0 \Rightarrow x = 10. $$ 
+                                We know that \(0 \leq x \leq 20 \), so we need to find the absolute maximum of \(A\) for all \(x\) in that interval. 
+                                We know that the maximum will either lie at the endpoints of the interval or at its critical points. 
+                                The maximum can't be at the endpoints, because if you plug \(x = 0\) or \(x = 40\) into \(A\), you will get an area of \(0\). 
+                                This leaves us with \(x = 10\), the point of the absolute maximum.   
+                            </p>
+                            <p>
+                                \(x = 10\) and \(y = 20\), so we can say that a 20 by 10 pen will produce the maximum area, which is \(200 \, \text{ft}^2\) in this case.  
+                            </p>
+                        </div>
+                    </div>
+                    <p></p>
+                    <p> 
+                        With optimization problems you should always draw a sketch, and generally the procedure is to arrange a system of equations 
+                    </p>
+                    <!--Example 2-->
+                    <div class="example">
+                        <div class="example__heading"><b>Example 2</b></div>
+                        <p class="example__problem"> In an \(xy\)-axis, there lies the parabola \(f(x) = 9 - x^2\) for \(f(x) \geq 0 \). A rectangle is to be inscribed in the parabola. What are the dimensions that will produce the maximum area of the rectangle? </p>
+                        <button onclick="toggle2()" class="solution__button"> Show Solution ▼ </button>
+                        <div id="solution2" class="solution">
+                            <p>Let's draw a picture for this problem. </p>
+                            <img src="../images/Calculus/3/3.8/3.8-2.jpg" class="image-center">
+                            <p>The expression for the inscribed rectangle's area is given by $$ A(x) = 2xf(x) = 2x(9 - x^2) = 18x - 2x^3. $$ Now we'll find the maximum value of \(A\) for \(x \in [0,3] \); notice that we consider this domain because \(A(x) < 0 \) outside of this interval. When \(x = 0\) or when \(x = 3\), \(A(x) = 0 \), so we know that the absolute maximum of \(A(x)\) cannot lie at the endpoints. We now consider the critical numbers by finding setting \(A'(x)\) equal to \(0\): $$ A'(x) = 18 - 6x^2 = 0 $$ $$ x = \sqrt{3}. $$ </p>
+                            <p> \(x = \sqrt{3}\) and \(f(\sqrt{3})\ = 6\), so a rectangle of length \(2\sqrt{3}\) by \(6\) will produce the maximum area of the inscribed rectangle, which is \(12\sqrt{3}\) in this case. </p>
+                        </div>
+                    </div>
+                </div>
+            <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+            <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3.0.1/es5/tex-mml-chtml.js"></script>
+            <script id="AMSmath" async src="TeX/AMSmath.js"></script>
+            <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+        </section>
+    </body>

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="../css/0.1.css">
+        <title>Calculus</title>
+        <meta charset="UTF-8">
+        <meta name="description" content="Real World Applications of Algebra, Geometry, Trigonometry, and Calculus.">
+        <meta name="Valerie" content="Applications of Calculus">
+        <meta name="keywords" content="Math, Math Tutorial, Real World Uses of Math, Real World Uses of Calculus, Real World Uses of Algbera, Real World Uses of Geometry, How is Math Used In the Real World, Applications of Math, Applications of Algebra, Applications of Calculus">
+    </head>
+    <header>
+        <div class="top-links">
+            <a href="../index.html" class="button_top">Home</a> 
+            <a href="../about.html" class="button_top">About Me</a> 
+            <a href="../faq.html" class="button_top">FAQ</a>
+            <a href="../contact.html" class="button_top">Contact Me</a>
+        </div>                                    
+    </header>
+    <body class="background">
+        <div class="top-menu">
+            <span>
+                <a href="index.html" title="Main Page" style="color:plum">Home</a>
+                <span>></span>
+                <a href="math.html" title="Math" style="color:plum">Math</a>
+                <span>></span>
+                <a href="calculus.html" title="Calculus" style="color:plum">Calculus</a>
+            </span>
+        </div>
+        <section>
+            <div>
+                <p class="background-title">4.11 — Further Integral Practice</p>
+                <div class="background-text">
+                    <p>In this section we'll be covering challenging integrals that require all of the techniques in Chapter 4 so far. You're expected to have a solid understanding of all of the techniques used previously because we'll be taking them to the next level. </p>
+                    <hr>
+                    <!--Example 1-->
+                    <p><h1>Example 1 </h1></p>
+                    <p>Evaluate the following integral: </p>
+                    <p>$$ \int \frac{\sin{(\ln(x))}\cos{(\cos{(\ln{(x)}})}}{x} \, dx $$</p>
+                    <p>To solve this integral, we should recognize that we can perform the following substitution: </p>
+                    <p>$$ \mathrm{let} \, u = \cos{(\ln{(x)})} $$</p>
+                    <p>$$ du = -\frac{\sin{(\ln{(x)})}}{x} \, dx $$</p>
+                    <p>$$ \int \frac{\sin{(\ln(x))}\cos{(\cos{(\ln{(x)}})}}{x} \, dx  = - \int \cos{u} \, du $$ </p>
+                    <p>$$ = -\sin{(u)} + C $$ </p>
+                    <p>$$ = -\sin{(\cos{(\ln{(x)})})} + C $$</p>
+                    <p>This integral showed a more complicated case of a \(u\)-substitution, for which you should always be on the lookout. </p>
+                    <hr>
+                    <!--Example 2-->
+                    <p><h1>Example 2</h1></p>
+                    <p>Evaluate the following integral:</p>
+                    <p>$$ \int \frac{1}{x^3+1} \, dx. $$</p>
+                    <p>First recall, from the sub of cubes formula, that:</p>
+                    <p>$$ a^3+b^3 = (a+b)(a^2-ab+b^2) \Rightarrow $$</p>
+                    <p>$$ x^3+1 = (x+1)(x^2-x+1). $$ </p>
+                    <p>We will then set up the integrand in terms of partial fractions:</p>
+                    <p>$$ \int \frac{1}{x^3+1} \, dx = \int \frac{a}{x+1} + \frac{bx+c}{x^2-x+1} \, dx. $$ </p>
+                    <p>Solving for \(a\), \(b\), and \(c \, \): </p>
+                    <p>$$ 1 = a(x^2-x+1) + bx(x+1)+c(x+1). $$ </p>
+                    <p>$$ \mathrm{let} \, x = -1: 3a = 1 \Rightarrow a = \frac{1}{3}; $$ </p>
+                    <p>$$ \mathrm{let} \, x = 0: \frac{1}{3} + c = 1 \Rightarrow c = \frac{2}{3}; $$ </p>
+                    <p>$$ \mathrm{let} \, x = 1: \frac{5}{3} + 2b = 1 \Rightarrow b = -\frac{1}{3}. $$ </p>
+                    <p>We therefore have our new integral setup as: </p>
+                    <p>$$ \int \frac{1}{x^3+1} \, dx = \int \frac{1}{3(x+1)} \, dx + \int \frac{2-x}{x^2-x+1} \, dx $$ </p>
+                    <p>$$ = \frac{1}{3}\ln{|x+1|} + \int \frac{2-x}{x^2-x+1} \, dx. $$ </p>
+                    <p>Our strategy here should be to break the second, integral term into two parts — one in which we can perform a \(u\)-substitution and another in which we complete the square in the denominator to perform a trigonometric substitution. </p>
+                    <p>$$ \int \frac{2-x}{x^2-x+1} \, dx = \underbrace{\int \frac{2}{x^2-x+1} \, dx}_{\mathrm{use \, trigonometric \, substitution}} - \underbrace{\int \frac{x}{x^2-x+1} \, dx}_{\mathrm{use} \, u\mathrm{\,-substitution}}.  $$ </p>
+                    <p>Notice that if we do a \(u\)-substitution with \(u = x^2-x+1\), \(du\) will be \(2x-1\), so we need to rewrite the expression to obtain \(2x-1\) in the second term. </p>
+                    <p>$$ = \int \frac{2}{x^2-x+1} \, dx - \frac{1}{2} \int \frac{(2x-1)+1}{x^2-x+1} \, dx $$ </p>
+                    <p>$$ = 2 \int \frac{1}{x^2-x+1} \, dx - \frac{1}{2} \int \frac{2x-1}{x^2-x+1} \, dx - \frac{1}{2} \int \frac{1}{x^2-x+1} \, dx $$ </p>
+                    <p>$$ = \frac{3}{2} \int \frac{1}{x^2-x+1} \, dx - \frac{1}{2} \int \frac{2x-1}{x^2-x+1} \, dx. $$ </p>
+                    <p>Now we are ready to perform the substitution. </p>
+                    <p>$$ \mathrm{let} \, u = x^2-x+1 \Rightarrow du = 2x-1 \, dx; $$ </p>
+                    <p>$$ -\frac{1}{2} \int \frac{2x-1}{x^2-x+1} \, dx = -\frac{1}{2} \int \frac{1}{u} \, du = -\frac{1}{2} \ln{(x^2-x+1)}. $$</p>
+                    <p>Note that \(x^2-x+1\) is strictly positive, so we do not need the absolute value bars. </p>
+                    <p>Now we have one more integral to evaluate; so far we have demonstrated that: </p>
+                    <p>$$ \int \frac{1}{x^3+1} \, dx = \frac{1}{3} \ln{|x+1|} - \frac{1}{2}\ln{(x^2-x+1)} + \int \frac{2}{x^2-x+1} \, dx. $$ </p>
+                    <p>We should complete the square here: </p>
+                    <p>$$ \int \frac{2}{x^2-x+1} \, dx = 2\int \frac{1}{(x-\frac{1}{2})^2+\frac{3}{4}} \, dx. $$ </p>
+                    <p>Now we are ready to perform a trigonometric substitution.</p>
+                    <p>$$ \mathrm{let} \, x - \frac{1}{2} = \frac{\sqrt{3}}{2} \tan{\theta} \Rightarrow dx = \frac{\sqrt{3}}{2}\sec^2{(\theta)} \, d\theta; $$</p>
+                    <p>$$ \theta = \tan^{-1}{\Big(\frac{2x-1}{\sqrt{3}}\Big)}; $$ </p>
+                    <p>$$ 2\int \frac{1}{(x-\frac{1}{2})^2+\frac{3}{4}} \, dx = \sqrt{3} \int \frac{\sec^2{\theta}}{(\frac{\sqrt{3}}{2}\tan{\theta})^2+\frac{3}{4}} \, d\theta $$</p>
+                    <p>$$ = \sqrt{3} \int \frac{\sec^2{\theta}}{\frac{3}{4}(\tan^2{\theta}+1)} \, d\theta $$</p>
+                    <p>$$ = \frac{4}{\sqrt{3}} \int d\theta $$ </p>
+                    <p>$$ = \frac{4}{\sqrt{3}} \tan^{-1}{\Big(\frac{2x-1}{\sqrt{3}}\Big)} $$</p>
+                    <p>$$ \therefore \int \frac{1}{x^3+1} \, dx = \frac{1}{3} \ln{|x+1|} - \frac{1}{2}\ln{(x^2-x+1)} + \frac{4}{\sqrt{3}}\tan^{-1}{\Big(\frac{2x-1}{\sqrt{3}}\Big)} + C. $$ </p>
+                    <p>This integral required a nice combination of partial fractions, \(u\)-substitution, and trigonometric substitution. </p>
+                    <hr>
+                    <!--Exercises-->
+                    <p><h1>Practice Problems</h1></p>
+                    <p><b>(1)</b> Find the value of \( \int_{\pi/2}^{3\pi/2} x \cot{(x)} \, dx \) or show that it diverges. </p>
+                    <p><b>(2)</b> Find the value of \(\int_{e^4}^{e^{21}} \frac{1}{x\ln{(x)}\ln{(\ln{(x)})}} \, dx\) or show that it diverges. </p>
+                    <p><b>(3)</b> Evaluate the following integral: $$ \int \frac{\sqrt{x}}{\log_{x}(e^{x})} \, dx. $$ </p>
+                    <p><b>(4)</b> Let \( f(x) = \frac{2}{(x-1)^{2}(x+5)}\). Let \( g(x) = \int_{0}^{x} f(u) \, du \). Find the value of \( x \), if it exists, for which \( g(x) = -2\).  </p>
+                    <p><b>(5)</b> Evaluate the following integral: (Hint: Use the difference of squares formula.) $$ \int (\cos^{4}{(t)}-\sin^{4}{(t)})e^{\sqrt{t}}\sec{(2t)}\sqrt{t} \, dt. $$ </p>
+                    <p><b>(6)</b> Evaluate the following integral: $$ \int \frac{5}{v\ln^3{(v)}-v} \, dv. $$ </p>
+                    <p><b>(7)</b> Let \(g(x)=\frac{x\sin{(x)}}{x^2+a^2}\). Show that \(\, |\int g(x) \, dx | \leq |\int \csc{(x)}g(x) \, dx| \) for all \( x \in (0,\pi)  \) and for all \( a \neq x \). </p>
+                    <p><b>(8)</b> Find the value of the following integral or show that it diverges: (Hint: \(\sinh{(\theta}\)) is an odd function.) $$ \int_{-\pi}^{\pi} \theta^{420} \sinh(\theta) \sqrt{42069-\theta^2} \, d\theta. $$ </p>
+                    <p><b>(9)</b> Evaluate the following integral: $$ \int \Big(\frac{\sec^2{(x)}}{\sinh{(x)}}-\frac{\tan{(x)}\coth{(x)}}{\sinh{(x)}}\Big) \, dx. $$</p>
+                    <p><b>(10)</b> Let \(V \,\) be the area of the region bounded left by the line \(x=0\), above by the line \(2x-y-1=0\), and below by the function \(y = e^{\sin{(x)}}\sin{(2x)}\csc{(x)}\). Derive an expression for \(V \,\) in terms of \(x\).  </p>
+                    <p><b>(11)</b> Evaluate the following integral: $$ \int \Big( \csc{(x)}\sin{(e^x)} + xe^{x}\csc{(x)}\cos{(e^{x})} + x\cos{(x)}\csc^2{(x)}\sin{(e^{x})} \Big) \, dx. $$ </p>
+                    <p><b>(12)</b> Find the value of the following integral  or show that it diverges: $$ \int_{3}^{4} y^2\sec{(y)}((y\tan{(y)} + 1) \, dy. $$ <p>
+                    <p><b>(13)</b> Let \(k\) and \(n\) be constant integers such that \(k \geq 3 \) and \(n > k\). Evaluate the following integral: $$ \int \sum_{i = k}^{n} \Big(\csc^{i}(x)\Big)\Big(\cos{(x)}-\frac{1}{2}\sin{(2x)}\Big) \, dx. $$ </p>
+                    <p><b>(14)</b> Evaluate the following integral: $$ \int x\Big[\frac{\cos{(\cos{(\cos{(\cos{(x)})})})}}{x\ln{(\ln{(x)})}\ln{(x)}} + \sin{(\cos{(\cos{(\cos{(x)})})})} \cdotp \sin{(\cos{(\cos{(x)}}))} \cdotp \sin{(\cos{(x)})} \cdotp \sin{(x)} \Big] \, dx. $$ </p>
+                    <p><b>(15)</b> In an \(xy\)-plane, there lie the line \(y = x\) and the ellipse \((x-2)^2 + 4y^2 = 16\). Let region \(A \, \) be the region bounded above by the line, below by the ellipse, and right by the line \(x = k\). Find the value of \(k\) for which the area of \(A \,\) equals  \(4.20\). </p>
+                    <p><b>(16)</b> Let function \(P \, \) denote the area of the outside region bounded by the circle \(x^2 + y^2 =25 \), its tangent line at \(x = 5\), and the \(y\)-axis for \(y \geq 0\). Show that \(\lim_{x \to 0}(\frac{dP}{dy}) = 5\). </p>
+                    <p><b>(17)</b> Let region \(R \, \) be the area in the first quadrant bounded by the hyperbola \(\frac{x^2}{a^2}-\frac{y^2}{b^2}=1\), the line \(x=k\), and the line \(x=2k\). Let region \(S \,\) be the area bounded in the first quadrant by the linear function \(bx-ay=0\), the line \(x=k\), and the line \(x=2k\), where \(a\) and \(b\) are constants such that \(ab>0\).  Use integral calculus to show that the ratio \(\frac{R}{S}\) converges to \(1\) as \(k\) approaches infinity.  </p>
+                    <p><b>(18)</b> Let {\({a_1, a_2, a_3, \dots , a_{69}}\)} be a set of non-zero constants. Let \(n\) be an integer such that \(n > 70\). Express in terms of {\(a_1, a_2, a_3, \dots, a_{69}\)} the value of the following integral or show that it diverges: $$ \int_{1}^{\infty} \frac{-a_1 x^{n-2} - a_2 x^{n-3} - a_3 x^{n-4} - a_4 x^{n-5} - \dots -a_{69} x^{n-70}}{(\frac{a_1 x^n}{n \sqrt{x}} + \frac{a_2 x^{n-1}}{(n-1)\sqrt{x}} + \frac{a_3 x^{n-2}}{(n-2)\sqrt{x}} + \dots + \frac{a_{69} x^{n-68}}{(n-68)\sqrt{x}})^2} \, dx. $$ </p>
+
+            <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+            <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3.0.1/es5/tex-mml-chtml.js"></script>
+            <script id="AMSmath" async src="TeX/AMSmath.js"></script>
+        </section>
+    </body>

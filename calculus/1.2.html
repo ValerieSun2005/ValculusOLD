@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="../css/0.1.css">
+        <title> 1.2 — Evaluating Limits Algebraically </title>
+        <meta charset="UTF-8">
+        <meta name="author" content="Valerie">
+    
+    </head>
+    <!--Top Button Panel-->
+    <header>
+        <div class="top-links" style="font-family:Georgia, 'Times New Roman', Times, serif">
+            <a href="../index.html" class="button_top">Home</a> 
+            <a href="../about.html" class="button_top">About Me</a> 
+            <a href="../faq.html" class="button_top">FAQ</a>
+            <a href="../contact.html" class="button_top">Contact Me</a>
+        </div>                                  
+    </header>
+    <!--Section Tabs-->
+    <div class="tab">
+        <a href="1.2.html" class="tab-button">Notes</a>
+        <a href="1.2-exercises.html" class="tab-button">Exercises</a>
+        <a href="1.2-applications.html" class="tab-button">Applications</a>
+        <a href="calculus.html" class="tab-button">Back to Calculus</a>
+    </div>
+    <body class="background">
+        <section>
+                <!--Section Title-->
+                <p class="background__title"> 1.2 — Evaluating Limits Algebraically </p>
+                <!--Section Body-->
+                <div class="background__text">
+                    <hr>
+                    <p> 
+                        In section 
+                        <a href="1.1.html" style="color:plum">1.1</a>, 
+                        we introduced the notion of limits and briefly discussed how to evaluate them.
+                        In this section, we will discuss how to evaluate limits in the forms 
+                        \(0/0\) and \(\infty/\infty\) using factoring, rationalization, and trigonometric identities.
+                        We will also learn to evaluate the limits of rational functions at infinity. 
+                    </p>
+                    <p>
+                        Consider the rational function 
+                        \(f(x) = (x^2 - 4x + 9)(x^3 - 2)\). 
+                        How can we find \(\lim_{x \to \infty} f(x)\) ?
+                        The intuitive process is to realize that, as \(x\) grows infinitely large, only the highest-degree terms are significant.
+                        As \(x\) grows to infinity, \((x^2 - 4x + 9)/(x^3 - 2)\) becomes analogous to 
+                        \(x^2/x^3 = 1/x\), 
+                        which will decay to \(0\).
+                        Algebraically, however, we can divide the numerator and denominator by the highest degree term of the rational expression,
+                        \(x^3\) in this case. Doing so, we obtain 
+                        \[
+                        \begin{aligned}
+                        \lim_{x \to \infty} \frac{x^2 - 4x + 9}{x^3 - 2} &=
+                        \lim_{x \to \infty} \frac{x^2 - 4x + 9}{x^3 - 2} \cdot \frac{1/x^3}{1/x^3} \\
+                        &= \lim_{x \to \infty} \frac{1/x - 4/x^2 + 9/x^3}{1 - 2/x^3} \\
+                        &= 0. \\
+                        \end{aligned}
+                        \]
+                        This result is intuitive because we know that \(f(x)\) contains a horizontal asymptote at \(x = 0\).
+                        Therefore, the end behavior is that as \(x\) approaches infinity, \(f(x)\) will approach \(0\), the horizontal asymptote.
+                        We then conclude that the limit of a rational expression, as \(x\) approaches \(-\infty\) or \(+ \infty\), matches the function's end behavior.
+                    </p>
+
+                    <br>
+
+                    <!-- table for evaluating limits of rational expressions-->
+                    <div class="box-title"> LIMITS OF RATIONAL EXPRESSIONS </div>
+                    <div class="box">
+                        <p>
+                            To determine the limit of a rational expression, 
+                            take the limit of the highest-degree terms in the numerator and denominator. 
+                            The resultant value is congruent with the horizontal asymptote of the function.
+                        </p>
+                    </div>
+
+                    <br>
+
+                    <!--example 1-->
+                    <div class="example">
+                        <div class="example__heading"><b>Example 1</b></div>
+                        <!--example 1 problem-->
+                        <p class="example__problem">  
+                            <p style="margin-left: 20px;">
+                                Evaluate each of the following limits.
+                                <div style="margin-left:5%">
+                                    <ol type="I" style="padding-top: 20px; padding-bottom: 20px; line-height: 3; font-style: normal;">
+                                        <li style="padding-left: 20px;">
+                                            \(\displaystyle \lim_{x \to \infty} \frac{3x^3 - 4x^2 + 16}{5x^3 + 8x - 2} \)
+                                        </li>
+                                        <li style="padding-left: 20px;">
+                                            \(\displaystyle \lim_{x \to \infty} \frac{-8x^2 + \frac{3}{4}x^2 + 16}{5x - 2}\)
+                                        </li>   
+                                        <li style="padding-left: 20px;">
+                                            \(\displaystyle \lim_{x \to -\infty} \frac{8 + 3x^2 - x^9}{10x^9} \)
+                                        </li>
+                                    </ol>
+                                </div>
+                            </p>
+                        </p>
+                        <!--example 1 solution-->
+                        <button onclick="toggle1()" class="solution__button"> Show Solution ▼ </button>
+                        <div id="solution1" class="solution">
+                            <p> 
+                                <ol type="I" style="padding-top: 20px; padding-bottom: 20px; line-height: 3; font-style: normal;">
+                                    <li style="padding-left: 20px;">
+                                        We consider only the highest-degree terms on the numerator and denominator. 
+                                        Therefore,
+                                        \[
+                                        \begin{aligned}
+                                        \lim_{x \to \infty} \frac{3x^3 - 4x^2 + 16}{5x^3 + 8x - 2} 
+                                        &= \lim_{x \to \infty} \frac{3x^3}{5x^3} \\
+                                        &= \lim_{x \to \infty} \frac{3}{5} \\
+                                        &= \bbox[border: 2pt solid white, 2px]{\frac{3}{5}}. \\
+                                        \end{aligned}
+                                        \] 
+                                    </li>
+                                    <hr>
+                                    <li style="padding-left: 20px;">
+                                        We consider only the highest-degree terms on the numerator and denominator. 
+                                        Therefore,
+                                        \[
+                                        \begin{aligned}
+                                        \lim_{x \to \infty} \frac{-8x^2 + \frac{3}{4}x^2 + 16}{5x - 2} 
+                                        &= \lim_{x \to \infty} \frac{-8x^2}{5x} \\
+                                        &= \lim_{x \to \infty} \frac{-8x}{5} \\
+                                        &= - \infty \\
+                                        \end{aligned}
+                                        \] 
+                                        Because the limit is unbounded, we conclude that it does not exist.
+                                    </li>   
+                                    <hr>
+                                    <li style="padding-left: 20px;">
+                                        We consider only the highest-degree terms on the numerator and denominator. 
+                                        Therefore,
+                                        \[
+                                        \begin{aligned}
+                                        \lim_{x \to -\infty} \frac{8 + 3x^2 - x^9}{10x^9} 
+                                        &= \lim_{x \to -\infty} \frac{-x^9}{10x^9} \\
+                                        &= \lim_{x \to -\infty} \frac{-1}{10} \\
+                                        &= \bbox[border: 2pt solid white, 2px]{-\frac{1}{10}}. \\
+                                        \end{aligned}
+                                        \]    
+                                    </li>
+                                </ol>
+                            </p>
+                        </div>
+                    </div>
+
+
+                    <br>
+
+                    <!---->
+                    <p>
+                        Let's now discuss more types of limits in the form \(0/0\) and \(\infty/\infty\), which are <u>indeterminate forms</u>.
+                        It is important to understand, however, that a limit in the form \(k/0\), where \(k \ne 0\), does not exist.
+                    </p>
+
+                    <br>
+                    
+                    <!-- table for indeterminate forms-->
+                    <div class="box-title"> INDETERMINATE FORMS </div>
+                    <div class="box">
+                        <p>
+                            <ul>
+                                <li style="line-height: 4;">
+                                    Limits in the forms \(\displaystyle \frac{0}{0}\) and \(\displaystyle \frac{\infty}{\infty}\) are <u>indeterminate</u>.
+                                </li>
+                                <li style="line-height: 4;">
+                                    Limits in the form \(\displaystyle \frac{k}{0}\), where \(k \ne 0\), <u>do not exist</u>.
+                                </li>
+                            </ul>
+                        </p>
+                    </div>
+
+                    <br>
+                    
+                    <div>
+                        <p>
+                            Consider, for example, the function \(f(x) = (x^2 - 25)/(x + 5)\). 
+                            What is \(\lim_{x \to -5} f(x)\) ?
+                            When we try to perform a direct substitution, we obtain the form \(0/0\), which is indeterminate. 
+                            However, we notice that the numerator \(f(x)\) is a difference of squares and can be factored as \((x + 5)(x - 5)\).
+                            Thus, we can rewrite the limit as 
+                            \[
+                            \begin{aligned}
+                            \lim_{x \to -5} f(x) &= \lim_{x \to -5} \frac{x^2 - 25}{x + 5} \\
+                            &= \lim_{x \to -5} \frac{(x + 5)(x - 5)}{x + 5} \\
+                            &= \lim_{x \to -5} (x - 5) \\
+                            &= -10.
+                            \end{aligned}
+                            \]
+                        </p>
+                        <div class="image-side">
+                            <img src="../images/Calculus/1/1.2/1.2-1.jpg" class="image-side-image" alt="">
+                            <p class="image-side-caption"> 
+                                Fig. 1.2-1.  
+                                The function \(y = (x^2 - 25)/(x + 5)\) is equivalent to \(y = x - 5\) with a hole at the point \((-5, -10)\).
+                            </p>
+                        </div>
+                        <p>
+                            The function \(f(x) = (x^2 - 25)/(x + 5)\) is equivalent to the line \(y = x - 5\) with a hole at the point \((-5, -10)\), 
+                            as shown in Fig. 1-2.1. This example demonstrates that, for a case in which direct substitution yields the indeterminate form \(0/0\),
+                            you should be aware of any factors that cancel out.
+                            After canceling out any common factors in the numerator and denominator, attempt direct substitution again. 
+                        </p>
+                    </div>
+
+                    <br>
+
+                    <div>
+                        <p>
+                            As a second example, consider the function \(g(x) = (\sqrt{2x + 5} - 1)/(x + 2)\).
+                            What is \(\lim_{x \to -2} g(x)\) ?
+                            We notice that, upon attempting direct substitution by plugging in \(x = -2\), we are left in a \(0/0\) indeterminate form.
+                            However, we should remain observant—let's 
+                            try multiplying the numerator and denominator by the conjugate of \((\sqrt{2x + 5} - 1)\),
+                            which is \((\sqrt{2x + 5} + 1)\). Doing so yields 
+                            \[
+                            \begin{aligned}
+                            g(x) &= \frac{\sqrt{2x + 5} - 1}{x + 2} \\ 
+                            &= \frac{\sqrt{2x + 5} - 1}{x + 2} \cdot \frac{\sqrt{2x + 5} + 1}{\sqrt{2x + 5} + 1} \\
+                            &= \frac{(2x + 5) - 1}{(x + 2) \left(\sqrt{2x + 5} + 1\right)} \\
+                            &= \frac{2(x + 2)}{(x + 2) \left(\sqrt{2x + 5} + 1\right)} \\
+                            &= \frac{2}{\sqrt{2x + 5} + 1}, x \ne -2. \\
+                            \end{aligned}
+                            \]
+                            We can now take the limit, as \(x\) approaches \(-2\), of \(2/(\sqrt{2x + 5} + 1)\). 
+                            We then get 
+                            \[ 
+                            \begin{aligned} 
+                            \lim_{x \to -2} \frac{2}{\sqrt{2x + 5} + 1} &= \frac{2}{\sqrt{2(-2) + 5} + 1} \\ 
+                            &= \frac{2}{\sqrt{1} + 1} \\
+                            &= \bbox[border: 2pt solid white, 2px]{1}.
+                            \end{aligned}
+                            \]
+                            This technique of rationalizing permitted us to create a common factor to cancel out. 
+                            After doing so, we performed direct substitution and obtained the limit.
+                            This rationalization created a new function that had a hole at \(x = -2\), which is analogous to the graph in Fig. 1.2.1. 
+                        </p>
+                        
+                    </div>
+
+                    <br>
+
+                    <!--example 2-->
+                    <div class="example">
+                        <div class="example__heading"><b>Example 2</b></div>
+                        <!--example 2 problem-->
+                        <p class="example__problem">  
+                            <p style="margin-left: 20px;">
+                                For each of the following, evaluate the limit or state that it does not exist. 
+                                <div style="margin-left:5%">
+                                    <ol type="I" style="padding-top: 20px; padding-bottom: 20px; line-height: 3; font-style: normal;">
+                                        <li style="padding-left: 20px;">
+                                            \(\displaystyle \lim_{x \to -2} \frac{x^2 - 4}{x + 2} \)
+                                        </li>
+                                        <li style="padding-left: 20px;">
+                                            \(\displaystyle \lim_{x \to 4} \frac{x^3 - 64}{x - 4} \)
+                                        </li>
+                                        <li style="padding-left: 20px;">
+                                            \(\displaystyle \lim_{x \to 9/4} \frac{\sqrt{4x - 5} - 2}{16x - 36} \)
+                                        </li>   
+                                        <li style="padding-left: 20px;">
+                                            \(\displaystyle \lim_{x \to 9} \frac{3x - 27}{\sqrt{x - 8} - 1} \)
+                                        </li>
+                                    </ol>
+                                </div>
+                            </p>
+                        </p>
+                        <!--example 2 solution-->
+                        <button onclick="toggle2()" class="solution__button"> Show Solution ▼ </button>
+                        <div id="solution2" class="solution">
+                            <p> 
+                                <ol type="I" style="padding-top: 20px; padding-bottom: 20px; line-height: 3; font-style: normal;">
+                                    <li style="padding-left: 20px;">
+                                        When we attempt to perform direct substitution, we obtain a \(0/0\) indeterminate form. 
+                                        However, the numerator is a difference of squares, so we can factor it and rewrite the limit as 
+                                        \[
+                                        \begin{aligned}
+                                        \lim_{x \to -2} \frac{(x + 2)(x - 2)}{x + 2} 
+                                        &= \lim_{x \to -2} (x - 2) \\
+                                        &= \bbox[border: 2pt solid white, 2px]{4}. \\
+                                        \end{aligned}
+                                        \] 
+                                    </li>
+                                    <hr>
+                                    <li style="padding-left: 20px;">
+                                        This limit is in the indeterminate form \(0/0\).
+                                        We see that the numerator is a difference of cubes and can thus be rewritten as 
+                                        \((x - 4)(x^2 + 8x + 16)\).
+                                        Thus, 
+                                        \[
+                                        \begin{aligned}
+                                        \lim_{x \to 4} \frac{(x^3 - 64)}{x - 4} 
+                                        &= \lim_{x \to 4} \frac{(x - 4)(x^2 + 8x + 16)}{x - 4} \\
+                                        &= \lim_{x \to 4} (x^2 + 8x + 16) \\
+                                        &= (4)^2 + 8(4) + 16 \\
+                                        &= \bbox[border: 2pt solid white, 2px]{64}. \\
+                                        \end{aligned}
+                                        \] 
+                                    </li>
+                                    <hr>
+                                    <li style="padding-left: 20px;">
+                                        This limit is in the indeterminate form \(0/0\).
+                                        We observe that there is a radical in the numerator, so let's attempt to rationalize. 
+                                        We can do so by multiplying the numerator and denominator by \((\sqrt{4x - 5} + 2)\).
+                                        We then get 
+                                        \[
+                                        \begin{aligned}
+                                        \lim_{x \to 9/4} \frac{\sqrt{4x - 5} - 2}{16x - 36} 
+                                        &= \lim_{x \to 9/4} \frac{\sqrt{4x - 5} - 2}{16x - 36} \cdot \frac{\sqrt{4x - 5} + 2}{\sqrt{4x - 5} + 2} \\
+                                        &= \lim_{x \to 9/4} \frac{(4x - 5) - 4}{(16x - 36)(\sqrt{4x - 5} + 2) } \\
+                                        &= \lim_{x \to 9/4} \frac{4x - 9}{4(4x - 9)(\sqrt{4x - 5} + 2)} \\
+                                        &= \lim_{x \to 9/4} \frac{1}{4(\sqrt{4x - 5} + 2)} \\
+                                        &= \frac{1}{4 \left(\sqrt{4\left(\frac{9}{4}\right) - 5} + 2 \right)} \\
+                                        &= \bbox[border: 2pt solid white, 2px]{\frac{1}{16}}. \\
+                                        \end{aligned}
+                                        \]
+                                    </li>   
+                                    <hr>
+                                    <li style="padding-left: 20px;">
+                                        This limit is in the indeterminate form \(0/0\).
+                                        We observe that there is a radical in the denominator, which we will attempt to rationalize. 
+                                        The conjugate of the denominator is \((\sqrt{x - 8} - 1)\). 
+                                        Therefore, we will multiply the numerator and denominator by \((\sqrt{x - 8} - 1)\) to get 
+                                        \[
+                                        \begin{aligned}
+                                        \lim_{x \to 9} \frac{3x - 27}{\sqrt{x - 8} + 1}
+                                        &= \lim_{x \to 9} \frac{3x - 27}{\sqrt{x - 8} + 1} \cdot \frac{\sqrt{x - 8} - 1}{\sqrt{x - 8} - 1} \\
+                                        &= \lim_{x \to 9} \frac{(3x - 27)(\sqrt{x - 8} - 1)}{(x - 8) - 1} \\
+                                        &= \lim_{x \to 9} \frac{3(x - 9)(\sqrt{x - 8} - 1)}{x - 9} \\
+                                        &= \lim_{x \to 9} 3 \left(\sqrt{x - 8} - 1\right) \\
+                                        &= 3 \left(\sqrt{9 - 8} - 1\right) \\ 
+                                        &= \bbox[border: 2pt solid white, 2px]{0}. \\
+                                        \end{aligned}
+                                        \]
+                                    </li>
+                                </ol>
+                            </p>
+                        </div>
+                    </div>
+
+                    <br>
+
+                    <div>
+                        <p>
+                            The next series of indeterminate limits we will analyze involve trigonometric functions. 
+                            Recall the following trigonometric identities: 
+                            \[ 
+                            \begin{aligned}
+                            1 &= \sin^2(x) + \cos^2(x)  \\
+                            \sin(2x) &= 2 \sin(x) \cos(x) \\
+                            \cos(2x) &= \cos^2(x) - \sin^2(x). \\
+                            \end{aligned}
+                            \]
+                            We will reference these identities for any indeterminate limits involving trigonometric functions. 
+                        </p>
+                    </div>
+
+                    <br>
+
+                    <!--example 3-->
+                    <div class="example">
+                        <div class="example__heading"><b>Example 3</b></div>
+                        <!--example 3 problem-->
+                        <p class="example__problem">  
+                            <p style="margin-left: 20px;">
+                                For each of the following, evaluate the limit or state that it does not exist.
+                                <div style="margin-left:5%">
+                                    <ol type="I" style="padding-top: 20px; padding-bottom: 20px; line-height: 3; font-style: normal;">
+                                        <li style="padding-left: 20px;">
+                                            \(\displaystyle \lim_{x \to \pi/2} \frac{\sin(2x)}{\cos(x)} \)
+                                        </li>
+                                        <li style="padding-left: 20px;">
+                                            \(\displaystyle \lim_{x \to 0} \frac{1 - \cos(x)}{3 \sin(x)} \)
+                                        </li>   
+                                        <li style="padding-left: 20px;">
+                                            \(\displaystyle \lim_{x \to \pi/4} \frac{\cos(2x)}{\cos(x) - \sin(x)} \)
+                                        </li>
+                                    </ol>
+                                </div>
+                            </p>
+                        </p>
+                        <!--example 3 solution-->
+                        <button onclick="toggle3()" class="solution__button"> Show Solution ▼ </button>
+                        <div id="solution3" class="solution">
+                            <div style="margin-left:5%">
+                                <ol type="I" style="padding-top: 20px; padding-bottom: 20px; line-height: 3; font-style: normal;">
+                                    <li style="padding-left: 20px;">
+                                        The limit is in a \(0/0\) indeterminate form.
+                                        We can rewrite \(\sin(2x)\) as \(2 \sin(x) \cos(x)\). 
+                                        We then obtain 
+                                        \[ 
+                                        \begin{aligned} 
+                                        \lim_{x \to \pi/2} \frac{\sin(2x)}{\cos(x)} 
+                                        &= \lim_{x \to \pi/2} \frac{2 \sin(x) \cos(x)}{\cos(x)} \\
+                                        &= \lim_{x \to \pi/2} 2 \sin(x) \\
+                                        &= 2 \sin \left(\frac{\pi}{2}\right) \\
+                                        &= \bbox[border: 2pt solid white, 2px]{2}.
+                                        \end{aligned}
+                                        \]
+                                    </li>
+                                    <hr>
+                                    <li style="padding-left: 20px;">
+                                        Because we are in a \(0/0\) indeterminate form, we must be resourceful. 
+                                        One way to manipulate this limit is to multiply the numerator and denominator by \((1 + \cos(x))\),
+                                        after which we get 
+                                        \[
+                                        \begin{aligned}
+                                        \lim_{x \to 0} \frac{1 - \cos(x)}{3 \sin(x)} 
+                                        &= \lim_{x \to 0} \frac{1 - \cos(x)}{3 \sin(x)} \cdot \frac{1 + \cos(x)}{1 + \cos(x)} \\
+                                        &= \lim_{x \to 0} \frac{1 - \cos^2(x)}{3 \sin(x)(1 + \cos(x))} \\
+                                        &= \lim_{x \to 0} \frac{\sin^2(x)}{3 \sin(x)(1 + \cos(x))} \\
+                                        &= \lim_{x \to 0} \frac{\sin(x)}{3 (1 + \cos(x))} \\
+                                        &= \frac{\sin(0)}{3\left(1 + \cos(0)\right)} \\
+                                        &= \bbox[border: 2pt solid white, 2px]{0}.
+                                        \end{aligned}
+                                        \]
+                                    </li>   
+                                    <hr>
+                                    <li style="padding-left: 20px;">
+                                        We understand that \(\cos(2x) = \cos^2(x) - \sin^2(x)\).
+                                        Therefore, 
+                                        \[
+                                            \begin{aligned}
+                                            \lim_{x \to \pi/4} \frac{\cos(2x)}{\cos(x) - \sin(x)} 
+                                            &= \lim_{x \to \pi/4} \frac{\cos^2(x) - \sin^2(x)}{\cos(x) - \sin(x)} \\
+                                            &= \lim_{x \to \pi/4} \frac{\left(\cos(x) + \sin(x)\right) \left(\cos(x) - \sin(x)\right)}{\cos(x) - \sin(x)} \\
+                                            &= \lim_{x \to \pi/4} \left(\cos(x) + \sin(x)\right) \\ 
+                                            &= \cos(\pi/4) + \sin(\pi/4) \\
+                                            &= \bbox[border: 2pt solid white, 2px]{\sqrt{2}}.
+                                            \end{aligned}
+                                        \]
+                                    </li>
+                                </ol>
+                            </div>
+                        </div>
+                    </div>
+
+                    <br>
+
+                    <div>
+                        We should now be comfortable with recognizing indeterminate forms. 
+                        The examples in this section showcase methods for algebraically manipulating indeterminate limits 
+                        into a form for which direct substitution yields a definite answer. 
+                        Remain vigilant for any factors that cancel out—this is the common goal of the algebraic manipulations featured in this section.
+                    </div>
+
+                    <!--section summary-->
+                    <p>
+                        <p style="text-align: center; font-size: 150%;">
+                            <u> SECTION SUMMARY </u>
+                            <ul>
+                                <li style="padding-bottom: 20px;"> 
+                                    A limit in the form \(\displaystyle \frac{0}{0}\) or \(\displaystyle \frac{\infty}{ \infty}\) 
+                                    is <u>indeterminate</u>. 
+                                    However, a limit in the form \(\displaystyle \frac{k}{0}\), where \(k \ne 0\), <u>does not exist</u>.  
+                                </li>
+                                <li style="padding-top: 20px; padding-bottom: 20px;">
+                                    To find a limit of a rational expression at infinity, take the limit of the highest-degree terms only—they 
+                                    are the most significant. The result agrees with the end behavior of the function.
+                                </li>
+                                <li style="padding-top: 20px; padding-bottom: 20px;">
+                                    Try to algebraically manipulate an indeterminate limit into a form for which direct substitution yields a definite value. 
+                                </li>
+                                <li style="padding-top: 20px; padding-bottom: 20px;">
+                                    If you notice a fraction with a radical in an indeterminate limit, 
+                                    try to rationalize it by multiplying the numerator and denominator by the conjugate of the radical expression. 
+                                </li>
+                                <li style="padding-top: 20px; padding-bottom: 20px;">
+                                    Utilize trigonometric identities to simplify indeterminate limits involving trigonometric functions. 
+                                    Remember the Pythagorean identity as well as the double angle identities for sine and cosine,
+                                    \(\sin(2x) = 2 \sin(x) \cos(x)\) and \(\cos(2x) = \cos^2(x) - \sin^2(x)\).
+                                </li>
+                            </ul>    
+                        </p>
+                </div>
+            <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+            <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3.0.1/es5/tex-mml-chtml.js"></script>
+            <script id="AMSmath" async src="TeX/AMSmath.js"></script>
+            <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+            <!--toggle solution functions-->
+            <script>
+                function toggle1(){
+                    var clicked = document.getElementById("solution1");
+                    if (clicked.style.display === "none") {
+                        clicked.style.display = "block";
+                    } else {
+                        clicked.style.display = "none";
+                    }
+                }
+                function toggle2(){
+                    var clicked = document.getElementById("solution2");
+                    if (clicked.style.display === "none") {
+                        clicked.style.display = "block";
+                    } else {
+                        clicked.style.display = "none";
+                    }
+                }
+                function toggle3(){
+                    var clicked = document.getElementById("solution3");
+                    if (clicked.style.display === "none") {
+                        clicked.style.display = "block";
+                    } else {
+                        clicked.style.display = "none";
+                    }
+                }
+                function toggle4(){
+                    var clicked = document.getElementById("solution4");
+                    if (clicked.style.display === "none") {
+                        clicked.style.display = "block";
+                    } else {
+                        clicked.style.display = "none";
+                    }
+                }
+                function toggle5(){
+                    var clicked = document.getElementById("solution5");
+                    if (clicked.style.display === "none") {
+                        clicked.style.display = "block";
+                    } else {
+                        clicked.style.display = "none";
+                    }
+                }
+            </script>
+            
+        </section>
+    </body>
+</html>

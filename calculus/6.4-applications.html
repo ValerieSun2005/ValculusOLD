@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="css/0.1.css">
+        <title>5.5 — The Disk Method</title>
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+        <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3.0.1/es5/tex-mml-chtml.js"></script>
+        <script id="AMSmath" async src="TeX/AMSmath.js"></script>
+        <meta charset="UTF-8">
+        <meta name="description" content="Real World Applications of Algebra, Geometry, Trigonometry, and Calculus.">
+        <meta name="Valerie" content="Applications of Calculus">
+        <meta name="keywords" content="Math, Math Tutorial, Real World Uses of Math, Real World Uses of Calculus, Real World Uses of Algbera, Real World Uses of Geometry, How is Math Used In the Real World, Applications of Math, Applications of Algebra, Applications of Calculus">
+    </head>
+    <header>
+        <div class="links" style="font-family:Georgia, 'Times New Roman', Times, serif">
+            <a href="index.html" class="button">Home</a> 
+            <a href="about.html" class="button">About</a> 
+            <a href="math.html" class="button">Math</a>
+            <a href="" class="button">My Blog</a>
+            <a href="lgbtq.html" class="button">LGBTQ+</a>
+            <a href="https://www.google.com/search?q=when+was+william+shakespeare+born&oq=when+was+william+shakespeare+born&aqs=chrome..69i57.6120j0j1&sourceid=chrome&ie=UTF-8" 
+            class="button" style="color:rgb(160, 44, 44)">ESCAPE</a> 
+        </div>                                  <!--Top Button Panel-->
+    </header>
+    <div class="top-menu">
+        <span> 
+            <a href="index.html" title="Main Page" style="color:plum">Home</a>
+            <span>></span>
+            <a href="math.html" title="Math" style="color:plum">Math</a>
+            <span>></span>
+            <a href="calculus.html" title="Calculus" style="color:plum">Calculus</a>
+            <span>></span>
+            <span>5.5, 5.6, 5.7 — Solids of Revolution</span>
+        </span>
+    </div>
+    <div class="navigation-top" >
+        <span>
+            <a href="5.5.html" title="Notes" class="button-2">Notes</a>
+            <a href="5.5-exercises.html" title="Exercises" class="button-2">Exercises</a>
+            <a href="5.5-applications.html" title="Applications" class="button-2">Applications</a>
+        </span>
+    </div>
+    <body>
+        <section>
+            <div class="background" style="font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif">
+                <div class="heading">
+                    5.5, 5.6, 5.7 — Applications
+                </div>
+            <hr>
+            <hr>
+                <p> In my opinion, the applications for Solids of Revolution are the most fun! Usually, the concepts are taught but never applied. I've merged sections 5.5, 5.6, and 5.7 together here because of their unity. In this section we'll be discussing applications ranging from fun math projects to derivations of everyday formulas.</p>
+            <hr>
+                <p><h1>APPLICATION 1 — Volume of a Sphere</h1></p>
+                <p>For this application we'll derive the volume of a sphere by using the Disk Method. We know that a semi-circle is in the form \(\sqrt{r^2 - x^2}\), where \(r\) is the radius. </p>
+                <img src="images/Calculus/5/5.567 app/5.567-1.jpg" alt="5.567-1" style="width:30%"> 
+                <p>Notice that if we rotate the region bounded by the semi-circle and the \(x\)-axis about the \(x\)-axis, we obtain a sphere. To find the expression for its volume, we can use the Disk Method — construct and integrate infinitely many disks of length \(dx\).</p>
+                <img src="images/Calculus/5/5.567 app/5.567-2.jpg" alt="5.567-2" style="width: 30%"> <img src="images/Calculus/5/5.567 app/5.567-3.jpg" alt="5.567-3" style="width: 30%">
+                <p>In this case \(r(x) = \sqrt{r^2 - x^2}\), and our bounds of integration are from \(-r\) to \(r\). Therefore, the volume is: </p>
+                    $$ \pi \int_{-r}^{r} r(x)^2 \, dx = \pi \int_{-r}^{r} (r^2 - x^2) \,dx $$
+                <p>Note that because our function is even(symmetric about the \(y\)-axis), we can rewrite this as: </p>
+                    $$ 2\pi \int_{0}^{r} (r^2 - x^2) \, dx $$
+                <p>Now integrating:</p>
+                    $$ 2\pi \int_{0}^{r} (r^2 - x^2) \, dx = 2\pi \Big[xr^2 - \frac{x^3}{3}\Big]_0^r $$
+                    $$ = 2\pi\Big[\frac{2r^3}{3} - 0\Big] $$
+                    $$ = \frac{4}{3} \pi r^3 $$
+                <p>And this is the formula we recognize as the volume of a sphere!</p>
+            <hr>
+                <p><h1>APPLICATION 2 — Volume of a Cone</h1></p>
+                <p>This application is similar to the last one — we'll derive the volume of a cone. Suppose that we have a line segment of length \(h\) and height \(r\).</p>
+            </div>
+  
+        </section>
+
+    </body>
+    </main>
+    

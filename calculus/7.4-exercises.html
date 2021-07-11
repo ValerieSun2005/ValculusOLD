@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link href="https://fonts.googleapis.com/css?family=Cardo:400,700|Oswald" rel="stylesheet">
+        <link rel="stylesheet" href="../css/0.1.css">
+        <title>7.4 Exercises — Separation of Variables</title>
+        <meta charset="UTF-8">
+    <!--Toggle Solution Functions-->
+        <script>
+            function toggle1(){
+                var clicked = document.getElementById("solution1");
+                if (clicked.style.display === "none") {
+                    clicked.style.display = "block";
+                } else {
+                    clicked.style.display = "none";
+                }
+            }
+            function toggle2(){
+                var clicked = document.getElementById("solution2");
+                if (clicked.style.display === "none") {
+                    clicked.style.display = "block";
+                } else {
+                    clicked.style.display = "none";
+                }
+            }
+            function toggle3(){
+                var clicked = document.getElementById("solution3");
+                if (clicked.style.display === "none") {
+                    clicked.style.display = "block";
+                } else {
+                    clicked.style.display = "none";
+                }
+            }
+        </script>
+    </head>
+    <!--Top Button Panel-->
+    <header>
+        <div class="top-links" style="font-family:Georgia, 'Times New Roman', Times, serif">
+            <a href="../index.html" class="button_top">Home</a> 
+            <a href="../about.html" class="button_top">About Me</a> 
+            <a href="../faq.html" class="button_top">FAQ</a>
+            <a href="../contact.html" class="button_top">Contact Me</a>
+        </div>                                  
+    </header>
+    <!--Section Tabs-->
+    <div class="tab">
+        <a href="7.4.html" class="tab-button">Notes</a>
+        <a href="7.4-exercises.html" class="tab-button">Exercises</a>
+        <a href="7.4-applications.html" class="tab-button">Applications</a>
+        <a href="calculus.html" class="tab-button">Back to Calculus</a>
+    </div>
+    <body class="background">
+        <section>
+                <!--Section Title-->
+                <p class="background__title">7.4 Exercises — Separation of Variables</p>
+                <!--Section Body-->
+                <div class="background__text">
+                    <hr>                    
+                    <p><b> (1) </b> Find the solution to the differential equation \(\frac{dy}{dx} = \frac{x}{2} - 3\), given that \(y = 1\) when \(x = 0\). </p>
+                    <p><b> (2) </b> Find the solution to the differential equation \(y \, ' = -\sin{(x)} \), given that \(y(0) = 2\).</p>
+                    <p><b> (3) </b> Find the solution to the differential equation \(y \, ' -\cos{(2x)} = 0\)  if the point \((0, \pi)\) passes through the solution curve. </p>
+                    <p><b> (4) </b> Find the solution to the differential equation \(y \, ' = e^{y}\)  with the initial condition \((0, 1)\). </p>
+                    <p><b> (5) </b> Find the solution to the differential equation \(y \, ' - \sqrt{y} = 0\). </p>
+                    <p><b> (6) </b> Find the solution to the differential equation \(\frac{dP}{dt} = \frac{1}{2t - e}\)  with the initial condition \((e, 4)\). </p>
+                    <p><b> (7) </b> Find the solution to the differential equation \(y \, ' + 2y^2 + y = 0 \) with the initial condition \((3, 4)\). </p>
+                    <p><b> (8) </b> Let \(a, b,\) and \(c \, \) be constants in the differential equation \( y \, ' + ay^2 + by + c = 0 \). Find the general solution of the differential equation.  </p>
+                    <p><b> (9) </b> Find the solution to the differential equation \(y \, ' = \frac{5y^2}{x\ln{(\ln{(x)})}}\) passing through the point \((e^2, 10)\).
+                    <p><b> (10) </b> Let \(k\) be a constant in the differential equation \(\dot y + \frac{t^2}{2} - kt = 0\) such that the points \((0, 1)\) and \((1, 4)\) pass through the solution curve. Find the value of \(k\). </p>
+                    <p><b> (11) </b> Let \(b\) be a constant in the differential equation \(by \, ' + y = 0\). Find the value of \(b\), given that the solution to the differential equation passes through the points \((2, 8)\) and \((3,10)\).
+                    <p><b> (12) </b> Money in a savings account grows at a rate proportional to the amount of money in the account at a given time \(t\). There are originally \(1500\) dollars in the account, and after a year there are \(1550\) dollars. How much money will be in the account after three years? </p>
+                    <p><b> (13) </b> People at a train station enter at a rate given by \(E(t) = t^2 - 2t + 6\) and leave at a rate given by \(L(t) = 15\sin{(t}) + 20\). There are originally \(500\) people in the train station. Find the expression for the number of people in the train terminal in terms of \(t\).</p>
+                    <p><b> (14) </b> Pigs enter a pen at a rate given by \(g(t) = \frac{50}{t+3}\) and exit at a rate given by \(h(t) = 2\sin{(2t)-3}\). At \(t = 0\) there are \(30\) pigs inside the pen. Model a function for the number of pigs in the pen at a given time \(t\). </p>
+                    <p><b> (15) </b> Newton's Law of Cooling states that \(\frac{dT}{dt} = -k(T-T_s)\), where \(T\) denotes the temperature of an object as a function of time \(t\), \(T_s\) denotes the temperature of the outside environment, and \(k\) is the heat transfer coefficient. Derive an expression for \(T\) as a function of \(t\).  </p>
+                    <p><b> (16) </b> An object with mass \(m\) is pulled with a constant force \(F_a\) and experiences a drag force modeled by \(\beta v^2\), where \(\beta\) is a constant and \(v\) denotes the object's velocity. Derive an expression for the velocity of the object in terms of \(t\), \(F_a\), \(m\), and \(\beta\), as appropriate. (Hint: Apply Newton's Second Law to obtain \(F_a - \beta v^2 = mv \, ' \).) </p>
+                    <p><b> (17) </b> A falling object experiences air resistance modeled by \(kv\), where \(k\) is the drag coefficient of the object and \(v\) denotes the object's velocity. By Newton's Second Law, \(kv - 10m = m\frac{dv}{dt}\), where \(m\) denotes the mass of the object and \(t\) denotes time. Derive an expression for \(\lim_{t \to \infty} v(t)\) in terms of \(m\) and \(k\). (This is called the terminal velocity of the object, the maximum speed at which the object can fall on Earth.)  </p>
+                    <p><b> (18) </b> A probability density function (PDF) is a function whose curve produces an area that gives the probability that a continuous random variable will fall within a range of values. This function of area is called a cumulative density function (CDF), defined as the integral of the PDF. Common examples of CDFs include Normal, \(t\)-, and \(\chi^2\)-distributions, which are fundamental tools for statistical inference. The fundamental property of probability density functions is that the area under them is always \(1\). Let \(p(x)\) denote a probability density function given by \(ke^{-kx}\) for \(x \geq 0\), where \(k\) is a constant. Find the CDF for \(p(x)\), which outputs the probability that a random variable will take a value less than or equal to \(x\). </p>
+                </div>
+            <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+            <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3.0.1/es5/tex-mml-chtml.js"></script>
+            <script id="AMSmath" async src="TeX/AMSmath.js"></script>
+            <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+        </section>
+    </body>

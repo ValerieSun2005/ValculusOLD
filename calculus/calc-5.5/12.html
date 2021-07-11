@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="../../css/0.1.css">
+        <title> 5.5 Exercises — Problem 12 </title>
+        <meta charset="UTF-8">
+        <meta name="Valerie" content="Applications of Calculus">
+    </head>
+    <!--Top Button Panel-->
+    <header>
+        <div class="top-links" style="font-family:Georgia, 'Times New Roman', Times, serif">
+            <a href="../index.html" class="button_top">Home</a> 
+            <a href="../about.html" class="button_top">About Me</a> 
+            <a href="../faq.html" class="button_top">FAQ</a>
+            <a href="../contact.html" class="button_top">Contact Me</a>
+        </div>                                  
+    </header>
+    <!--Section Tabs-->
+    <div class="tab">
+        <a href="11.html" class="tab-button"> < Previous Problem </a>
+        <a href="../5.5.html" class="tab-button"> Notes </a>
+        <a href="../5.5-exercises.html" class="tab-button"> Exercises </a>
+        <a href="../calculus.html" class="tab-button"> Back to Calculus </a>
+        <a href="13.html" class="tab-button"> Next Problem > </a>
+    </div>
+    <body class="background">
+        <section>
+                <!--Section Title-->
+                <p class="background__title"> 5.5 Exercises — Problem 12 </p>
+                <!--Section Body-->
+                <div class="background__text">
+                    <p> <i>
+                        \((12)\) Evaluate \(\displaystyle \int_{-2}^3 g(x) \, \textrm{d} x\), 
+                        \( \displaystyle g(x)=
+                        \begin{cases}
+                        x + 5 & \text{for $-2 \leq x \leq 0$} \\[2ex]
+                        \ln(x) & \text{for $0 \lt x \leq 4$},
+                        \end{cases} \)
+                        or show that it diverges.  </i>
+                    </p>
+                    <hr>
+                    <p>
+                        Notice that \(g\) contains a discontinuity at \(x = 0\). 
+                        However, if we rewrite the integral as 
+                        $$ \int_{-2}^0 g(x) \, \textrm{d} x + \int_0^3 g(x) \, \textrm{d} x $$
+                        $$ = \int_{-2}^0 \left(x + 5\right) \, \textrm{d} x + \int_0^3 \ln(x) \, \textrm{d} x, $$
+                        we immediately notice that 
+                        \(\displaystyle \int_{-2}^0 \left(x + 5\right) \, \textrm{d} x\)
+                        is convergent and equal to \(8\).
+                        If \(\displaystyle \int_0^3 \ln(x) \, \textrm{d} x\) is convergent too, then 
+                        \(\displaystyle \int_{-2}^3 g(x) \, \textrm{d} x\) will be convergent.
+                        <p>
+                            To evaluate \(\displaystyle \int_0^3 \ln(x) \, \textrm{d} x\), recall that 
+                            $$ \int \ln(x) = x \ln(x) - x + C. $$
+                            Furthermore, notice that \(\ln(x)\) is undefined for \(x \leq 0\); therefore, we are working with a Type II integral.
+                            Thus, we obtain 
+                            $$ \lim_{k \to 0^+} \int_k^3 \ln(x) \, \textrm{d} x $$
+                            $$ = \lim_{k \to 0^+} \left(x \ln(x) - x\right)\Big]_k^3 $$
+                            $$ = \left( 3 \ln(3) - 3 \right) - \left(\lim_{k \to 0^+} \left[k \ln(k) - k\right] \right) $$
+                            $$ = \left( 3 \ln(3) - 3 \right) - \lim_{k \to 0^+} k \ln(k). $$
+                            Notice that, for \(\displaystyle \lim_{k \to 0^+} k \ln(k)\), 
+                            \(\displaystyle \lim_{k \to 0^+} k = 0\) and \(\displaystyle \lim_{k \to 0^+} k \ln(k) = -\infty\).
+                            We are therefore in a \(0 \cdot \infty\) indeterminate form, for which we may resort to L'Hôpital's Rule:
+                            $$ \lim_{k \to 0^+} k \ln(k) $$
+                            $$ = \lim_{k \to 0^+} \frac{\ln(k)}{1/k}, $$
+                            which is in the indeterminate form \(\displaystyle \frac{\infty}{\infty}\).
+                            We can then differentiate the numerator and denominator to get 
+                            $$ \lim_{k \to 0^+} \frac{\frac{\textrm{d}}{\textrm{d} k} \ln(k)}{ \frac{\textrm{d}}{\textrm{d} k} 1/k} $$
+                            $$ = \lim_{k \to 0^+} \frac{1/k}{-1/k^2} $$
+                            $$ = \lim_{k \to 0^+} -k $$
+                            $$ = 0. $$
+                            Therefore, 
+                            $$ \int_0^3 \ln(x) \, \textrm{d} x = 3\ln(3) - 3. $$
+                            We conclude that 
+                            $$ \int_{-2}^3 g(x) \, \textrm{d} x = 8 + \left(3\ln(3) - 3\right)$$
+                            $$ = \bbox[border: 2px solid white, 2pt]{5 + 3 \ln(3).} $$
+                        </p>
+                    </p>
+                </div>
+            <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+            <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3.0.1/es5/tex-mml-chtml.js"></script>
+            <script id="AMSmath" async src="TeX/AMSmath.js"></script>
+            <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+        </section>
+    </body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="../../css/0.1.css">
+        <title> 5.5 Exercises — Problem 1 </title>
+        <meta charset="UTF-8">
+        <meta name="Valerie" content="Applications of Calculus">
+    </head>
+    <!--Top Button Panel-->
+    <header>
+        <div class="top-links" style="font-family:Georgia, 'Times New Roman', Times, serif">
+            <a href="../index.html" class="button_top">Home</a> 
+            <a href="../about.html" class="button_top">About Me</a> 
+            <a href="../faq.html" class="button_top">FAQ</a>
+            <a href="../contact.html" class="button_top">Contact Me</a>
+        </div>                                  
+    </header>
+    <!--Section Tabs-->
+    <div class="tab">
+        <a class="tab-button"> < Previous Problem </a>
+        <a href="../5.5.html" class="tab-button">Notes</a>
+        <a href="../5.5-exercises.html" class="tab-button">Exercises</a>
+        <a href="../calculus.html" class="tab-button">Back to Calculus</a>
+        <a href="2.html" class="tab-button">Next Problem ></a>
+    </div>
+    <body class="background">
+        <section>
+                <!--Section Title-->
+                <p class="background__title"> 5.5 Exercises — Problem 1 </p>
+                <!--Section Body-->
+                <div class="background__text">
+                    <p> <i>
+                        \((1)\) Evaluate \(\displaystyle \int_2^\infty \frac{1}{x + 9} \, \textrm{d} x \) or show that it diverges.  </i>
+                    </p>
+                    <hr>
+                    <p>
+                        Notice that this integral is a Type I improper integral—with an upper bound of infinity. 
+                        Therefore, we will insert a variable, \(k\), substitute it for the upper bound, and take the limit as \(k\) approaches infinity.
+                        We then get 
+                        $$ \int_2^\infty \frac{1}{x + 9} \, \textrm{d} x = \lim_{k \to \infty} \int_2^k \frac{1}{x + 9} \, \textrm{d} x $$
+                        Notice that an antiderivative of \(\displaystyle \frac{1}{x + 9} \) is \(\displaystyle \ln(x + 9)\)
+                        (we can neglect the absolute value bars because the integral is over positive values.)
+                        Thus, we obtain 
+                        $$ \lim_{k \to \infty} \ln(x + 9) \Big]_2^k $$
+                        $$ = \lim_{k \to \infty} \ln(k + 9) - \ln(2 + 9) $$
+                        $$ = \underbrace{\lim_{k \to \infty} \ln(k + 9)}_{\infty} - \ln 11. $$
+                        Because \(\displaystyle \lim_{k \to \infty} \ln(k + 9)\) does not exist, 
+                        $$ \int_2^\infty \frac{1}{x + 9} \, \textrm{d} x \, \, \, \bbox[border: 2px solid white, 2pt]{\textrm{diverges}.} $$
+                    </p>
+                </div>
+            <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+            <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3.0.1/es5/tex-mml-chtml.js"></script>
+            <script id="AMSmath" async src="TeX/AMSmath.js"></script>
+            <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+        </section>
+    </body>

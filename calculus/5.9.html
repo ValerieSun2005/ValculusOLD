@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="../css/0.1.css">
+        <title>5.9 — Applications of Integrals</title>
+        <meta charset="UTF-8">
+        <meta name="author" content="Valerie">
+    </head>
+    <!--Top Button Panel-->
+    <header>
+        <div class="top-links" style="font-family:Georgia, 'Times New Roman', Times, serif">
+            <a href="../index.html" class="button_top">Home</a> 
+            <a href="../about.html" class="button_top">About Me</a> 
+            <a href="../faq.html" class="button_top">FAQ</a>
+            <a href="../contact.html" class="button_top">Contact Me</a>
+        </div>                                  
+    </header>
+    <!--Section Tabs-->
+    <div class="tab">
+        <a href="5.9.html" class="tab-button">Notes</a>
+        <a href="" class="tab-button">Exercises</a>
+        <a href="" class="tab-button">Applications</a>
+        <a href="calculus.html" class="tab-button">Back to Calculus</a>
+    </div>
+    <body class="background">
+        <section>
+                <!--Section Title-->
+                <p class="background__title">5.9 — Applications of Applications of Integrals</p>
+                <!--Section Body-->
+                <div class="background__text">
+                    <p> In this section we are going to be wrapping up this unit by looking at some applications of integrals. We will be deriving formulas from physics, chemistry, and elementary algebra. </p>
+                    <hr>
+                    <!--Application 1-->
+                    <div id="app-1">
+                        <p><h3> Application #1 — Area of an Ellipse</h3></p>
+                        <p> Recall that the formula for an ellipse is \(\frac{x^2}{a^2} + \frac{y^2}{b^2} = 1\), where \(a\) and \(b\) are the corresponding radii of the ellipse.</p>
+                        <img src="../images/Calculus/5/5.9/5.9-0.jpg" style="width:50%" class="center">
+                        <p>We'll be finding an expression for \(y\) and then integrating that to find the region of one half of the ellipse. To obtain the area of the entire ellipse, we multiply the integral expression by \(2\). </p>
+                        <p>$$ \frac{x^2}{a^2} + \frac{y^2}{b^2} = 1 \Rightarrow y = \pm b\sqrt{1 - \frac{x^2}{a^2}}$$</p>
+                        <p>We only need the positive square root function, so we'll be using it for simplicity. This will only give us the area of half of the ellipse, however, so we need to multiply the integral expression by \(2\). </p>
+                        <p>$$ 2\int_{-a}^{a} y \, dx = 2\int_{-a}^{a} b\sqrt{1 - \frac{x^2}{a^2}} \, dx $$</p>
+                        <p>Because our function is symmetrical about the \(y\)-axis, we can rewrite this as: </p>
+                        <p>$$ 4b\int_{0}^{a} \sqrt{1-\frac{x^2}{a^2}} \, dx $$ </p>
+                        <p>We want to get our integral in a form in which we can perform trigonometric substitution. To do this, we need to get it into the form \(\sqrt{a^2 - x^2}\) and perform the substitution \(x = a \sin{x}\) to rewrite the integrand without the radical. </p>
+                        <p>$$ = 4b\int_{0}^{a} \sqrt{\frac{1}{a^2}(a^2-x^2)} \, dx = \frac{4b}{a}\int_{0}^{a} \sqrt{a^2-x^2} \, dx $$
+                        </p>
+                        <p>$$ \mathrm{let} \, x = a\sin \theta $$</p>
+                        <p>$$ dx = a\cos \theta \, d\theta $$</p>
+                        <p>Now we'll be changing the bounds of integration: </p>
+                        <p>$$ 0 = a\sin{\theta} \Rightarrow \theta = 0 $$</p>
+                        <p>$$ a = a\sin{\theta} \Rightarrow \theta = \frac{\pi}{2} $$ </p>
+                        <p>$$ \frac{4b}{a}\int_{0}^{\frac{\pi}{2}}\sqrt{a^2 - (a\sin{\theta})^2} \, a\cos{\theta} \, d\theta = \frac{4b}{a}\int_{0}^{\frac{\pi}{2}}\sqrt{a^2 - a^2\sin^2{\theta}} \, a\cos{\theta} \, d\theta = 4b\int_{0}^{\frac{\pi}{2}} a\sqrt{1 - \sin^2{\theta}} \cos{\theta} \, d\theta  = 4ab\int_{0}^{\frac{\pi}{2}} \cos^2{\theta} \, d\theta $$</p>
+                        <p>The power reduction formula states that:</p>
+                        <p>$$ \cos^2{\theta} = \frac{1}{2}(1 + \cos{2\theta}) $$ </p>
+                        <p>Plugging it in:</p>
+                        <p>$$ 2ab\int_{0}^{\frac{\pi}{2}} (1 + \cos{2\theta}) \, d\theta = 2ab\Big[\theta + \frac{1}{2}\sin{2\theta}\Big]_{0}^{\frac{\pi}{2}} = 2ab\Big(\frac{\pi}{2}\Big) = ab\pi $$  </p>
+                        <p>The area of an ellipse is \(ab\pi\)!</p>
+                    </div>
+                    <hr>
+                    <!--Application 2-->
+                    <div id="app-2">
+                        <p><h3>Application #2 — Population Growth</h3></p>
+                        <p>This derivation features the formula for population growth, which is taught in most introductory algebra classes. We'll first be writing a differential equation to model the rate of change of the population. Let \(N\) denote the population and \(t\) represent the time. </p>
+                        <p>The rate of change of the population is proportional to the current population at a given time \(t\). Let \(k\) denote the percent rate of growth of the population: </p>
+                        <p>$$ \frac{dN}{dt} = kN $$ </p>
+                        <p>To solve this differential equation, we can separate the variables:</p>
+                        <p>$$ \frac{1}{N} \, dN = k \, dt $$ </p>
+                        <p>Now integrating: </p>
+                        <p>$$ \int \frac{1}{N} \, dN = \int k \, dt $$ </p>
+                        <p>$$ \ln{N} = kt + C $$ </p>
+                        <p>Now solving for \(N\): </p>
+                        <p>$$ N = e^{kt + C} \Rightarrow N = Ce^{kt} $$ </p>
+                        <p>We'll rewrite the constant of integration as the initial value of the population at \(t = 0\): </p>
+                        <p>$$ N = N_{0}e^{kt} $$</p>
+                        <p>You may also see \(P\) used to denote the population. \(P\) is more commonly seen in introductory algebra classes, but \(N\) is more standard in ecology, statistics, and social sciences fields. </p>
+                    </div>
+                    <hr>
+                    <!--Application 3-->
+                    <div id="app-3">
+                        <p><h3>Application #3 — Probability Density Functions</h3></p>
+                        <p>Probability density curves are an integral part of standardization, probability modeling, and statistical inference. A probability density function represents the distribution of potential values and outputs the likelihood that a continuous, random variable will take a certain value \(x\). Because we're working with probability, the area under any density function must equal \(1\), and the integral from \(a\) to \(b\) represents the probability that a certain value will fall between those bounds.  </p>
+                        <p>Let \(p(x)\) denote a probability density function for all real values \(x\): </p>
+                        <p>$$ \int_{-\infty}^{\infty} p(x) \, dx = 1 $$</p>
+                        <p>$$ P(a \leq x \leq b) = \int_{a}^{b} p(x) \, dx $$</p>
+                        <img src="../images/Calculus/5/5.9/5.9-1.jpg" style="width: 80%" class="center">
+                        <p>A distribution is approximately Normal if there are no outliers or strong skewness. It is frequently referred to as a "bell curve" due to its relative symmetry about the mean. Normal distributions appear often in sampling distributions because of the Central Limit Theorem, which states that large quantities of sample data converge to have an approximately Normal distribution, namely when there are at least \(30\) samples. This theorem is important for statistical inference and analysis, as the probability density function for a Normal distribution is the Gaussian function: </p>
+                        <p>$$ p(x) = \frac{1}{\sigma\sqrt{2\pi}}e^{-\frac{1}{2}(\frac{x-\mu}{\sigma})^2}, $$</p>
+                        <p>where \(\mu\) denotes the mean of the distribution and \(\sigma\) denotes the standard deviation. </p>
+                        <p>Notice that \(p\) is a function with the error function as its antiderivative, which is not elementary. Numerical approximations are often used to approximate the result, for which technology is strictly used for computations. </p>
+                        <p>The cumulative density function is a function of area and is defined generally as:  </p>
+                        <p>$$C(x) = \int_{-\infty}^{x} p(t) \, dt $$</p>
+                        <p>We can use cumulative density functions to locate percentiles. For example, the distribution of women's heights is approximately Normal with a mean of \(\mu = 64.5\) inches and a standard deviation of \(\sigma = 2.5 \) inches. I'm a girl who is 5'8". To find the percentile in which I lie, we need to find the area bounded below \(x = 68\): </p>
+                        <img src="../images/Calculus/5/5.9/5.9-2.jpg" style="width: 80%" class="center">
+                        <p>I used a calculator to find that the area of the region is \(0.919\), which means that \(68\) inches is approximately in the \(92\)nd percentile. </p>
+                        <p>$$ P(x \leq 68) = \int_{-\infty}^{68} \frac{1}{2(2.5)}e^{-\frac{1}{2}(\frac{x-64.5}{2.5})^2} \, dx = 0.919 $$ </p>
+                        <p>Probability density functions are also used in statistical inference to find evidence for or against specific hypotheses. If we obtain a value that significantly differs from the mean, we have convincing evidence that the mean may not be accurate. This mean is called the <b>Null Hypothesis</b> (\(H_0\)), and if we find convincing evidence against it, we are <b>rejecting the null hypothesis</b>. In scientific studies the common significance level is \(5\) percent (called the \(p\)-value), meaning that if we calculate that the probability of obtaining a value as extreme as or more extreme than our observed value is less than 5 percent, the value is significant. The primary methods for calculating a \(p\)-value include \(\chi^2\)-tests, \(t\)-tests, and \(z\)-tests, for which we compute the probability under their corresponding density functions. </p>
+                    </div>
+                    <hr>
+                    <!--Application 4-->
+                    <div id="app-4">
+                        <p><h3>Application #4 — Work-Energy Theorem Derivation</h3></p>
+                        <p>In physics the Work-Energy Theorem is an important theorem that relates the kinetic energy of an object to the work done on it. It states that: </p>
+                        <p>$$ W = \Delta K. $$ </p>
+                        <p>To derive it we should recall that: </p>
+                        <p>$$ v = \frac{dx}{dt} \, \mathrm{and} \, a = \frac{dv}{dt} $$ </p>
+                        <p>$$ W = \int_{x_i}^{x_f} F \, dx $$</p>
+                        <p>$$ F = ma \, $$ </p>
+                        <p>$$ \Delta K = \frac{1}{2}m(v_f^2 - v_0^2). $$ </p>
+                        <p>where \(x\) denotes position, \(v\) denotes velocity, \(v_i\) denotes initial speed, \(v_f\) denotes final speed, \(a\) denotes acceleration, \(m\) denotes mass, \(K\) denotes the kinetic energy, \(W\) denotes the net work done on the object, and \(F\) denotes the net force on the object. Using Newton's Second Law, plug in \(ma \, \)for \(F\): </p>
+                        <p>$$ \int_{x_i}^{x_f}ma \, dx = m \int_{x_i}^{x_f} a \, dx = m\int_{x_i}^{x_f} \frac{dv}{dt} \, dx. $$  </p>
+                        <p>The chain rule states that: </p>
+                        <p>$$ \frac{dv}{dt} = \frac{dv}{dx} \frac{dx}{dt}. $$ </p>
+                        <p>$$ m \int_{x_i}^{x_f} \frac{dv}{dt} \, dx= m \int_{x_i}^{x_f} \frac{dv}{dx} \frac{dx}{dt} \, dx = m \int_{x_i}^{x_f} \frac{dx}{dt} \, dv. $$ </p>
+                        <p>We change the bounds of integration because our new integrand is expressed in terms of \(v \, \): </p>
+                        <p>$$ = m \int_{v_i}^{v_f} v \, dv = \frac{1}{2}m \Big[v^2\Big]_{v_i}^{v_f} = \underbrace{\frac{1}{2}m(v_f^2 - v_i^2)}_{\Delta \mathrm{K}} $$</p>
+                        <p>$$ \therefore W = \int_{x_i}^{x_f} F \, dx = \frac{1}{2}m(v_f^2 - v_i^2) = {\Delta \mathrm{K}}. $$ </p>
+                    </div>
+                    <!---->
+                    <hr>
+                    <!--Application 5-->
+                    <div id="app-5">
+                        <p><h3>Application #5 — Gravitational Potential Energy</h3></p>
+                        <p>Newton's Law of Universal Gravitation states that the force of attraction between any two objects in the universe is proportional to the masses of the two objects and inversely proportional to the square of the distance between them. The equation is given by: </p>
+                        <p>$$ F = G\frac{m_1m_2}{r^2}, $$ </p>
+                        <p>where \(m_1\) and \(m_2\) represent the masses of the two objects, respectively, \(r\) is the distance between the objects, and \(G\) is the gravitational constant \(6.67 \times 10^{-11} \, \mathrm{m}^3 \, \mathrm{kg}^{-1} \, \mathrm{s}^{-2} \). Because the constant \(G\) is so small, we usually cannot see or feel the attraction between two everyday objects; however, the force of attraction between an everyday object and Earth is definitely noticable — in the form of gravity. </p>
+                        <p>The law of conservation of energy states that energy can neither be created nor destroyed. We know that in a closed system, where matter does not transfer into or out of the system and only internal forces are doing work, the total mechanical energy of the system will be conserved. Recall that mechanical energy is made up of kinetic and potential energies, so we can say: </p>
+                        <p>$$ \Delta \mathrm{ME} = \Delta K + \Delta U = 0 \Rightarrow \Delta U = -\Delta K. $$ </p>
+                        <p>But remember from the Work-Energy Theorem that \(\Delta K\) is the integral of force, which is equal to \(G\frac{m_1 m_2}{r^2}\) in this case. We will assume that the two objects in the closed system start infinitely far away from each other before being placed a distance \(r\) away from each other. Therefore: </p>
+                        <p>$$ \Delta U = -\int_{r}^{\infty} G \frac{m_1 m_2}{\alpha^2} \, d\alpha. $$ </p>
+                        <p>Note that \(\alpha\) is simply a dummy variable. We can evaluate the improper integral by inserting a variable \(b\) as the upper bound and taking the limit as it approaches infinity: </p>
+                        <p>$$ = - \lim_{b \to \infty} \int_{r}^{b} G \frac{m_1 m_2}{\alpha^2} \, d\alpha = - G m_1 m_2 \lim_{b \to \infty} \int_{r}^{b} \frac{1}{\alpha^2} \, d\alpha $$ </p>
+                        <p>$$ = G m_1 m_2 \lim_{b \to \infty} \Big[\frac{1}{\alpha}\Big]_{r}^{b} = G m_1 m_2(0 - \frac{1}{r}) $$ </p>
+                        <p>$$ = -G\frac{m_1 m_2}{r}. $$ </p>
+                        <p>This formula is applicable in finding the escape speed — the speed at which an object must travel to avoid the effect of gravity and therefore "escape" a planet. Remember from the conservation of energy equation that \(\Delta K + \Delta U = 0 \). Suppose that an object were launched into the air fast enough to escape Earth. Let \(v_e\) denote the escape speed, \(m\) denote the object's mass, \(M\) denote Earth's mass, and \(R\) denote Earth's radius. We know that there will be no kinetic energy at infinity because the speed will be \(0\), and we also know that the gravitational potential energy at infinity will be \(0\) because the object is separate from Earth. So plugging in gives: </p>
+                        <p>$$ \frac{1}{2} mv_e^2 = G\frac{mM}{R} $$ </p>
+                        <p>$$ \frac{1}{2} v_e^2 = G\frac{M}{R} $$ </p>
+                        <p>$$ v_e = \sqrt{\frac{2GM}{R}} $$ </p>
+                        <p hidden>SECOND LETTER FOR SCAVENGER HUNT—"U".</p>
+                        <p>It is known that the mass of Earth is \(5.97 \times 10^{24} \, \mathrm{km} \) and that its radius is (assuming Earth is perfectly spherical) \(6357 \, \mathrm{km}\). Therefore, </p>
+                        <p>$$ v_e = \sqrt{\frac{2(6.67 \times 10^{-11})(5.97 \times 10^{24})}{6.357 \times 10^6}} \approx 11200 \, \mathrm{m/s} = 25000 \, \mathrm{mph}.$$ </p>
+                        <p>The escape speed of Earth is roughly \(25,000\) miles per hour! </p>
+                    </div>
+                    <hr>
+                    <!--Application 6-->
+                    <div id="app-6">
+                        <p><h3>Application #6 — Rocket Propulsion </h3></p>
+                        <p>When a rocket accelerates, it releases exhaust — usually in the form of fuel — which decreases the mass of the rocket and thrusts it forward, thereby increasing its velocity. Let \(dm\) denote the small change in the rocket's mass \(m\), \(dv\) denote the small increase in the rocket's velocity from the thrust \(v\), and \(v_e\) denote the velocity of the debris released by the rocket. </p>
+                        <img src="../images/Calculus/5/5.9/5.9-3.jpg" style="width: 50%" class="center"> 
+                        <p>The law of conservation of momentum states that the total momentum of a closed system, where no external forces act, remains constant. The symbol for momentum is denoted with \(P\), and we can state that: </p>
+                        <p>$$ P_i = P_f, $$</p>
+                        <p>where \(P_i\) denotes the momentum of the rocket before it releases the exhaust and \(P_f\) denotes the momentum of the system after the rocket releases the exhaust. We define momentum as the mass times velocity (\(mv\)). In this case we need to find the momenta of the individual components of the rocket-exhaust system. Before the rocket releases the exhaust, the system consists of just the rocket; after it releases the exhaust, the system consists of two objects — the accelerating rocket and the falling debris. At that moment the rocket has mass \((m - dm)\) and velocity \((v + dv)\), and the debris has mass \(dm\) and velocity \((v - v_e)\) (relative to the rocket). The combined momenta of these objects must equal the momentum of the rocket before it released the exhaust (by the law of conservation of momentum), so we can write:  </p>
+                        <p>$$ mv = (m - dm)(v + dv) + (v - v_e) \, dm $$ </p>
+                        <p>$$ mv = mv + m \, dv - v \, dm - dm \, dv + v \, dm - \, v_e \, dm $$ </p>
+                        <p>$$ m \, dv = dm \, dv - v_e \, dm. $$</p>
+                        <p>The product \(dm \, dv\) is extremely small and is therefore negligible, so we then get: </p>
+                        <p>$$ m \, dv = - v_e \, dm $$ </p>
+                        <p>$$ dv = - v_e \frac{1}{m} \, dm. $$</p>
+                        <p>Integrating, we get: </p>
+                        <p>$$ \int_{v_i}^{v_f} \, dv = - v_e \int_{m_i}^{m_f} \frac{1}{m} \, dm $$ </p>
+                        <p>$$ \Delta v = v_e \ln{\frac{m_i}{m_f}}, $$ </p>
+                        <p>which demonstrates that a rocket can accelerate itself by expelling part of its mass with high velocity.  </p>
+                    </div>
+            <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+            <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3.0.1/es5/tex-mml-chtml.js"></script>
+            <script id="AMSmath" async src="TeX/AMSmath.js"></script>
+        </section>
+    </body>
+</html>

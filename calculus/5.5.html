@@ -1,0 +1,693 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="../css/0.1.css">
+        <title>5.5 — Improper Integrals</title>
+        <meta charset="UTF-8">
+        <meta name="author" content="Valerie">
+    </head>
+    <!--top button panel-->
+    <header>
+        <div class="top-links" style="font-family:Georgia, 'Times New Roman', Times, serif">
+            <a href="../index.html" class="button_top">Home</a> 
+            <a href="../about.html" class="button_top">About Me</a> 
+            <a href="../faq.html" class="button_top">FAQ</a>
+            <a href="../contact.html" class="button_top">Contact Me</a>
+        </div>                                  
+    </header>
+    <!--section tabs-->
+    <div class="tab">
+        <a class="tab-button">Notes</a>
+        <a href="5.5-exercises.html" class="tab-button">Exercises</a>
+        <a href="5.5-applications.html" class="tab-button">Applications</a>
+        <a href="calculus.html" class="tab-button">Back to Calculus</a>
+    </div>
+    <body class="background">
+        <section>
+            <!--section title-->
+            <p class="background__title">5.5 — Improper Integrals </p>
+            <!--section body-->
+            <div class="background__text">
+                <hr>
+                <p>
+                    Up to this point, we have covered integrals that featured finite bounds or were well-defined over the interval over which we integrated.
+                    In this section, however, we will discuss 
+                    <u>improper integrals</u>—integrals that either (1) have unbounded limits or that (2) feature a discontinuity
+                    between its bounds. 
+                    We call these Type I and Type II improper integrals, respectively.
+                </p>
+                <!--box type I improper integrals-->
+                <div class="box-title"> TYPE I IMPROPER INTEGRALS </div>
+                <div class="box">
+                    Integrals of a continuous function \(f\) with unbounded limits—in the forms \(\displaystyle \int_a^\infty f(x) \, \textrm{d} x\), 
+                    \(\displaystyle \int_{-\infty}^b f(x) \, \textrm{d} x\), and 
+                    \(\displaystyle \int_{-\infty}^\infty f(x) \, \textrm{d} x\)
+                    —are all examples of Type I improper integrals.
+                    $$\tag*{$\blacksquare$}$$
+                </div>
+                
+                <br>
+
+                <!--box type II improper integrals-->
+                <div class="box-title"> TYPE II IMPROPER INTEGRALS </div>
+                <div class="box">
+                    Integrals over a region with a discontinuity are called Type II improper integrals; that is, the form
+                    \(\displaystyle \int_a^k f(x) \, \textrm{d} x\), where \(f\) is discontinuous at \(x = k\).
+                    $$\tag*{$\blacksquare$}$$
+                </div>
+
+                <br> 
+
+                <p>
+                    Let us now analyze an example of a Type I improper integral. 
+                    Consider, for example, the function \(\displaystyle f(x) = \frac{1}{x}\). 
+                    Suppose that we want to evaluate \(\displaystyle \int_1^\infty \frac{1}{x} \, \textrm{d} x\).
+                    The process of doing so is to insert a variable for the upper bound and take the limit as it approaches infinity.
+                    Doing so, we obtain  
+                    $$ \int_1^\infty \frac{1}{x} \, \textrm{d} x = \lim_{k \to \infty} \int_1^k \frac{1}{x} \, \textrm{d} x. $$
+                    <p style="text-align: right;"> \((1)\) </p>
+                    We now take an antiderivative and apply the Fundamental Theorem of Calculus, as usual.
+                    We understand that an antiderivative of \(\displaystyle \frac{1}{x} \) is \(\ln|x|\) 
+                    (we can drop the absolute value bars here because we are working with positive bounds.)
+                    We then get 
+                    $$ \lim_{k \to \infty} \int_1^k \frac{1}{x} \, \textrm{d} x = \lim_{k \to \infty} \ln(x) \Big]_{1}^{k} $$
+                    $$ \lim_{k \to \infty} \ln(k) - \ln(1) $$
+                    $$ \lim_{k \to \infty} \ln(k) - 0. $$
+                    <p style="text-align: right;"> \((2)\) </p>
+                    It is clear that \(\displaystyle \lim_{k \to \infty} \ln(k)\) does not exist (it approaches infinity.) 
+                    Thus, we state that the integral diverges: 
+                    $$ \bbox[border: 2px solid white, 2pt]{\int_1^\infty \frac{1}{x} \, \textrm{d} x \, \, \, \textrm{diverges}.} $$
+                    <p style="text-align: right;"> \((3)\) </p>
+                    $$\tag*{$\blacksquare$}$$
+                </p>
+
+                <br>
+
+                <!--type I improper integral convergence/ divergence-->
+                <div class="box-title"> CONVERGENCE AND DIVERGENCE OF TYPE I IMPROPER INTEGRALS </div>
+                <div class="box">
+                    Let \(F\) be an antiderivative of \(f\), a continuous function for all \(x\) between the bounds of each integral.
+                    <ol type="a" style="padding-top: 20px; padding-bottom: 20px; line-height: 3;">
+                        <li style="padding-top: 20px; padding-bottom: 20px; padding-left: 20px;"> 
+                            If \(\displaystyle \lim_{b \to \infty} F(x) \Big]_{a}^{b} \) exists as a finite number, then
+                            \(\displaystyle \int_a^\infty f(x) \, \textrm{d} x\) 
+                            <u>converges</u>.
+                        </li>
+                        <li style="padding-top: 20px; padding-bottom: 20px; padding-left: 20px; line-height: 3;">
+                            If \(\displaystyle \lim_{a \to -\infty} F(x) \Big]_{a}^{b} \) exists as a finite number, then
+                            \(\displaystyle \int_{-\infty}^b f(x) \, \textrm{d} x\) 
+                            <u>converges</u>.
+                            
+                        </li>
+                        <li style="padding-top: 20px; padding-bottom: 20px; padding-left: 20px; line-height: 3;">
+                            If \(\displaystyle \lim_{a \to -\infty} \lim_{b \to \infty} F(x) \Big]_{a}^{b} \) exists as a finite number, then
+                            \(\displaystyle \int_{-\infty}^\infty f(x) \, \textrm{d} x\) 
+                            <u>converges</u>.
+                        </li>
+                    </ol>
+                    <p>
+                        If one of the listed limits does not exist, then the respective integral <u>diverges</u>.
+                    </p>
+                </div>
+
+                <br>
+
+                <!--example 1-->
+                <!-- int 1/x^2 dx -->
+                <div class="example">
+                    <div class="example__heading"> <b>Example 1</b> </div>
+                    <p class="example__problem"> 
+                        Evaluate the following integral:
+                        $$ \int_1^\infty \frac{1}{x^2} \, \textrm{d} x. $$
+                    </p>
+                    <button onclick="toggle1()" class="solution__button"> Show Solution ▼ </button>
+                    <div id="solution1" class="solution">
+                        <p> 
+                            We will introduce a variable \(k\) that approaches infinity and substitute it for the upper limit of the integral.
+                            We then have 
+                            $$ \lim_{k \to \infty} \int_1^k \frac{1}{x^2} \, \textrm{d} x. $$
+                            <p style="text-align: right;"> \((1)\) </p>
+                            Taking an antiderivative, we obtain 
+                            $$ \lim_{k \to \infty} \frac{-1}{k} \Big]_1^k $$
+                            $$ = \lim_{k \to \infty} \frac{-1}{k} + \frac{1}{1} $$
+                            $$ = 0 + 1 $$
+                            <p style="text-align: right;"> \((2)\) </p>
+                            $$ \int_1^\infty \frac{1}{x^2} \, \textrm{d} x = \bbox[border: 2px solid white, 2pt]{1.} $$
+                            <p style="text-align: right;"> \((3)\) </p>
+                            $$\tag*{$\blacksquare$}$$
+                        </p>
+                    </div>
+                </div>  
+
+                <br>
+
+
+                <!--example 2-->
+                <!-- int 1/sqrt(x) dx -->
+                <div class="example">
+                    <div class="example__heading"> <b>Example 2</b> </div>
+                    <p class="example__problem"> 
+                        Evaluate the following integral:
+                        $$ \int_1^\infty \frac{1}{\sqrt{x}} \, \textrm{d} x. $$
+                    </p>
+                    <button onclick="toggle2()" class="solution__button"> Show Solution ▼ </button>
+                    <div id="solution2" class="solution">
+                        <p> 
+                            We will introduce a variable \(k\) for the upper bound.
+                            Taking the limit as \(k\) approaches infinity, we get  
+                            $$ \lim_{k \to \infty} \int_1^k \frac{1}{\sqrt{x}} \, \textrm{d} x. $$
+                            <p style="text-align: right;"> \((1)\) </p>
+                            Taking an antiderivative, we obtain 
+                            $$ \lim_{k \to \infty} 2 \sqrt{x} \Big]_1^k $$
+                            $$ = \lim_{k \to \infty} 2 \sqrt{k} - 2(1) $$
+                            $$ = \lim_{k \to \infty} 2 \sqrt{k} - 2 $$
+                            <p style="text-align: right;"> \((2)\) </p>
+                            \(\displaystyle \lim_{k \to \infty} 2 \sqrt{k} \to \infty \), so 
+                            $$ \bbox[border: 2px solid white, 2pt]{\int_1^\infty \frac{1}{\sqrt{x}} \, \textrm{d} x \, \, \, \textrm{diverges}.} $$
+                            <p style="text-align: right;"> \((3)\) </p>
+                            $$\tag*{$\blacksquare$}$$
+                        </p>
+                    </div>
+                </div>  
+
+                <br>
+
+
+                <!--p-integral-->
+                <p>
+                    We now observe a paradoxical fact: 
+                    Consider the family of integrals \(\displaystyle \int_a^\infty \frac{1}{x^p} \, \textrm{d} x \),
+                    where \(a > 0\) and \(p\) is a constant.
+                </p>
+                <p>
+                    As you may verify, if \(p \leq 1\), then \(\displaystyle \int_a^\infty \frac{1}{x^p} \, \textrm{d} x \) diverges. 
+                    If \(p > 1\), then \(\displaystyle \int_a^\infty \frac{1}{x^p} \, \textrm{d} x \) converges. 
+                    We can see that \(\displaystyle \int_1^\infty \frac{1}{x^1} \, \textrm{d} x \) diverges, but 
+                    \(\displaystyle \int_1^\infty \frac{1}{x^{1.000000001}} \, \textrm{d} x \) converges!
+                </p>
+
+                <br>
+
+                <!--p-integral table-->
+                <div class="box-title"> \(p\)-INTEGRALS </div>
+                <div class="box">
+                    Let \(f\) be a continuous function for all \(x \geq a\). Consider \(\displaystyle \int_a^\infty \frac{1}{x^p} \, \textrm{d} x \).
+                    <ol type="a" style="padding-top: 20px; padding-bottom: 20px; line-height: 3;">
+                        <li style="padding-top: 20px; padding-bottom: 20px; padding-left: 20px;"> 
+                            If \(p \leq 1\), then \(\displaystyle \int_a^\infty \frac{1}{x^p} \, \textrm{d} x \) <u>diverges</u>.
+                        </li>
+                        <li style="padding-top: 20px; padding-bottom: 20px; padding-left: 20px; line-height: 3;">
+                            If \(p \gt 1\), then \(\displaystyle \int_a^\infty \frac{1}{x^p} \, \textrm{d} x \) <u>converges</u>.
+                        </li>
+                </div>
+
+                <br>
+                <!--example 3-->
+                <!-- int 1/sqrt(x) dx -->
+                <div class="example">
+                    <div class="example__heading"> <b>Example 3</b> </div>
+                    <p class="example__problem"> 
+                        Determine the values of \(n\) for which 
+                        \(\displaystyle \int_1^\infty \frac{1}{7 x^{3n - 4}} \, \textrm{d} x \)
+                        converges.
+                    </p>
+                    <button onclick="toggle3()" class="solution__button"> Show Solution ▼ </button>
+                    <div id="solution3" class="solution">
+                        <p> 
+                            We can rewrite the integral as 
+                            $$ \frac{1}{7} \int_1^\infty \frac{1}{ x^{3n - 4}} \, \textrm{d} x. $$
+                            <p style="text-align: right;"> \((1)\) </p>
+                            We know that, to obtain convergence, the integral must be in the form 
+                            $$ \int_a^\infty \frac{1}{x^p} \, \textrm{d} x, $$
+                            where \(p > 1\). 
+                            Thus, we must set \(3n - 4\) to be greater than \(1\). 
+                            Doing so, we obtain 
+                            $$ 3n -4 > 1$$
+                            $$ \bbox[border: 2px solid white, 2pt]{n > \frac{5}{3}.} $$ 
+                            $$\tag*{$\blacksquare$}$$
+                        </p>
+                    </div>
+                </div> 
+
+                <br>
+
+                <p> 
+                    Let us now introduce Type II improper integrals.
+                </p> 
+                <p>
+                    Consider the integral \(\displaystyle \int_{-2}^2 \frac{1}{x^2} \, \textrm{d} x \), and attempt to evaluate it.
+                    You may try to compute it as 
+                    $$ \int_{-2}^2 \frac{1}{x^2} \, \textrm{d} x $$
+                    $$ = - \frac{1}{x} \Big]_{-2}^2 $$
+                    $$ = -1; $$
+                    however, this answer is <span style="color:rgb(170, 57, 72)"> NOT  </span>correct.
+                    These fallacious steps are, unfortunately, very common among students when evaluating integrals. 
+                    The problem is that there is a vertical asymptote at \(x = 0\) !
+                    Therefore, when we integrated over the interval \(\displaystyle [-2, 2]\), we were also including the unbounded area due to the asymptote,
+                    as shown in Fig. 5-5.1.
+                </p>
+                <img src="../images/Calculus/5/5.5/5.5-1.jpg" class="image-center" alt="">
+                <p class="image-caption"> Fig. 5.5-1. </p>
+                <p>
+                    Instead, we must split the integral into two parts and analyze the behavior as they approach the asymptote.
+                    $$ \int_{-2}^2 \frac{1}{x^2} \, \textrm{d} x  $$
+                    $$ = \lim_{k \to 0^-} \int_{-2}^k \frac{1}{x^2} \, \textrm{d} x + \lim_{k \to 0^+} \int_k^2 \frac{1}{x^2} \, \textrm{d} x. $$
+                    <p style="text-align: right;"> \((1)\) </p>
+                    We now obtain 
+                    $$ \lim_{k \to 0^-} -\frac{1}{x} \Big]_{-2}^k + \lim_{k \to 0^+} -\frac{1}{x} \Big]_{k}^2 $$
+                    $$ = \left(-\lim_{k \to 0^-} \frac{1}{k} - \frac{1}{2} \right) + \left(- \frac{1}{2} + \lim_{k \to 0^+} \frac{1}{k} \right) $$
+                    $$ = - \frac{1}{4} -\lim_{k \to 0^-} \frac{1}{k} + \lim_{k \to 0^+} \frac{1}{k}. $$
+                    <p style="text-align: right;"> \((2)\) </p>
+                    Notice that 
+                    \(\displaystyle -\lim_{k \to 0^-} \frac{1}{k}\) and \(\displaystyle \lim_{k \to 0^+} \frac{1}{k}\) both tend to positive infinity and thus do not exist.
+                    Therefore, 
+                    $$ \bbox[border: 2px solid white, 2pt]{\int_{-2}^2 \frac{1}{x^2} \, \textrm{d} x \, \, \, \textrm{diverges}.} $$
+                    <p style="text-align: right;"> \((3)\) </p>
+                    $$\tag*{$\blacksquare$}$$
+                </p>
+
+                <br>
+
+                <!--type II improper integral convergence/ divergence-->
+                <div class="box-title"> CONVERGENCE AND DIVERGENCE OF TYPE II IMPROPER INTEGRALS </div>
+                <div class="box">  
+                    <ol type="a" style="padding-top: 20px; padding-bottom: 20px;">
+                        <li style="padding-top: 20px; padding-bottom: 20px; padding-left: 20px; line-height: 3;">
+                            <p> If \(f\) is continuous on \([a,b)\) but discontinuous at \(x = b\), then </p>
+                            \(\displaystyle \int_a^b f(x) \, \textrm{d} x = \lim_{k \to b^-} \int_a^b f(x) \, \textrm{d} x \).
+                            If this limit does not exist, then \(\displaystyle \int_a^b f(x) \, \textrm{d} x\) diverges.
+                        </li>
+                        <li style="padding-top: 20px; padding-bottom: 20px; padding-left: 20px; line-height: 3;">
+                            <p> If \(f\) is continuous on \((a,b]\) but discontinuous at \(x = a\), then </p>
+                            \(\displaystyle \int_a^b f(x) \, \textrm{d} x = \lim_{k \to a^+} \int_a^b f(x) \, \textrm{d} x \).
+                            If this limit does not exist, then \(\displaystyle \int_a^b f(x) \, \textrm{d} x\) diverges.
+                        </li>
+                        <li style="padding-top: 20px; padding-bottom: 20px; padding-left: 20px; line-height: 3;">
+                            If \(f\) contains a discontinuity at \(x = k\), \(a \lt k \lt b\), and
+                            \(\displaystyle \lim_{x \to k^-} \int_a^k f(x) \, \textrm{d} x\)  
+                            and
+                            \(\displaystyle\lim_{x \to k^+} \int_k^b f(x) \, \textrm{d} x\) 
+                            exist (as finite numbers), then 
+                            \(\displaystyle \int_a^b f(x) \, \textrm{d} x = \int_a^k f(x) \, \textrm{d} x + \int_k^b f(x) \, \textrm{d} x.\)
+                        </li>
+                        <li style="padding-top: 20px; padding-bottom: 20px; padding-left: 20px; line-height: 3;">
+                            If either \(\displaystyle \lim_{x \to k^-} \int_a^k f(x) \, \textrm{d} x\)  
+                            or 
+                            \(\displaystyle\lim_{x \to k^+} \int_k^b f(x) \, \textrm{d} x\) does not exist, 
+                            then \(\displaystyle \int_a^b f(x) \, \textrm{d} x\) diverges.
+                        </li>
+                    </ol>
+                    $$\tag*{$\blacksquare$}$$
+                </div>
+
+                <br>
+
+                <p>
+                    Be extremely careful—whenever you see an integral from this point on, you must determine whether or not it is improper.
+                    Check for any vertical asymptotes or other discontinuous that indicate "improper integral."
+                </p>
+
+                <br>
+
+                <!--example 4-->
+                <!-- int 1/(x^2 - 6x + 9) dx, 0 to 6 -->
+                <div class="example">
+                    <div class="example__heading"> <b>Example 4</b> </div>
+                    <p class="example__problem"> 
+                        Evaluate \(\displaystyle \int_0^6 \frac{1}{x^2 - 6x + 9} \, \textrm{d} x \) 
+                        or show that it diverges.
+                    </p>
+                    <button onclick="toggle4()" class="solution__button"> Show Solution ▼ </button>
+                    <div id="solution4" class="solution">
+                        <p> 
+                            Because \(\displaystyle x^2 - 6x + 9\) is a perfect square of \((x - 3)\), 
+                            the integrand can be rewritten as 
+                            $$ \int_0^6 \frac{1}{(x - 3)^2} \, \textrm{d} x. $$
+                            <p style="text-align: right;"> \((1)\) </p>
+                            Let us now break the integral into two parts and analyze their behavior as they approach \(x = 3\):
+                            $$ \int_0^6 \frac{1}{(x - 3)^2} \, \textrm{d} x 
+                            = \lim_{k \to 3^-} \int_0^k \frac{1}{(x - 3)^2} \, \textrm{d} x + 
+                            \lim_{k \to 3^+} \int_k^6 \frac{1}{(x - 3)^2} \, \textrm{d} x.
+                            $$
+                            Note that this is only true if these limits exist (i.e., each integral is convergent).
+                            <p style="text-align: right;"> \((2)\) </p>
+                            We now antidifferentiate to obtain, as you may verify,
+                            $$ \lim_{k \to 3^-} \frac{-1}{x-3} \Big|_0^k + \lim_{k \to 3^+} \frac{-1}{x-3} \Big|_k^6 $$
+                            $$ = \left( \lim_{k \to 3^-} \frac{-1}{k-3} - \frac{1}{3} \right) + \left( -\frac{1}{3} + \lim_{k \to 3^+} \frac{1}{k-3} \right) $$
+                            \(\displaystyle \lim_{k \to 3^-} \frac{-1}{x-3}\) and \(\displaystyle \lim_{k \to 3^+} \frac{1}{k-3}\)
+                            do not exist; therefore,
+                            <p style="text-align: right;"> \((3)\) </p>
+                            $$ \bbox[border: 2px solid white, 2pt]{\int_{0}^6 \frac{1}{x^2 - 6x + 9} \, \textrm{d} x \, \, \, \textrm{diverges}.} $$
+                            <p style="text-align: right;"> \((4)\) </p>
+                            $$\tag*{$\blacksquare$}$$
+                        </p>
+                    </div>
+                </div>
+
+                <br>
+
+                <!--example 5-->
+                <!-- int piecewise function dx -->
+                <div class="example">
+                    <div class="example__heading"> <b>Example 5</b> </div>
+                    <p class="example__problem"> 
+                        Let \(f\) be defined as the piecewise function
+                        $$ f(x)=
+                        \begin{cases}
+                        \sin{\left(x - \frac{\pi}{2} \right)} & \text{for $x \leq 0 $} \\[2ex]
+                        8 - x & \text{for $ x \gt 0. $}
+                        \end{cases} $$
+                        Evaluate \(\displaystyle \int_{-\pi/2}^4 f(x) \, \textrm{d} x \) or show that it diverges.
+                    </p>
+                    <button onclick="toggle5()" class="solution__button"> Show Solution ▼ </button>
+                    <div id="solution5" class="solution">
+                        <p> 
+                            We notice that \(f\) is discontinuous at \(x = 0\) (the left- and right-hand side limits are not equivalent.)
+                            Therefore, we rewrite the integral as
+                            $$ \int_{-\pi/2}^0 f(x) \, \textrm{d} x + \int_0^4 f(x) \, \textrm{d} x. $$
+                            $$ = \int_{-\pi/2}^0 \sin{\left(x - \frac{\pi}{2}\right)} \, \textrm{d} x + \int_0^4 \left(8 - x\right) \, \textrm{d} x. $$
+                            <p style="text-align: right;"> \((1)\) </p>
+                            We understand that both of these integrals are convergent 
+                            (you may verify that \(\displaystyle \lim_{k \to 0^-} \int_{-\pi/2}^k \sin{\left(x - \frac{\pi}{2}\right)} \, \textrm{d} x\) and
+                            \(\displaystyle \lim_{k \to 0^+} \int_k^4 \left(8 - x\right) \, \textrm{d} x\) exist and are finite.)
+                            <p>
+                                We can now evaluate each limit and sum them together.
+                            </p>
+                            $$ \int_{-\pi/2}^0 \sin{\left(x - \frac{\pi}{2}\right)} \, \textrm{d} x = \cos{\left(x - \frac{\pi}{2}\right)} \Big]_{-\pi/2}^0 $$
+                            $$ = \cos{\left(-\frac{\pi}{2}\right)} - \cos{\left(- \pi\right)}$$ 
+                            $$ = 0 - 1 $$ 
+                            $$ = -1. $$
+                            Furthermore,
+                            $$ \int_0^4 \left(8 - x\right) \, \textrm{d} x = \left( 8x - \frac{x^2}{2} \right) \Big]_0^4 $$
+                            $$ = \left( 8(4) - \frac{(4)^2}{2} \right) - \left(8(0) - \frac{0^2}{2} \right) $$
+                            $$ = 24 - 0 $$
+                            $$ = 24. $$
+                            <p style="text-align: right;"> \((2)\) </p>
+                            Therefore, 
+                            $$ \int_{-\pi/2}^4 f(x) \, \textrm{d} x = \bbox[border: 2px solid white, 2pt]{23.} $$
+                            <p style="text-align: right;"> \((3)\) </p>
+                            $$\tag*{$\blacksquare$}$$
+                        </p>
+                    </div>
+                </div>
+
+                <br>
+
+                <p>
+                    There are some functions that do not have an elementary antiderivative. 
+                    However, it may still be possible to determine whether improper integrals of these functions converge or diverge by comparison testing.
+                    Consider, for example, \(\displaystyle \int_1^\infty \frac{\left|\sin(x)\right|}{x^{3/2}} \, \textrm{d} x\). 
+                    If we wanted to determine its convergence, then there is an easier method than taking an antiderivative and calculating its value.
+                    (in this case, there does not even exist an elementary antiderivative!) 
+                    Instead, we can make the statement that 
+                    $$ 0 \lt \int_1^\infty \frac{\left|\sin(x)\right|}{x^{3/2}} \, \textrm{d} x \leq \int_1^\infty \frac{1}{x^{3/2}}  \, \textrm{d} x $$
+                    since \(\left|\sin(x)\right| \leq 1\) for all \(x\).
+                </p>
+                <p>
+                    We know that \(\displaystyle \int_1^\infty \frac{1}{x^{3/2}} \, \textrm{d} x\) converges because it is a \(p\)-integral with 
+                    \(\displaystyle p = \frac{3}{2}\). Thus, \(\displaystyle \int_1^\infty \frac{\left|\sin(x)\right|}{x^{3/2}} \, \textrm{d} x\)
+                    is bounded by a finite value and is therefore also convergent.
+                    $$\tag*{$\blacksquare$}$$
+                </p>
+                <p>
+                    Generalizing this logic, if \(\displaystyle 0 \lt f(x) \leq g(x)\) and \(\displaystyle \int_a^\infty g(x) \, \textrm{d} x\) converges, 
+                    then so does \(\displaystyle \int_a^\infty f(x) \, \textrm{d} x\). 
+                    However, if \(\displaystyle 0 \lt g(x) \leq f(x)\) and \(\displaystyle \int_a^\infty g(x) \, \textrm{d} x\) diverges,
+                    then so does \(\displaystyle \int_a^\infty f(x) \, \textrm{d} x\).
+                    If \(\displaystyle f(x) \leq g(x) \lt 0\) and \(\displaystyle \int_a^\infty g(x) \, \textrm{d} x\) diverges,
+                    then so does \(\displaystyle \int_a^\infty f(x) \, \textrm{d} x\).
+                </p>
+
+                <br>
+
+
+                <!--comparison test improper integrals-->
+                <div class="box-title"> COMPARISON TESTS FOR IMPROPER INTEGRALS </div>
+                <div class="box">
+                    <ol type="a" style="padding-top: 20px; padding-bottom: 20px;">
+                        <li style="padding-top: 20px; padding-bottom: 20px; padding-left: 20px; line-height: 3;">
+                            If \(\displaystyle 0 \lt f(x) \leq g(x)\) and \(\displaystyle \int_a^\infty g(x) \, \textrm{d} x\) converges, 
+                            then so does \(\displaystyle \int_a^\infty f(x) \, \textrm{d} x\).
+                        </li>
+                        <li style="padding-top: 20px; padding-bottom: 20px; padding-left: 20px; line-height: 3;">
+                            If \(\displaystyle g(x) \leq f(x) \lt 0 \) and \(\displaystyle \int_a^\infty g(x) \, \textrm{d} x\) converges,
+                            then so does \(\displaystyle \int_a^\infty f(x) \, \textrm{d} x\).
+                        </li>
+                        <li style="padding-top: 20px; padding-bottom: 20px; padding-left: 20px; line-height: 3;">
+                            If \(\displaystyle 0 \lt g(x) \leq f(x)\) and \(\displaystyle \int_a^\infty g(x) \, \textrm{d} x\) diverges,
+                            then so does \(\displaystyle \int_a^\infty f(x) \, \textrm{d} x\).
+                        </li>
+                        <li style="padding-top: 20px; padding-bottom: 20px; padding-left: 20px; line-height: 3;">
+                            If \(\displaystyle f(x) \leq g(x) \lt 0\) and \(\displaystyle \int_a^\infty g(x) \, \textrm{d} x\) diverges,
+                            then so does \(\displaystyle \int_a^\infty f(x) \, \textrm{d} x\).
+                        </li>
+                    </ol>
+                    $$\tag*{$\blacksquare$}$$
+                </div>
+
+                <br>
+
+
+                <!--example 6-->
+                <!-- determining whether int ln(x)/x^5/2 dx converges -->
+                <div class="example">
+                    <div class="example__heading"> <b>Example 6</b> </div>
+                    <p class="example__problem"> 
+                        Determine whether \(\displaystyle \int_3^\infty \frac{\ln(x)}{x^{5/2}} \, \textrm{d} x \) converges or diverges.
+                    </p>
+                    <button onclick="toggle6()" class="solution__button"> Show Solution ▼ </button>
+                    <div id="solution6" class="solution">
+                        <p> 
+                            We know that 
+                            $$ 0 \lt \frac{\ln(x)}{x^{5/2}} \leq \frac{x}{x^{5/2}} $$ 
+                            $$ 0 \lt \frac{\ln(x)}{x^{5/2}} \leq \frac{1}{x^{3/2}}. $$
+                        </p>
+                        <p style="text-align: right;"> \((1)\) </p>
+                        <p>
+                            Therefore,
+                            $$ 0 \lt \int_3^\infty \frac{\ln(x)}{x^{5/2}} \, \textrm{d} x \leq  \int_3^\infty \frac{1}{x^{3/2}} \, \textrm{d} x. $$
+                        </p>
+                        <p style="text-align: right;"> \((2)\) </p>
+                        <p>
+                            We know that \(\displaystyle \int_3^\infty \frac{1}{x^{3/2}} \, \textrm{d} x\) is a \(p\)-integral with \(\displaystyle p = \frac{3}{2}\),
+                            so it is convergent.
+                            Therefore, because \(\displaystyle \int_3^\infty \frac{\ln(x)}{x^{5/2}} \, \textrm{d} x \) is bounded by two finite values, 
+                            it is also convergent.
+                        </p>
+                        <p style="text-align: right;"> \((3)\) </p>
+                        $$\tag*{$\blacksquare$}$$
+                    </div>
+                </div>
+
+                <br>
+
+
+                <!--example 7-->
+                <!-- determine which integrals are improper -->
+                <div class="example">
+                    <div class="example__heading"> <b>Example 7</b> </div>
+                    <p class="example__problem"> 
+                        Determine which of the following integrals are improper.
+                        <ol type="1" style="padding-top: 20px; padding-bottom: 20px;">
+                            <li style="padding-top: 20px; padding-bottom: 20px; padding-left: 20px; line-height: 3;">
+                                \(\displaystyle \int_2^5 \frac{3}{x^2 - 4x + 3} \, \textrm{d} x\)
+                            </li>
+                            <li style="padding-top: 20px; padding-bottom: 20px; padding-left: 20px; line-height: 3;">
+                                \(\displaystyle \int_1^\infty \frac{1}{x^3 - 4x + 5} \, \textrm{d} x\)
+                            </li>
+                            <li style="padding-top: 20px; padding-bottom: 20px; padding-left: 20px; line-height: 3;">
+                                \(\displaystyle \int_1^4 \frac{2}{x - 8} \, \textrm{d} x\)
+                            </li>
+                            <li style="padding-top: 20px; padding-bottom: 20px; padding-left: 20px; line-height: 3;">
+                                \(\displaystyle \int_{-\infty}^\infty \frac{1}{x} \, \textrm{d} x\)
+                            </li>
+                            <li style="padding-top: 20px; padding-bottom: 20px; padding-left: 20px; line-height: 3;">
+                                \(\displaystyle \int_2^9 \frac{3 + x}{x^2 + 4x + 3} \, \textrm{d} x\)
+                            </li>
+                            <li style="padding-top: 20px; padding-bottom: 20px; padding-left: 20px; line-height: 3;">
+                                \(\displaystyle \int_{-2}^2 f(x) \, \textrm{d} x\), 
+                                \( \displaystyle f(x)=
+                                \begin{cases}
+                                \cos(2x) & \text{for $x \leq 0 $} \\[2ex]
+                                3x^2 + 1 & \text{for $ x \gt 0 $}
+                                \end{cases} \)
+                            </li>
+                        </ol>
+                    </p>
+                    <button onclick="toggle7()" class="solution__button"> Show Solution ▼ </button>
+                    <div id="solution7" class="solution">
+                        <ol type="1" style="padding-top: 20px; padding-bottom: 20px;">
+                            <li style="padding-top: 20px; padding-bottom: 20px; padding-left: 20px; line-height: 3;">
+                                For integral <i>1.</i>, we see that the integrand can be rewritten as \(\displaystyle \frac{1}{(x - 3)(x - 1)}\),
+                                which contains vertical asymptotes at \(x = 1\) and \(x = 3\). 
+                                The limits of the integral are from \(x = 2\) to \(x = 5\), which include the discontinuity at \(x = 3\).
+                                Therefore, integral <i>1.</i> is improper.
+                            </li>
+                            <li style="padding-top: 20px; padding-bottom: 20px; padding-left: 20px; line-height: 3;">
+                                For integral <i>2.</i>, the upper bound is infinity, so it is improper.
+                            </li>
+                            <li style="padding-top: 20px; padding-bottom: 20px; padding-left: 20px; line-height: 3;">
+                                For integral <i>3.</i>, the integrand contains a vertical asymptote at \(x = 8\). 
+                                However, the bounds of the integral are from \(x = 1\) to \(x = 4\), which do not enclose the discontinuity.
+                                Thus, <i>3</i> is a proper integral.
+                            </li>
+                            <li style="padding-top: 20px; padding-bottom: 20px; padding-left: 20px; line-height: 3;">
+                                Integral <i>4.</i> has infinite bounds, so it is improper.
+                            </li>
+                            <li style="padding-top: 20px; padding-bottom: 20px; padding-left: 20px; line-height: 3;">
+                                For integral <i>5.</i>, we notice that the integrand can be factored as 
+                                \(\displaystyle \frac{3 + x}{(x + 3)(x +1)} = \frac{1}{x + 1} \), 
+                                which contains a vertical asymptote at \(x = -1\) and a removeable discontinuity at \(x = -3\).
+                                Because our bounds are from \(x = 2\) to \(x = 9\), we do not worry about these points. 
+                                The integrand is continuous for all \(x \in [2,9]\), so the integral is proper. 
+                            </li>
+                            <li style="padding-top: 20px; padding-bottom: 20px; padding-left: 20px; line-height: 3;">
+                                For integral <i>6.</i>, notice that \(f\) is continuous at \(x = 0\) (the left- and right-hand side limits are equivalent.)
+                                Therefore, it is a proper integral.
+                            </li>
+                        </ol>
+                        <p>
+                            Integrals <u><i>1.</i>, <i>2.</i>, <i>4. </i>, and <i>6.</i></u> are improper.
+                        </p>
+                        $$\tag*{$\blacksquare$}$$
+                    </div>
+                </div>
+
+                <br>
+
+
+                <!--section summary-->
+                <p>
+                    <p style="text-align: center; font-size: 150%;">
+                        <u> SECTION SUMMARY </u>
+                        <ul>
+                            <li style="padding-bottom: 20px;"> 
+                                Type I improper integrals contain infinite bounds. 
+                                Integrals in the forms 
+                                \(\displaystyle \int_a^\infty f(x) \, \textrm{d} x\), 
+                                \(\displaystyle \int_{-\infty}^b f(x) \, \textrm{d} x\), and 
+                                \(\displaystyle \int_{-\infty}^\infty f(x) \, \textrm{d} x\)
+                                are all examples of Type I improper integrals.
+                            </li>
+                            <li style="padding-bottom: 20px;">
+                                To evaluate Type I improper integrals, rewrite the integral using limits. 
+                                First, insert a variable for the infinite bound.
+                                Then, antidifferentiate and plug in the variable, using the Fundamental Theorem of Calculus. 
+                                Finally, evaluate the limit of the resulting expression as the variable approaches infinity.
+                                If the limit does not exist, then the integral diverges.
+                            </li>
+                            <li style="padding-bottom: 20px;"> 
+                                A \(p\)-integral is an improper integral in the form \(\displaystyle \int_a^\infty \frac{1}{x^p} \, \textrm{d} x \),
+                                where \(a > 0\). 
+                                The integral diverges for \(p \leq 1\) and converges for \(p \gt 1\).
+                            </li>
+                            <li style="padding-bottom: 20px;">
+                                Comparison tests can be used to conveniently determine the convergence or divergence of a Type I improper integral.
+                                <ol type="a" style="padding-top: 20px; padding-bottom: 20px;">
+                                    <li style="padding-top: 20px; padding-bottom: 20px; padding-left: 20px; line-height: 3;">
+                                        If \(\displaystyle 0 \lt f(x) \leq g(x)\) and \(\displaystyle \int_a^\infty g(x) \, \textrm{d} x\) converges, 
+                                        then so does \(\displaystyle \int_a^\infty f(x) \, \textrm{d} x\).
+                                    </li>
+                                    <li style="padding-top: 20px; padding-bottom: 20px; padding-left: 20px; line-height: 3;">
+                                        If \(\displaystyle g(x) \leq f(x) \lt 0 \) and \(\displaystyle \int_a^\infty g(x) \, \textrm{d} x\) converges,
+                                        then so does \(\displaystyle \int_a^\infty f(x) \, \textrm{d} x\).
+                                    </li>
+                                    <li style="padding-top: 20px; padding-bottom: 20px; padding-left: 20px; line-height: 3;">
+                                        If \(\displaystyle 0 \lt g(x) \leq f(x)\) and \(\displaystyle \int_a^\infty g(x) \, \textrm{d} x\) diverges,
+                                        then so does \(\displaystyle \int_a^\infty f(x) \, \textrm{d} x\).
+                                    </li>
+                                    <li style="padding-top: 20px; padding-bottom: 20px; padding-left: 20px; line-height: 3;">
+                                        If \(\displaystyle f(x) \leq g(x) \lt 0\) and \(\displaystyle \int_a^\infty g(x) \, \textrm{d} x\) diverges,
+                                        then so does \(\displaystyle \int_a^\infty f(x) \, \textrm{d} x\).
+                                    </li>
+                                </ol>
+                            </li>
+                            <li style="padding-bottom: 20px;"> 
+                                Type II improper integrals are in the form \(\displaystyle \int_a^b f(x) \, \textrm{d} x\),
+                                where \(f\) has a discontinuity between \(x = a\) and \(x = b\), inclusive. 
+                                Be careful—these integrals often appear to be proper integrals! 
+                            </li>
+                            <li style="padding-bottom: 20px;"> 
+                                To determine the convergence of the improper integral \(\displaystyle \int_a^b f(x) \, \textrm{d}x\),
+                                where \(f\) has a discontinuity at \(x = k\), \(a \lt k \lt b\), rewrite the integral as 
+                                \(\displaystyle \lim_{x \to k^-} \int_a^k f(x) \, \textrm{d} x + \lim_{x \to k^+} \int_k^b f(x) \, \textrm{d} x \).
+                                If either \(\displaystyle \lim_{x \to k^-} \int_a^k f(x) \, \textrm{d} x\) 
+                                or \(\displaystyle \lim_{x \to k^+} \int_k^b f(x) \, \textrm{d} x \) does not exist,
+                                then \(\displaystyle \int_a^b f(x) \, \textrm{d}x\) diverges.
+                            </li>
+                            <li style="padding-bottom: 20px;"> 
+                                For a convergent Type II improper integral \(\displaystyle \int_a^b f(x) \, \textrm{d}x\), 
+                                where \(f\) has a discontinuity at \(x = k\), \(a \lt k \lt b\), 
+                                \(\displaystyle \int_a^b f(x) \, \textrm{d} x = \int_a^k f(x) \, \textrm{d} x + \int_k^b f(x) \, \textrm{d} x\).
+                            </li>
+                        </ul>    
+                    </p>
+                </p>
+            </div>
+            
+            <!--These functions control the "Show Solution" button to the example problems.-->
+            <script>
+                function toggle1(){
+                    var clicked = document.getElementById("solution1");
+                    if (clicked.style.display === "none") {
+                        clicked.style.display = "block";
+                    } else {
+                        clicked.style.display = "none";
+                    }
+                }
+                function toggle2(){
+                    var clicked = document.getElementById("solution2");
+                    if (clicked.style.display === "none") {
+                        clicked.style.display = "block";
+                    } else {
+                        clicked.style.display = "none";
+                    }
+                }
+                function toggle3(){
+                    var clicked = document.getElementById("solution3");
+                    if (clicked.style.display === "none") {
+                        clicked.style.display = "block";
+                    } else {
+                        clicked.style.display = "none";
+                    }
+                }
+                function toggle4(){
+                    var clicked = document.getElementById("solution4");
+                    if (clicked.style.display === "none") {
+                        clicked.style.display = "block";
+                    } else {
+                        clicked.style.display = "none";
+                    }
+                }
+                function toggle5(){
+                    var clicked = document.getElementById("solution5");
+                    if (clicked.style.display === "none") {
+                        clicked.style.display = "block";
+                    } else {
+                        clicked.style.display = "none";
+                    }
+                }
+                function toggle6(){
+                    var clicked = document.getElementById("solution6");
+                    if (clicked.style.display === "none") {
+                        clicked.style.display = "block";
+                    } else {
+                        clicked.style.display = "none";
+                    }
+                }
+                function toggle7(){
+                    var clicked = document.getElementById("solution7");
+                    if (clicked.style.display === "none") {
+                        clicked.style.display = "block";
+                    } else {
+                        clicked.style.display = "none";
+                    }
+                }
+            </script>
+            <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+            <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3.0.1/es5/tex-mml-chtml.js"></script>
+            <script id="AMSmath" async src="TeX/AMSmath.js"></script>
+            <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+        </section>
+    </body>
+</html>

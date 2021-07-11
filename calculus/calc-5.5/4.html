@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="../../css/0.1.css">
+        <title> 5.5 Exercises — Problem 4 </title>
+        <meta charset="UTF-8">
+        <meta name="Valerie" content="Applications of Calculus">
+    </head>
+    <!--Top Button Panel-->
+    <header>
+        <div class="top-links" style="font-family:Georgia, 'Times New Roman', Times, serif">
+            <a href="../index.html" class="button_top">Home</a> 
+            <a href="../about.html" class="button_top">About Me</a> 
+            <a href="../faq.html" class="button_top">FAQ</a>
+            <a href="../contact.html" class="button_top">Contact Me</a>
+        </div>                                  
+    </header>
+    <!--Section Tabs-->
+    <div class="tab">
+        <a href="3.html" class="tab-button"> < Previous Problem </a>
+        <a href="../5.5.html" class="tab-button"> Notes </a>
+        <a href="../5.5-exercises.html" class="tab-button"> Exercises </a>
+        <a href="../calculus.html" class="tab-button"> Back to Calculus </a>
+        <a href="5.html" class="tab-button"> Next Problem > </a>
+    </div>
+    <body class="background">
+        <section>
+                <!--Section Title-->
+                <p class="background__title"> 5.5 Exercises — Problem 4 </p>
+                <!--Section Body-->
+                <div class="background__text">
+                    <p> <i>
+                        \((4)\) Evaluate \(\displaystyle \int_2^5 \frac{1}{x - 4} \, \textrm{d} x \) or show that it diverges.  </i>
+                    </p>
+                    <hr>
+                    <p>
+                        Be careful—this integral is improper!
+                        There is a vertical asymptote at \(x = 4\), so we must break the integral as 
+                        $$ \lim_{k \to 4^-} \int_2^k \frac{1}{x - 4} \, \textrm{d} x + \lim_{k \to 4^+} \int_k^5 \frac{1}{x - 4} \, \textrm{d} x. $$
+                        If either of these limits does not exist, then \(\displaystyle \int_2^5 \frac{1}{x - 4} \, \textrm{d} x \) diverges.
+                        <p>
+                            Let us first consider \(\displaystyle \lim_{k \to 4^-} \int_2^k \frac{1}{x - 4} \, \textrm{d} x\),
+                            which is a Type II improper integral. 
+                            Antidifferentiating yields 
+                            $$ \lim_{k \to 4^-} \ln |x - 4|  \Big]_{2}^k $$
+                            $$ \underbrace{\lim_{k \to 4^-} \ln|k - 4|}_{-\infty} - \ln(2) $$
+                        </p>
+                        Because \(\displaystyle \lim_{k \to 4^-} \int_2^k \frac{1}{x - 4} \, \textrm{d} x\) does not exist,
+                        $$ \int_2^5 \frac{1}{x - 4} \, \textrm{d} x \, \, \, \bbox[border: 2px solid white, 2pt]{\textrm{diverges}.} $$
+                        Note that we do not need to consider the second limit, \(\displaystyle \lim_{k \to 4^+} \int_k^5 \frac{1}{x - 4} \, \textrm{d} x\),
+                        because we already established that at least one of the limits does not exist.
+                    </p>
+                </div>
+            <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+            <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3.0.1/es5/tex-mml-chtml.js"></script>
+            <script id="AMSmath" async src="TeX/AMSmath.js"></script>
+            <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+        </section>
+    </body>

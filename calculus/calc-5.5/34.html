@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="../../css/0.1.css">
+        <title> 5.5 Exercises — Problem 34 </title>
+        <meta charset="UTF-8">
+        <meta name="Valerie" content="Applications of Calculus">
+    </head>
+    <!--Top Button Panel-->
+    <header>
+        <div class="top-links" style="font-family:Georgia, 'Times New Roman', Times, serif">
+            <a href="../index.html" class="button_top">Home</a> 
+            <a href="../about.html" class="button_top">About Me</a> 
+            <a href="../faq.html" class="button_top">FAQ</a>
+            <a href="../contact.html" class="button_top">Contact Me</a>
+        </div>                                  
+    </header>
+    <!--Section Tabs-->
+    <div class="tab">
+        <a href="33.html" class="tab-button"> < Previous Problem </a>
+        <a href="../5.5.html" class="tab-button"> Notes </a>
+        <a href="../5.5-exercises.html" class="tab-button"> Exercises </a>
+        <a href="../calculus.html" class="tab-button"> Back to Calculus </a>
+        <a class="tab-button"> Next Problem > </a>
+    </div>
+    <body class="background">
+        <section>
+                <!--Section Title-->
+                <p class="background__title"> 5.5 Exercises — Problem 34 </p>
+                <!--Section Body-->
+                <div class="background__text">
+                    <p> 
+                        <div style="float:left;">  <a href="calc-5.5/34.html" style="color:plum"> <b>\(34.\)</b></a> </div>
+                        <div style="padding-left: 5%;">
+                            <div class="image-side">
+                                <img class="image-side-image" src="../../images/Calculus/5/5.5/5.5-e.2.jpg" style="width:90%" alt="">
+                                <p></p>
+                                <p class="image-caption" style="font-style: normal; line-height: 4;"> FIGURE FOR PROBLEM \(34\) </p>
+                            </div>
+                            A freefalling object will accelerate until it reaches a terminal velocity—the maximum speed at which the object can fall.
+                            A drag force, which can be modeled by \(\displaystyle F_D = kv\), where \(k\) is the object's drag coefficient and \(v\) is the object's velocity,
+                            acts on the object as it falls. 
+                            The force due to gravity is given by \(F_g = mg\), 
+                            where \(m\) is the object's mass and \(g\) is the constant of gravitational acceleration, \(9.8 \text{m}/\textrm{s}^2\) on Earth.
+                            Newton's Second Law gives the equation \(\displaystyle mg - kv = m \frac{\textrm{d}v}{\textrm{d}t} \).
+                            Performing separation of variables, an equation that can be used to solve for \(v_T\), the terminal velocity of the object, 
+                            is \(\displaystyle \int_0^{v_T} \frac{1}{g - \frac{k}{m}v} \, \textrm{d} v = \int_0^\infty \textrm{d} t \).
+                            Show that \(\displaystyle v_T = \frac{mg}{k}\).
+                            (Hint: \(m\), \(k\), and \(g\) are constants.)
+                        </div>
+                    </p>
+                    <hr>
+                    <br>
+                    <p>
+                        Integrating, we obtain 
+                        $$ - \frac{m}{k} \left(\ln\left| g - \frac{kv_T}{m} \right| - \ln(g) \right) = t \Big]_0^\infty $$
+                        $$ \ln\left| 1 - \frac{kv_T}{mg} \right| =  -\frac{k}{m} t \Big]_0^\infty $$
+                        $$ 1 - \frac{kv_T}{mg} = e^{-kt/m} \Big]_0^\infty $$
+                        $$ v_T = \frac{mg}{k} \left(1 - e^{-kt/m} \right) \Big]_0^\infty $$
+                        $$ v_T = \frac{mg}{k} \Big[1 - \Big( \underbrace{\lim_{t \to \infty} e^{-kt/m}}_0 - e^0 \Big) \Big]  $$
+                        $$ = \frac{mg}{k}. $$
+                    </p>
+                </div>
+            <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+            <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3.0.1/es5/tex-mml-chtml.js"></script>
+            <script id="AMSmath" async src="TeX/AMSmath.js"></script>
+            <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+        </section>
+    </body>
+</html>

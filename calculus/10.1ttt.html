@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="../css/0.1.css">
+        <title> 10.1 — Overview of Infinite Sequences and Series </title>
+        <meta charset="UTF-8">
+        <meta name="author" content="Valerie">
+
+    </head>
+    <body class="background" style="background-color: white;">
+        <section>
+                <!--section title-->
+                <p class="background__title" style="font-size: 25px; margin-left: 0%; margin-right: 0%; color: black; font-family: 'Times New Roman', Times, serif;"> 10.1 — Overview of Infinite Sequences and Series </p>
+                <!--section body-->
+                <div class="background__text" style="font-size: 15px; margin-left: 0%; margin-right: 0%; color: black;">
+                    <hr>
+                    <p>
+                        In this section, we will introduce infinite series and sequences, and we will define convergence and divergence.  
+                        A <u>sequence</u> is a list of numbers, while a <u>series</u> is a sum of numbers. 
+                        An example of a sequence is 
+                        $$ \{a_1, a_2, a_3, a_4, \dots a_k\}, $$
+                        which we can model as \(\displaystyle \{a_n\}_1^k \) to represent a sequence \(a_n\) starting at \(n = 1\) and ending at \(n = k\).
+                        In calculus, we will focus on infinite sequences—sequences that never terminate.
+                        A series, however, is the sum of a sequence; i.e., consider 
+                        $$ a_1 + a_2 + a_3 + a_4 + \cdots a_k, $$
+                        which can be written using summation notation as \(\displaystyle \sum_{n = 1}^{k} a_n\).
+                        It is important to note that we may pick our starting index to be any integer greater than or equal to \(0\) 
+                        (sequences and series do not have to just start at \(n = 1\).)
+                    </p>
+
+                    <br>
+
+                    <div style="border:10px solid rgb(96, 150, 182); padding: 10px;">
+                        <p style="font-size: 20px; line-height: 0.5;"> Example 1 </p>
+                        <hr style="width:20%;" align="left">
+                        <div> 
+                            <i> Find the general term \(a_n\) that models the sequence \(\displaystyle \{2, 5, 8, 11, \dots \} \). </i>
+                            <p> 
+                                For this problem, we notice that the first term is \(2\), 
+                                the second term is \(5\), and the third term is \(8\).
+                                We notice that each incremental term increases by \(3\), 
+                                so, starting at \(n = 1\), the general form is given by 
+                                \(\displaystyle a_n = \bbox[border: 2px solid white, 2pt]{2 + 3(n - 1).}\)
+                                Alternatively, if we chose to start at \(n = 0\), then 
+                                \(\displaystyle a_n = \bbox[border: 2px solid white, 2pt]{2 + 3n.}\)
+                            </p>
+                        </div>
+                    </div>
+
+                    <br>
+
+                    <p>
+                        Let us now define the concept of convergence. 
+                        If the terms of a sequence \(\{a_n\}\) approach a certain finite value \(L\); i.e.,
+                        if \(\displaystyle \lim_{n \to \infty} a_n = L\),
+                        where \(L\) is finite, then \(\{a_n\}\) converges to \(L\). 
+                        However, if the limit does not exist, then \(\{a_n\}\) is divergent (it does not converge to a finite value.)
+                    </p>
+                    <p>
+                        For example, the sequence in Example 1, \(a_n = 2 + 3(n - 1)\), diverges 
+                        because \(\displaystyle \lim_{n \to \infty} a_n\) approaches infinity.
+                        This result is intuitive because we can see that, as we write out more terms,
+                        the terms will continuously increase, approaching infinity.
+                        Consider, in contrast, a sequence such as \(\displaystyle a_n = \frac{1}{n}\).
+                        The terms of this sequence (starting at \(n = 1\)), 
+                        are given by \(\displaystyle \left\{1, \frac{1}{2}, \frac{1}{3}, \frac{1}{4}, \dots \right\} \).
+                        It is clear that the terms in this sequence approach \(0\), a finite value.
+                        Thus, this sequence converges to \(0\).
+                    </p>
+
+                    <br>
+
+                    <!--convergence of sequence a_n-->
+                    <div class="box">
+                        CONVERGENCE OF A SEQUENCE \(\{a_n\}\)
+                        <ol type="I" style="padding-top: 10px; padding-bottom: 10px;">
+                            <li style="padding-top: 10px; padding-bottom: 10px; padding-left: 20px; line-height: 1;">
+                                \(\{a_n\}\) converges to \(L\) if \(\displaystyle \lim_{n \to \infty} a_n = L \), where \(L\) 
+                                is a finite value.
+                            </li>
+                            <li style="padding-top: 10px; padding-bottom: 10px; padding-left: 20px; line-height: 1;">
+                                \(\{a_n\}\) diverges if \(\displaystyle \lim_{n \to \infty} a_n\) does not exist.
+                            </li>   
+                        </ol>
+                    </div>
+
+                    <br>
+                    <p> 
+                        Consider Fig. 10-1.1, in which a convergent sequence \( \{a_n\} \) is shown. 
+                        We see that the sequence converges to a value \(L\), as the terms of \( \{a_n\} \) tend to the value \(L\).
+                        We can verify that \(\displaystyle \lim_{n \to \infty} a_n = L \).
+                        <img src="../images/Calculus/10/10.1/10.1-1 - Copy.jpg " class="image-center" alt="">
+                        <p class="image-caption"> Fig. 10-1.1. </p>
+                    </p>
+                    <p> 
+                        Now consider Fig. 10-1.2, in which a divergent sequence \( \{a_n\} \) is shown. 
+                        We see that the terms of \(\{a_n\}\) will grow to infinity and is therefore divergent.
+                        We may verify this result because \(\displaystyle \lim_{n \to \infty} a_n = \infty \) (does not exist).
+                        <img src="../images/Calculus/10/10.1/10.1-2 - Copy.jpg" class="image-center" alt="">
+                        <p class="image-caption"> Fig. 10-1.2. </p>
+                    </p>
+                    <p> 
+                        The last scenario of divergence is shown in Fig. 10-1.3, in which a sequence \( \{a_n\} \) is shown. 
+                        We see that the terms of \(\{a_n\}\) oscillate between the values \((L - k)\) and \((L + k)\).
+                        Specifically, \(\displaystyle \lim_{n \to \infty} a_n \) does not exist, so the sequence diverges.
+                        These oscillating sequences are typically in the form \(\displaystyle a_n = (-1)^n b_n\), where \(b_n\) is 
+                        non-oscillating.
+                        <img src="../images/Calculus/10/10.1/10.1-3 - Copy.jpg" class="image-center" alt="">
+                        <p class="image-caption"> Fig. 10-1.3. </p>
+                    </p>
+
+                    <br>
+
+                    <div style="border:10px solid rgb(96, 150, 182); padding: 10px;">
+                        <p style="font-size: 20px; line-height: 0.5;"> Example 2 </p>
+                        <hr style="width:20%;" align="left">
+                        <div> 
+                            <i> Determine which of the following sequences converge. 
+                                If a sequence converges, state the value to which it converges.
+                                <div style="margin-left:5%">
+                                    <ol type="I" style="padding-top: 20px; padding-bottom: 20px; line-height: 3; font-style: normal;">
+                                        <li style="padding-left: 20px;">
+                                            \(\displaystyle a_n = \frac{2n + 3}{n^2 + 8}\)
+                                        </li>
+                                        <li style="padding-left: 20px;">
+                                            \(\displaystyle \{a_n\} = \left\{-1, 1, -1, 1, -1, 1 \dots \right\} \)
+                                        </li>   
+                                        <li style="padding-left: 20px;">
+                                            \(\displaystyle a_n = \frac{6n^3}{n + 3} \)
+                                        </li>
+                                        <li style="padding-left: 20px;">
+                                            \(\displaystyle a_n = \frac{3n^2 - 4}{7n^2 + 1} \)
+                                        </li> 
+                                    </ol>
+                                </div> 
+                            </i>
+                            <p> 
+                                <ol type="I" style="padding-top: 20px; padding-bottom: 20px; line-height: 3; font-style: normal;">
+                                    <li style="padding-left: 20px;">
+                                        We notice that \(\displaystyle \lim_{n \to \infty} \frac{2n + 3}{n^2 + 8} = 0\),
+                                        so \(\{a_n\}\) converges to \(0\).
+                                    </li>
+                                    <li style="padding-left: 20px;">
+                                        This sequence oscillates between \(-1\) and \(1\), and it will never converge to a final value.
+                                        Therefore, \(\{a_n\}\) diverges.
+                                    </li>   
+                                    <li style="padding-left: 20px;">
+                                        \(\displaystyle \lim_{n \to \infty} = \frac{6n^3}{n + 3} \) does not exist (it approaches infinity.)
+                                        Therefore, the sequence diverges.
+                                    </li>
+                                    <li style="padding-left: 20px;">
+                                        \(\displaystyle \lim_{n \to \infty} \frac{3n^2 - 4}{7n^2 + 1} = \frac{3}{7}\), 
+                                        so \(\{a_n\}\) converges to \(\displaystyle \frac{3}{7}\). 
+                                    </li> 
+                                </ol>
+                            </p>
+                        </div>
+                    </div>
+
+
+                    <br>
+
+                    Now let us discuss infinite series. Infinite series are in the form 
+                    $$ \sum_{n = k}^{\infty} a_n = a_k + a_{k + 1} + a_{k + 2} + a_{k + 3} \cdots, $$
+                    and, in calculus, we analyze these series to determine whether they converge or diverge. 
+                    At first, this idea seems paradoxical—it would be logical to assume that the sum would approach infinity as more terms are added.
+                    However, if each term decreases (i.e., \(a_{n + 1} \lt a_n\)), then there is a possibility of the sum converging.
+                    Consider, for example, a sum such as
+                    $$ 1 + 2 + 3 + 4 + \cdots. $$
+                    It is clear that, as more terms are added, the sum will approach infinity. 
+                    Conversely, consider a sum such as 
+                    $$ 1 + \frac{1}{4} + \frac{1}{16} + \frac{1}{64} + \frac{1}{256} + \cdots, $$
+                    whose terms are decreasing. This sum happens to be convergent, and its exact value is \(\displaystyle \frac{4}{3}\) !
+                    We will analyze these forms of series in section 
+                    <a href="10.2.html" style="color:plum">10.2</a>—infinite geometric series.
+                    From these points, we introduce the <u>\(n\)th term test</u> (also known as the <u>divergence test</u>), 
+                    which permits us to determine immediately whether a sum diverges.
+
+                    <br>
+                    <br>
+
+
+                    <!--convergence of series Σa_n-->
+                    <div class="box">
+                        CONVERGENCE OF A SERIES \( \sum a_n \)
+                        <p style="text-align:center">
+                            If \(\displaystyle \lim_{n \to \infty} a_n \ne 0\), then \(\displaystyle \sum a_n\) diverges.
+                        </p>
+                    </div>
+
+
+                    <br>
+
+                    <p> 
+                        This test states that if the terms of \(\{a_n\}\) are not shrinking in absolute value to \(0\), then \(\sum a_n\) diverges without question.
+                        However, it is important to know that this test CANNOT establish convergence; 
+                        i.e., if \(\displaystyle \lim_{n \to \infty} a_n = 0\), then the <u>test is inconclusive</u>—we 
+                        must therefore use other methods to determine whether \(\sum a_n\) converges or diverges.
+                    </p>
+                    <p>
+                        Consider, as an example, the series \(\displaystyle \sum_{n = 1}^{\infty} \frac{1}{n}\), which is called the <u>harmonic series</u>.
+                        Writing some of its terms, we get 
+                        $$ 1 + \frac{1}{2} + \frac{1}{3} + \frac{1}{4} + \cdots, $$
+                        and this series happens to diverge! 
+                        This result is non-intuitive, and it demonstrates a case in which 
+                        \(\displaystyle \lim_{n \to \infty} a_n = 0\) but \(\displaystyle \sum a_n\) diverges.
+                    </p>
+
+                    <br>
+
+                    <div style="border:10px solid rgb(96, 150, 182); padding: 10px;">
+                        <p style="font-size: 20px; line-height: 0.5;"> Example 3 </p>
+                        <hr style="width:20%;" align="left">
+                        <div> 
+                            <i> 
+                                    Using the divergence test, determine which of the following series diverge. 
+                                <div style="margin-left:5%">
+                                    <ol type="I" style="padding-top: 20px; padding-bottom: 20px; line-height: 3; font-style: normal;">
+                                        <li style="padding-left: 20px;">
+                                            \(\displaystyle \sum_{n = 0}^\infty \sin(n) \)
+                                        </li>
+                                        <li style="padding-left: 20px;">
+                                            \(\displaystyle \sum_{n = 4}^\infty \frac{1}{n - 3} \)
+                                        </li>   
+                                        <li style="padding-left: 20px;">
+                                            \(\displaystyle \sum_{n = 1}^\infty e^{n + 2} \)
+                                        </li>
+                                        <li style="padding-left: 20px;">
+                                            \(\displaystyle \sum_{n = 3}^\infty \frac{2n^2 + 10}{3n^2 - 2} \)
+                                        </li> 
+                                        <li style="padding-left: 20px;">
+                                            \(\displaystyle \sum_{n = 3}^\infty \frac{n!}{n^{999}} \)
+                                        </li> 
+                                    </ol>
+                                </div>    
+                            </i>
+                            <p> 
+                                <ol type="I" style="padding-top: 20px; padding-bottom: 20px; line-height: 3; font-style: normal;">
+                                    <li style="padding-left: 20px;">
+                                        Because \(\displaystyle \lim_{n \to \infty} \sin(n)\) does not exist 
+                                        (sine continuously oscillates and will never approach a final value),
+                                        the divergence test states that \(\displaystyle \sum_{n = 0}^\infty \sin(n) \) diverges.
+                                    </li>
+                                    <li style="padding-left: 20px;">
+                                        \(\displaystyle \lim_{n \to \infty} \frac{1}{n - 3} = 0\), so the divergence test is inconclusive.
+                                    </li>   
+                                    <li style="padding-left: 20px;">
+                                        \(\displaystyle \lim_{n \to \infty} e^{n + 2}\) does not exist (it approaches infinity),
+                                        so, by the divergence test, \(\displaystyle \sum_{n = 1}^\infty e^{n + 2} \) diverges.
+                                    </li>
+                                    <li style="padding-left: 20px;">
+                                        \(\displaystyle \lim_{n \to \infty} \frac{2n^2 + 10}{3n^2 - 2} = \frac{2}{3} \ne 0\),
+                                        so \(\displaystyle \sum_{n = 3}^\infty \frac{2n^2 + 10}{3n^2 - 2} \) diverges.
+                                    </li> 
+                                    <li style="padding-left: 20px;">
+                                        \(\displaystyle \lim_{n \to \infty} \frac{n!}{n^{999}}\) approaches infinity 
+                                        (factorials always grow faster than exponential functions), so 
+                                        \(\displaystyle \sum_{n = 3}^\infty \frac{n!}{n^{999}} \) diverges.
+                                    </li> 
+                                </ol>
+                            </p>
+                        </div>
+                    </div>
+
+                    
+                    <br>
+                    <p>
+                        We now have an idea of what we will work with in this chapter. 
+                        The first half of this chapter will focus on methods for determining whether a series converges or diverges.
+                        In the second half, we will apply those methods to <u>power series</u>—infinite polynomials that can represent various functions 
+                        such as \(\sin(x)\), \(\cos(x)\), and \(e^x\).
+                    </p>
+                    <!--section summary-->
+                    <p>
+                        <p style="text-align: center; font-size: 150%;">
+                            <u> SECTION SUMMARY </u>
+                        </p>
+                            <ul>
+                                <li style="padding-bottom: 20px;"> 
+                                    A <u>sequence</u> is a list of numbers, 
+                                    an example of which is \(\displaystyle \{a_n\} = \{a_1, a_2, a_3, a_4, \dots\} \).
+                                </li>
+                                <li style="padding-bottom: 20px;"> 
+                                    A <u>series</u> is a list of numbers, 
+                                    an example of which is \(\displaystyle \sum_{n = 1}^{\infty} a_n = a_1 + a_2 + a_3 + a_4 + \cdots \).
+                                </li>
+                                <li style="padding-bottom: 20px;"> 
+                                    A sequence \(\{a_n\}\) converges to the value \(L\)
+                                    if \(\displaystyle \lim_{n \to \infty} a_n = L\).
+                                </li>
+                                <li style="padding-bottom: 20px;"> 
+                                    A sequence \(\{a_n\}\) diverges 
+                                    if \(\displaystyle \lim_{n \to \infty} a_n \) does not exist.
+                                </li>
+                                <li style="padding-bottom: 20px;"> 
+                                    <u>The divergence test</u>: A series \(\sum a_n \) diverges 
+                                    if \(\displaystyle \lim_{n \to \infty} a_n \ne 0 \).
+                                    If \(\displaystyle \lim_{n \to \infty} a_n = 0 \), then 
+                                    the test is indeterminate (may or may not converge). 
+                                </li>
+                            </ul>    
+                        </p>
+                    </p>
+                </div>
+            <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+            <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3.0.1/es5/tex-mml-chtml.js"></script>
+            <script id="AMSmath" async src="TeX/AMSmath.js"></script>
+            <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+        
+        </section>
+    </body>
+</html>

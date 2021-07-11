@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link href="https://fonts.googleapis.com/css?family=Cardo:400,700|Oswald" rel="stylesheet">
+        <link rel="stylesheet" href="../css/0.1.css">
+        <title>7.4 — Separation of Variables</title>
+        <meta charset="UTF-8">
+        <meta name="description" content="Real World Applications of Algebra, Geometry, Trigonometry, and Calculus.">
+        <meta name="Valerie" content="Applications of Calculus">
+        <meta name="keywords" content="Math, Math Tutorial, Real World Uses of Math, Real World Uses of Calculus, Real World Uses of Algbera, Real World Uses of Geometry, How is Math Used In the Real World, Applications of Math, Applications of Algebra, Applications of Calculus">
+    <!--Toggle Solution Functions-->
+        <script>
+            function toggle1(){
+                var clicked = document.getElementById("solution1");
+                if (clicked.style.display === "none") {
+                    clicked.style.display = "block";
+                } else {
+                    clicked.style.display = "none";
+                }
+            }
+            function toggle2(){
+                var clicked = document.getElementById("solution2");
+                if (clicked.style.display === "none") {
+                    clicked.style.display = "block";
+                } else {
+                    clicked.style.display = "none";
+                }
+            }
+            function toggle3(){
+                var clicked = document.getElementById("solution3");
+                if (clicked.style.display === "none") {
+                    clicked.style.display = "block";
+                } else {
+                    clicked.style.display = "none";
+                }
+            }
+        </script>
+    </head>
+    <!--Top Button Panel-->
+    <header>
+        <div class="top-links" style="font-family:Georgia, 'Times New Roman', Times, serif">
+            <a href="../index.html" class="button_top">Home</a> 
+            <a href="../about.html" class="button_top">About Me</a> 
+            <a href="../faq.html" class="button_top">FAQ</a>
+            <a href="../contact.html" class="button_top">Contact Me</a>
+        </div>                                  
+    </header>
+    <!--Section Tabs-->
+    <div class="tab">
+        <a href="7.4.html" class="tab-button">Notes</a>
+        <a href="7.4-exercises.html" class="tab-button">Exercises</a>
+        <a href="7.4-applications.html" class="tab-button">Applications</a>
+        <a href="calculus.html" class="tab-button">Back to Calculus</a>
+    </div>
+    <body class="background">
+        <section>
+            <div>
+                <!--Section Title-->
+                <p class="background__title">7.4 — Separation of Variables</p>
+                <!--Section Body-->
+                <div class="background__text">
+                    <hr>                    
+                    <p> In this section we will discuss the most-elementary method for solving differential equations—separation of variables. 
+                        Separation of variables can be used to solve SOME differential equations in the form 
+                        $$ \frac{dy}{dx} = f(x,y), $$
+                        when the equation can be re-expressed in the form $$ g(y)\, dy = h(x) \, dx, $$
+                        where we have "separated" the \(x\)- and \(y\)-terms and isolated them on different sides. 
+                        Our goal with solving any differential equation with this method is to get all of the \(x\)'s on one side and all of the \(y\)'s on the other; if this is not possible, the procedure will not work. 
+                        Let us now examine a few examples to understand the procedure.
+                    </p>
+                    <!--Example 1-->
+                    <div class="example">
+                        <div class="example__heading"><b>Example 1</b></div>
+                        <p class="example__problem"> Solve the following differential equation given that \(y(0) = 1\): 
+                            $$ \frac{dy}{dx} = x+2. $$ </p>
+                        <button onclick="toggle1()" class="solution__button">Show Solution ▼ </button>
+                        <div id="solution1" class="solution">
+                            <p> For this problem let's rewrite the differential equation as $$ dy = (x+2) \, dx, $$
+                                and then integrating both sides gives 
+                                $$ \int dy = \int (x+2) \, dx $$
+                                $$ y + C_1 = \frac{x^2}{2} + 2x + C_2. $$
+                                Notice that we have constants of integration from integrating both sides. It's often easier to express them as a single constant, which we will denote \(C\):
+                                $$ y = \frac{x^2}{2} + 2x + C. $$
+                                Plugging in the initial condition gives 
+                                $$ 1 = \frac{(0)^2}{2} + 2(0) + C $$
+                                $$ \Rightarrow C = 1, $$
+                                which we can then plug back into the above equation to obtain
+                                $$ \bbox[border: 2px solid white, 2pt]{y = \frac{x^2}{2} + 2x + 1.} $$
+                            </p>
+                        </div>
+                    </div>
+                    <p></p>
+                    <!--Example 2-->
+                    <div class="example">
+                        <div class="example__heading"><b>Example 2</b></div>
+                        <p class="example__problem"> Solve the following differential equation given that \(y(1) = 5\): 
+                            $$ y \, ' = \frac{2}{x+2}. $$ </p>
+                        <button onclick="toggle2()" class="solution__button">Show Solution ▼ </button>
+                        <div id="solution2" class="solution">
+                            <p> For this problem let's rewrite the differential equation as $$ dy = \frac{2}{x+2} \, dx, $$
+                                and then integrating both sides gives 
+                                $$ \int dy = \int \frac{2}{x+2} \, dx $$
+                                $$ y + C_1 = 2\ln{|x+2|} + C_2. $$
+                                Notice that we have constants of integration from integrating both sides. It's often easier to express them as a single constant, which we will denote \(C\):
+                                $$ y = 2\ln{|x+2|} + C. $$
+                                Now we plug in the initial condition to solve for \(C\):
+                                $$ 5 = 2\ln{|1+2|} + C $$ $$ \Rightarrow C = 5 - 2\ln(3), $$
+                                which we can then plug back into the equation above to obtain 
+                                $$ y = 2\ln{|x+2|} + (5 - 2\ln(3)) $$
+                                $$ = \bbox[border: 2px solid white, 2pt]{5 + 2\ln{\frac{|x+2|}{3}}.} $$
+                            </p>
+                        </div>
+                    </div>
+                    <p></p>
+                    <!--Example 3-->
+                    <div class="example">
+                        <div class="example__heading"><b>Example 3</b></div>
+                        <p class="example__problem"> Bacteria in a petri dish grow at a rate modeled by the function \(g(t) = 1 + e^{-2t} \). At \(t = 0\) there are \(100\) bacteria in the dish. Model a function for the amount of bacteria in the petri dish at a given time \(t\). </p>
+                        <button onclick="toggle3()" class="solution__button">Show Solution ▼ </button>
+                        <div id="solution3" class="solution">
+                            <p> For simplicity and easy reference let \(B(t)\) denote the number of bacteria in the petri dish at a given time \(t\).
+                                We see that \(B'(t) = g(t) = 1 + e^{-2t}\). Rewriting this, we obtain
+                                $$ \frac{dB}{dt} = 1 + e^{-2t}, $$
+                                and we can now multiply by both sides by \(dt\) to get 
+                                $$ dB = (1 + e^{-2t}) \, dt. $$
+                                Integrating, we get 
+                                $$ \int dB = \int (1 + e^{-2t}) \, dt $$
+                                $$ B(t) = t -\frac{1}{2} e^{-2t} + C. $$
+                                We know that at \(t = 0, B(t) = 100\), so we can use this information to find \(C\):
+                                $$ 100 = 0 - \frac{1}{2}e^{-2(0)} + C  $$
+                                $$ \Rightarrow C = \frac{201}{2}. $$
+                                Plugging back in for \(B(t)\) gives us our function of 
+                                $$ \bbox[border: 2px solid white, 2pt]{B(t) = t - \frac{1}{2}e^{-2t} + \frac{201}{2}.} $$
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+            <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3.0.1/es5/tex-mml-chtml.js"></script>
+            <script id="AMSmath" async src="TeX/AMSmath.js"></script>
+            <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+        </section>
+    </body>

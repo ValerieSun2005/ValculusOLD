@@ -1,0 +1,39 @@
+.calculator-msg{ /* informing that calculator needed */
+    color:rgb(170, 57, 72);
+}
+
+.problems-note{ /* prompt; ex. "Problems 2–4 refer to the following:" */
+    color: gray;
+    font-style: italic;
+}
+
+.problem-number{ /* indent for exercise #s */
+    float: left;
+    padding-right: 5%;
+    color: plum;
+}
+
+.problem-step{ /* commentary for problem */
+    text-align: right;
+}
+
+.mcq-option{ /* answer choice tfor  mcq exercise */
+    margin-left: 5%;
+    font-size: 25px;
+}
+
+.problems-left-column{ /* left column for exercises */
+    float:left; 
+    width: 50%; 
+    padding-right: 2%; 
+    position: relative; 
+    z-index: 1;
+}
+
+.problems-right-column{ /* right column for exercises */
+    float:right; 
+    width: 50%; 
+    padding-left: 2%; 
+    position: relative; 
+    z-index: 1;
+}

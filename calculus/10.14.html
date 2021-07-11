@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link href="https://fonts.googleapis.com/css?family=Cardo:400,700|Oswald" rel="stylesheet">
+        <link rel="stylesheet" href="../css/0.1.css">
+        <title>10.14 — Lagrange Error Bound</title>
+        <meta charset="UTF-8">
+        <meta name="author" content="Valerie">
+    <!--Toggle Solution Functions-->
+        <script>
+            function toggle1(){
+                var clicked = document.getElementById("solution1");
+                if (clicked.style.display === "none") {
+                    clicked.style.display = "block";
+                } else {
+                    clicked.style.display = "none";
+                }
+            }
+            function toggle2(){
+                var clicked = document.getElementById("solution2");
+                if (clicked.style.display === "none") {
+                    clicked.style.display = "block";
+                } else {
+                    clicked.style.display = "none";
+                }
+            }
+            function toggle3(){
+                var clicked = document.getElementById("solution3");
+                if (clicked.style.display === "none") {
+                    clicked.style.display = "block";
+                } else {
+                    clicked.style.display = "none";
+                }
+            }
+        </script>
+    </head>
+    <!--Top Button Panel-->
+    <header>
+        <div class="top-links" style="font-family:Georgia, 'Times New Roman', Times, serif">
+            <a href="../index.html" class="button_top">Home</a> 
+            <a href="../about.html" class="button_top">About Me</a> 
+            <a href="../faq.html" class="button_top">FAQ</a>
+            <a href="../contact.html" class="button_top">Contact Me</a>
+        </div>                                  
+    </header>
+    <!--Section Tabs-->
+    <div class="tab">
+        <a href="10.14.html" class="tab-button">Notes</a>
+        <a href="10.14-exercises.html" class="tab-button">Exercises</a>
+        <a href="10.14-applications.html" class="tab-button">Applications</a>
+        <a href="calculus.html" class="tab-button">Back to Calculus</a>
+    </div>
+    <body class="background">
+        <section>
+                <!--Section Title-->
+                <p class="background__title">10.14 — The Lagrange Error Bound</p>
+                <!--Section Body-->
+                <div class="background__text">
+                    <hr>
+                    <p>
+                        In this section we will discuss the Lagrange Error Bound, a formula used to find an error bound for a Taylor Series. 
+                        The Lagrange Error Bound (also known as Taylor's Remainder Theorem) is similar to the Alternating Series Error Bound (9.15) 
+                        but with an element of "human" to it. The formula for the Lagrange Error Bound is given by
+                    </p>
+                    <div class="highlight">
+                        $$ E_n(x) \leq \Big|\frac{M(x-c)^{n+1}}{(n+1)!}\Big|, $$ (Lagrange Error Bound)
+                    </div>
+                    <p>
+                        where \(n\) denotes the degree of the Taylor approximation, \(c \,\) denotes the point at which the Taylor Series is centered, 
+                        and \(M\) is a constant such that \(M \geq f^{(n+1)}(z)\) for all \(z \in [x,c]\). 
+                        Notice that the formula resembles the next term in a Taylor approximation, 
+                        from which we construct an error bound—similar to what we did with the Alternating Series Error Bound. 
+                    </p>
+                    <!--Example 1-->
+                    <div class="example">
+                        <div class="example__heading"><b>Example 1</b></div>
+                        <p class="example__problem">A function \(f\) has derivatives of all orders. 
+                            It is known that \(f(1) = 4, \, f'(1) = -2, \, f''(1) = 16, \) \(f^{(3)}(1) = 3,\) and \(\,  f^{(4)}(1) = -1\). 
+                            It is also known that \(|f^{(5)}(x)| \leq 50 \) for all \(x \in [1,3]\).
+                            Write a fourth-degree Taylor Series centered at \(x = 1\) to approximate \(f(1.2)\), 
+                            and use the Lagrange Error Bound to find the error in the approximation.  </p>
+                        <button onclick="toggle1()" class="solution__button">Show Solution ▼ </button>
+                        <div id="solution1" class="solution">
+                            <p>The fourth-degree Taylor Series for \(f\) centered at \(x = 1\) is 
+                                $$ f(x) \approx f(1) + f'(1)(x-1) + \frac{f''(1)}{2!}(x-1)^2 + \frac{f^{(3)}(1)}{3!}(x-1)^3 + \frac{f^{(4)}(1)}{4!}(x-1)^4 $$  
+                                $$ = 4 -2(x-1) + 8(x-1)^2 + \frac{1}{2}(x-1)^3 -\frac{1}{24}(x-1)^4 ,$$ 
+                                from which we can approximate \(f(1.2)\) by plugging in \(x = 1.2\): 
+                                $$ f(1.2) \approx 4 -2(1.2-1) + 8(1.2-1)^2 + \frac{1}{2}(1.2-1)^3 -\frac{1}{24}(1.2-1)^4 $$ 
+                                $$ = \bbox[border: 2px solid white, 2pt]{3.924}. $$ 
+                            </p>
+                            <p>
+                                The error of the approximation is given by the Lagrange Error Bound: 
+                                $$ \text{error} \leq \Big| \frac{M(x-c)^{n+1}}{(n+1)!} \Big|. $$ 
+                                In this case we know that \(n = 4\), \(x = 1.2\), and \(c = 1\). 
+                                Additionally, we know that \(f^{(5)} \leq 50 \) for all \(x \in [1,1.2]\), so we can let \(M = 50\) to utilize it as an upper bound. 
+                                Plugging in everything gives $$ \text{error} \leq \Big| \frac{50(1.2-1)^{4+1}}{(4+1)!} \Big| $$
+                                 $$ = \bbox[border: 2px solid white, 2pt]{0.00013}. $$ Our estimate of \(f(1.2)\) has a maximum error of \(0.000013\). 
+                            </p>
+                        </div>
+                    </div>
+                    <p></p>
+                    <!--Example 2-->
+                    <div class="example">
+                        <div class="example__heading"><b>Example 2</b></div>
+                        <p class="example__problem">Recall that the Maclaurin series for \(e^x\) is given by \(1 + x + \frac{x^2}{2!} + \frac{x^3}{3!} + \cdots\). Use a third-degree Maclaurin series to approximate \(e^{0.9}\), and find an interval in which \(e^{0.9}\) must reside. </p>
+                        <button onclick="toggle2()" class="solution__button">Show Solution ▼ </button>
+                        <div id="solution2" class="solution">
+                            <p>
+                                The third-degree Maclaurin series for \(e^x\) is given by $$ 1 + x + \frac{x^2}{2!} + \frac{x^3}{3!}. $$ Plugging in \(x = 0.9\), 
+                                our approximation of \(e^{0.9}\) is then $$ 1 + 0.9 + \frac{0.9^2}{2!} + \frac{0.9^3}{3!} $$ $$ = 2.4265. $$ 
+                            </p>
+                            <p>
+                                The error of the approximation is given by the Lagrange Error Bound. 
+                                In this case \(n = 3\), \(x = 0.9\), and \(c = 0.9\). 
+                                We need the maximum value of the \((n+1)\)st derivative on the interval between \(0\) and \(0.9\). 
+                                In this case we're looking for the \(4\)th derivative of \(e^x\), which is of course simply \(e^x\). 
+                                The maximum of \(e^x\) on \([0,0.9]\) is \(e^{0.9}\), but that's the value we're trying to approximate! 
+                                It makes zero sense to simply plug it in for \(M\), 
+                                so we should set \(M\) to a number clearly greater than \(e^{0.9}\) of which we know the numerical value. 
+                                In this case \(3 > e^{0.9}\), so let \(M = 3\). 
+                                $$ \text{error} \leq \Big| \frac{M(x-c)^{n+1}}{(n+1)!}\Big| = \Big| \frac{3(0.9)^4}{4!} \Big|. $$ 
+                                $$ = 0.082. $$ </p>
+                            <p>
+                                The maximum error of our approximation of \(e^{0.9}\) is \(0.082\), 
+                                so the interval in which the actual value of \(e^{0.9}\) must lie is 
+                                $$ [2.4265 - 0.082, 2.4265 + 0.082] = [2.344, 2.509]. $$ 
+                                <b>\(e^{0.9}\) must lie in the interval \([2.344, 2.509]\). </b> 
+                            </p>
+                        </div>
+                    </div>
+                    <p></p>
+                    <!--Example 3-->
+                    <div class="example">
+                        <div class="example__heading"><b>Example 3</b></div>
+                        <p class="example__problem">Recall that the Maclaurin series for \(\sin(x)\) is given by \(x - \frac{x^3}{3!} + \frac{x^5}{5!} - \frac{x^7}{7!} + - \cdots \). Use a fifth-degree Maclaurin series to approximate \(\sin(0.3)\), and find an interval in which \(\sin(0.3)\) must reside. </p>
+                        <button onclick="toggle3()" class="solution__button">Show Solution ▼ </button>
+                        <div id="solution3" class="solution">
+                            <p>
+                                The fifth-degree Maclaurin series for \(\sin(x)\) is given by 
+                                $$ x - \frac{x^3}{3!} + \frac{x^5}{5!}. $$ 
+                                Our approximation of \(\sin(0.9)\) is then $$ 0.9 - \frac{0.9^3}{3!} + \frac{0.9^5}{5!} $$ $$ = 0.0783. $$ 
+                            </p>
+                            <p>
+                                The error of the approximation is given by the Lagrange Error Bound. 
+                                In this case \(n = 5\), \(x = 0.9\), and \(c = 0\). 
+                                We then need to find the maximum value of the sixth derivative of \(\sin(x)\), \(-\sin(x)\), between \(0\) and \(0.9\). 
+                                The maximum value in magnitude of \(-\sin(x)\) between \(0\) and \(0.9\) is \(-\sin(0.9)\); 
+                                we consider the absolute value because the formula for error is always positive.  
+                                Again, it makes no sense to let \(M = -\sin(0.9)\) because it defeats the purpose of performing series approximations. 
+                                The mindset we should have is that in which we have no calculator (or have a non-scientific one) and are doing these computations by hand. 
+                                We know that sinusoidal functions — \(\sin()\) and \(\cos()\) — are bounded between \(-1\) and \(1\). Thus, \(1 \geq \sin(0.9)\), so let \(M = 1\). 
+                                We then have that $$ \text{error} \leq \Big| \frac{M(x-c)^{n+1}}{(n+1)!}\Big| = \frac{0.9^6}{6!} $$ $$ = 0.0007. $$ 
+                            </p>
+                            <p>
+                                The maximum error of our <!-- hi :) --> approximation is \(0.0007\), 
+                                so the interval in which the actual value of \(\sin(0.9)\) must lie is $$ [0.0783 - 0.0007, 0.0783 + 0.0007] = [0.0776, 0.079].$$ 
+                            </p>
+                            <p><b>\(\sin(0.9)\) must lie in the interval \([0.0776, 0.079]\). </b> </p>
+                        </div>
+                    </div>
+            <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+            <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3.0.1/es5/tex-mml-chtml.js"></script>
+            <script id="AMSmath" async src="TeX/AMSmath.js"></script>
+            <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+        </section>
+    </body>
