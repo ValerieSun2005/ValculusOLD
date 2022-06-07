@@ -1,3 +1,12 @@
+body{
+    counter-reset: figure;
+}
+
+img{
+    counter-increment: figure;
+    content: "Fig. " counter(figure) ".";
+}
+
 /* figure 1  */
 
 .fig-1-body{

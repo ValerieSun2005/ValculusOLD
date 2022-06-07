@@ -1,0 +1,29 @@
+<html>
+    <style>
+        body {
+        counter-reset: chapter;
+        }
+
+        h2::before {
+        counter-increment: chapter;
+        content: "Chapter " counter(chapter) ": ";
+        }
+
+        .content a::after {
+            content: leader('.') target-counter(attr(href), section);
+        }
+    </style>
+
+    <body>
+        <h2>Book Title</h2>
+
+        <section>
+        <a href="#marker">The magic number is</a>
+        <h2 id="marker">Example Chapter</h2>
+
+        <p>Some text for the chapter.t</p>
+        </section>
+        <h2>tt</h2>
+    </body>
+
+</html>
