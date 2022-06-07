@@ -1,0 +1,693 @@
+<!DOCTYPE html>
+<html>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+    <script id="AMSmath" src="TeX/AMSmath.js"></script>
+    <script src="../js/mathjax-config.js" ></script>
+    <script type="text/javascript" id="MathJax-script" 
+        src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js">
+    </script>
+    <script type="text/javascript" id="MathJax-script" 
+        src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js">
+    </script>
+    <head>
+        <link rel="stylesheet" href="../css/hamburger-menu.css">
+        <link rel="stylesheet" href="../css/layout.css">
+        <link rel="stylesheet" href="../css/notes-style.css">
+        <link rel="stylesheet" href="../css/calculus/10.6.css">
+        <title> 10.6 — Alternating Series </title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <meta name="author" content="Valerie">
+    </head>
+    <!--section tabs-->
+    <nav class="tab">
+        <span class="tab-button-background"> <a href="10.5.html" class="tab-button"> < Previous Section </a> </span>
+        <span class="tab-button-background"> <a class="tab-button"> Notes </a> </span>
+        <span class="tab-button-background"> <a href="10.6-exercises.html" class="tab-button"> Exercises </a> </span>
+        <span class="tab-button-background"> <a href="10.6.html" class="tab-button"> Next Section > </a> </span>
+        <!--nav menu button-->
+        <span class="menu-button__background" style="text-align: left;">
+            <div class="menu-btn">
+                <div class="menu-btn__burger">
+                </div>
+            </div> 
+        </span>
+    </nav>
+        
+
+    <!--nav menu-->
+    <div id="popupMenuItems" class="menu-popup"> 
+        <div class="menu-list">
+            <hr class="menu-hr">
+            <p> 
+                <a class="menu-link" href="../index.html"> 
+                    <div class="menu-item"> 
+                        <img src="../images/icons/home-icon.png" class="menu-icon" alt="">
+                        Home 
+                    </div>
+                </a> 
+            </p>
+            <p> 
+                <a class="menu-link" href="../about.html"> 
+                    <div class="menu-item"> 
+                        <img src="../images/icons/about.png" class="menu-icon" alt="">
+                        About 
+                    </div>
+                </a> 
+            </p>
+            <p> 
+                <a class="menu-link" href="../faq.html"> 
+                    <div class="menu-item"> 
+                        <img src="../images/icons/" class="menu-icon" alt="">
+                        FAQ
+                    </div>
+                </a> 
+            </p>
+            <p> 
+                <a class="menu-link" href="../contact.html"> 
+                    <div class="menu-item"> 
+                        <img src="../images/icons/email.png" class="menu-icon" alt="">
+                        Contact
+                    </div>
+                </a> 
+            </p>
+        
+
+            <hr class="menu-hr">
+            <p class="menu-link" style="color: gray;"> COURSES </p>
+            <p> <a class="menu-link" href="algebra.html"> Algebra </a> </p>
+            <p> <a class="menu-link" href="trig.html"> Trigonometry </a> </p>
+            <p> <a class="menu-link" href="calculus.html"> Calculus </a> </p>
+            <p> <a class="menu-link" href="statistics.html"> Statistics </a> </p>
+        </div>
+    </div>
+
+    <body class="background">
+        <!--Section Title-->
+            <h1> 10.6 — Alternating Series </h1>
+            <!--Section Body-->
+            <section class="background-text">
+                <hr size=6 noshade="true">
+                <p>
+                    In this section, 
+                    we will discuss alternating series and introduce a test that allows us to establish whether they converge.
+                    <u>Alternating series</u> are series whose terms alternate in sign and can be written in the form 
+                    \[\sum_{n = k}^\infty (-1)^n \, b_n \, , \, b_n \gt 0.\]
+                    We call the term \((-1)^n\) the <u>alternator</u>—the mechanism by which each term changes sign.
+                    There are other forms in which alternators can be rewritten,
+                    such as \((-1)^{n + 1} \, ,\) \((-1)^{n - 1} \, ,\) and \(\cos(\pi n),\) as you may verify.
+
+                </p>
+
+                <!-- alternating series box -->
+                <div class="box-title"> ALTERNATING SERIES </div>
+                <div class="box">
+                    <p>
+                        Alternating series are of the form 
+                        \( \ds \sum_{n = k}^\infty (-1)^n \, b_n \, , \, b_n \gt 0.\)
+                    </p>
+                </div>
+
+                <!--example 1-->
+                <div class="example-title"> EXAMPLE \(1\) </div>
+                <div class="example">
+                    <!--example 1 problem-->
+                    <div class="example-problem">  
+                        Determine whether the following series are alternating.
+                        If a series is alternating, find \(b_n\) in the general form of an alternating series,
+                        \(\ds \sum_{n = k}^\infty (-1)^n b_n.\)
+                        <div class="list-item">
+                            <div class="list-number"> I. </div>
+                            <div class="list-text">
+                                \(\ds 2 - 1 + \frac{1}{2} - \frac{1}{4} + \frac{1}{8} - \frac{1}{16} + \cdots \)
+                            </div>
+                        </div>
+                        <div class="list-item">
+                            <div class="list-number"> II. </div>
+                            <div class="list-text">
+                                \(\ds \sum_{n = 2}^\infty \frac{(-1)^{n + 2}}{n^2} \)
+                            </div>
+                        </div>
+                        <div class="list-item">
+                            <div class="list-number"> III. </div>
+                            <div class="list-text">
+                                \(\ds \sum_{n = 4}^\infty (-1)^{2n} \, n^{-1/2} \)
+                            </div>
+                        </div>
+                        <div class="list-item">
+                            <div class="list-number"> IV. </div>
+                            <div class="list-text">
+                                \(\ds \sum_{n = 1}^\infty (-2)^{n - 2} \)
+                            </div>
+                        </div>
+                        <div class="list-item">
+                            <div class="list-number"> V. </div>
+                            <div class="list-text">
+                                \(\ds \sum_{n = 1}^\infty n^{-3/2} \cos(\pi n) \)
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <button onclick="toggle1()" class="solution-button"> SHOW SOLUTION ▼ </button>
+                <!--example 1 solution-->
+                <div>
+                    <div id="solution1" class="solution">
+
+                        <hr class="solution-hr" size=6 noshade="true">
+
+                        <div class="list-item">
+                            <div class="list-number"> I. </div>
+                            <div class="list-text">
+                                Because every term alternates sign, the series is alternating.
+                                Using sigma notation, we can write the series as
+                                \[\sum_{n = 0}^\infty 2 \left(-\frac{1}{2}\right)^n = \sum_{n = 0}^\infty 2 (-1)^n \left(\frac{1}{2}\right)^n,\]
+                                which is congruent with the general form of an alternating series, \(\ds \sum_{n = k}^\infty (-1)^n \, b_n \, ,\)
+                                where \(\ds b_n = 2 (1/2)^n .\)
+                            </div>
+                        </div>
+
+                        <hr class="solution-hr" size=6 noshade="true">
+
+                        <div class="list-item">
+                            <div class="list-number"> II. </div>
+                            <div class="list-text">
+                                We can rewrite the series as 
+                                \[
+                                \ba 
+                                \sum_{n = 2}^\infty \frac{(-1)^{n + 2}}{n^2} &= \sum_{n = 2}^\infty \frac{(-1)^n (-1)^2}{n^2} \\
+                                &= \sum_{n = 2}^\infty \frac{(-1)^n}{n^2},
+                                \ea
+                                \]
+                                which is congruent with the general form of an alternating series, \(\ds \sum_{n = k}^\infty (-1)^n \, b_n \, ,\)
+                                where \(\ds b_n = 1/n^2.\)
+                                Therefore, this series is alternating.
+                            </div>
+                        </div>
+
+                        <hr class="solution-hr" size=6 noshade="true">
+
+                        <div class="list-item">
+                            <div class="list-number"> III. </div>
+                            <div class="list-text">
+                                We notice that 
+                                \[(-1)^{2n} = \Big((-1)^n\Big)^2. \]
+                                For any value of \(n,\) \((-1)^{2n}\) will give \(+1.\) 
+                                Therefore, this series is not alternating. 
+                                In fact, the series is nothing more than \(\ds \sum_{n = 4}^\infty n^{-1/2} .\)
+
+                            </div>
+                        </div>
+
+                        <hr class="solution-hr" size=6 noshade="true">
+
+                        <div class="list-item">
+                            <div class="list-number"> IV. </div>
+                            <div class="list-text">
+                                Rewriting the series gives 
+                                \[
+                                \ba 
+                                \sum_{n = 1}^\infty (-2)^{n - 2} &= \sum_{n = 1}^\infty (-2)^n \cdot (-2)^{-2} \\
+                                &= -\frac{1}{4} \sum_{n = 1}^\infty (-1)^n \cdot 2^n.
+                                \ea 
+                                \]
+                                The resulting series is congruent with the general form 
+                                \(\ds \sum_{n = k}^\infty (-1)^n \, b_n \, , \)
+                                where \(b_n = -1/4 2^n.\)
+                                Thus, this series is alternating.
+                            </div>
+                        </div>
+
+                        <hr size=6 noshade="true">
+                        
+                        <div class="list-item">
+                            <div class="list-number"> V. </div>
+                            <div class="list-text">
+                                Notice that, for \(n = 1,\) \(\cos(\pi n) = -1.\)
+                                For \(n = 2,\) \(\cos(\pi n) = 1.\)
+                                For \(n = 3,\) \(\cos( \pi n) = -1.\)
+                                From these results, it is clear that \(\cos(\pi n) = (-1)^n.\)
+                                Therefore, the series can be rewritten as 
+                                \[\sum_{n = 1}^\infty n^{-3/2} \cos(\pi n) = \sum_{n = 1}^\infty \frac{(-1)^n}{n^{3/2}}. \]
+                                In this case, \(b_n = 1/n^{3/2}.\)
+                            </div>
+                        </div>
+
+                        <hr class="solution-hr" size=6 noshade="true">
+                    </div>
+                </div>
+               
+                <p> 
+                    Let us now discuss a test for determining whether an alternating series converges, 
+                    known as the <u>alternating series test</u>.
+                    Consider the alternating series \( \sum_{n = k}^\infty (-1)^n \, b_n \, , b_n \geq 0.\)
+                    The test states that if \( \ds \lim_{n \to \infty} b_n = 0\) 
+                    and \(\{b_n\}\) is a decreasing sequence (i.e., \(b_{n + 1} \lt b_n\)), 
+                    then the series converges.
+                    Analytically, the test states that an alternating series converges 
+                    if its terms are decreasing in magnitude to \(0.\)
+                </p>
+
+                <!-- alternating series test box -->
+                <div class="box-title"> ALTERNATING SERIES TEST </div>
+                <div class="box">
+                    <p>
+                        Consider the alternating series 
+                        \( \ds \sum_{n = k}^\infty (-1)^n \, b_n \, , \, b_n \gt 0.\)
+                        <br>
+                        If \(\ds \lim_{n \to \infty} b_n = 0\) and \(b_{n + 1} \lt b_n \) for all \(n,\)
+                        then \( \ds \sum_{n = k}^\infty (-1)^n \, b_n\) converges.
+                    </p>
+                </div>
+
+                <p>
+                    As an example, examine the series \( \sum_{n = 1}^\infty (-1)^n /n, \)
+                    which is the <u>alternating harmonic series</u>.
+                    In this case, \(b_n = 1/n\)
+                    (note that \(b_n\) never includes the alternator.)
+                    We note that, for \(n \geq 1,\)
+                    \[ \underbrace{\frac{1}{n + 1}}_{b_{n + 1}} \lt \underbrace{\frac{1}{n}}_{b_n}. \]
+                    Therefore, \(b_n\) is decreasing for \(n \geq 1.\)
+                    Furthermore, \(\ds \lim_{n \to \infty} b_n = 0.\)
+                    Thus, by the alternating series test, \( \sum_{n = 1}^\infty (-1)^n /n \, \) converges—as 
+                    opposed to the non-alternating harmonic series, which diverges.
+                    Alternatively, writing out some of the terms of the series gives 
+                    \(-1 + 1/2 - 1/3 + 1/4 - 1/5 + \cdots,\) and it is clear that the terms are alternating and decreasing in magnitude to \(0,\)
+                    indicating the convergence of the series.
+                </p>
+
+                <!--example 2-->
+                <div class="example-title"> EXAMPLE \(2\) </div>
+                <div class="example">
+                    <!--example 2 problem-->
+                    <div class="example-problem">  
+                        Determine whether each of the following series converge or diverge.
+                        <div class="list-item">
+                            <div class="list-number"> I. </div>
+                            <div class="list-text">
+                                \(\ds \sum_{n = 1}^\infty \frac{(-1)^{n + 1}}{\sqrt{n}} \)
+                            </div>
+                        </div>
+                        <div class="list-item">
+                            <div class="list-number"> II. </div>
+                            <div class="list-text">
+                                \(\ds \sum_{n = 1}^\infty \frac{\sin(\pi/2 + n)}{n^{-2/3}} \)
+                            </div>
+                        </div>
+                        <div class="list-item">
+                            <div class="list-number"> III. </div>
+                            <div class="list-text">
+                                \(\ds \sum_{n = 2}^\infty (-1)^n \)
+                            </div>
+                        </div><div class="list-item">
+                            <div class="list-number"> IV. </div>
+                            <div class="list-text">
+                                \(\ds \sum_{n = 1}^\infty (-1)^{2n - 2} \, n^{-1/3} \)
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <button onclick="toggle2()" class="solution-button"> SHOW SOLUTION ▼ </button>
+                <!--example 2 solution-->
+                <div>
+                    <div id="solution2" class="solution">
+                        <hr class="solution-hr" size=6 noshade="true">
+
+                        <div class="list-item">
+                            <div class="list-number"> I. </div>
+                            <div class="list-text">
+                                In this case, \(b_n = 1/\sqrt{n}.\)
+                                We notice that, for \(n \geq 1,\) 
+                                \[\underbrace{\frac{1}{\sqrt{n}}}_{b_{n + 1}} \lt \underbrace{\frac{1}{\sqrt{n + 1}}}_{b_n}. \]
+                                Therefore, \(b_n\) is decreasing for all \(n \geq 1.\) 
+                                Additionally, \( \lim_{n \to \infty } b_n = 0,\)
+                                so the series converges by the alternating series test. 
+                            </div>
+                        </div>
+
+                        <hr class="solution-hr" size=6 noshade="true">
+
+                        <div class="list-item"> 
+                            <div class="list-number"> II. </div>
+                            <div class="list-text">
+                                We note that \(\sin(\pi/2 + n)\) is the alternator for this series; 
+                                it can be rewritten as \((-1)^n.\)
+                                Additionally, \(b_n = 1/n^{2/3}.\)
+                                We note that, for \(n \geq 1,\) 
+                                \[\underbrace{\frac{1}{(n + 1)^{2/3}}}_{b_{n + 1}} \lt \underbrace{\frac{1}{n^{2/3}}}_{b_n}; \]
+                                therefore, \(b_n\) is decreasing. 
+                                Furthermore, \(\lim_{n \to \infty} b_n = 0,\)
+                                so the series converges by the alternating series test.
+                                
+                            </div>
+                        </div>
+
+                        <hr class="solution-hr" size=6 noshade="true">
+
+                        <div class="list-item">
+                            <div class="list-number"> III. </div>
+                            <div class="list-text">
+                                In this case, \(b_n = 1.\) 
+                                This is a non-zero constant, so \(\lim_{n \to \infty} b_n \ne 0.\) 
+                                Thus, the alternating series test cannot establish convergence for this series
+                                (it turns out that this series diverges by the divergence (\(n\)th term) test, 
+                                but we cannot use the alternating series test to establish that result.)
+                            </div>
+                        </div>
+
+                        <hr class="solution-hr" size=6 noshade="true">
+
+                        <div class="list-item">
+                            <div class="list-number"> IV. </div>
+                            <div class="list-text">
+                                We notice that 
+                                \[
+                                \ba 
+                                (-1)^{2n - 2} &= (-1)^{2n} \cdot (-1)^{-2} \\
+                                &= 1 \cdot 1/2.
+                                \ea
+                                \]
+                                We can then rewrite the series as 
+                                \( \ds \sum_{n = 1}^\infty \frac{1}{2} \, n^{-1/3}, \)
+                                which is not alternating, so we cannot use the alternating series test.
+                                (In fact, this series diverges—it is a \(p\)-series with \(p = 1/3.\))
+                            </div>
+                        </div>
+
+                        <hr class="solution-hr" size=6 noshade="true">
+
+                    </div>
+                </div>
+
+                <p>
+                    For some series, it is not clear whether the terms are decreasing in magnitude. 
+                    In those cases, we can compare \(b_n\) to a function and take its derivative.
+                    Consider, as an example, the series \(\sum_{n = 1}^\infty (-1)^{n - 1} \frac{\sqrt{n}}{n + 2}. \)
+                    In this case, \(b_n = \frac{\sqrt{n}}{n + 2},\) and we can compare it to \(f(x) = \frac{\sqrt{x}}{x + 2}.\)
+                    Taking the derivative, we have 
+                    \[
+                    \ba 
+                    f'(x) &= \frac{\frac{x + 2}{2\sqrt{x}} - \sqrt{x}}{(x + 2)^2} \\[1.5ex]
+                    &= \frac{-x + 2}{2 \sqrt{x}},
+                    \ea 
+                    \]
+                    which is negative for all \(x \gt 2.\) 
+                    Because \(f'(x) \lt 0\) for \(x \gt 2,\) \(f(x)\) is decreasing on that interval, 
+                    so it follows that \(b_n\) is decreasing for \(n \gt 2.\) 
+                    Additionally, \(\lim_{n \to \infty} b_n = 0.\)
+                    Therefore, by the alternating series test, we conclude that 
+                    \(\sum_{n = 1}^\infty (-1)^n \frac{\sqrt{n}}{n + 2}\) converges. 
+                    Writing out some terms of the series, we get 
+                    \[\underbrace{\frac{1}{3}}_{0.333 \dots} - \underbrace{\frac{\sqrt 2 }{4}}_{0.354 \dots} 
+                    + \underbrace{\frac{\sqrt 3 }{5}}_{0.346 \dots} - \underbrace{\frac{1}{3}}_{0.333\dots} 
+                    + \underbrace{\frac{\sqrt 5}{7}}_{0.319 \dots} + \cdots . \]
+                    Following the second term, \(-\sqrt 2/4\), we see that each incremental term is decreasing in magnitude to \(0.\)
+                </p>
+
+                <!--example 3-->
+                <div class="example-title"> EXAMPLE \(3\) </div>
+                <div class="example">
+                    <!--example 3 problem-->
+                    <div class="example-problem">  
+                        Determine whether \(\ds \sum_{n = 1}^\infty \cos(\pi n) \frac{n}{n^2 + 1} \) converges or diverges.
+                    </div>
+                </div>
+                <button onclick="toggle3()" class="solution-button"> SHOW SOLUTION ▼ </button>
+                <!--example 3 solution-->
+                <div>
+                    <div id="solution3" class="solution">
+                        <p>
+                            We notice that \(\cos(\pi n) \) is the alternator for this series.
+                            Also, \(b_n = n/(n^2 + 1)\) and \(\ds \lim_{n \to \infty} b_n = 0.\)
+                            To determine whether the terms of the sequence \(\{b_n\}\) are decreasing, 
+                            we can compare \(b_n = n/(n^2 + 1)\) to \(f(x) = x/(x^2 + 1).\) 
+                            Differentiating \(f(x),\) we get 
+                            \[
+                            \ba 
+                            f'(x) &= \frac{(x^2 + 1) - x(2x)}{(x^2 + 1)^2} \\
+                            &= \frac{1 - x^2}{(x^2 + 1)^2}, \\
+                            \ea 
+                            \]
+                            which is negative for all \(x \gt 1.\) 
+                            Therefore, \(f(x)\) is decreasing for \(x \geq 1,\) 
+                            so it follows that the sequence defined by \(b_n\) is decreasing for \(n \geq 1.\)
+                            Summarizing, \(\ds \sum_{n = 1}^\infty \cos(\pi n) \frac{n}{n^2 + 1} \) is an alternating series,
+                            \(b_n\) is decreasing, and \(\ds \lim_{n \to \infty} b_n = 0,\) so the series converges by the Alternating Series Test.
+                        </p>
+                    </div>
+                </div>
+
+                <p>
+                    <span class="warning">However,</span> the alternating series test cannot be used establish divergence; 
+                    i.e., if \(\ds \lim_{n \to \infty} b_n \ne 0,\) then the test is inconclusive. 
+                    In those cases, 
+                    if \(\ds \lim_{n \to \infty} (-1)^n \, b_n \ne 0,\)
+                    then the series diverges by the divergence test.
+                </p>
+                <!--example 4-->
+                <div class="example-title"> EXAMPLE \(4\) </div>
+                <div class="example">
+                    <!--example 4 problem-->
+                    <div class="example-problem">  
+                        Determine whether \(\ds \sum_{n = 1}^\infty (-1)^n \frac{n^3}{3n^3 + 1} \) converges or diverges.
+                    </div>
+                </div>
+                <button onclick="toggle4()" class="solution-button"> SHOW SOLUTION ▼ </button>
+                <!--example 4 solution-->
+                <div>
+                    <div id="solution4" class="solution">
+                        <p>
+                            This series is alternating due to the term \((-1)^n.\)
+                            Furthermore, \(b_n= n^3/(3n^3 + 1),\) but \(\ds \lim_{n \to \infty} b_n = 1/3 \ne 0.\)
+                            Because the conditions for the alternating series test were not satisfied, 
+                            we cannot use it to establish convergence—but we also cannot use it to establish divergence.
+                            Instead, we must resort to the 
+                            divergence test—we will consider the limit \(\ds \lim_{n \to \infty} (-1)^n \frac{n^3}{3n^3 + 1}.\)
+                            As \(n\) approaches infinity, the ratio will oscillate between \(-1/3\) and \(1/3,\) never settling to a final value.
+                            Therefore, because \(\ds \lim_{n \to \infty} (-1)^n \frac{n^3}{3n^3 + 1}\) does not exist, 
+                            \(\ds \sum_{n = 1}^\infty (-1)^n \frac{n^3}{3n^3 + 1} \) diverges by the divergence test.
+                        </p>
+                    </div>
+                </div>
+
+                <p>
+                    Let us now discuss the idea of an error bound. 
+                    Consider the infinite series 
+                    \(\ds S = \sum_{n = k}^\infty a_n.\) 
+                    If \(S\) is approximated using a partial sum \(\ds S_N = \sum_{n = k}^N a_n \, ,\) 
+                    then the remainder, \(\ds R_N = \sum_{n = N + 1}^\infty a_n \, ,\) is neglected.
+                    The magnitude of the remainder, \(\left| R_N \right|, \) is known as the <u>error</u> in the approximation.
+                    Namely,
+                    \[
+                    \ba 
+                    S &= S_N + R_N \\
+                    \sum_{n = k}^\infty a_n &= \sum_{n = k}^N a_n + \sum_{n = N + 1}^\infty a_n \\
+                    &= \underbrace{\left(a_k + a_{k + 1} + a_{k + 2} + \cdots + a_{N} \right)}_{\textrm{estimate}} 
+                    + \underbrace{\left(a_{N + 1} + a_{N + 2} + a_{N + 3} + \cdots \right)}_{\textrm{remainder}}.
+                    \ea 
+                    \]
+                    We therefore define the error as 
+                    \[
+                    \ba 
+                    \textrm{error} &= \left| \textrm{actual} - \textrm{estimate} \right| \\[1em]
+                    &= \left| S - S_N \right|.
+                    \ea 
+                    \]
+                    Consider a convergent alternating series \(\ds S = \sum_{n = k}^\infty (-1)^n \, b_n \, , \,  b_n \gt 0. \)
+                    If a partial sum \(\ds S_N = \sum_{n = k}^{N} (-1)^n \, b_n \) is used to approximate \(S,\) then 
+                    the error of the estimate is <u>bounded by</u> the absolute value of the first unused term, \(b_{N + 1} \, .\)
+                    Namely,
+                    \[\underbrace{\left|S - S_N\right|}_{\textrm{error}} 
+                    \leq \underbrace{b_{N + 1}}_{\textrm{next term}}. \]
+                </p>
+
+                <!-- alternating series error bound test box -->
+                <div class="box-title"> ALTERNATING SERIES ERROR BOUND </div>
+                <div class="box">
+                    <p>
+                        Consider the convergent alternating series 
+                        \( \ds S = \sum_{n = k}^\infty (-1)^n \, b_n \, , \, b_n \gt 0.\)
+                        <br>
+                        Let the partial sum \(\ds S_N = \sum_{n = k}^N (-1)^n \, b_n \) be used to approximate \(S.\) 
+                        The error of this approximation is <u>no greater than</u> \(b_{N + 1} \, .\)
+                    </p>
+                </div>
+
+                    Consider, as an example, the series 
+                    \[\sum_{n = 1}^\infty \frac{(-1)^{n + 1}}{n} 
+                    = 1 - \frac{1}{2} + \frac{1}{3} - \frac{1}{4} + \frac{1}{5} - \frac{1}{6} + \cdots. \]
+                    Using the first five terms as an approximation for the sum, 
+                    the error is bounded by the magnitude of the first neglected term, \(1/6.\)
+                    In other words, the magnitude of the sum of the remaining terms, 
+                    \(\ds -\frac{1}{6} + \frac{1}{7} - \frac{1}{8} + \cdots, \)
+                    is <i>no greater than</i> \(1/6.\)
+                </p>
+
+                <!--example 5-->
+                <div class="example-title"> EXAMPLE \(5\) </div>
+                <div class="example">
+                    <!--example 5 problem-->
+                    <div class="example-problem">  
+                        The infinite series \(\ds S = \sum_{n = 1}^\infty \frac{(-1)^{n + 1}}{n^2 + 2}\) 
+                        is to be approximated using the partial sum \(\ds S_5 = \sum_{n = 1}^5 \frac{(-1)^{n + 1}}{n^2 + 2}. \)
+                        Use the alternating series error bound to find a value \(K\) for which \( \left| S - S_5 \right| \leq K.\)
+                    </div>
+                </div>
+                <button onclick="toggle5()" class="solution-button"> SHOW SOLUTION ▼ </button>
+                <!--example 5 solution-->
+                <div>
+                    <div id="solution5" class="solution">
+                        <p>
+                            By using the partial sum \(S_5 \, ,\) we are neglecting any incremental terms beginning with \(n = 6.\)
+                            Because the term with \(n = 6\) is the first term left out, its magnitude is the error bound for \(S_5.\)
+                            Therefore,
+                            \[
+                            \ba 
+                            \left| S - S_5 \right| &\leq \left| \frac{(-1)^{n + 1}}{n^2 + 2} \right|_{n = 6} \\
+                            &= 1/38. \\
+                            \therefore K &= \box{1/38.}
+                            \ea
+                            \]
+                        </p>
+                    </div>
+                </div>
+
+                <br>
+
+                <!--example 6-->
+                <div class="example-title"> EXAMPLE \(6\) </div>
+                <div class="example">
+                    <!--example 6 problem-->
+                    <div class="example-problem">  
+                        The value of \(\ds S = \sum_{n = 1}^\infty \frac{(-1)^n}{2\sqrt{n + 3}} \)
+                        is to be approximated using the partial sum \( \ds S_N = \sum_{n = 1}^N \frac{(-1)^n}{2\sqrt{n + 3}} . \)
+                        Find the values of \(N\) for which the error of \(S_N\) is no more than \(0.1.\) 
+                    </div>
+                </div>
+                <button onclick="toggle6()" class="solution-button"> SHOW SOLUTION ▼ </button>
+                <!--example 6 solution-->
+                <div>
+                    <div id="solution6" class="solution">
+                        <p>
+                            This series is alternating. In this case, \(\ds b_n = \frac{1}{2 \sqrt{n + 3}}.\)
+                            Comparing \(b_n\) to \(\ds f(x) = \frac{1}{2 \sqrt{x + 3}}, \) we have 
+                            \[f'(x) = \frac{-\frac{1}{\sqrt{x + 3}}}{4(x + 3)}, \]
+                            which is negative for all \(x \geq 1.\) 
+                            Therefore, \(f(x)\) is decreasing for \(x \geq 1,\) and it follows that \(b_n\) is decreasing for \(n \geq 1.\)
+                            Also, because \(\lim_{n \to \infty} b_n = 0,\) 
+                            the alternating series test states that \(S\) is finite.
+                            Using the partial sum \(S_N = \sum_{n = 1}^N \frac{(-1)^n}{2\sqrt{n + 3}},\)
+                            we can set the error bound, given by \(\left| \frac{(-1)^{N + 1}}{2 \sqrt{(N + 1) + 3}} \right|, \)
+                            to be less than \(0.1\) in order to comply with the required level of accuracy.
+                            We have 
+                            \[
+                            \ba 
+                            \left| \frac{(-1)^{N + 1}}{2 \sqrt{(N + 1) + 3}} \right| &\leq 0.1 \\
+                            \frac{1}{2 \sqrt{N + 4}} &\leq 0.1 \\
+                            N &\geq 21. \\
+                            \ea 
+                            \]
+                            In words, for \(\box{N \geq 21,}\) the partial sum \(S_N\) produces an error of no more than \(0.1.\)
+                        </p>
+                    </div>
+                </div>
+
+                <!--section summary-->
+                <div class="section-summary__title"> SECTION SUMMARY </div>
+                <div class="section-summary">
+                    <ul>
+                        <li class="summary-list-item__top"> 
+                            An <u>alternating series</u> is a series whose terms change signs. 
+                            Its general form is \(\ds \sum_{n = k}^\infty (-1)^n b_n \, , \, b_n \gt 0.\)
+                        </li>
+                        <li class="summary-list-item">
+                            An <u>alternator</u> is the mechanism by which the terms of a series change signs.
+                            Examples of alternators include \((-1)^n \, ,\) \((-1)^{n - 1} \, ,\) and \(\cos( \pi n).\) 
+                            All alternators can be manipulated into the general form \((-1)^n.\)
+                        </li>
+                        <li class="summary-list-item">
+                            The <u>alternating series test</u> enables us to test whether an alternating series converges.
+                            If \(\{b_n\}\) is a decreasing sequence (i.e., \(b_{n + 1} \lt b_n\)) and \(\ds \lim_{n \to \infty} b_n = 0,\)
+                            then \(\ds \sum_{n = k}^\infty (-1)^n b_n\) converges, dby the alternating series test. 
+                        </li>
+                        <li class="summary-list-item">
+                            The alternating series test <span class="warning">cannot</span> be used to establish divergence.
+                            Use the divergence test to establish whether an alternating series diverges.
+                        </li>
+                        <li class="summary-list-item">
+                            
+                        </li>
+                    </ul>   
+            </section>
+            
+    </body>
+    <footer>
+        <div class="footer-sections">
+            <div class="footer-logo">
+                <div style="padding-bottom: 10%;"> VAL <br> CALC </div>
+                <a href="https://discord.gg/CbXg72x9Q9"> <img src="../images/discord-icon.png" class="footer-image-icon" alt=""> </a>
+                <img src="../images/paypal-icon.png" class="footer-image-icon" alt="">
+                <img src="../images/venmo-icon.png" class="footer-image-icon venmo-icon" alt="">
+            </div>
+            <div class="footer-nav-column">
+                <ul class="footer-nav-column__ul">
+                    <li>
+                        <a class="footer-link" href="../index.html">Home</a> 
+                    </li>
+                    <li>
+                        <a class="footer-link" href="../about.html">About</a> 
+                    </li>
+                    <li>
+                        <a class="footer-link" href="../faq.html">FAQ</a> 
+                    </li>
+                    <li>
+                        <a class="footer-link" href="../contact.html">Contact</a> 
+                    </li>
+                    <li>
+                        <a class="footer-link" href="../contact.html">Discord</a> 
+                    </li>
+                </ul>
+            </div>
+            <div class="footer-nav-column">
+                <ul class="footer-nav-column__ul">
+                    <li>
+                        <a class="footer-link" href="../index.html"> Section Notes </a> 
+                    </li>
+                    <li>
+                        <a class="footer-link" href="../faq.html"> AP® Calculus  </a> 
+                    </li>
+                    <li>
+                        <a class="footer-link" href="../faq.html"> Before Taking Calculus  </a> 
+                    </li>
+                    <li>
+                        <a class="footer-link" href="../faq.html"> Practice Tests  </a> 
+                    </li>
+                </ul>
+            </div>
+            <div class="footer-nav-column">
+                <ul class="footer-nav-column__ul">
+                    <li>
+                        <a class="footer-link" href="../index.html">Report a Problem</a> 
+                    </li>
+                    <li>
+                        <a class="footer-link" href="../about.html"> Terms of Use </a> 
+                    </li>
+                    <li>
+                        <a class="footer-link" href="../faq.html">Privacy Policy</a> 
+                    </li>
+                    <li>
+                        <a class="footer-link" href="../contact.html">Donate</a> 
+                    </li>
+                </ul>
+            </div>
+        </div>
+    <p class="ap-notice">
+        AP® is a trademark registered by the College Board, which is not affiliated with, and does not endorse, this website.
+    </p>
+    </footer>
+
+    <script src="../js/hamburger-menu.js"></script>
+    <script src="../js/toggle-solutions.js"></script>
+    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+</html>

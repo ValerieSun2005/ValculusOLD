@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en-us">
+    <head>
+        <link rel="stylesheet" href="../css/hamburger-menu.css">
+        <link rel="stylesheet" href="../css/layout.css">
+        <link rel="stylesheet" media = "screen" href="../css/calculus/5.4.css">
+        <link rel="stylesheet" media = "screen" href="../css/notes-style.css">
+        <link rel="stylesheet" media = "screen" href="../css/exercises-style.css">
+        <link rel="stylesheet" media = "print" href="../css/layout-print.css">
+        <link rel="stylesheet" media = "print" href="../css/notes-style-print.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <title> 5.4 — Integration by Partial Fraction Decomposition </title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <meta name="author" content="Valerie">
+    </head>
+
+    <script> 
+        $(function(){
+          $("#header").load("header.html"); 
+          $("#footer").load("footer.html"); 
+        });
+    </script> 
+    
+    <body class="background">
+        <!--Section Title-->
+        <h1> 5.4 Exercises — Integration by Partial Fraction Decomposition </h1>
+        <!--Section Body-->
+        <main class="background-text">
+            <div class="pdf-panel">
+                <div class="pdf-panel-left">
+                    <ul>
+                        <li>
+                            <button> 
+                                <a href="5.4.html" rel="noopener"> 
+                                    Section 
+                                    <i class="fa fa-external-link"></i>
+                                </a>
+                            </button>
+                        </li>
+                        <li>
+                            <button> 
+                                <a class="link-deactivate" rel="noopener"> 
+                                    Exercises 
+                                    <i class="fa fa-external-link"></i>
+                                </a>
+                            </button>
+                        </li>
+                        <li>
+                            <button> 
+                                <a href="5.4-exercises-solutions.html" rel="noopener"> 
+                                    Exercise Solutions 
+                                    <i class="fa fa-external-link"></i>
+                                </a>
+                            </button>
+                        </li>
+                    </ul>
+                </div>    
+                <div class="pdf-panel-right">
+                    <ul>
+                        <li>
+                            <button> 
+                                <a target="_blank" rel="noopener"> 
+                                    Download 
+                                    <i class="fa fa-file-pdf-o"></i>
+                                </a>
+                            </button>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <hr>           
+            <p class="exercises-hint">
+                Click on a problem number to see its solution.
+            </p>
+            <p class="problems-note">
+                For each of problems 1–6,
+                perform the partial fraction decomposition.
+            </p>
+            <!-- exercises 1--6 -->
+            <table>
+                <tbody>
+                    <tr>
+                        <td>
+                            <a href="5.4-exercises-solutions.html#problem-1" target="_blank" rel="noopener"> \(1.\) </a>
+                            \(\ds \frac{2}{(x + 3)(x - 2)} \)
+                        </td>
+                        <td>
+                            <a href="5.4-exercises-solutions.html#problem-2" target="_blank" rel="noopener"> \(2.\)</a>
+                            \(\ds \frac{3x - 1}{x^2 - 8x - 9} \)
+                        </td>
+                        <td>
+                            <a href="5.4-exercises-solutions.html#problem-3" target="_blank" rel="noopener"> \(3.\) </a>
+                            \(\ds \frac{2x + 3}{9x^2 - x} \)
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="5.4-exercises-solutions.html#problem-4" target="_blank" rel="noopener"> \(4.\) </a>
+                            \(\ds \frac{t^2}{8t^3 - 1} \)
+                        </td>
+                        <td>
+                            <a href="5.4-exercises-solutions.html#problem-5" target="_blank" rel="noopener"> \(5.\)</a>
+                            \(\ds \frac{x^3 + 1}{9 - x^2} \)
+                        </td>
+                        <td>
+                            <a href="5.4-exercises-solutions.html#problem-6" target="_blank" rel="noopener"> \(6.\) </a>
+                            \(\ds \frac{3 - 10x^3}{5x^3 + 8x^2 - 11x}\)
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <p class="problems-note">
+                For each of problems 7–17,
+                evaluate the integral.
+            </p>
+            <table>
+                <tbody>
+                    <!-- 7--9 -->
+                    <tr>
+                        <td>
+                            <a href="5.4-exercises-solutions.html#problem-7" target="_blank" rel="noopener">
+                                \(7.\) 
+                            </a>
+                            \(\ds \int \frac{4 - 3x}{(7x + 3)(4 - x)} \, \dd x \)
+                        </td>
+                        <td>
+                            <a href="5.4-exercises-solutions.html#problem-8" target="_blank" rel="noopener">
+                                \(8.\)
+                            </a>
+                            \(\ds \int \frac{x}{2x^2 - 5x - 3} \, \dd x \)
+                        </td>
+                        <td>
+                            <a href="5.4-exercises-solutions.html#problem-9" target="_blank" rel="noopener">
+                                \(9.\)
+                            </a>
+                            \(\ds \int \frac{3t^2 + 2}{5t^2 - 25t} \, \dd t \)
+                        </td>
+                    </tr>
+                    <!-- 10--13 -->
+                    <tr>
+                        <td>
+                            <a href="5.4-exercises-solutions.html#problem-10" target="_blank" rel="noopener">
+                                \(10.\)
+                            </a>
+                            \(\ds \int \frac{3}{x(x + 3)(x^2-4)} \, \dd x \)
+                        </td>
+                        <td>
+                            <a href="5.4-exercises-solutions.html#problem-11" target="_blank" rel="noopener">
+                                \(11.\)
+                            </a>    
+                            \(\ds \int \frac{5}{(t - 3)^2} \, \dd t \)
+                        </td>
+                        <td>
+                            <a href="5.4-exercises-solutions.html#problem-12" target="_blank" rel="noopener">
+                                \(12.\)
+                            </a>
+                            \(\ds \int \frac{6 - 2t}{(t + 1)(27 - 3t^2)} \, \dd t \)
+                        </td>
+                    </tr>
+                    <!-- 13--16 -->
+                    <tr>
+                        <td>
+                            <a href="5.4-exercises-solutions.html#problem-13" target="_blank" rel="noopener">
+                                \(13.\)
+                            </a>
+                            \(\ds \int \frac{9 + 5q^2}{q^3 - q^2 - 12q} \, \dd q\)
+                        </td>
+                        <td>
+                            <a href="5.4-exercises-solutions.html#problem-14" target="_blank" rel="noopener">
+                                \(14.\)
+                            </a>    
+                            \(\ds \int \frac{x^4 + 1}{16 - 4x^2} \, \dd x \)
+                        </td>
+                        <td>
+                            <a href="5.4-exercises-solutions.html#problem-15" target="_blank" rel="noopener">
+                                \(15.\)
+                            </a>
+                            <span>
+                                \(\ds \int \frac{x}{(2x + 1)(x^2 + 4x + 1)} \, \dd x \)
+                            </span>
+                        </td>
+                    </tr>
+                    <!-- 16--19 -->
+                    <tr>
+                        <td>
+                            <a href="5.4-exercises-solutions.html#problem-16" target="_blank" rel="noopener">
+                                \(16.\)
+                            </a>
+                            \(\ds \int \frac{7w^3 - 9}{(w + 2)(4 - w^2)} \, \dd w \)
+                        </td>
+                        <td>
+                            <a href="5.4-exercises-solutions.html#problem-17" target="_blank" rel="noopener">
+                                \(17.\)
+                            </a>    
+                            \(\ds \int \frac{5}{2x^3 + 3x} \, \dd x\)
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </main>
+    </body>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+        <script id="AMSmath" src="TeX/AMSmath.js"></script>
+        <script src="../js/mathjax-config.js" ></script>
+        <script type="text/javascript" id="MathJax-script" 
+            src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js">
+        </script>
+        <script type="text/javascript" id="MathJax-script" 
+            src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js">
+        </script>
+        <script 
+            src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous">
+        </script>
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+        <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3.0.1/es5/tex-mml-chtml.js"></script>
+        <script id="AMSmath" async src="TeX/AMSmath.js"></script>
+        <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+        <script src="../js/hamburger-menu.js"></script>
+        <script src="../js/toggle-solutions.js"></script>
+</html>

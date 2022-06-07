@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>   
+    <head>
+        <link rel="stylesheet" href="../../css/hamburger-menu.css">
+        <link rel="stylesheet" href="../../css/layout.css">
+        <link rel="stylesheet" href="../../css/exercises-style.css">
+        <link rel="stylesheet" href="../../css/calculus/5.1-exercises.css">
+        <title> Problem 35 — 5.1 Exercises </title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <meta name="author" content="Valerie">
+    </head>
+    <!--Top Button Panel-->
+
+    <!--section tabs-->
+    <div class="tab">
+        <span class="tab-button-background"> <a href="34.html" class="tab-button"> < Previous Problem </a> </span>
+        <span class="tab-button-background"> <a href="../5.1.html" class="tab-button"> Notes </a> </span>
+        <span class="tab-button-background"> <a href="../5.1-exercises.html" class="tab-button"> Exercises </a> </span>
+        <span class="tab-button-background"> <a href="36.html" class="tab-button"> Next Problem > </a> </span>
+        <!--hamburger menu button-->
+        <span class="menu-button__background" style="text-align: left;">
+            <div class="menu-btn">
+                <div class="menu-btn__burger">
+                </div>
+            </div> 
+        </span>
+    </div>
+
+    <!--hamburger menu-->
+    <div class="menu-button__background">
+        <div class="menu-btn">
+            <div class="menu-btn__burger">
+            </div>
+        </div> 
+    </div>
+    <div id="popupMenuItems" class="menu-popup"> 
+        <div class="menu-list">
+            <hr class="menu-hr">
+            <p> 
+                <a class="menu-link" href="../../index.html"> 
+                    <div class="menu-item"> 
+                        <img src="../../images/icons/home-icon.png" class="menu-icon" alt="">
+                        Home 
+                    </div>
+                </a> 
+            </p>
+            <p> 
+                <a class="menu-link" href="../../about.html"> 
+                    <div class="menu-item"> 
+                        <img src="../../images/icons/about.png" class="menu-icon" alt="">
+                        About 
+                    </div>
+                </a> 
+            </p>
+            <p> 
+                <a class="menu-link" href="../../faq.html"> 
+                    <div class="menu-item"> 
+                        <img src="../../images/icons/question-mark-line.png" class="menu-icon" alt="">
+                        FAQ
+                    </div>
+                </a> 
+            </p>
+            <p> 
+                <a class="menu-link" href="../../contact.html"> 
+                    <div class="menu-item"> 
+                        <img src="../../images/icons/email.png" class="menu-icon" alt="">
+                        Contact
+                    </div>
+                </a> 
+            </p>
+            <hr class="menu-hr">
+            <p class="menu-link" style="color: gray;"> COURSES </p>
+            <p> <a class="menu-link" href="../algebra.html"> Algebra </a> </p>
+            <p> <a class="menu-link" href="../trig.html"> Trigonometry </a> </p>
+            <p> <a class="menu-link" href="../calculus.html"> Calculus </a> </p>
+            <p> <a class="menu-link" href="../statistics.html"> Statistics </a> </p>
+        </div>
+    </div>
+    <body class="background">
+        <h1> Problem 35 — 5.1 Exercises (Integration by Parts) </h1>
+        <!--section body-->
+        <section class="background-text">
+            <!--problem boxed-->
+            <div class="box-solution">
+                <div class="box-solution__problem">
+                    <div class="problem-body">
+                        <p>
+                            The density of sprinkles on a circular cake as a function of the distance, \(r,\) from the center of the cake 
+                            is given by \(\displaystyle s(r) = \frac{1}{10}e^{r/3},\) 
+                            where \(r\) is measured in inches and \(s(r)\) is measured in sprinkles per square inch.
+                            The total number of sprinkles on the cake is given by the expression 
+                            \(\displaystyle \int_0^{10} 2 \pi r s(r) \, \dd r.\)
+                            Find this value.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <!--solution-->
+            <div class="exercise-solution">
+                <p>
+                    <span class="solution-text">SOLUTION</span>
+                    We want to evaluate 
+                    \[\int_0^{10} 2 \pi r s(r) \, \dd r = \frac{\pi}{5} \int_0^{10} r e^{r/3} \, \dd r. \]
+                    Referencing the integration by parts formula,
+                    \[\int u \, \dd v = uv - \int v \, \dd u, \]
+                    we pick \(u = r\) and \(\dd v = e^{r/3} \, \dd r.\)
+                    Then, \(\dd u = \dd r\) and \(v = 3 e^{r/3}.\)
+                    We now have 
+                    \[
+                    \begin{aligned}
+                    \frac{\pi}{5} \int_0^{10} r e^{r/3} \, \dd r 
+                    &= \frac{\pi}{5} \left(3re^{r/3} \Big|_0^{10} - 3 \int_0^{10} e^{r/3} \, \dd r \right) \\
+                    &= \frac{\pi}{5} \left(3(10)e^{10/3} - 0 \right) - \frac{9 \pi}{5} \left(e^{10/3} - e^{0}\right) \\
+                    &= 6 \pi e^{10/3} - \frac{9 \pi}{5} e^{10/3} + \frac{9 \pi}{5} \\
+                    &= \frac{21 \pi}{5} e^{10/3} + \frac{9 \pi}{5} \\
+                    &\approx \box{375.52 \rightarrow 376.}
+                    \end{aligned}
+                    \]
+                    There are approximately \(376\) sprinkles on the cake.
+                </p>
+            </div>
+        </section>
+    </body>
+
+    <script src="../../js/hamburger-menu.js"></script>
+    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+    <script src="../../js/mathjax-config.js" defer></script>
+    <script type="text/javascript" id="MathJax-script" defer
+        src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js">
+    </script>
+    <script type="text/javascript" id="MathJax-script" async
+        src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js">
+    </script>
+</html> 
+

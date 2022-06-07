@@ -1,528 +1,650 @@
 <!DOCTYPE html>
-<html>
+<html lang="en-us">
     <head>
-        <link rel="stylesheet" href="../css/0.1.css">
-        <title> 1.2 — Evaluating Limits Algebraically </title>
+        <link rel="stylesheet" href="../css/hamburger-menu.css">
+        <link rel="stylesheet" href="../css/layout.css">
+        <link rel="stylesheet" href="../css/notes-style.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <title> 1.2 - Limit Properties </title>
         <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <meta name="author" content="Valerie">
-    
     </head>
-    <!--Top Button Panel-->
-    <header>
-        <div class="top-links" style="font-family:Georgia, 'Times New Roman', Times, serif">
-            <a href="../index.html" class="button_top">Home</a> 
-            <a href="../about.html" class="button_top">About Me</a> 
-            <a href="../faq.html" class="button_top">FAQ</a>
-            <a href="../contact.html" class="button_top">Contact Me</a>
-        </div>                                  
-    </header>
-    <!--Section Tabs-->
-    <div class="tab">
-        <a href="1.2.html" class="tab-button">Notes</a>
-        <a href="1.2-exercises.html" class="tab-button">Exercises</a>
-        <a href="1.2-applications.html" class="tab-button">Applications</a>
-        <a href="calculus.html" class="tab-button">Back to Calculus</a>
-    </div>
+
+    <script> 
+        $(function(){
+          $("#header").load("header.html"); 
+          $("#footer").load("footer.html"); 
+        });
+    </script> 
+    
     <body class="background">
-        <section>
-                <!--Section Title-->
-                <p class="background__title"> 1.2 — Evaluating Limits Algebraically </p>
-                <!--Section Body-->
-                <div class="background__text">
-                    <hr>
-                    <p> 
-                        In section 
-                        <a href="1.1.html" style="color:plum">1.1</a>, 
-                        we introduced the notion of limits and briefly discussed how to evaluate them.
-                        In this section, we will discuss how to evaluate limits in the forms 
-                        \(0/0\) and \(\infty/\infty\) using factoring, rationalization, and trigonometric identities.
-                        We will also learn to evaluate the limits of rational functions at infinity. 
+        <!--Section Title-->
+            <h1> 1.2 — Limit Properties </h1>
+            <!--Section Body-->
+            <section class="background-text">
+                <div class="pdf-panel">
+                    <ul>
+                        <li>
+                            <button> 
+                                <a target="_blank" rel="noreferrer noopener"> 
+                                    Notes <i class="fa fa-file-pdf-o"></i>
+                                </a>
+                            </button>
+                        </li>
+                        <li>
+                            <button> 
+                                <a target="_blank" rel="noreferrer noopener"> 
+                                    Exercises <i class="fa fa-file-pdf-o"></i>
+                                </a>
+                            </button>
+                        </li>
+                        <li>
+                            <button> 
+                                <a target="_blank" rel="noreferrer noopener"> 
+                                    Exercise Solutions <i class="fa fa-file-pdf-o"></i>
+                                </a>
+                            </button>
+                        </li>
+                        
+                    </ul>
+                </div>
+                    <hr>                  
+                    <p>
+                        This section covers limit properties involving the sums, differences, products, quotients, and compositions 
+                        of functions. It also covers the laws and procedures for more-complex types of limits. 
                     </p>
                     <p>
-                        Consider the rational function 
-                        \(f(x) = (x^2 - 4x + 9)(x^3 - 2)\). 
-                        How can we find \(\lim_{x \to \infty} f(x)\) ?
-                        The intuitive process is to realize that, as \(x\) grows infinitely large, only the highest-degree terms are significant.
-                        As \(x\) grows to infinity, \((x^2 - 4x + 9)/(x^3 - 2)\) becomes analogous to 
-                        \(x^2/x^3 = 1/x\), 
-                        which will decay to \(0\).
-                        Algebraically, however, we can divide the numerator and denominator by the highest degree term of the rational expression,
-                        \(x^3\) in this case. Doing so, we obtain 
+                        We must begin by introducing trivial limit properties,
+                        which enable us to prove later limit laws. 
+                        Consider a constant \(c.\) 
+                        We first have 
+                        \[\lim_{x \to a} c = c\,,\]
+                        which is intuitive because if we let \(f(x) = c,\) 
+                        a continuous function,
+                        then it follows that \(\lim_{x \to a} f(x) = f(a) = c.\)
+                        We also have the property that 
+                        \[\lim_{x \to a} x = a\,.\]
+                        Additionally, if we have the function \(cf(x)\) and \(\lim_{x \to a} f(x)\) exists, then 
+                        \[\lim_{x \to a} [cf(x)] = c \lim_{x \to a} f(x)\,.\]
+                        These limit laws are all intuitive since they are made palpable by drawing the graphs of 
+                        \(y = c,\) \(y = x,\) and \(y = cf(x),\) respectively. 
+                        You may find a proof to all the properties in this section in this 
+                        <a href="">PDF <i class="fa fa-file-pdf-o"></i> </a>. 
+                    </p>
+                    <p>
+                        Let us now discuss the limits of sums, differences, products, and quotients of functions. 
+                        Suppose that we have two functions \(f(x)\) and \(g(x)\) 
+                        such that 
+                        \(\lim_{x \to a} f(x)\) and \(\lim_{x \to a} g(x)\)
+                        both exist. Then
                         \[
-                        \begin{aligned}
-                        \lim_{x \to \infty} \frac{x^2 - 4x + 9}{x^3 - 2} &=
-                        \lim_{x \to \infty} \frac{x^2 - 4x + 9}{x^3 - 2} \cdot \frac{1/x^3}{1/x^3} \\
-                        &= \lim_{x \to \infty} \frac{1/x - 4/x^2 + 9/x^3}{1 - 2/x^3} \\
-                        &= 0. \\
-                        \end{aligned}
+                        \ba 
+                            \lim_{x \to a} [f(x) + g(x)] &= \lim_{x \to a} f(x) + \lim_{x \to a} g(x)\,. \\[2ex]
+                            \lim_{x \to a} [f(x) - g(x)] &= \lim_{x \to a} f(x) - \lim_{x \to a} g(x)\,. \\[2ex]
+                            \lim_{x \to a} [f(x) \cdot g(x)] &= \lim_{x \to a} f(x) \cdot \lim_{x \to a} g(x)\,. \\[2ex]
+                            \lim_{x \to a} [f(x)/g(x)] &= 
+                            \lim_{x \to a} f(x)/ \lim_{x \to a} g(x)\,, \, \textrm{given that} \lim_{x \to a} g(x) \ne 0\,. \\[2ex]
+                        \ea 
                         \]
-                        This result is intuitive because we know that \(f(x)\) contains a horizontal asymptote at \(x = 0\).
-                        Therefore, the end behavior is that as \(x\) approaches infinity, \(f(x)\) will approach \(0\), the horizontal asymptote.
-                        We then conclude that the limit of a rational expression, as \(x\) approaches \(-\infty\) or \(+ \infty\), matches the function's end behavior.
                     </p>
 
-                    <br>
-
-                    <!-- table for evaluating limits of rational expressions-->
-                    <div class="box-title"> LIMITS OF RATIONAL EXPRESSIONS </div>
+                    <div class="box-title"> LIMITS OF SUMS, DIFFERENCES, PRODUCTS, AND QUOTIENTS </div>
                     <div class="box">
-                        <p>
-                            To determine the limit of a rational expression, 
-                            take the limit of the highest-degree terms in the numerator and denominator. 
-                            The resultant value is congruent with the horizontal asymptote of the function.
-                        </p>
+                        If \(\lim_{x \to a} f(x)\) and \(\lim_{x \to a} g(x)\)
+                        both exist, then 
+                        <div class="numbered-equations">
+                            <p>
+                                \(\ds \lim_{x \to a} [f(x) + g(x)] = \lim_{x \to a} f(x) + \lim_{x \to a} g(x) \,.\)
+                                <span> \((1)\) </span>
+                            </p>
+                            <p>
+                                \(\ds \lim_{x \to a} [f(x) - g(x)] = \lim_{x \to a} f(x) - \lim_{x \to a} g(x)\,.\)
+                                <span> \((2)\) </span>
+                            </p>
+                            <p>
+                                \(\ds \lim_{x \to a} [f(x) \cdot g(x)] = \lim_{x \to a} f(x) \cdot \lim_{x \to a} g(x)\,.\)
+                                <span> \((3)\) </span>
+                            </p>
+                            <p>
+                                \(\ds \lim_{x \to a} [f(x)/g(x)] = \lim_{x \to a} f(x) / \lim_{x \to a} g(x)\,.\)
+                                <span> \((4)\) </span>
+                            </p>
+                        </div>
                     </div>
-
-                    <br>
 
                     <!--example 1-->
+                    <div class="example-title"> EXAMPLE \(1\) </div>
                     <div class="example">
-                        <div class="example__heading"><b>Example 1</b></div>
                         <!--example 1 problem-->
-                        <p class="example__problem">  
-                            <p style="margin-left: 20px;">
-                                Evaluate each of the following limits.
-                                <div style="margin-left:5%">
-                                    <ol type="I" style="padding-top: 20px; padding-bottom: 20px; line-height: 3; font-style: normal;">
-                                        <li style="padding-left: 20px;">
-                                            \(\displaystyle \lim_{x \to \infty} \frac{3x^3 - 4x^2 + 16}{5x^3 + 8x - 2} \)
-                                        </li>
-                                        <li style="padding-left: 20px;">
-                                            \(\displaystyle \lim_{x \to \infty} \frac{-8x^2 + \frac{3}{4}x^2 + 16}{5x - 2}\)
-                                        </li>   
-                                        <li style="padding-left: 20px;">
-                                            \(\displaystyle \lim_{x \to -\infty} \frac{8 + 3x^2 - x^9}{10x^9} \)
-                                        </li>
-                                    </ol>
-                                </div>
-                            </p>
-                        </p>
-                        <!--example 1 solution-->
-                        <button onclick="toggle1()" class="solution__button"> Show Solution ▼ </button>
+                        <div class="example-problem">  
+                            Let \(f\) and \(g\) be functions such that 
+                            \(\lim_{x \to 2} f(x) = 4\) and \(\lim_{x \to 2} g(x) = -2.\)
+                            Calculate the following limits.
+                            <ol type="i" class="example-list">
+                                <li>
+                                    \(\ds \lim_{x \to 2}[f(x) + g(x)]\)
+                                </li>
+                                <li>
+                                    \(\ds \lim_{x \to 2} [f(x) - g(x)]\)
+                                </li>
+                                <li>
+                                    \(\ds \lim_{x \to 2} [f(x) g(x)]\)
+                                </li>
+                                <li>
+                                    \(\ds \lim_{x \to 2} [f(x)/g(x)]\)
+                                </li>
+                            </ol>
+                        </div>
+                    </div>
+                    <button onclick="toggle1()" class="solution-button"> SHOW SOLUTION ▼ </button>
+                    <!--example 1 solution-->
+                    <div>
                         <div id="solution1" class="solution">
-                            <p> 
-                                <ol type="I" style="padding-top: 20px; padding-bottom: 20px; line-height: 3; font-style: normal;">
-                                    <li style="padding-left: 20px;">
-                                        We consider only the highest-degree terms on the numerator and denominator. 
-                                        Therefore,
-                                        \[
-                                        \begin{aligned}
-                                        \lim_{x \to \infty} \frac{3x^3 - 4x^2 + 16}{5x^3 + 8x - 2} 
-                                        &= \lim_{x \to \infty} \frac{3x^3}{5x^3} \\
-                                        &= \lim_{x \to \infty} \frac{3}{5} \\
-                                        &= \bbox[border: 2pt solid white, 2px]{\frac{3}{5}}. \\
-                                        \end{aligned}
-                                        \] 
-                                    </li>
-                                    <hr>
-                                    <li style="padding-left: 20px;">
-                                        We consider only the highest-degree terms on the numerator and denominator. 
-                                        Therefore,
-                                        \[
-                                        \begin{aligned}
-                                        \lim_{x \to \infty} \frac{-8x^2 + \frac{3}{4}x^2 + 16}{5x - 2} 
-                                        &= \lim_{x \to \infty} \frac{-8x^2}{5x} \\
-                                        &= \lim_{x \to \infty} \frac{-8x}{5} \\
-                                        &= - \infty \\
-                                        \end{aligned}
-                                        \] 
-                                        Because the limit is unbounded, we conclude that it does not exist.
-                                    </li>   
-                                    <hr>
-                                    <li style="padding-left: 20px;">
-                                        We consider only the highest-degree terms on the numerator and denominator. 
-                                        Therefore,
-                                        \[
-                                        \begin{aligned}
-                                        \lim_{x \to -\infty} \frac{8 + 3x^2 - x^9}{10x^9} 
-                                        &= \lim_{x \to -\infty} \frac{-x^9}{10x^9} \\
-                                        &= \lim_{x \to -\infty} \frac{-1}{10} \\
-                                        &= \bbox[border: 2pt solid white, 2px]{-\frac{1}{10}}. \\
-                                        \end{aligned}
-                                        \]    
-                                    </li>
-                                </ol>
-                            </p>
+                            <ol type="i" class="example-list">
+                                <li>
+                                    The limits of \(f(x)\) and \(g(x)\) both exist, so we can apply property \((1)\) to obtain
+                                    \[
+                                    \ba 
+                                    \lim_{x \to 2}[f(x) + g(x)] &= \lim_{x \to 2} f(x) + \lim_{x \to 2} g(x) \\ 
+                                    &= 4 - 2 \\
+                                    &= \boxed{2\,.}
+                                    \ea 
+                                    \]
+                                </li>
+                                <hr>
+                                <li>
+                                    We can apply property \((2)\) to get 
+                                    \[
+                                    \ba 
+                                    \lim_{x \to 2}[f(x) - g(x)] &= \lim_{x \to 2} f(x) - \lim_{x \to 2} g(x) \\ 
+                                    &= 4 - (-2) \\
+                                    &= \boxed{6\,.}
+                                    \ea 
+                                    \]
+                                </li>
+                                <hr>
+                                <li>
+                                    The application of property \((3)\) gives 
+                                    \[
+                                    \ba 
+                                    \lim_{x \to 2}[f(x) g(x)] &= \lim_{x \to 2} f(x) \cdot \lim_{x \to 2} g(x) \\ 
+                                    &= 4 \cdot (-2) \\
+                                    &= \boxed{-8\,.}
+                                    \ea 
+                                    \]
+                                </li>
+                                <hr>
+                                <li>
+                                    Using property \((4),\) we get 
+                                    \[
+                                    \ba 
+                                    \lim_{x \to 2} \frac{f(x)}{g(x)} &= \frac{\lim_{x \to 2} f(x)}{\lim_{x \to 2} g(x)} \\[1ex]
+                                    &= \frac{4}{-2} \\[1ex]
+                                    &= \boxed{-2\,.}
+                                    \ea 
+                                    \]
+                                </li>
+                                <hr>
+                            </ol>
                         </div>
                     </div>
 
-
-                    <br>
-
-                    <!---->
                     <p>
-                        Let's now discuss more types of limits in the form \(0/0\) and \(\infty/\infty\), which are <u>indeterminate forms</u>.
-                        It is important to understand, however, that a limit in the form \(k/0\), where \(k \ne 0\), does not exist.
+                        If \(n\) is a constant and \(\lim_{x \to a} f(x)\) exists, then we have the following laws with exponents:
+                        \[
+                        \ba 
+                            \lim_{x \to a} x^n &= a^n \,. \\
+                            \lim_{x \to a} \sqrt[n]{x} &= \sqrt[n]{a}\,.\\
+                            \lim_{x \to a} [f(x)]^n &= \left[\lim_{x \to a} f(x)\right]^n\,. \\
+                            \lim_{x \to a} \sqrt[n]{f(x)} &= \sqrt[n]{\lim_{x \to a} f(x)}\,.
+                        \ea 
+                        \]
                     </p>
 
-                    <br>
-                    
-                    <!-- table for indeterminate forms-->
-                    <div class="box-title"> INDETERMINATE FORMS </div>
+                    <div class="box-title"> LIMIT PROPERTIES WITH EXPONENTS </div>
                     <div class="box">
-                        <p>
-                            <ul>
-                                <li style="line-height: 4;">
-                                    Limits in the forms \(\displaystyle \frac{0}{0}\) and \(\displaystyle \frac{\infty}{\infty}\) are <u>indeterminate</u>.
-                                </li>
-                                <li style="line-height: 4;">
-                                    Limits in the form \(\displaystyle \frac{k}{0}\), where \(k \ne 0\), <u>do not exist</u>.
-                                </li>
-                            </ul>
-                        </p>
-                    </div>
-
-                    <br>
-                    
-                    <div>
-                        <p>
-                            Consider, for example, the function \(f(x) = (x^2 - 25)/(x + 5)\). 
-                            What is \(\lim_{x \to -5} f(x)\) ?
-                            When we try to perform a direct substitution, we obtain the form \(0/0\), which is indeterminate. 
-                            However, we notice that the numerator \(f(x)\) is a difference of squares and can be factored as \((x + 5)(x - 5)\).
-                            Thus, we can rewrite the limit as 
-                            \[
-                            \begin{aligned}
-                            \lim_{x \to -5} f(x) &= \lim_{x \to -5} \frac{x^2 - 25}{x + 5} \\
-                            &= \lim_{x \to -5} \frac{(x + 5)(x - 5)}{x + 5} \\
-                            &= \lim_{x \to -5} (x - 5) \\
-                            &= -10.
-                            \end{aligned}
-                            \]
-                        </p>
-                        <div class="image-side">
-                            <img src="../images/Calculus/1/1.2/1.2-1.jpg" class="image-side-image" alt="">
-                            <p class="image-side-caption"> 
-                                Fig. 1.2-1.  
-                                The function \(y = (x^2 - 25)/(x + 5)\) is equivalent to \(y = x - 5\) with a hole at the point \((-5, -10)\).
+                        If \(n\) is a constant and \(\lim_{x \to a} f(x)\) exists, then 
+                        <div class="numbered-equations">
+                            <p>
+                                \(\ds \lim_{x \to a} x^n = a^n\,.\)
+                                <span> \((5)\) </span>
                             </p>
-                        </div>
-                        <p>
-                            The function \(f(x) = (x^2 - 25)/(x + 5)\) is equivalent to the line \(y = x - 5\) with a hole at the point \((-5, -10)\), 
-                            as shown in Fig. 1-2.1. This example demonstrates that, for a case in which direct substitution yields the indeterminate form \(0/0\),
-                            you should be aware of any factors that cancel out.
-                            After canceling out any common factors in the numerator and denominator, attempt direct substitution again. 
-                        </p>
-                    </div>
-
-                    <br>
-
-                    <div>
-                        <p>
-                            As a second example, consider the function \(g(x) = (\sqrt{2x + 5} - 1)/(x + 2)\).
-                            What is \(\lim_{x \to -2} g(x)\) ?
-                            We notice that, upon attempting direct substitution by plugging in \(x = -2\), we are left in a \(0/0\) indeterminate form.
-                            However, we should remain observant—let's 
-                            try multiplying the numerator and denominator by the conjugate of \((\sqrt{2x + 5} - 1)\),
-                            which is \((\sqrt{2x + 5} + 1)\). Doing so yields 
-                            \[
-                            \begin{aligned}
-                            g(x) &= \frac{\sqrt{2x + 5} - 1}{x + 2} \\ 
-                            &= \frac{\sqrt{2x + 5} - 1}{x + 2} \cdot \frac{\sqrt{2x + 5} + 1}{\sqrt{2x + 5} + 1} \\
-                            &= \frac{(2x + 5) - 1}{(x + 2) \left(\sqrt{2x + 5} + 1\right)} \\
-                            &= \frac{2(x + 2)}{(x + 2) \left(\sqrt{2x + 5} + 1\right)} \\
-                            &= \frac{2}{\sqrt{2x + 5} + 1}, x \ne -2. \\
-                            \end{aligned}
-                            \]
-                            We can now take the limit, as \(x\) approaches \(-2\), of \(2/(\sqrt{2x + 5} + 1)\). 
-                            We then get 
-                            \[ 
-                            \begin{aligned} 
-                            \lim_{x \to -2} \frac{2}{\sqrt{2x + 5} + 1} &= \frac{2}{\sqrt{2(-2) + 5} + 1} \\ 
-                            &= \frac{2}{\sqrt{1} + 1} \\
-                            &= \bbox[border: 2pt solid white, 2px]{1}.
-                            \end{aligned}
-                            \]
-                            This technique of rationalizing permitted us to create a common factor to cancel out. 
-                            After doing so, we performed direct substitution and obtained the limit.
-                            This rationalization created a new function that had a hole at \(x = -2\), which is analogous to the graph in Fig. 1.2.1. 
-                        </p>
-                        
-                    </div>
-
-                    <br>
-
-                    <!--example 2-->
-                    <div class="example">
-                        <div class="example__heading"><b>Example 2</b></div>
-                        <!--example 2 problem-->
-                        <p class="example__problem">  
-                            <p style="margin-left: 20px;">
-                                For each of the following, evaluate the limit or state that it does not exist. 
-                                <div style="margin-left:5%">
-                                    <ol type="I" style="padding-top: 20px; padding-bottom: 20px; line-height: 3; font-style: normal;">
-                                        <li style="padding-left: 20px;">
-                                            \(\displaystyle \lim_{x \to -2} \frac{x^2 - 4}{x + 2} \)
-                                        </li>
-                                        <li style="padding-left: 20px;">
-                                            \(\displaystyle \lim_{x \to 4} \frac{x^3 - 64}{x - 4} \)
-                                        </li>
-                                        <li style="padding-left: 20px;">
-                                            \(\displaystyle \lim_{x \to 9/4} \frac{\sqrt{4x - 5} - 2}{16x - 36} \)
-                                        </li>   
-                                        <li style="padding-left: 20px;">
-                                            \(\displaystyle \lim_{x \to 9} \frac{3x - 27}{\sqrt{x - 8} - 1} \)
-                                        </li>
-                                    </ol>
-                                </div>
+                            <p>
+                                \(\ds \hspace{-0.15ex} \lim_{x \to a} \sqrt[n]{x} = \sqrt[n]{a}\,.\)
+                                <span> \((6)\) </span>
                             </p>
-                        </p>
-                        <!--example 2 solution-->
-                        <button onclick="toggle2()" class="solution__button"> Show Solution ▼ </button>
-                        <div id="solution2" class="solution">
-                            <p> 
-                                <ol type="I" style="padding-top: 20px; padding-bottom: 20px; line-height: 3; font-style: normal;">
-                                    <li style="padding-left: 20px;">
-                                        When we attempt to perform direct substitution, we obtain a \(0/0\) indeterminate form. 
-                                        However, the numerator is a difference of squares, so we can factor it and rewrite the limit as 
-                                        \[
-                                        \begin{aligned}
-                                        \lim_{x \to -2} \frac{(x + 2)(x - 2)}{x + 2} 
-                                        &= \lim_{x \to -2} (x - 2) \\
-                                        &= \bbox[border: 2pt solid white, 2px]{4}. \\
-                                        \end{aligned}
-                                        \] 
-                                    </li>
-                                    <hr>
-                                    <li style="padding-left: 20px;">
-                                        This limit is in the indeterminate form \(0/0\).
-                                        We see that the numerator is a difference of cubes and can thus be rewritten as 
-                                        \((x - 4)(x^2 + 8x + 16)\).
-                                        Thus, 
-                                        \[
-                                        \begin{aligned}
-                                        \lim_{x \to 4} \frac{(x^3 - 64)}{x - 4} 
-                                        &= \lim_{x \to 4} \frac{(x - 4)(x^2 + 8x + 16)}{x - 4} \\
-                                        &= \lim_{x \to 4} (x^2 + 8x + 16) \\
-                                        &= (4)^2 + 8(4) + 16 \\
-                                        &= \bbox[border: 2pt solid white, 2px]{64}. \\
-                                        \end{aligned}
-                                        \] 
-                                    </li>
-                                    <hr>
-                                    <li style="padding-left: 20px;">
-                                        This limit is in the indeterminate form \(0/0\).
-                                        We observe that there is a radical in the numerator, so let's attempt to rationalize. 
-                                        We can do so by multiplying the numerator and denominator by \((\sqrt{4x - 5} + 2)\).
-                                        We then get 
-                                        \[
-                                        \begin{aligned}
-                                        \lim_{x \to 9/4} \frac{\sqrt{4x - 5} - 2}{16x - 36} 
-                                        &= \lim_{x \to 9/4} \frac{\sqrt{4x - 5} - 2}{16x - 36} \cdot \frac{\sqrt{4x - 5} + 2}{\sqrt{4x - 5} + 2} \\
-                                        &= \lim_{x \to 9/4} \frac{(4x - 5) - 4}{(16x - 36)(\sqrt{4x - 5} + 2) } \\
-                                        &= \lim_{x \to 9/4} \frac{4x - 9}{4(4x - 9)(\sqrt{4x - 5} + 2)} \\
-                                        &= \lim_{x \to 9/4} \frac{1}{4(\sqrt{4x - 5} + 2)} \\
-                                        &= \frac{1}{4 \left(\sqrt{4\left(\frac{9}{4}\right) - 5} + 2 \right)} \\
-                                        &= \bbox[border: 2pt solid white, 2px]{\frac{1}{16}}. \\
-                                        \end{aligned}
-                                        \]
-                                    </li>   
-                                    <hr>
-                                    <li style="padding-left: 20px;">
-                                        This limit is in the indeterminate form \(0/0\).
-                                        We observe that there is a radical in the denominator, which we will attempt to rationalize. 
-                                        The conjugate of the denominator is \((\sqrt{x - 8} - 1)\). 
-                                        Therefore, we will multiply the numerator and denominator by \((\sqrt{x - 8} - 1)\) to get 
-                                        \[
-                                        \begin{aligned}
-                                        \lim_{x \to 9} \frac{3x - 27}{\sqrt{x - 8} + 1}
-                                        &= \lim_{x \to 9} \frac{3x - 27}{\sqrt{x - 8} + 1} \cdot \frac{\sqrt{x - 8} - 1}{\sqrt{x - 8} - 1} \\
-                                        &= \lim_{x \to 9} \frac{(3x - 27)(\sqrt{x - 8} - 1)}{(x - 8) - 1} \\
-                                        &= \lim_{x \to 9} \frac{3(x - 9)(\sqrt{x - 8} - 1)}{x - 9} \\
-                                        &= \lim_{x \to 9} 3 \left(\sqrt{x - 8} - 1\right) \\
-                                        &= 3 \left(\sqrt{9 - 8} - 1\right) \\ 
-                                        &= \bbox[border: 2pt solid white, 2px]{0}. \\
-                                        \end{aligned}
-                                        \]
-                                    </li>
-                                </ol>
+                            <p>
+                                \(\ds \hspace{4.6ex} \lim_{x \to a} [f(x)]^n = \left[\lim_{x \to a} f(x)\right]^n\,.\)
+                                <span> \((7)\) </span>
+                            </p>
+                            <p>
+                                \(\ds \hspace{3ex} \lim_{x \to a} \sqrt[n]{f(x)} = \sqrt[n]{\lim_{x \to a} f(x)}\,.\)
+                                <span> \((8)\) </span>
                             </p>
                         </div>
                     </div>
-
-                    <br>
-
-                    <div>
-                        <p>
-                            The next series of indeterminate limits we will analyze involve trigonometric functions. 
-                            Recall the following trigonometric identities: 
-                            \[ 
-                            \begin{aligned}
-                            1 &= \sin^2(x) + \cos^2(x)  \\
-                            \sin(2x) &= 2 \sin(x) \cos(x) \\
-                            \cos(2x) &= \cos^2(x) - \sin^2(x). \\
-                            \end{aligned}
-                            \]
-                            We will reference these identities for any indeterminate limits involving trigonometric functions. 
-                        </p>
-                    </div>
-
-                    <br>
-
-                    <!--example 3-->
-                    <div class="example">
-                        <div class="example__heading"><b>Example 3</b></div>
-                        <!--example 3 problem-->
-                        <p class="example__problem">  
-                            <p style="margin-left: 20px;">
-                                For each of the following, evaluate the limit or state that it does not exist.
-                                <div style="margin-left:5%">
-                                    <ol type="I" style="padding-top: 20px; padding-bottom: 20px; line-height: 3; font-style: normal;">
-                                        <li style="padding-left: 20px;">
-                                            \(\displaystyle \lim_{x \to \pi/2} \frac{\sin(2x)}{\cos(x)} \)
-                                        </li>
-                                        <li style="padding-left: 20px;">
-                                            \(\displaystyle \lim_{x \to 0} \frac{1 - \cos(x)}{3 \sin(x)} \)
-                                        </li>   
-                                        <li style="padding-left: 20px;">
-                                            \(\displaystyle \lim_{x \to \pi/4} \frac{\cos(2x)}{\cos(x) - \sin(x)} \)
-                                        </li>
-                                    </ol>
-                                </div>
-                            </p>
-                        </p>
-                        <!--example 3 solution-->
-                        <button onclick="toggle3()" class="solution__button"> Show Solution ▼ </button>
-                        <div id="solution3" class="solution">
-                            <div style="margin-left:5%">
-                                <ol type="I" style="padding-top: 20px; padding-bottom: 20px; line-height: 3; font-style: normal;">
-                                    <li style="padding-left: 20px;">
-                                        The limit is in a \(0/0\) indeterminate form.
-                                        We can rewrite \(\sin(2x)\) as \(2 \sin(x) \cos(x)\). 
-                                        We then obtain 
-                                        \[ 
-                                        \begin{aligned} 
-                                        \lim_{x \to \pi/2} \frac{\sin(2x)}{\cos(x)} 
-                                        &= \lim_{x \to \pi/2} \frac{2 \sin(x) \cos(x)}{\cos(x)} \\
-                                        &= \lim_{x \to \pi/2} 2 \sin(x) \\
-                                        &= 2 \sin \left(\frac{\pi}{2}\right) \\
-                                        &= \bbox[border: 2pt solid white, 2px]{2}.
-                                        \end{aligned}
-                                        \]
-                                    </li>
-                                    <hr>
-                                    <li style="padding-left: 20px;">
-                                        Because we are in a \(0/0\) indeterminate form, we must be resourceful. 
-                                        One way to manipulate this limit is to multiply the numerator and denominator by \((1 + \cos(x))\),
-                                        after which we get 
-                                        \[
-                                        \begin{aligned}
-                                        \lim_{x \to 0} \frac{1 - \cos(x)}{3 \sin(x)} 
-                                        &= \lim_{x \to 0} \frac{1 - \cos(x)}{3 \sin(x)} \cdot \frac{1 + \cos(x)}{1 + \cos(x)} \\
-                                        &= \lim_{x \to 0} \frac{1 - \cos^2(x)}{3 \sin(x)(1 + \cos(x))} \\
-                                        &= \lim_{x \to 0} \frac{\sin^2(x)}{3 \sin(x)(1 + \cos(x))} \\
-                                        &= \lim_{x \to 0} \frac{\sin(x)}{3 (1 + \cos(x))} \\
-                                        &= \frac{\sin(0)}{3\left(1 + \cos(0)\right)} \\
-                                        &= \bbox[border: 2pt solid white, 2px]{0}.
-                                        \end{aligned}
-                                        \]
-                                    </li>   
-                                    <hr>
-                                    <li style="padding-left: 20px;">
-                                        We understand that \(\cos(2x) = \cos^2(x) - \sin^2(x)\).
-                                        Therefore, 
-                                        \[
-                                            \begin{aligned}
-                                            \lim_{x \to \pi/4} \frac{\cos(2x)}{\cos(x) - \sin(x)} 
-                                            &= \lim_{x \to \pi/4} \frac{\cos^2(x) - \sin^2(x)}{\cos(x) - \sin(x)} \\
-                                            &= \lim_{x \to \pi/4} \frac{\left(\cos(x) + \sin(x)\right) \left(\cos(x) - \sin(x)\right)}{\cos(x) - \sin(x)} \\
-                                            &= \lim_{x \to \pi/4} \left(\cos(x) + \sin(x)\right) \\ 
-                                            &= \cos(\pi/4) + \sin(\pi/4) \\
-                                            &= \bbox[border: 2pt solid white, 2px]{\sqrt{2}}.
-                                            \end{aligned}
-                                        \]
-                                    </li>
-                                </ol>
-                            </div>
-                        </div>
-                    </div>
-
-                    <br>
-
-                    <div>
-                        We should now be comfortable with recognizing indeterminate forms. 
-                        The examples in this section showcase methods for algebraically manipulating indeterminate limits 
-                        into a form for which direct substitution yields a definite answer. 
-                        Remain vigilant for any factors that cancel out—this is the common goal of the algebraic manipulations featured in this section.
-                    </div>
-
-                    <!--section summary-->
-                    <p>
-                        <p style="text-align: center; font-size: 150%;">
-                            <u> SECTION SUMMARY </u>
-                            <ul>
-                                <li style="padding-bottom: 20px;"> 
-                                    A limit in the form \(\displaystyle \frac{0}{0}\) or \(\displaystyle \frac{\infty}{ \infty}\) 
-                                    is <u>indeterminate</u>. 
-                                    However, a limit in the form \(\displaystyle \frac{k}{0}\), where \(k \ne 0\), <u>does not exist</u>.  
-                                </li>
-                                <li style="padding-top: 20px; padding-bottom: 20px;">
-                                    To find a limit of a rational expression at infinity, take the limit of the highest-degree terms only—they 
-                                    are the most significant. The result agrees with the end behavior of the function.
-                                </li>
-                                <li style="padding-top: 20px; padding-bottom: 20px;">
-                                    Try to algebraically manipulate an indeterminate limit into a form for which direct substitution yields a definite value. 
-                                </li>
-                                <li style="padding-top: 20px; padding-bottom: 20px;">
-                                    If you notice a fraction with a radical in an indeterminate limit, 
-                                    try to rationalize it by multiplying the numerator and denominator by the conjugate of the radical expression. 
-                                </li>
-                                <li style="padding-top: 20px; padding-bottom: 20px;">
-                                    Utilize trigonometric identities to simplify indeterminate limits involving trigonometric functions. 
-                                    Remember the Pythagorean identity as well as the double angle identities for sine and cosine,
-                                    \(\sin(2x) = 2 \sin(x) \cos(x)\) and \(\cos(2x) = \cos^2(x) - \sin^2(x)\).
-                                </li>
-                            </ul>    
-                        </p>
                 </div>
-            <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-            <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3.0.1/es5/tex-mml-chtml.js"></script>
-            <script id="AMSmath" async src="TeX/AMSmath.js"></script>
-            <script src="http://code.jquery.com/jquery-latest.min.js"></script>
-            <!--toggle solution functions-->
-            <script>
-                function toggle1(){
-                    var clicked = document.getElementById("solution1");
-                    if (clicked.style.display === "none") {
-                        clicked.style.display = "block";
-                    } else {
-                        clicked.style.display = "none";
-                    }
-                }
-                function toggle2(){
-                    var clicked = document.getElementById("solution2");
-                    if (clicked.style.display === "none") {
-                        clicked.style.display = "block";
-                    } else {
-                        clicked.style.display = "none";
-                    }
-                }
-                function toggle3(){
-                    var clicked = document.getElementById("solution3");
-                    if (clicked.style.display === "none") {
-                        clicked.style.display = "block";
-                    } else {
-                        clicked.style.display = "none";
-                    }
-                }
-                function toggle4(){
-                    var clicked = document.getElementById("solution4");
-                    if (clicked.style.display === "none") {
-                        clicked.style.display = "block";
-                    } else {
-                        clicked.style.display = "none";
-                    }
-                }
-                function toggle5(){
-                    var clicked = document.getElementById("solution5");
-                    if (clicked.style.display === "none") {
-                        clicked.style.display = "block";
-                    } else {
-                        clicked.style.display = "none";
-                    }
-                }
-            </script>
-            
+
+                <!--example 2-->
+                <div class="example-title"> EXAMPLE \(2\) </div>
+                <div class="example">
+                    <!--example 2 problem-->
+                    <div class="example-problem">  
+                       <!--figure 1-->
+                       <div class="fig-1">
+                            <img src="../images/Calculus/1/1.2/1.jpg" class="fig-1__image" alt="">
+                        </div>
+                        Consider Figure 1, in which the graphs of \(f\) and \(g\) are shown. 
+                        Compute the following limits.
+                        <ol type="i" class="example-list">
+                            <li>
+                                \(\ds \lim_{x \to -1} [f(x) + g(x)]\)
+                            </li>
+                            <li>
+                                \(\ds \lim_{x \to \, 0 \;} [f(x) - g(x)]\)
+                            </li>
+                            <li>
+                                \(\ds \lim_{x \to \, 0 \;} [f(x) + g(x)]\)
+                            </li>
+                            <li>
+                                \(\ds \lim_{x \to 0^+} [f(x)/g(x)]\)
+                            </li>
+                        </ol>
+                    </div>
+                </div>
+                <button onclick="toggle2()" class="solution-button"> SHOW SOLUTION ▼ </button>
+                <!--example 2 solution-->
+                <div>
+                    <div id="solution2" class="solution">
+                        <ol type="i" class="example-list">
+                            <li>
+                                We see that \(\lim_{x \to -1} f(x) = 1\) 
+                                and \(\lim_{x \to -1} g(x) = 2.\)
+                                Thus,
+                                \[
+                                \ba 
+                                \lim_{x \to -1} [f(x) + g(x)] &= \lim_{x \to -1} f(x) + \lim_{x \to -1} g(x) \\ 
+                                &= 1 + 2 \\
+                                &= \boxed{3\,.}
+                                \ea 
+                                \]
+                            </li>
+                            <hr>
+                            <li>
+                                We see that neither \(\lim_{x \to 0} f(x)\) nor \(\lim_{x \to 0} g(x)\) 
+                                exists, so we cannot use property \((2).\)
+                                However, we <i>can</i> apply property \((2)\) for the one-sided limits because each one exists:
+                                \[
+                                \ba 
+                                \lim_{x \to 0^-} [f(x) - g(x)] &= \lim_{x \to 0^-} f(x) - \lim_{x \to 0^-} g(x) \\
+                                &= 3 - 2 \\
+                                &= 1\,; \\
+                                \lim_{x \to 0^+} [f(x) - g(x)] &= \lim_{x \to 0^+} f(x) - \lim_{x \to 0^+} g(x) \\
+                                &= 4 - 3 \\
+                                &= 1\,.
+                                \ea 
+                                \]
+                                Since these one-sided limits are equal, 
+                                we have 
+                                \[\lim_{x \to 0} [f(x) - g(x)] = \boxed{1\,.}\]
+                            </li>
+                            <hr>
+                            <li>
+                                Similar to part (ii), neither \(\lim_{x \to 0} f(x)\) nor \(\lim_{x \to 0} g(x)\) exists.
+                                We cannot apply property \((1),\) but we <i>can</i> apply it to the one-sided limits of the sum:
+                                \[
+                                \ba 
+                                \lim_{x \to 0^-} [f(x) + g(x)] &= \lim_{x \to 0^-} f(x) + \lim_{x \to 0^-} g(x) \\
+                                &= 3 + 2 \\
+                                &= 5\,; \\
+                                \lim_{x \to 0^+} [f(x) + g(x)] &= \lim_{x \to 0^+} f(x) + \lim_{x \to 0^+} g(x) \\
+                                &= 4 + 3 \\
+                                &= 7\,.
+                                \ea 
+                                \]
+                                Because these one-sided limits are not equivalent, the limit <span class="border">does not exist.</span>
+                            </li>
+                            <hr>
+                            <li>
+                                In this case, we can apply property \((4)\) to get 
+                                \[
+                                \ba 
+                                \lim_{x \to 0^+} \frac{f(x)}{g(x)} &= \frac{\lim_{x \to 0^+} f(x)}{\lim_{x \to 0^+} g(x)} \\[2ex]
+                                &= \boxed{4/3\,.}
+                                \ea 
+                                \]
+                            </li>
+                            <hr>
+                        </ol>
+                    </div>
+                    <p>
+                        For limit properties \((1)\) through \((4),\) 
+                        the nonexistence of \(\lim_{x \to a} f(x)\) and/or \(\lim_{x \to a} g(x)\) 
+                        does NOT imply that the limit of the sum, difference, product, or quotient does not exist.
+                        <span class="warning">
+                            These properties are theorems that can be applied to <i>some</i> limits.</span>
+                        For example, consider the function \(k(x) = \sin(x)/x.\) 
+                        You may verify using a graphing calculator that \(\lim_{x \to 0} k(x) = 1,\)
+                        but the fallacious application of property \((3)\) could produce 
+                        \[
+                        \ba 
+                            \lim_{x \to 0} \frac{\sin x}{x} &= \lim_{x \to 0} \sin x \cdot \lim_{x \to 0} \frac{1}{x}\, , 
+                        \ea 
+                        \]
+                        in which \(\lim_{x \to 0} (1/x)\) does not exist.
+                        Moreover, the one-sided limits of \(1/x\) as \(x \to 0^-\) and \(x \to 0^+\) 
+                        also do not exist, so the application of property \((3)\) is not possible. 
+                    </p>
+                    <p>
+                        Let us now discuss the strategy for computing limits of composite functions.
+                        Consider the general composition of two functions \(f(g(x))\) 
+                        \(\big[\)also written as \((f \circ g)(x)\big].\)
+                        If \(f\) is continuous at the value \(\lim_{x \to a} g(x),\)
+                        then direct substitution provides 
+                        <div class="numbered-equations">
+                            <p>
+                                \(\ds \lim_{x \to a} f(g(x)) = f \left(\lim_{x \to a} g(x) \right)\,.\)
+                                <span> \((9)\) </span>
+                            </p>
+                        </div>
+                        This fact is a generalization that relates properties \((5)\) through \((8).\)
+                        Problems become more complicated if \(f\) is undefined or discontinuous at \(\lim_{x \to a} g(x),\)
+                        requiring special thought because property \((9)\) does not apply.
+                        Similar to the note on properties \((1)\) through \((4),\) 
+                        <span class="warning">you may not conclude that a limit of a composite function 
+                            does not exist if property \((9)\) cannot be used.</span>
+                    </p>
+                </div>
+                <!--example 3-->
+                <div class="example-title"> EXAMPLE \(3\) </div>
+                <div class="example">
+                    <!--example 3 problem-->
+                    <div class="example-problem">  
+                        Calculate the following limits.
+                        <ol type="i" class="example-list">
+                            <li>
+                                \(\ds \lim_{x \to 2} \sqrt{4x + 8}\)
+                            </li>
+                            <li>
+                                \(\ds \lim_{x \to 1} 2^{3x - x^2}\)
+                            </li>
+                            <li>
+                                \(\ds \lim_{x \to \pi/2} \cos^2(4x)\)
+                            </li>
+                            <li>
+                                \(\ds \lim_{x \to 8e} \ln(x - 4e)\)
+                            </li>
+                        </ol>
+                    </div>
+                </div>
+                <button onclick="toggle3()" class="solution-button"> SHOW SOLUTION ▼ </button>
+                <!--example 3 solution-->
+                <div>
+                    <div id="solution3" class="solution">
+                        <ol type="i" class="example-list">
+                            <li>
+                                \(\sqrt{4x + 8}\) is continuous at all \(x\) in its domain, 
+                                so at \(x = 2\) we have, using property \(8,\)
+                                \[\lim_{x \to 2} \sqrt{4x + 8} = \sqrt{4(2) + 8} = \boxed{4\,.}\]
+                            </li>
+                            <hr>
+                            <li>
+                                Since \(2^{3x - x^2}\) is continuous at \(x = 1,\) we obtain,
+                                by property \((7),\)
+                                \[\lim_{x \to 1} 2^{3x - x^2} = 2^{3(1) - (1)^2} = \boxed{4\,.}\]
+                            </li>
+                            <hr>
+                            <li>
+                                Cosine is a continuous function; thus, its square is also continuous. 
+                                Using properties \((7)\) and \((9)\) then gives 
+                                \[\lim_{x \to \pi/2} \cos^2(4x) = \cos^2(4 \pi / 2) = \boxed{1\,.}\]
+                            </li>
+                            <hr>
+                            <li>
+                                The application of property \((9)\) provides 
+                                \[ 
+                                \ba 
+                                \lim_{x \to 8e} \ln(x - 4e) &= \ln(8e - 4e) \\
+                                &= \ln(4e) \\ 
+                                &= \boxed{1 + \ln 4\,.}
+                                \ea 
+                                \]
+                            </li>
+                            <hr>
+                        </ol>
+                    </div>
+                </div>
+                <!--example 4-->
+                <div class="example-title"> EXAMPLE \(4\) </div>
+                <div class="example">
+                    <!--example 4 problem-->
+                    <div class="example-problem">  
+                       <!--figure 2-->
+                       <div class="fig-2">
+                            <img src="../images/Calculus/1/1.2/2.jpg" class="fig-2__image" alt="">
+                        </div>
+                        Consider Figure 2, in which the graphs of \(f\) and \(g\) are shown. 
+                        Compute the following limits.
+                        <ol type="i" class="example-list">
+                            <li>
+                                \(\ds \lim_{x \to 2^-} g(f(x))\)
+                            </li>
+                            <li>
+                                \(\ds \lim_{x \to 1} f(g(x)) \)
+                            </li>
+                            <li>
+                                \(\ds \hspace{-0.65ex} \lim_{x \to -1} g(f(x) - 1)\)
+                            </li>
+                            <li>
+                                \(\ds \lim_{x \to 0} g(x^2 - 3)\)
+                            </li>
+                        </ol>
+                    </div>
+                </div>
+                <button onclick="toggle4()" class="solution-button"> SHOW SOLUTION ▼ </button>
+                <!--example 4 solution-->
+                <div>
+                    <div id="solution4" class="solution">
+                        <ol type="i" class="example-list">
+                            <li>
+                                The first step of evaluating the limit of a composite function is to determine whether 
+                                property \((9)\) can be used. 
+                                That is, we need to determine whether \(g(x)\) is continuous at the value 
+                                \(x = \lim_{x \to 2^-} f(x),\) assuming this limit exists. 
+                                From the graph, we have \(\lim_{x \to 2^-} f(x) = -4,\)
+                                and \(g\) is continuous at \(x = -4.\)
+                                Thus, we can apply property \((9) \!:\)
+                                \[
+                                \ba 
+                                \lim_{x \to 2^-} g(f(x)) &= g\left(\lim_{x \to 2^-} f(x)\right) \\
+                                &= g(-4) \\
+                                &= \boxed{-2\,.}
+                                \ea 
+                                \]
+                            </li>
+                            <hr>
+                            <li>
+                                From the graph, we see that \(\lim_{x \to 1} g(x) = 2,\)
+                                but \(f\) is not continuous at this value because exists a jump discontinuity at that point. 
+                                Therefore, we cannot apply property \((9)\) to this limit.
+                                However, we notice that \(g(x) \to 2\) 
+                                solely from below as \(x \to 1;\) 
+                                in other words, near \(x = 1,\) \(g\) <i>only</i> takes on values less than \(2.\)
+                                Thus, 
+                                \[\lim_{x \to 1} f(g(x)) = \lim_{g(x) \to 2} f(g(x))\,,\]
+                                or, equivalently,
+                                \[\lim_{x \to 2^-} f(x) = \boxed{-4 \,.}\]
+                                Since \(g\) never takes on values greater than \(2\) as \(x \to 1,\) 
+                                we do not consider the one-sided limit \(\lim_{x \to 2^+} f(x).\)
+                                These values of \(g,\) 
+                                which are less than \(2,\) are inputted into the function \(f\)
+                                and therefore correspond to the left-hand limit, \(\lim_{x \to 2^-} f(x).\) 
+                            </li>
+                            <hr>
+                            <li>
+                                As \(x \to -1,\) \((f(x) - 1) \to 3.\) 
+                                However, \(g\) is not continuous at \(x = 3,\) 
+                                so we cannot apply property \((9).\) 
+                                As \(x \to -1,\) 
+                                \((f(x) - 1)\) approaches \(3\) from the top and bottom:
+                                it takes on values both less than \(3\) and greater than \(3.\)
+                                Thus, we cannot consider a single one-sided limit as we did in part (ii),
+                                so we must write 
+                                \[
+                                \lim_{x \to -1} g(f(x) - 1) = \lim_{x \to 3} g(x)\,,
+                                \]
+                                which <span class="border">does not exist.</span>
+                            </li>
+                            <hr>
+                            <li>
+                                As \(x \to 0,\) \((x^2 - 3) \to -3.\)
+                                We may NOT use property \((9)\) to conclude that 
+                                \[\lim_{x \to 0} g(x^2 - 3) = g \left(\lim_{x \to 0} (x^2 - 3) \right) = g(3)\, ,\]
+                                however, because \(g\) is not continuous at \(x = 3.\)
+                                Instead, we notice that as \(x \to 0,\) \((x^2 - 3) \to -3\) from ABOVE only 
+                                (i.e., from values greater than \(-3\)). 
+                                Therefore, we may consider only the right-hand limit of \(g \!:\)
+                                \[
+                                \ba 
+                                \lim_{x \to 0} g(x^2 - 3) &= \lim_{x \to -3^+} g(x) \\
+                                &= \boxed{3\,.}
+                                \ea 
+                                \]
+                            </li>
+                            <hr>
+                            To experiment with these limits, you may visit this Desmos 
+                        </ol>
+                    </div>
+                </div>
+
+                <div class="section-summary__title"> SECTION SUMMARY </div>
+                <div class="section-summary">
+                    <ul>
+                        <li>
+                            If \(c\) is a constant, then 
+                            \[\lim_{x \to a} c= \lim_{x \to a} c\,.\]
+                        </li>
+                        <li>
+                            If \(c\) is a constant and \(\lim_{x \to a} f(x)\) exists, then 
+                            \[\lim_{x \to a} [cf(x)] = c \lim_{x \to a} f(x)\,.\]
+                        </li>
+                        <li>
+                            \[\lim_{x \to a} x = a\,.\]
+                        </li>
+                        <li>
+                            If \(\lim_{x \to a} f(x)\) and \(\lim_{x \to a} g(x)\) both exist, then
+                            \[
+                            \ba 
+                                \lim_{x \to a} [f(x) + g(x)] &= \lim_{x \to a} f(x) + \lim_{x \to a} g(x)\,. \\[2ex]
+                                \lim_{x \to a} [f(x) - g(x)] &= \lim_{x \to a} f(x) - \lim_{x \to a} g(x)\,. \\[2ex]
+                                \lim_{x \to a} [f(x) \cdot g(x)] &= \lim_{x \to a} f(x) \cdot \lim_{x \to a} g(x)\,. \\[2ex]
+                                \lim_{x \to a} [f(x)/g(x)] &= 
+                                \lim_{x \to a} f(x)/ \lim_{x \to a} g(x), \, \textrm{given that} \lim_{x \to a} g(x) \ne 0 \,. \\[2ex]
+                            \ea 
+                            \]
+                        </li>
+                        <li>
+                            If \(\lim_{x \to a} f(x)\) and/or \(\lim_{x \to a} g(x)\) do not exist, 
+                            then you may NOT assume that the limit of a sum, difference, product, or quotient of \(f\) and \(g\)
+                            does not exist. 
+                            In some situations, you may apply properties \((1)\) through \((4)\) to the one-sided limits
+                            of \(f\) and \(g,\) while in others the properties are not applicable.
+                        </li>
+                        <li>
+                            If \(n\) is a constant and \(\lim_{x \to a} f(x)\) exists, then
+                            \[
+                            \ba 
+                                \lim_{x \to a} x^n &= a^n \\
+                                \lim_{x \to a} \sqrt[n]{x} &= \sqrt[n]{a}\\
+                                \lim_{x \to a} [f(x)]^n &= \left[\lim_{x \to a} f(x)\right]^n \\
+                                \lim_{x \to a} \sqrt[n]{f(x)} &= \sqrt[n]{\lim_{x \to a} f(x)}\,.
+                            \ea 
+                            \]
+                        </li>
+                        <li>
+                            If \(f\) is continuous at the value \(\lim_{x \to a} g(x),\)
+                            then
+                            \[\lim_{x \to a} f(g(x)) = f \left(\lim_{x \to a} g(x) \right)\,.\]
+                            Remember that if you cannot use this property, you may NOT conclude that \(\lim_{x \to a} f(g(x))\) 
+                            does not exist.
+                        </li>
+                    </ul>
+                </div>
+
         </section>
+        <style>
+            .fig-1{
+                display: block;
+                margin-left: auto;
+                margin-right: auto;
+                width: 50%;
+                padding-right: 0;
+                max-width: 900px;
+            }
+
+            .fig-1__image{
+                width: 100%;
+                height: auto;
+                max-width: 900px;
+            }
+
+            .fig-1::before{
+                content:'FIGURE 1';
+                display: block;
+                background: rgb(110, 80, 80);
+                font-size: 90%;
+                color: white;
+                text-align: center;
+                margin-bottom: 0;
+            }
+        </style>
+
+        <style>
+            .fig-2{
+                display: block;
+                margin-left: auto;
+                margin-right: auto;
+                width: 50%;
+                padding-right: 0;
+                max-width: 900px;
+            }
+
+            .fig-2__image{
+                width: 100%;
+                height: auto;
+                max-width: 900px;
+            }
+
+            .fig-2::before{
+                content:'FIGURE 2';
+                display: block;
+                background: rgb(110, 80, 80);
+                font-size: 90%;
+                color: white;
+                text-align: center;
+                margin-bottom: 0;
+            }
+        </style>
+
+        <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+        <script id="AMSmath" src="TeX/AMSmath.js"></script>
+        <script src="../js/mathjax-config.js" ></script>
+        <script type="text/javascript" id="MathJax-script" 
+            src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js">
+        </script>
+        <script type="text/javascript" id="MathJax-script" 
+            src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js">
+        </script>
+        <script 
+            src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous">
+        </script>
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+        <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3.0.1/es5/tex-mml-chtml.js"></script>
+        <script id="AMSmath" async src="TeX/AMSmath.js"></script>
+        <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+        <script src="../js/hamburger-menu.js"></script>
+        <script src="../js/toggle-solutions.js"></script>
     </body>
 </html>

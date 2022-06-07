@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en-us">
+    <head>
+        <link rel="stylesheet" href="../css/hamburger-menu.css">
+        <link rel="stylesheet" href="../css/layout.css">
+        <link rel="stylesheet" media = "screen" href="../css/notes-style.css">
+        <link rel="stylesheet" media = "screen" href="../css/exercises-style.css">
+        <link rel="stylesheet" media = "screen" href="../css/calculus/3.1.css">
+        <link rel="stylesheet" media = "print" href="../css/layout-print.css">
+        <link rel="stylesheet" media = "print" href="../css/notes-style-print.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <title> 3.1 Exercises Solutions — Mean Value Theorem and Rolle's Theorem </title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <meta name="author" content="Valerie">
+    </head>
+
+    <script> 
+        $(function(){
+          $("#header").load("../assets/header.html"); 
+        });
+    </script> 
+    <nav id="header"></nav>
+
+    <body id="main-body">
+        <!--Section Title-->
+        <h1> 3.1 Exercises Solutions — Mean Value Theorem and Rolle's Theorem </h1>
+        <!--Section Body-->
+        <main>
+            <div class="pdf-panel">
+                <div class="pdf-panel-left">
+                    <ul>
+                        <li>
+                            <button> 
+                                <a href="3.1.html" rel="noopener"> 
+                                    Section 
+                                    <i class="fa fa-external-link"></i>
+                                </a>
+                            </button>
+                        </li>
+                        <li>
+                            <button> 
+                                <a href="3.1-exercises.html" rel="noopener"> 
+                                    Exercises 
+                                    <i class="fa fa-external-link"></i>
+                                </a>
+                            </button>
+                        </li>
+                        <li>
+                            <button> 
+                                <a class="link-deactivate" rel="noopener"> 
+                                    Exercise Solutions 
+                                    <i class="fa fa-external-link"></i>
+                                </a>
+                            </button>
+                        </li>
+                    </ul>
+                </div>    
+                <div class="pdf-panel-right">
+                    <ul>
+                        <li>
+                            <button> 
+                                <a target="_blank" rel="noopener"> 
+                                    Download 
+                                    <i class="fa fa-file-pdf-o"></i>
+                                </a>
+                            </button>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <hr>           
+            
+            <div id="problem-1">
+                <div class="box-solution__head">
+                    QUESTION 1
+                </div>
+                <div class="box-solution">
+                    <div class="box-solution__body">
+                        <div class="box-solution__problem">
+                            Find the values that satisfy the Mean Value Theorem for 
+                            \(f(x) = \sin(2x)\) over \(0 \leq x \leq \frac{\pi}{2}.\) 
+                        </div>
+                        <hr>
+                        <div id="solution-1">
+                            <span class="solution-text">SOLUTION</span>
+                            The average rate of change of \(f(x)\) over \(0 \leq x \leq \frac{\pi}{2}\) is 
+                            \[\frac{\sin \frac{\pi}{2} - \sin 0}{\frac{\pi}{2} - 0} = 0 \per \] 
+                            Because \(f(x)\) is continuous on \(0 \leq x \leq \frac{\pi}{2}\) 
+                            and differentiable on \(0 \lt x \lt \frac{\pi}{2},\)
+                            the Mean Value Theorem (or Rolle's Theorem, given that the average rate of change is zero)  
+                            guarantees a value \(c\) such that 
+                            \[f'(c) = 0 \per\]
+                            We then have 
+                            \[f'(c) = 2 \cos(2c) = 0 \implies \boxed{c = \frac{\pi}{4}}\]
+                            as the value that satisfies the Mean Value Theorem for \(f\) over \([0, \frac{\pi}{2}].\)
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="problem-2">
+                <div class="box-solution__head">
+                    QUESTION 2
+                </div>
+                <div class="box-solution">
+                    <div class="box-solution__body">
+                        <div class="box-solution__problem">
+                            Find the values that satisfy the Mean Value Theorem for 
+                            \(f(x) =  3x^2 - 8x + 11\) over \(1 \leq x \leq 4.\)
+                        </div>
+                        <hr>
+                        <div id="solution-2">
+                            <span class="solution-text">SOLUTION</span>
+                            The average rate of change of \(f(x)\) over the interval \(1 \leq x \leq 4\) is 
+                            \[\frac{f(4) - f(1)}{4 - 1} = 7 \per \] 
+                            \(f(x)\) is a polynomial, so it's continuous over \(1 \leq x \leq 4\) 
+                            and differentiable over \(1 \lt x \lt 4.\)
+                            Thus, the Mean Value Theorem guarantees a value \(c\) in \((1, 4)\) such that 
+                            \[f'(c) = 7 \per\]
+                            Solving, we have 
+                            \[
+                            f'(c) = 6c - 8 = 7 \implies \boxed{c = \frac{5}{2} \per}
+                            \]
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div id="problem-3">
+                <div class="box-solution__head">
+                    QUESTION 3
+                </div>
+                <div class="box-solution">
+                    <div class="box-solution__body">
+                        <div class="box-solution__problem">
+                            Find the values that satisfy the Mean Value Theorem for 
+                            \(f(x) = \frac{1}{3} x^3 - x^2 -3x - 15\) over \(0 \leq x \leq 3.\)
+                        </div>
+                        <hr>
+                        <div id="solution-3">
+                            <span class="solution-text">SOLUTION</span>
+                            \(f(x)\) is a polynomial, so it's continuous for \(0 \leq x \leq 3\)
+                            and differentiable for \(0 \lt x \lt 3.\)
+                            Therefore, the Mean Value Theorem guarantees a value \(c\) in \((0, 3)\)
+                            such that 
+                            \[f'(c) = \frac{f(3) - f(0)}{3 - 0} = -3 \per\]
+                            Solving, we have 
+                            \[
+                            \ba 
+                            f'(c) = c^2 - 2c - 3 &= -3 \\
+                            c^2 - 2c &= 0 \implies c = 0 \comm c = 2 \per
+                            \ea 
+                            \]
+                            \(\boxed{c = 2}\) is in \((0, 3),\) so this value satisfies the Mean Value Theorem
+                            for \(f\) over \([0, 3].\)
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="problem-4">
+                <div class="box-solution__head">
+                    QUESTION 4
+                </div>
+                <div class="box-solution">
+                    <div class="box-solution__body">
+                        <div class="box-solution__problem">
+                            Find the values that satisfy the Mean Value Theorem for 
+                            \(f(x) = |2 - x|\) over \(0 \leq x \leq 4.\) 
+                        </div>
+                        <hr>
+                        <div id="solution-4">
+                            <span class="solution-text">SOLUTION</span>
+                            \(f(x)\) is not differentiable at \(x = 2,\)
+                            so no value satisfies the Mean Value Theorem over \(0 \leq x \leq 4.\)
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="problem-5">
+                <div class="box-solution__head">
+                    QUESTION 5
+                </div>
+                <div class="box-solution">
+                    <div class="box-solution__body">
+                        <div class="box-solution__problem">
+                            Find the values that satisfy the Mean Value Theorem for 
+                            \(f(x) = 5e^x\) over \(0 \leq x \leq \ln 3.\) 
+                        </div>
+                        <hr>
+                        <div id="solution-5">
+                            <span class="solution-text">SOLUTION</span>
+                            Exponential functions are continuous and differentiable for all values in their domain.
+                            Thus, \(f(x)\) is continuous for \(0 \leq x \leq \ln 3\) and 
+                            differentiable for \(0 \lt x \lt \ln 3.\) 
+                            The Mean Value Theorem then guarantees a value \(c\) in \((0, \ln 3)\) such that 
+                            \[f'(c) = \frac{f(\ln 3) - f(0)}{\ln(3) - 0} = \frac{10}{\ln 3} \per\]
+                            Solving, we have 
+                            \[
+                            \ba 
+                            f'(c) = 5e^c &= \frac{10}{\ln 3} \\[2ex]
+                            e^c &= \frac{2}{\ln 3} \\[2ex] 
+                            c &= \boxed{\ln \left( \frac{2}{\ln 3} \right) \per}
+                            \ea 
+                            \]
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="problem-6">
+                <div class="box-solution__head">
+                    QUESTION 6
+                </div>
+                <div class="box-solution">
+                    <div class="box-solution__body">
+                        <div class="box-solution__problem">
+                            Find the values that satisfy the Mean Value Theorem for 
+                            \(f(x) = \frac{1}{3} x^3 - x^2 -x + 8\)
+                            over \(-3 \leq x \leq 3.\)
+                        </div>
+                        <hr>
+                        <div id="solution-6">
+                            <span class="solution-text">SOLUTION</span>
+                            \(f\) is continuous on \([-3, 3]\) and differentiable on \((-3, 3).\)
+                            Thus, the Mean Value Theorem guarantees a value \(c\) in \((-3, 3)\) such that 
+                            \[f'(c) = \frac{f(3) - f(-3)}{3 - (-3)} = 2 \per\]
+                            Solving, we have 
+                            \[
+                            \ba 
+                            f'(c) = c^2 - 2c - 1 &= 2 \\
+                            c^2 - 2c - 3 &= 0 \com  \\
+                            \ea 
+                            \]
+                            whose solution in \((-3, 3)\) is \(\boxed{c = -1 \per}\)
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="problem-7">
+                <div class="box-solution__head">
+                    QUESTION 7
+                </div>
+                <div class="box-solution">
+                    <div class="box-solution__body">
+                        <div class="box-solution__problem">
+                            Consider the function
+                            \(g(x) = ax^2 + bx,\) where \(a\) and \(b\) are constants.
+                            Show that \(c = k/2\) satisfies the Mean Value Theorem for \(g\) over \(0 \leq x \leq k.\)
+                        </div>
+                        <hr>
+                        <div id="solution-7">
+                            <span class="solution-text">SOLUTION</span>
+                            Because \(g(x)\) is a polynomial, it's differentiable for all \(x.\)
+                            Moreover, the average rate of change of \(g\) over \([0, k]\) is 
+                            \[
+                            \ba 
+                            \frac{g(k) - g(0)}{k - 0} &= \frac{ak^2 + bk}{k} \\[2ex]
+                            &= ak + b \per
+                            \ea 
+                            \]
+                            Therefore, the Mean Value Theorem guarantees a value \(c\) in \((0, k)\) such that
+                            \[g'(c) = ak + b \per \]
+                            Solving, we have 
+                            \[
+                            \ba 
+                            g'(c) = 2ac + b &= ak + b \\
+                            c &= k/2 \per
+                            \ea 
+                            \]
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="problem-8">
+                <div class="box-solution__head">
+                    QUESTION 8
+                </div>
+                <div class="box-solution">
+                    <div class="box-solution__body">
+                        <div class="box-solution__problem">
+                            <figure class="fig-7">
+                                <img src="../images/Calculus/3/3.1/3.1-7.jpg" alt="">
+                            </figure>
+                            Consider Figure 7, in which the graph of \(y = \) \(f(x)\) is shown.
+                            For \(-2 \lt x \lt 3,\) 
+                            \[f(x) = (x - 1)^2 - 6 \per\]
+
+                            <ol class="list-alpha">
+                                <li>
+                                    Find the average rate of change of \(f(x)\) over \(-2 \leq x \leq 3.\)
+                                </li>
+                                <li>
+                                    Determine the value \(c\) that satisfies the Mean Value Theorem for \(f\) over \([-2, 3].\) 
+                                    State the conditions of the Mean Value Theorem.
+                                </li>
+                                <li>
+                                    The average rate of change of \(f(x)\) over \(-6 \leq x \leq 3\) is \(0.\)
+                                    Does \(f\) satisfy Rolle's Theorem over this interval? 
+                                </li>
+                            </ol>
+                        </div>
+                        <hr>
+                        <div id="solution-8">
+                            <span class="solution-text">SOLUTION</span>
+                            <ol class="list-alpha">
+                                <li>
+                                    The average rate of change of \(f(x)\) over \(-2 \leq x \leq 3\) is 
+                                    \[\frac{f(3) - f(-2)}{3 - (-2)} = -1 \per\]
+                                </li>
+                                <li>
+                                    \(f(x)\) is continuous on \(-2 \leq x \leq 3\) and differentiable on \(-2 \lt x \lt 3.\)
+                                    Thus, the Mean Value Theorem guarantees a value \(c\) in \((-2, 3)\) such that 
+                                    \(f'(c) = -1.\) 
+                                    We then get 
+                                    \[f'(c) = 2(c - 1) = -1 \implies \boxed{c = \frac{1}{2} \per} \]
+                                </li>
+                                <li>
+                                    No, because \(f(x)\) is not differentiable at every point in \(-6 \lt x \lt 3.\)
+                                    [At \(x = -2,\) there is a sharp turn in the graph of \(y = f(x).\)]
+                                    Therefore, the conditions of Rolle's Theorem are not met.
+                                </li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="problem-9">
+                <div class="box-solution__head">
+                    QUESTION 9
+                </div>
+                <div class="box-solution">
+                    <div class="box-solution__body">
+                        <div class="box-solution__problem">
+                            The amount of snow, in inches, on a road after \(t\) hours is modeled by 
+                            \[s(t) = 5 \left(1 - e^{-t/5}\right) \per\]
+                            For what value of \(k,\) \(0 \leq k \leq 5,\) is \(s'(k)\) equal to
+                            the average rate of change of \(s(t)\) over \(0 \leq t \leq 5 \ques\)
+                            (Calculator required.)
+                        </div>
+                        <hr>
+                        <div id="solution-9">
+                            <span class="solution-text">SOLUTION</span>
+                            We find the average rate of change of \(s(t)\) over \(0 \leq t \leq 5\) to be 
+                            \[\frac{s(5) - s(0)}{5 - 0} \approx 0.632 \; \text{inches}/\text{hr} \per\]
+                            We then have \(s(t) = 0.632\) at \(\boxed{t \approx 2.293 \per}\)
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="problem-10">
+                <div class="box-solution__head">
+                    QUESTION 10
+                </div>
+                <div class="box-solution">
+                    <div class="box-solution__body">
+                        <div class="box-solution__problem">
+                            Let \(f\) be the polynomial defined by
+                            \(f(x) = x^5 + 6x^3 + 4x + 2.\) 
+                            Note that \(f(-1) = -9\) and \(f(0) = 2.\)
+                            Using Rolle's Theorem, show that \(f(x) = 0\) has exactly one real solution.
+                        </div>
+                        <hr>
+                        <div id="solution-10">
+                            <span class="solution-text">SOLUTION</span>
+                            \(f(x)\) is a polynomial, so it is continuous for all \(x.\)
+                            Therefore, because \(f(-1) = -9\) and \(f(0) = 2,\)
+                            the Intermediate Value Theorem guarantees a solution to \(f(x) = 0\)
+                            within \(-1 \leq x \leq 2.\)
+                            We now show that there are no other zeros of \(f\) using a Proof By Contradiction.
+                            We first start by assuming that there are two zeros of \(f \col\) \(x = a\) and \(x = b.\)
+                            It then follows that 
+                            \[f(a) = f(b) = 0 \per\]
+                            Because \(f\) is a polynomial, it is continuous on \([a, b]\) and differentiable on \((a, b).\)
+                            Thus, Rolle's Theorem states that there must be a value \(c\) in \((a, b)\) such that \(f'(c) = 0.\)
+                            Differentiating, we attain
+                            \[5c^4 + 18c^2 + 4 = 0 \com\]
+                            which has no solution.  
+                            Therefore, we have a contradiction: 
+                            The only condition of Rolle's Theorem that \(f\) 
+                            does not satisfy is \(f(a) = f(b) = 0.\)
+                            We conclude, therefore, that there must only be one zero of \(f.\)
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </body>
+    <script> 
+        $(function(){
+          $("#footer").load("../assets/footer.html"); 
+        });
+    </script> 
+    <footer id="footer"></footer>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+    <script id="AMSmath" src="TeX/AMSmath.js"></script>
+    <script src="../js/mathjax-config.js" ></script>
+    <script type="text/javascript" id="MathJax-script" 
+        src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js">
+    </script>
+    <script type="text/javascript" id="MathJax-script" 
+        src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js">
+    </script>
+    <script 
+        src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous">
+    </script>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3.0.1/es5/tex-mml-chtml.js"></script>
+    <script id="AMSmath" async src="TeX/AMSmath.js"></script>
+    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <script src="../js/hamburger-menu.js"></script>
+    <script src="../js/toggle-solutions.js"></script>
+</html>

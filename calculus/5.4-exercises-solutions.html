@@ -1,0 +1,896 @@
+<!DOCTYPE html>
+<html lang="en-us">
+    <head>
+        <link rel="stylesheet" href="../css/hamburger-menu.css">
+        <link rel="stylesheet" href="../css/layout.css">
+        <link rel="stylesheet" media = "screen" href="../css/calculus/5.4.css">
+        <link rel="stylesheet" media = "screen" href="../css/notes-style.css">
+        <link rel="stylesheet" media = "screen" href="../css/exercises-style.css">
+        <link rel="stylesheet" media = "print" href="../css/layout-print.css">
+        <link rel="stylesheet" media = "print" href="../css/notes-style-print.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <title> 5.4 Exercises Solutions — Integration by Partial Fraction Decomposition </title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <meta name="author" content="Valerie">
+    </head>
+
+    <script> 
+        $(function(){
+          $("#header").load("header.html"); 
+          $("#footer").load("footer.html"); 
+        });
+    </script> 
+    <nav class="tab">
+        <ul>
+            <li class="logo-header">
+                <a href="index.html">
+                    VALCULUS
+                </a>
+            </li>
+            <li>
+                <a href="">
+                    Sections
+                </a>
+            </li>
+            <li>
+                <a href="about.html">
+                    AP&nbsp;Practice 
+                </a>
+            </li>
+            <li>
+                <a href="../about.html">
+                    About 
+                </a>
+            </li>
+            <li>
+                <a>
+                    Contact
+                </a>
+            </li>
+            <li>
+                <a>
+                    More
+                </a>
+            </li>
+        </ul>
+    </nav>
+    <header class="header-print">
+        <thead>
+            VALCULUS
+        </thead>
+       
+    </header>
+    <body class="background">
+        <!--Section Title-->
+            <h1> 5.4 Exercises Solutions — Integration by Partial Fraction Decomposition </h1>
+            <!--Section Body-->
+            <section class="background-text">
+                <div class="pdf-panel">
+                    <div class="pdf-panel-left">
+                        <ul>
+                            <li>
+                                <button> 
+                                    <a href="5.4.html" rel="noopener"> 
+                                        Section 
+                                        <i class="fa fa-external-link"></i>
+                                    </a>
+                                </button>
+                            </li>
+                            <li>
+                                <button> 
+                                    <a href="5.4-exercises.html" rel="noopener"> 
+                                        Exercises 
+                                        <i class="fa fa-external-link"></i>
+                                    </a>
+                                </button>
+                            </li>
+                            <li>
+                                <button> 
+                                    <a class="link-deactivate" rel="noopener"> 
+                                        Exercise Solutions 
+                                        <i class="fa fa-external-link"></i>
+                                    </a>
+                                </button>
+                            </li>
+                        </ul>
+                    </div>    
+                    <div class="pdf-panel-right">
+                        <ul>
+                            <li>
+                                <button> 
+                                    <a target="_blank" rel="noopener"> 
+                                        Download 
+                                        <i class="fa fa-file-pdf-o"></i>
+                                    </a>
+                                </button>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <hr>    
+
+                <div id="problem-1">
+                    <div class="box-solution__head">
+                        QUESTION 1
+                    </div>
+                    <div class="box-solution">
+                        <div class="box-solution__body">
+                            <div class="box-solution__problem">
+                                Determine the partial fraction decomposition of
+                                \(\ds \frac{2}{(x + 3)(x - 2)} \, . \)
+                            </div>
+                            <hr>
+                            <div id="solution-1">
+                                <span class="solution-text">SOLUTION</span>
+                                The rational expression contains 
+                                two linear factors: \((x + 3)\) and \((x - 2).\)
+                                The partial fraction decomposition then takes the shape 
+                                \[\frac{2}{(x + 3)(x - 2)} = \frac{A}{x + 3} + \frac{B}{x - 2} \, .\]
+                                Manipulating these fractions, we have 
+                                \[
+                                \ba 
+                                \frac{2}{(x + 3)(x - 2)} 
+                                &= \frac{A}{x + 3} \left(\frac{x - 2}{x - 2}\right) 
+                                + \frac{B}{x - 2} \left(\frac{x + 3}{x + 3}\right) \\[1.5ex] 
+                                2 &= A(x - 2) + B(x + 3) \, . 
+                                \ea 
+                                \]
+                                Our objective is now to solve for \(A\) and \(B.\) 
+                                Letting \(x = 2\) yields 
+                                \[2 = 0 + 5B \implies B = \frac{2}{5} \, .\]
+                                Similarly, for \(x = -3\) we get 
+                                \[2 = -5A + 0 \implies A = -\frac{2}{5} \, .\]
+                                We have, therefore, 
+                                \[\frac{2}{(x + 3)(x - 2)} = \boxed{\frac{-2/5}{x + 3} + \frac{2/5}{x - 2} \, .}\]
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="problem-2">
+                    <div class="box-solution__head">
+                        QUESTION 2
+                    </div>
+                    <div class="box-solution">
+                        <div class="box-solution__body">
+                            <div class="box-solution__problem">
+                                Determine the partial fraction decomposition of
+                                \(\ds \frac{3x - 1}{x^2 - 8x - 9} \, .\)
+                            </div>
+                            <hr>
+                            <div id="solution-2">
+                                <span class="solution-text">SOLUTION</span>
+                                We factor the denominator as 
+                                \[\frac{3x - 1}{(x - 9)(x + 1)} \, ,\]
+                                from which our partial fraction decomposition takes the form 
+                                \[
+                                \frac{3x - 1}{(x - 9)(x + 1)} = \frac{A}{x - 9} + \frac{B}{x + 1} \,
+                                \]
+                                Algebraic manipulation gives 
+                                \[
+                                \ba 
+                                \frac{3x - 1}{(x - 9)(x + 1)} 
+                                &= \frac{A}{x - 9} \left(\frac{x + 1}{x + 1}\right)  
+                                + \frac{B}{x + 1} \left(\frac{x - 9}{x - 9}\right) \\[1.5ex] 
+                                3x - 1 &= A(x + 1) + B(x - 9) \, .
+                                \ea 
+                                \]
+                                We now perform substitutions to solve for \(A\) and \(B.\) 
+                                Letting \(x = -1\) gives 
+                                \[-4 = 0 - 10B \implies B = \frac{2}{5} \, .\]
+                                Moreover, assigning \(x = 9\) produces 
+                                \[26 = 10A + 0 \implies A = \frac{13}{5} \, .\]
+                                We now have, for our final answer,
+                                \[\frac{3x - 1}{(x - 9)(x + 1)} = \boxed{\frac{13/5}{x - 9} + \frac{2/5}{x + 1}\, .} \]
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="problem-3">
+                    <div class="box-solution__head">
+                        QUESTION 3
+                    </div>
+                    <div class="box-solution">
+                        <div class="box-solution__body">
+                            <div class="box-solution__problem">
+                                Determine the partial fraction decomposition of
+                                \(\ds \frac{2x + 3}{9x^2 - x} \, .\)
+                            </div>
+                            <hr>
+                            <div id="solution-3">
+                                <span class="solution-text">SOLUTION</span>
+                                Factoring the denominator, we have 
+                                \[\frac{2x + 3}{x(9x - 1)} \, ,\]
+                                so our decomposition shape is 
+                                \[\frac{2x + 3}{x(9x - 1)} = \frac{A}{x} + \frac{B}{9x - 1} \, .\]
+                                Adding these partial fractions results in 
+                                \[2x + 3 = A(9x - 1) + Bx \, .\]
+                                We now let \(x = 0\) to get 
+                                \[3 = -A + 0 \implies A = -3 \, .\]
+                                Furthermore, letting \(x = 1/9\) gives 
+                                \[\frac{2}{9} + 3 = 0 + \frac{1}{9} B \implies B = 29 \, .\]
+                                Thus, we obtain 
+                                \[\frac{2x + 3}{9x^2 - x} = \boxed{\frac{-3}{x} + \frac{29}{9x - 1} \, .}\]
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="problem-4">
+                    <div class="box-solution__head">
+                        QUESTION 4
+                    </div>
+                    <div class="box-solution">
+                        <div class="box-solution__body">
+                            <div class="box-solution__problem">
+                                Determine the partial fraction decomposition of
+                                \(\ds \frac{t^2}{8t^3 - 1} \, .\)
+                            </div>
+                            <hr>
+                            <div id="solution-4">
+                                <span class="solution-text">SOLUTION</span>
+                                The denominator is a difference of cubes that can be factored to obtain
+                                \[\frac{t^2}{8t^3 - 1} = \frac{t^2}{(2t - 1)(4t^2 + 2t + 1)} \, .\]
+                                The quadratic \((4t^2 + 2t + 1)\) is nonreducible,
+                                so our decomposition is in the form 
+                                \[\frac{t^2}{(2t - 1)(4t^2 + 2t + 1)} = \frac{A}{2t - 1} + \frac{Bt + C}{4t^2 + 2t + 1} \, .\]
+                                Adding the partial fractions gives 
+                                \[t^2 = A(4t^2 + 2t + 1) + Bt(2t - 1) + C(2t - 1) \, .\]
+                                We now solve for \(A,\) \(B,\) and \(C.\)
+                                Two of the terms contain the factor \((2t - 1),\) 
+                                so letting \(t = 1/2\) zeroes them. 
+                                We attain 
+                                \[\frac{1}{4} = 3A + 0 \implies A = \frac{1}{12} \, .\]
+                                We now have two unknowns: 
+                                \[t^2 = \frac{1}{12} (4t^2 + 2t + 1) + Bt(2t - 1) + C(2t - 1) \, .\]
+                                Letting \(t = 0\) provides 
+                                \[0 = \frac{1}{12} + 0 - C \implies C = \frac{1}{12} \, .\]
+                                At this point, our remaining unknown is \(B;\) we have  
+                                \[t^2 = \frac{1}{12}(4t^2 + 2t + 1) + Bt(2t - 1) + \frac{1}{12}(2t - 1) \, .\]
+                                We assign \(t\) any value to directly solve for \(B.\) 
+                                The simplest value is \(t = 1,\) which gives 
+                                \[1 = \frac{7}{12} + B + \frac{1}{12} \implies B = \frac{1}{3} \, .\]
+                                Our final answer is 
+                                \[
+                                \frac{t^2}{8t^3 - 1} 
+                                = \boxed{\frac{\frac{1}{12}}{2t - 1} + \frac{\frac{1}{3}t + \frac{1}{12}t}{4t^2 + 2t + 1} \, .}\]
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="problem-5">
+                    <div class="box-solution__head">
+                        QUESTION 5
+                    </div>
+                    <div class="box-solution">
+                        <div class="box-solution__body">
+                            <div class="box-solution__problem">
+                                Determine the partial fraction decomposition of
+                                \(\ds \frac{x^3 + 1}{9 - x^2} \, .\)
+                            </div>
+                            <hr>
+                            <div id="solution-5">
+                                <span class="solution-text">SOLUTION</span>
+                                We cannot perform partial fraction decomposition immediately 
+                                because the degree of the numerator is greater than the degree of the denominator.
+                                Our first step, therefore, is to perform polynomial long division. 
+                                Doing so gives the simplified expression 
+                                \[-x + \frac{9x + 1}{9 - x^2} \, .\]
+                                Factoring the denominator of \(\frac{9x + 1}{9 - x^2}\) gives 
+                                \[\frac{9x + 1}{(3 + x)(3 - x)} \, .\]
+                                Our partial fraction decomposition is then in the form 
+                                \[\frac{9x + 1}{(3 + x)(3 - x)} = \frac{A}{3 + x} + \frac{B}{3 - x} \, .\]
+                                Adding the partial fractions, we obtain 
+                                \[9x + 1 = A(3 - x) + B(3 + x) \, .\]
+                                Now we let \(x = 3 \! :\)
+                                \[28 = 0 + 6B \implies B = \frac{14}{3} \, .\]
+                                Then letting \(x = -3\) gives 
+                                \[-26 = 6A + 0 \implies A = -\frac{13}{3} \, .\]
+                                Therefore, our final answer is 
+                                \[\frac{x^3 + 1}{9 - x^2} = \boxed{-x - \frac{13/3}{3 + x} + \frac{14/3}{3 - x} \, .}\]
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="problem-6">
+                    <div class="box-solution__head">
+                        QUESTION 6
+                    </div>
+                    <div class="box-solution">
+                        <div class="box-solution__body">
+                            <div class="box-solution__problem">
+                                Determine the partial fraction decomposition of
+                                \(\ds \frac{3 - 10x^3}{5x^3 + 8x^2 - 11x} \, . \)
+                            </div>
+                            <hr>
+                            <div id="solution-6">
+                                <span class="solution-text">SOLUTION</span>
+                                We begin by performing polynomial division because the degrees of the numerator and denominator are equal.
+                                Doing so gives 
+                                \[\frac{3 - 10x^3}{5x^3 + 8x^2 - 11x} = -2 + \frac{16x^2 - 22x + 3}{5x^3 + 8x^2 - 11x} \, . \]
+                                Our objective is now to find the partial fraction decomposition of \(\frac{16x^2 - 22x + 3}{5x^3 + 8x^2 - 11x} \!:\)
+                                \[
+                                \ba 
+                                \frac{16x^2 - 22x + 3}{5x^3 + 8x^2 - 11x} &= \frac{16x^2 - 22x + 3}{x(5x^2 + 8x - 11)} \\ 
+                                &= \frac{A}{x} + \frac{Bx + C}{5x^2 + 8x - 11} \, .
+                                \ea 
+                                \]
+                                We then have 
+                                \[16x^2 - 22x + 3 = A(5x^2 + 8x - 11) + Bx^2 + Cx \, .\]
+                                To solve for \(A,\) we let \(x = 0\) to get 
+                                \[3 = -11A + 0 + 0 \implies A = -\frac{3}{11} \, . \]
+                                There is no convenient substitution to solve for \(B\) or \(C.\)
+                                Thus, we should arrange a system of equations to solve for these unknowns.
+                                Letting \(x = 1,\) for simplicity, gives 
+                                \[
+                                -3 = -\frac{6}{11} + B + C \implies B + C = -\frac{27}{11} \, . 
+                                \]
+                                Moreover, letting \(x = -1\) provides the simple equation 
+                                \[41 = -14 \left(-\frac{3}{11}\right) + B - C \implies B - C = \frac{409}{11} \, .\]
+                                Our system is then 
+                                \[
+                                \ba 
+                                B + C &= -\frac{27}{11} \\[1.5ex] 
+                                B - C &= \frac{409}{11} \, ,
+                                \ea 
+                                \]
+                                for which the solutions are 
+                                \[B = \frac{191}{11} \qquad \textrm{and} \qquad C = -\frac{218}{11} \, . \]
+                                Our final answer is, therefore, 
+                                \[
+                                \ba 
+                                \frac{3 - 10x^3}{5x^3 + 8x^2 - 11x} &= \boxed{\frac{-3/11}{x} + \frac{191x - 218}{11(5x^2 + 8x^2 - 11)} \, . }
+                                \ea 
+                                \]
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="problem-7">
+                    <div class="box-solution__head">
+                        QUESTION 7
+                    </div>
+                    <div class="box-solution">
+                        <div class="box-solution__body">
+                            <div class="box-solution__problem">
+                                Evaluate 
+                                \(\ds \int \frac{4 - 3x}{(7x + 3)(4 - x)} \, \dd x \, .\)
+                            </div>
+                            <hr>
+                            <div id="solution-7">
+                                <span class="solution-text">SOLUTION</span>
+                                The partial fraction decomposition of the integrand takes the shape 
+                                \[\frac{4 - 3x}{(7x + 3)(4 - x)} = \frac{A}{7x + 3} + \frac{B}{4 - x} \, .\]
+                                We then get 
+                                \[4 - 3x = A(4 - x) + B(7x + 3) \, .\]
+                                We solve for \(B\) by letting \(x = 4 \!:\)
+                                \[-8 = 0 + 31B \implies B = -\frac{8}{31} \, .\]
+                                Letting \(x = -3/7\) yields 
+                                \[4 + \frac{9}{7} = A \left(4 + \frac{3}{7} \right) \implies A = \frac{37}{31} \, .\]
+                                We have, therefore,
+                                \[
+                                \ba 
+                                \int \frac{4 - 3x}{(7x + 3)(4 - x)} \, \dd x 
+                                &= \int \frac{37/31}{7x + 3} - \frac{8/31}{4 - x} \, \dd x \\[1.5ex]
+                                &= \boxed{\frac{37}{217} \ln|7x + 3| + \frac{8}{31} \ln|4 - x| + C \, .}
+                                \ea 
+                                \]
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="problem-8">
+                    <div class="box-solution__head">
+                        QUESTION 8
+                    </div>
+                    <div class="box-solution">
+                        <div class="box-solution__body">
+                            <div class="box-solution__problem">
+                                Evaluate 
+                                \(\ds \int \frac{x}{2x^2 - 5x - 3} \, \dd x \, .\)
+                            </div>
+                            <hr>
+                            <div id="solution-8">
+                                <span class="solution-text">SOLUTION</span>
+                                Factoring the denominator gives 
+                                \[\int \frac{x}{(x - 3)(2x + 1)} \, \dd x \, ,\]
+                                whose integrand has the partial fraction decomposition  
+                                \[\frac{x}{(x - 3)(2x + 1)} = \frac{A}{x - 3} + \frac{B}{2x + 1} \, .\]
+                                We then get 
+                                \[x = A(2x + 1) + B(x - 3) \, .\]
+                                To solve for \(A,\) we let \(x = 3\) to get 
+                                \[3 = 7A + 0 \implies A = \frac{3}{7} \, .\]
+                                Letting \(x = -1/2\) gives 
+                                \[-\frac{1}{2} = 0 - \frac{7}{2} B \implies B = \frac{1}{7} \, .\]
+                                Thus, 
+                                \[
+                                \ba 
+                                \int \frac{x}{2x^2 - 5x - 3} \, \dd x &= \int \frac{3/7}{x - 3} + \frac{1/7}{2x + 1} \, \dd x  \\[1.5ex]
+                                &= \boxed{\frac{3}{7} \ln|x - 3| + \frac{1}{14} \ln|2x + 1| + C \, .}
+                                \ea 
+                                \]
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="problem-9">
+                    <div class="box-solution__head">
+                        QUESTION 9
+                    </div>
+                    <div class="box-solution">
+                        <div class="box-solution__body">
+                            <div class="box-solution__problem">
+                                Evaluate 
+                                \(\ds \int \frac{3t^2 + 2}{5t^2 - 25t} \, \dd t \, .\)
+                            </div>
+                            <hr>
+                            <div id="solution-9">
+                                <span class="solution-text">SOLUTION</span>
+                                The degree of the numerator is greater than the degree of the denominator,
+                                so we first perform polynomial division to get 
+                                \[
+                                \ba 
+                                \frac{3t^2 + 2}{5t^2 - 25t} &= \frac{3}{5} + \frac{15t + 2}{5t^2 - 25t} \\[1.5ex]
+                                &= \frac{3}{5} + \frac{15t + 2}{5t(t - 5)} \, . 
+                                \ea 
+                                \]
+                                The partial fraction decomposition of \(\frac{15t + 2}{5t(t - 5)} \) takes the form 
+                                \[\frac{15t + 2}{5t(t - 5)} = \frac{1}{5} \left(\frac{A}{t} + \frac{B}{t - 5} \right) \, .\]
+                                We then get 
+                                \[15t + 2 = A(t - 5) + Bt \, .\]
+                                Solving for \(A,\) we let \(t = 0\) to get
+                                \[2 = -5A + 0 \implies A = -\frac{2}{5} \, .\]
+                                Letting \(t = 5\) gives 
+                                \[77 = 0 + 5B \implies B = \frac{77}{5} \, .\]
+                                Thus,
+                                \[
+                                \ba 
+                                \int \frac{3t^2 + 2}{5t^2 - 25t} \, \dd t 
+                                &= \int \frac{3}{5} + \frac{1}{5} \left( \frac{-2/5}{t} + \frac{77/5}{t - 5} \right) \, \dd t \\[1.5ex]
+                                &= \boxed{\frac{3}{5} t - \frac{2}{25} \ln|t| + \frac{77}{25} \ln|t - 5| + C \, .}
+                                \ea 
+                                \] 
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="problem-10">
+                    <div class="box-solution__head">
+                        QUESTION 10
+                    </div>
+                    <div class="box-solution">
+                        <div class="box-solution__body">
+                            <div class="box-solution__problem">
+                                Evaluate
+                                \(\ds \int \frac{3}{x(x + 3)(x^2-4)} \, \dd x  \, .\)
+                            </div>
+                            <hr>
+                            <div id="solution-10">
+                                <span class="solution-text">SOLUTION</span>
+                                The partial fraction decomposition for the integrand is 
+                                \[\frac{A}{x} + \frac{B}{x + 3} + \frac{C}{x + 2} + \frac{D}{x - 2} \, .\]
+                                We then have
+                                \[3 = A(x + 3)(x + 2)(x - 2) + Bx(x + 2)(x - 2) + Cx(x + 3)(x - 2) + Dx(x + 3)(x + 2) \, .\]
+                                To solve for \(A,\) we let \(x = 0\) to obtain 
+                                \[3 = -12A \implies A = -\frac{1}{4} \, .\]
+                                Similarly, assigning \(x = -3\) gives 
+                                \[3 = 0 -15B + 0 + 0 \implies B = -\frac{1}{5} \, .\]
+                                Solving for \(C\) is just as simple—by letting \(x = -2 \!:\) 
+                                \[3 = 0 + 0 + 8C + 0 \implies C = \frac{3}{8} \, .\]
+                                Lastly, we let \(x = 2\) to find \(D \!:\)
+                                \[3 = 0 + 0 + 0 + 40D \implies D = \frac{3}{40} \, .\]
+                                Substituting these coefficients and integrating yield
+                                \[\small \int \frac{-1/4}{x} - \frac{1/5}{x + 3} + \frac{3/8}{x + 2} + \frac{3/40}{x - 2} \, \dd x \\
+                                = \boxed{-\frac{1}{4} \ln|x| - \frac{1}{5} \ln|x + 3| + 
+                                \frac{3}{8} \ln|x + 2| + \frac{3}{40} \ln|x - 2| + C \, .} \]
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="problem-11">
+                    <div class="box-solution__head">
+                        QUESTION 11
+                    </div>
+                    <div class="box-solution">
+                        <div class="box-solution__body">
+                            <div class="box-solution__problem">
+                                Evaluate 
+                                \(\ds \int \frac{5}{t(t - 3)^2} \, \dd t \, .\)
+                            </div>
+                            <hr>
+                            <div id="solution-11">
+                                <span class="solution-text">SOLUTION</span>
+                                We rewrite the integrand as
+                                \[\frac{5}{t(t - 3)(t - 3)} \, ,\]
+                                whose partial fraction decomposition takes the form
+                                \[\frac{5}{t(t - 3)(t - 3)} = \frac{A}{t} + \frac{B}{t - 3} + \frac{C}{(t - 3)^2} \, .\]
+                                We then get, after multiplying both sies by \(t(t - 3)^2,\)
+                                \[5 = A(t - 3)^2 + Bt(t - 3) + Ct \, .\]
+                                We immediately solve for \(A\) by letting \(t = 0 \!:\)
+                                \[5 = 9A + 0 + 0 \implies A = \frac{5}{9} \, . \]
+                                Likewise, letting \(t = 3\) yields 
+                                \[5 = 0 + 0 = 3C \implies C = \frac{5}{3} \, .\]
+                                Plugging in these coefficients, our equation is now
+                                \[5 = \frac{5}{9}(t - 3)^2 + Bt(t - 3) + \frac{5}{3} t \, .\]
+                                We now let \(t\) equal any value to solve for \(B.\)
+                                A simple value is \(t = 4,\) from which we obtain 
+                                \[5 = \frac{5}{9} + 4B + \frac{20}{3} \implies B = -\frac{5}{9} \, .\]
+                                We have, therefore,
+                                \[
+                                \ba 
+                                \int \frac{5}{t(t - 3)^2} \, \dd t 
+                                &= \int \frac{5/9}{t} - \frac{5/9}{t - 3} + \frac{5/3}{(t - 3)^2} \\[1.5ex] 
+                                &= \boxed{\frac{5}{9} \ln|t| - \frac{5}{9} \ln|t - 3| - \frac{5/3}{t - 3} + C \, .}
+                                \ea 
+                                \] 
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="problem-12">
+                    <div class="box-solution__head">
+                        QUESTION 12
+                    </div>
+                    <div class="box-solution">
+                        <div class="box-solution__body">
+                            <div class="box-solution__problem">
+                                Evaluate
+                                \(\ds \int \frac{6 - 2t}{(t + 1)(27 - 3t^2)} \, \dd t \, .\)
+                            </div>
+                            <hr>
+                            <div id="solution-12">
+                                <span class="solution-text">SOLUTION</span>
+                                We rewrite the integrand as
+                                \[ \frac{-2(t - 3)}{3(t + 1)(3 + t)(3 - t)} \, .\]
+                                The partial fraction decomposition then takes the shape
+                                \[\frac{-2(t - 3)}{3(t + 1)(3 + t)(3 - t)} = \frac{1}{3} \left( \frac{A}{t + 1} + \frac{B}{3 + t} + \frac{C}{3 - t}\right) \, .\]
+                                We then have 
+                                \[-2(t - 3) = A(3 + t)(3 - t) + B(t + 1)(3 - t) + C(t + 1)(3 + t) \, .\]
+                                To solve for \(C,\) we let \(t = 3\) to get 
+                                \[0 = 0 + 0 + 36C \implies C = 0 \, .\]
+                                Likewise, letting \(t = -1\) gives 
+                                \[8 = 8A + 0 \implies A = 1 \, .\]
+                                Finally, we let \(t = -3\) to obtain 
+                                \[12 = 0 - 12B + 0 \implies B = -1 \, .\]
+                                We have, for our integral, 
+                                \[\frac{1}{3} \int \frac{1}{t + 1} - \frac{1}{3 + t} \, \dd t = \boxed{\frac{1}{3} \ln|t + 1| - \frac{1}{3} \ln|3 + t| + C \, .}\]
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="problem-13">
+                    <div class="box-solution__head">
+                        QUESTION 13
+                    </div>
+                    <div class="box-solution">
+                        <div class="box-solution__body">
+                            <div class="box-solution__problem">
+                                Evaluate
+                                \(\ds \int \frac{9 + 5q^2}{q^3 - q^2 - 12q} \, \dd q \, .\)
+                            </div>
+                            <hr>
+                            <div id="solution-13">
+                                <span class="solution-text">SOLUTION</span>
+                                We re-express the integrand as 
+                                \[\frac{9 + 5q^2}{q(q - 4)(q + 3)} \, ,\]
+                                whose partial fraction decomposition takes the shape 
+                                \[\frac{A}{q} + \frac{B}{q - 4} + \frac{C}{q + 3} \, .\] 
+                                We then get 
+                                \[9 + 5q^2 = A(q - 4)(q + 3) + Bq(q + 3) + Cq(q - 4) \, .\]
+                                To solve for \(A,\) we let \(q = 0\) to get 
+                                \[9 + 0 = -12A + 0 + 0 \implies A = \frac{-3}{4} \, . \]
+                                Assinging \(t = 4\) provides 
+                                \[89 = 0 + 28B + 0 \implies B = \frac{89}{28} \, .\]
+                                Lastly, we solve for \(C\) by letting \(t = -3 \!:\)
+                                \[54 = 0 + 0 + 21C \implies C = \frac{18}{7} \, .\]
+                                We have, therefore, 
+                                \[
+                                \ba 
+                                \int \frac{9 + 5q^2}{q^3 - q^2 - 12q} \, \dd q &= \int \frac{-3/4}{q} + \frac{89/28}{q - 4} + \frac{18/7}{q + 3} \, \dd q \\[1.5ex] 
+                                &= \boxed{\frac{89}{28} \ln|q - 4| + \frac{18}{7} \ln|q + 3| - \frac{3}{4} \ln|q| + C \, . } 
+                                \ea 
+                                \]
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="problem-14">
+                    <div class="box-solution__head">
+                        QUESTION 14
+                    </div>
+                    <div class="box-solution">
+                        <div class="box-solution__body">
+                            <div class="box-solution__problem">
+                                Evaluate
+                                \(\ds \int \frac{x^4 + 1}{16x - 4x^3} \, \dd x \, .\)
+                            </div>
+                            <hr>
+                            <div id="solution-14">
+                                <span class="solution-text">SOLUTION</span>
+                                The degree of the numerator is greater than the degree of the denominator, 
+                                so we must first simplify the expression using polynomial division.
+                                Doing so gives 
+                                \[\frac{x^4 + 1}{16 - 4x^2} = -\frac{x}{4} + \frac{4x^2 + 1}{16x - 4x^3} \, .\]
+                                Factoring \(\frac{4x^2 + 1}{16x - 4x^3}\) yields 
+                                \[\frac{4x^2 + 1}{4x(2 + x)(2 - x)} \, ,\]
+                                whose partial fraction decompositions take the form 
+                                \[
+                                \frac{4x^2 + 1}{4x(2 + x)(2 - x)} = \frac{A}{4x} + \frac{B}{2 + x} + \frac{C}{2 - x} \, .
+                                \]
+                                Adding these partial fractions, we attain 
+                                \[4x^2 + 1 = A(2 + x)(2 - x) + B(4x)(2 - x) + C(4x)(2 + x) \, .\]
+                                Two of the terms possess the factor \((4x),\) 
+                                so letting \(x = 0\) cancels them out. We get 
+                                \[1 = 4A + 0 + 0 \implies A = \frac{1}{4} \, .\]
+                                In addition, letting \(x = 2\) cancels out two more factors, 
+                                enabling us to solve for \(C \! :\)
+                                \[17 = 0 + 0 + 32 C \implies C = \frac{17}{32} \, .\]
+                                Finally, letting \(x = -2\) allows us to obtain the value of \(B \! :\)
+                                \[17 = 0 - 32 B \implies B = -\frac{17}{32} \, .\]
+                                Our partial fraction decomposition is then 
+                                \[
+                                \frac{x^4 + 1}{16x - 4x^3} = -\frac{x}{4} + \frac{1}{16x} - \frac{17/32}{2 + x} + \frac{17/32}{2 - x} \, . 
+                                \]
+                                Integrating this expression, we get 
+                                \[
+                                \ba 
+                                \int \frac{x^4 + 1}{16x - 4x^3} \, \dd x 
+                                &= \int -\frac{x}{4} + \frac{1}{16x} - \frac{17/32}{2 + x} + \frac{17/32}{2 - x} \, \dd x \\[1.5ex]
+                                &= \boxed{-\frac{1}{8}x^2 + \frac{1}{16} \ln|x| - \frac{17}{32} \ln|2 + x| - \frac{17}{32} \ln|2 - x| + C \, .} 
+                                \ea 
+                                \]
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="problem-15">
+                    <div class="box-solution__head">
+                        QUESTION 15
+                    </div>
+                    <div class="box-solution">
+                        <div class="box-solution__body">
+                            <div class="box-solution__problem">
+                                Evaluate
+                                \(\ds \int \frac{x}{(2x + 1)(x^2 + 4x + 1)} \, \dd x \, .\)
+                            </div>
+                            <hr>
+                            <div id="solution-15">
+                                <span class="solution-text">SOLUTION</span>
+                                The partial fraction composition of the integrand is expressed by 
+                                \[\frac{x}{(2x + 1)(x^2 + 4x + 1)} = \frac{A}{2x + 1} + \frac{Bx + C}{x^2 + 4x + 1} \, .\] 
+                                We then have 
+                                \[x = A(x^2 + 4x + 1) + Bx(2x + 1) + C(2x + 1) \, .\]
+                                We solve for \(A\) by letting \(x = -1/2 \!:\) 
+                                \[-\frac{1}{2} = -\frac{3}{4}A + 0 + 0 \implies A = \frac{2}{3} \, . \]
+                                Another simple substitution is letting \(x = 0,\) from which we obtain 
+                                \[0 = \frac{2}{3} + 0 + C \implies C = -\frac{2}{3} \, .\]
+                                Our equation is now 
+                                \[x = \frac{2}{3}(x^2 + 4x + 1) + Bx(2x + 1) - \frac{2}{3} (2x + 1) \, .\]
+                                To solve for \(B,\) we let \(x\) equal any value;
+                                an easy choice is letting \(x = 1\) to attain 
+                                \[1 = 4 + 3B - 2 \implies B = -\frac{1}{3} \, . \]
+                                Our new integral is now 
+                                \[\int \frac{2/3}{2x + 1} - \frac{x + 2}{3(x^2 + 4x + 1)}  \, \dd x \, .\]
+                                The integral \(\int \frac{x + 2}{3(x^2 + 4x + 1)} \, \dd x\) can be evaluated using the substitution \(u = x^2 + 4x + 1.\)
+                                We then acquire, for our final answer,
+                                \[\boxed{\frac{1}{3} \ln|2x + 1| - \frac{1}{6} \ln|x^2 + 4x + 1| + C \, .}\]
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="problem-16">
+                    <div class="box-solution__head">
+                        QUESTION 16
+                    </div>
+                    <div class="box-solution">
+                        <div class="box-solution__body">
+                            <div class="box-solution__problem">
+                                Evaluate
+                                \(\ds \int \frac{7w^3 - 9}{(w + 2)(4 - w^2)} \, \dd w  \, .\)
+                            </div>
+                            <hr>
+                            <div id="solution-16">
+                                <span class="solution-text">SOLUTION</span>
+                                The degree of the numerator is equal to the degree of the denominator. 
+                                Thus, we perform polynomial division first to obtain 
+                                \[-7 + \frac{-14w^2 + 28w + 47}{(w + 2)(4 - w^2)} \, .\]
+                                The partial fraction decomposition of 
+                                \(\frac{-14w^2 + 28w + 47}{(w + 2)(4 - w^2)}\) takes the shape 
+                                \[
+                                \ba 
+                                \frac{-14w^2 + 28w + 47}{(w + 2)(4 - w^2)} 
+                                &= \frac{-14w^2 + 28w + 47}{(w + 2)^2(2 - w)} \\[1.5ex]
+                                &= \frac{A}{w + 2} + \frac{B}{(w + 2)^2} + \frac{C}{2 - w} \, .
+                                \ea 
+                                \]
+                                Multiplying both sides by \((w + 2)^2 (2 - w),\) we obtain
+                                \[-14w^2 + 28w + 47 = A(w + 2) (2 - w) + B(2 - w) + C(w + 2)^2 \, .\]
+                                To solve for \(C,\) we let \(w = 2\) to get 
+                                \[47 = 0 + 0 + 16C \implies C = \frac{47}{16} \, .\]
+                                Similarly, letting \(w = -2\) provides 
+                                \[-65 = 0 + 4B + 0 \implies B = -\frac{65}{4} \, .\]
+                                Our resulting equation is 
+                                \[-14w^2 + 28w + 47 = A(w + 2) (2 - w) - \frac{65}{4}(2 - w) + \frac{47}{16} (w + 2)^2 \, .\]
+                                To solve for \(A,\) we assign \(w\) any value.
+                                A simple choice is \(w = 0,\) which gives 
+                                \[47 = 4A - \frac{65}{2} + \frac{47}{4} \implies A = \frac{271}{16} \, . \]
+                                We have, therefore,
+                                \[
+                                \ba 
+                                \int \frac{7w^3 - 9}{(w + 2)(4 - w^2)} \, \dd w 
+                                &= \int -7 + \left(\frac{271/16}{w + 2} - \frac{65/4}{(w + 2)^2} + \frac{47/16}{2 - w} \right) \, \dd w \\[1.5ex] 
+                                &= \boxed{-7w + \frac{271}{16} \ln|w + 2| + \frac{65/4}{w + 2} - \frac{47}{16} \ln|2 - w| + C \, .}
+                                \ea 
+                                \]
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="problem-17">
+                    <div class="box-solution__head">
+                        QUESTION 17
+                    </div>
+                    <div class="box-solution">
+                        <div class="box-solution__body">
+                            <div class="box-solution__problem">
+                                Evaluate 
+                                \(\ds \int \frac{5}{2x^3 + 3x} \, \dd x \, .\)
+                            </div>
+                            <hr>
+                            <div id="solution-17">
+                                <span class="solution-text">SOLUTION</span>
+                                We factor the denominator to get 
+                                \[\frac{5}{2x^3 + 3x} = \frac{5}{x(2x^2 + 3)} \, ,\]
+                                whose partial fraction decomposition is
+                                \[\frac{5}{x(2x^2 + 3)} = \frac{A}{x} + \frac{Bx + C}{2x^2 + 3} \, .\]
+                                We then get 
+                                \[5 = A(2x^2 + 3) + Bx^2 + Cx \, . \]
+                                To solve for \(A,\) we let \(x = 0\) and get 
+                                \[5 = 3A + 0 + 0 \implies A = \frac{5}{3} \, .\]
+                                We now have 
+                                \[5 = \frac{5}{3} (2x^2 + 3) + Bx^2 + Cx \, .\]
+                                At this point, there aren't any more convenient substitutions.
+                                We can, however, establish a system of equations to find \(B\) and \(C.\) 
+                                This procedure involves attaining equations by assigning \(x\) any value. 
+                                Letting, say, \(x = 1\) gives 
+                                \[
+                                5 = \frac{25}{3} + B + C \implies 3B + 3C = -10 \, .
+                                \]
+                                Another simple value is \(x = -1,\) from which we get 
+                                \[5 = \frac{25}{3} + B - C \implies 3B - 3C = -10 \, .\]
+                                Thus, our system is 
+                                \[
+                                \ba 
+                                3B + 3C &= -10 \\ 
+                                3B - 3C &= -10 \, ,
+                                \ea 
+                                \]
+                                which has solutions \(B = -10/3\) and \(C = 0.\)
+                                We have, therefore, 
+                                \[
+                                \ba 
+                                \int \frac{5}{2x^3 + 3x} \, \dd x &= \int \frac{5/3}{x} + \frac{-10x/3}{2x^2 + 3} \, \dd x \\ 
+                                &= \int \frac{5}{3x} - \frac{10x}{6x^2 + 9} \, \dd x \, . 
+                                \ea 
+                                \]
+                                To evaluate \(\int \frac{10x}{6x^2 + 9} \, \dd x,\) 
+                                we let \(u = 6x^2 + 9.\) Then \(\dd u = 12x \, \dd x,\) and we get 
+                                \[
+                                \ba 
+                                \int \frac{10x}{6x^2 + 9} \, \dd x = \frac{10}{12} \int \frac{1}{u} \, \dd u 
+                                &= \frac{5}{6} \ln|u| + C \\
+                                &= \frac{5}{6} \ln(6x^2 + 9) + C \, .
+                                \ea 
+                                \]
+                                Therefore, 
+                                \[
+                                \int \frac{5/3}{x} + \frac{-10x/3}{2x^2 + 3} \, \dd x 
+                                = \boxed{\frac{5}{3} \ln|x| - \frac{5}{6} \ln(6x^2 + 9) + C \, .}
+                                \]
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+        <script id="AMSmath" src="TeX/AMSmath.js"></script>
+        <script src="../js/mathjax-config.js" ></script>
+        <script type="text/javascript" id="MathJax-script" 
+            src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js">
+        </script>
+        <script type="text/javascript" id="MathJax-script" 
+            src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js">
+        </script>
+        <script 
+            src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous">
+        </script>
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+        <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3.0.1/es5/tex-mml-chtml.js"></script>
+        <script id="AMSmath" async src="TeX/AMSmath.js"></script>
+        <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+        <script src="../js/hamburger-menu.js"></script>
+        <script src="../js/toggle-solutions.js"></script>
+    </body>
+    <footer>
+        <div class="footer-sections">
+            <div class="footer-logo">
+                <div class="footer-logo-text"> VALCULUS </div>
+                <a href="https://discord.gg/CbXg72x9Q9"> <img src="../images/discord-icon.png" class="footer-image-icon" alt=""> </a>
+                <img src="../images/paypal-icon.png" class="footer-image-icon" alt="">
+                <img src="../images/venmo-icon.png" class="footer-image-icon venmo-icon" alt="">
+            </div>
+            <div class="footer-nav-column">
+                <ul class="footer-nav-column__ul">
+                    <li>
+                        <a class="footer-link" href="../index.html">Home</a> 
+                    </li>
+                    <li>
+                        <a class="footer-link" href="../about.html">About</a> 
+                    </li>
+                    <li>
+                        <a class="footer-link" href="../faq.html">FAQ</a> 
+                    </li>
+                    <li>
+                        <a class="footer-link" href="../contact.html">Contact</a> 
+                    </li>
+                    <li>
+                        <a class="footer-link" href="../contact.html">Discord</a> 
+                    </li>
+                </ul>
+            </div>
+            <div class="footer-nav-column">
+                <ul class="footer-nav-column__ul">
+                    <li>
+                        <a class="footer-link" href="../index.html"> Section Notes </a> 
+                    </li>
+                    <li>
+                        <a class="footer-link" href="../faq.html"> AP® Calculus  </a> 
+                    </li>
+                    <li>
+                        <a class="footer-link" href="../faq.html"> Before Taking Calculus  </a> 
+                    </li>
+                    <li>
+                        <a class="footer-link" href="../faq.html"> Practice Tests  </a> 
+                    </li>
+                </ul>
+            </div>
+            <div class="footer-nav-column">
+                <ul class="footer-nav-column__ul">
+                    <li>
+                        <a class="footer-link" href="../index.html">Report a Problem</a> 
+                    </li>
+                    <li>
+                        <a class="footer-link" href="../about.html"> Terms of Use </a> 
+                    </li>
+                    <li>
+                        <a class="footer-link" href="../faq.html">Privacy Policy</a> 
+                    </li>
+                    <li>
+                        <a class="footer-link" href="../contact.html">Donate</a> 
+                    </li>
+                </ul>
+            </div>
+        </div>
+    <img src="../images/copyright-icon.jpg" class="copyright-image" alt="">    
+    <p class="ap-notice">
+        AP® is a trademark registered by the College Board, which is not affiliated with, and does not endorse, this website.
+    </p>
+    </footer>
+</html>

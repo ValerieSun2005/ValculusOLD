@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>   
+    <head>
+        <link rel="stylesheet" href="../../css/hamburger-menu.css">
+        <link rel="stylesheet" href="../../css/layout.css">
+        <link rel="stylesheet" href="../../css/exercises-style.css">
+        <link rel="stylesheet" href="../../css/calculus/5.1-exercises.css">
+        <title> Problem 9 — 5.1 Exercises </title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <meta name="author" content="Valerie">
+    </head>
+    <!--Top Button Panel-->
+
+    <!--section tabs-->
+    <div class="tab">
+        <span class="tab-button-background"> <a href="8.html" class="tab-button"> < Previous Problem </a> </span>
+        <span class="tab-button-background"> <a href="../5.1.html" class="tab-button"> Notes </a> </span>
+        <span class="tab-button-background"> <a href="../5.1-exercises.html" class="tab-button"> Exercises </a> </span>
+        <span class="tab-button-background"> <a href="10.html" class="tab-button"> Next Problem > </a> </span>
+        <!--hamburger menu button-->
+        <span class="menu-button__background" style="text-align: left;">
+            <div class="menu-btn">
+                <div class="menu-btn__burger">
+                </div>
+            </div> 
+        </span>
+    </div>
+
+    <!--hamburger menu-->
+    <div class="menu-button__background">
+        <div class="menu-btn">
+            <div class="menu-btn__burger">
+            </div>
+        </div> 
+    </div>
+    <div id="popupMenuItems" class="menu-popup"> 
+        <div class="menu-list">
+            <hr class="menu-hr">
+            <p> 
+                <a class="menu-link" href="../../index.html"> 
+                    <div class="menu-item"> 
+                        <img src="../../images/icons/home-icon.png" class="menu-icon" alt="">
+                        Home 
+                    </div>
+                </a> 
+            </p>
+            <p> 
+                <a class="menu-link" href="../../about.html"> 
+                    <div class="menu-item"> 
+                        <img src="../../images/icons/about.png" class="menu-icon" alt="">
+                        About 
+                    </div>
+                </a> 
+            </p>
+            <p> 
+                <a class="menu-link" href="../../faq.html"> 
+                    <div class="menu-item"> 
+                        <img src="../../images/icons/question-mark-line.png" class="menu-icon" alt="">
+                        FAQ
+                    </div>
+                </a> 
+            </p>
+            <p> 
+                <a class="menu-link" href="../../contact.html"> 
+                    <div class="menu-item"> 
+                        <img src="../../images/icons/email.png" class="menu-icon" alt="">
+                        Contact
+                    </div>
+                </a> 
+            </p>
+            <hr class="menu-hr">
+            <p class="menu-link" style="color: gray;"> COURSES </p>
+            <p> <a class="menu-link" href="../algebra.html"> Algebra </a> </p>
+            <p> <a class="menu-link" href="../trig.html"> Trigonometry </a> </p>
+            <p> <a class="menu-link" href="../calculus.html"> Calculus </a> </p>
+            <p> <a class="menu-link" href="../statistics.html"> Statistics </a> </p>
+        </div>
+    </div>
+    <body class="background">
+        <h1> Problem 9 — 5.1 Exercises (Integration by Parts) </h1>
+        <!--section body-->
+        <section class="background-text">
+            <!--problem boxed-->
+            <div class="box-solution">
+                <div class="box-solution__problem">
+                    <div class="problem-body">
+                        <p>
+                            Evaluate \(\displaystyle \int \sin^{-1}(2t) \, \dd t. \) 
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <!--solution-->
+            <div class="exercise-solution">
+                <p>
+                    <span class="solution-text">SOLUTION</span>
+                    Using the integration by parts formula, 
+                    \[\int u \, \dd v = uv - \int v \, \dd u,\]
+                    we let \(u = \sin^{-1}(2t)\) and \(\dd v = \, \dd t.\)
+                    Then, \(\displaystyle \dd u = \frac{2}{\sqrt{1 - 4t^2}} \, \dd t\) and \(v = t.\)
+                    After plugging in these expressions, we obtain 
+                    \[
+                    \begin{aligned}
+                    \int \sin^{-1}(2t) \, \dd t &= t \sin^{-1}(2t) - \int \frac{2t}{\sqrt{1 - 4t^2}} \, \dd t. \\
+                    \end{aligned}
+                    \]
+                    We can evaluate \(\displaystyle \int \frac{2t}{\sqrt{1 - 4t^2}} \, \dd t\) 
+                    using the substitution \(A = 1 - 4t^2.\)
+                    Then, \(\dd A = -8t \, \dd t\) and the integral becomes 
+                    \[
+                    \begin{aligned}
+                    &\int \frac{-1}{4\sqrt{A}} \, \dd A \\
+                    = &-\frac{1}{4} \left(2 \sqrt{A}\right) + C \\
+                    = &-\frac{1}{2} \sqrt{1 - 4t^2} + C.
+                    \end{aligned}
+                    \]
+                    Therefore,
+                    \[
+                    \begin{aligned}
+                    \int \sin^{-1}(2t) \, \dd t &= t \sin^{-1}(2t) - \left(-\frac{1}{2} \sqrt{1 - 4t^2}\right) + C \\
+                    &= \bbox[border: 2px solid white, 2pt]{t \sin^{-1}(2t) + \frac{1}{2} \sqrt{1 - 4t^2} + C.}
+                    \end{aligned}
+                    \]
+                </p>
+            </div>
+        </section>
+    </body>
+
+    <script src="../../js/hamburger-menu.js"></script>
+    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+    <script src="../../js/mathjax-config.js" defer></script>
+    <script type="text/javascript" id="MathJax-script" defer
+        src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js">
+    </script>
+    <script type="text/javascript" id="MathJax-script" async
+        src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js">
+    </script>
+</html> 

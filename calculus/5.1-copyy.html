@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html>
+    <!--Keep these scripts at the top because if they're placed at the bottom then math won't display correctly.-->
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+    <script id="AMSmath" src="TeX/AMSmath.js"></script>
+    <script src="../js/mathjax-config.js" ></script>
+    <script type="text/javascript" id="MathJax-script" 
+        src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js">
+    </script>
+    <script type="text/javascript" id="MathJax-script" 
+        src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js">
+    </script>
+    <head>
+        <link rel="stylesheet" href="../css/hamburger-menu.css">
+        <link rel="stylesheet" href="../css/layout.css">
+        <link rel="stylesheet" href="../css/notes-style.css">
+        <link rel="stylesheet" href="../css/calculus/1.4.css">
+        <title> 5.1 — Integration by Parts </title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <meta name="author" content="Valerie">
+    </head>
+    <!--section tabs-->
+    <nav class="tab">
+        <span class="tab-button-background"> <a class="tab-button"> < Previous Section </a> </span>
+        <span class="tab-button-background"> <a class="tab-button"> Notes </a> </span>
+        <span class="tab-button-background"> <a href="5.1-exercises.html" class="tab-button"> Exercises </a> </span>
+        <span class="tab-button-background"> <a href="5.2.html" class="tab-button"> Next Section > </a> </span>
+        <!--hamburger menu button-->
+        <span class="menu-button__background" style="text-align: left;">
+            <div class="menu-btn">
+                <div class="menu-btn__burger">
+                </div>
+            </div> 
+        </span>
+    </nav>
+        
+
+    <!--hamburger menu-->
+    <div id="popupMenuItems" class="menu-popup"> 
+        <div class="menu-list">
+            <hr class="menu-hr">
+            <p> 
+                <a class="menu-link" href="../index.html"> 
+                    <div class="menu-item"> 
+                        <img src="../images/icons/home-icon.png" class="menu-icon" alt="">
+                        Home 
+                    </div>
+                </a> 
+            </p>
+            <p> 
+                <a class="menu-link" href="../about.html"> 
+                    <div class="menu-item"> 
+                        <img src="../images/icons/about.png" class="menu-icon" alt="">
+                        About 
+                    </div>
+                </a> 
+            </p>
+            <p> 
+                <a class="menu-link" href="../faq.html"> 
+                    <div class="menu-item"> 
+                        <img src="../images/icons/" class="menu-icon" alt="">
+                        FAQ
+                    </div>
+                </a> 
+            </p>
+            <p> 
+                <a class="menu-link" href="../contact.html"> 
+                    <div class="menu-item"> 
+                        <img src="../images/icons/email.png" class="menu-icon" alt="">
+                        Contact
+                    </div>
+                </a> 
+            </p>
+        
+
+            <hr class="menu-hr">
+            <p class="menu-link" style="color: gray;"> COURSES </p>
+            <p> <a class="menu-link" href="algebra.html"> Algebra </a> </p>
+            <p> <a class="menu-link" href="trig.html"> Trigonometry </a> </p>
+            <p> <a class="menu-link" href="calculus.html"> Calculus </a> </p>
+            <p> <a class="menu-link" href="statistics.html"> Statistics </a> </p>
+        </div>
+    </div>
+
+    <body class="background">
+        <!--Section Title-->
+            <h1> 5.1 — Integration by Parts </h1>
+            <!--Section Body-->
+            <section class="background-text">
+                <hr size=6 noshade="true">
+                <p>
+                    Up to this point, we have seen integrals that can be evaluated with a simple substitution,
+                    such as \(\int \cos(2x) \, \dd x , \) which can be evaluated using the substitution \(u = 2x\).
+                    In this section, however, we will explore a way to rewrite integrals as expressions that are easier to evaluate. 
+                </p>
+                <p>
+                    Let \(u\) and \(v\) be two functions of \(x\). 
+                    The product rule states that the derivative of the product \(uv\) is given by 
+                    \[(uv)' = u' v + u v'.\]
+                    If we integrate both sides, we will be reversing the effect of the product rule.
+                    This procedure will be useful because it produces the formula on which we base 
+                    the integration technique featured in this section.
+                    We will get
+                    \[
+                    \begin{aligned}
+                    \int (uv)' \, \dd x &= \int u' v \, \dd x + \int u v' \, \dd x \\
+                    uv &= \int u' v \, \dd x + \int u v' \, \dd x \\
+                    \int u v' \, \dd x &= uv - \int u' v \, \dd x.
+                    \end{aligned}
+                    \]
+                    We can condense the terms \(v' \, \dd x\) and \(u' \, \dd x\) as \(\dd v\) and \(\dd u\), respectively.
+                    Thus, we can rewrite the formula as 
+                    \[\int u \, \dd v = uv - \int v \, \dd u. \]
+                    In words, this formula permits us to re-express an integral \(\int u \, \dd v\)
+                    by choosing a term to differentiate (this is our \(u\)) and a term to integrate (this is our \(\dd v\).)
+                    The resulting expression, \(uv - \int v \, \dd u,\) will hopefully be easier to evaluate.
+                </p>
+
+                <br>
+
+                <!-- table for ibp formula-->
+                <div class="box-title"> INTEGRATION BY PARTS FORMULA </div>
+                <div class="box">
+                    <p>
+                        \[\int u \, \dd v = uv - \int v \, \dd u. \]
+                    </p>
+                </div>
+
+                <br>
+
+                <p>
+                    Consider, as an example, the integral \(\int x e^x \, \dd x.\)
+                    A substitution will not work for evaluating the integral, but we can instead try integration by parts.
+                    In this case, we can pick 
+                    \[ u = x \quad \textrm{and} \quad \dd v = e^x \, \dd x. \]
+                    To complete the remaining portion of the new expression, we need \(v\) and \(\dd u.\)
+                    We can differentiate \(u\) to get \(\dd u\) and integrate \(\dd v\) to get \(v.\)
+                    \[ \dd u = 1 \, \dd x \quad \textrm{and} \quad v = e^x. \]
+                    Therefore, 
+                    \[
+                    \begin{aligned} 
+                    \int u \, \dd v &= uv - \int v \, \dd u \\
+                    \int xe^x \, \dd x &= x\left(e^x\right) - \int e^x \left(1 \, \dd x\right) \\
+                    &= xe^x - \int e^x \, \dd x \\ 
+                    &= \bbox[border: 2px solid white, 2pt]{xe^x - e^x + C.} 
+                    \end{aligned}
+                    \]
+                    We notice that our choice to let \(u = x\) was correct—the resulting integral, \(\int e^x \, \dd x\),
+                    is easily evaluable. 
+                    However, had we let \(u = e^x\) and \(\dd v = x \, \dd x,\) the resulting integral would have been 
+                    \(\int \frac{1}{2} x^2 e^x \, \dd x\), which would have lead nowhere.
+                    This example highlights the fact that it is 
+                    <u>not sufficient to simply have the formula memorized</u>.
+                    You <u>must</u> continue to practice integration by parts 
+                    to be able to determine the correct expressions for \(u\) and \(\dd v\).
+                </p>
+
+                <br>
+
+                <p>
+                    There is a general mnemonic that can help us decide what to let \(u\), called "LIATE," which is an acronym 
+                    for "\((1)\) logarithms, \((2)\) inverse trigonometric functions, \((3)\) algebraic expressions, 
+                    \((4)\) trigonometric functions,  and \((5)\) exponential functions." 
+                    The mnemonic suggests that we prioritize our choice of \(u\) according to the order of those list items.
+                </p>
+
+                <br>
+
+                <!-- table for LIATE-->
+                <div class="steps-title"> CHOOSING \(u\) — "LIATE" </div>
+                <div class="steps">
+                    <p> Select \(u\) in the following order: </p>
+                    <div class="example-list">
+                        <ol type="I" class="example-list">
+                            <!--I-->
+                            <li style="padding-left: 20px;">
+                                Logarithms; e.g., \(\ln(x)\)
+                            </li>
+                            <!--II-->
+                            <li style="padding-left: 20px;">
+                                Inverse Trigonometric Functions; e.g., \(\sin^{-1}(x)\)
+                            </li>  
+                            <!--III-->
+                            <li style="padding-left: 20px;">
+                                Algebraic Expressions; e.g., \(x^2\)
+                            </li>
+                            <!--IV-->
+                            <li style="padding-left: 20px;">
+                                Trigonometric Functions; e.g., \(\sin(x)\)
+                            </li>
+                            <!--V-->
+                            <li style="padding-left: 20px;">
+                                Exponential Functions; e.g., \(e^x\)
+                            </li>
+                        </ol> 
+                    </div>
+                </div>
+
+                <br>
+
+                <p>
+                    It is important to note that the acronym only serves as a general guideline.
+                    There are, of course, exceptions to the list, especially when an integrand contains multiple of one item 
+                    (e.g., multiple algebraic expressions).
+                </p>
+                
+                <br>
+
+                <!--example 1-->
+                <div class="example-title"> EXAMPLE \(1\) </div>
+                <div class="example">
+                    <!--example 1 problem-->
+                    <div class="example-problem">  
+                        Evaluate the following integrals.
+                        <ol type="I" class="example-list">
+                            <!--I-->
+                            <li style="padding-left: 20px;">
+                                \(\displaystyle \int x \sin(x) \, \dd x\)
+                            </li>
+                            <!--II-->
+                            <li style="padding-left: 20px;">
+                                \(\displaystyle \int x^2 \cos(x) \, \dd x\)
+                            </li>  
+                            <li style="padding-left: 20px;">
+                                \(\displaystyle \int x^3 \sqrt{9 - x^2} \, \dd x\)
+                            </li>
+                        </ol>
+                    </div>
+                </div>
+                <button onclick="toggle1()" class="solution-button"> SHOW SOLUTION ▼ </button>
+                <!--example 1 solution-->
+                <div>
+                    <div id="solution1" class="solution">
+                        <ol type="I" class="example-list">
+                            <!--I-->
+                            <li style="padding-left: 20px;">
+                                For this problem, we have an algebraic expression, \(x\), and a trigonometric function, \(\sin(x)\).
+                                Following the acronym "LIATE," we are instructed to let \(u\) equal the algebraic expression.
+                                Thus, let 
+                                \[u = x \quad \textrm{and} \quad \dd v = \sin(x) \, \dd x.\]
+                                Then,
+                                \[\dd u = 1 \, \dd x \quad \textrm{and} \quad v = - \cos(x) .\]
+                                Therefore,
+                                \[
+                                \begin{aligned} 
+                                \int u \, \dd v &= uv - \int v \, \dd u \\
+                                \int x \sin(x) \, \dd x &= x \left(- \cos(x)\right) - \int (- \cos(x)) (1 \, \dd x) \\
+                                &= - x \cos(x) + \int \cos(x) \, \dd x \\
+                                &= \bbox[border: 2px solid white, 2pt]{-x \cos(x) + \sin(x) + C.} 
+                                \end{aligned}
+                                \]
+                            </li>
+                            <hr size=6 noshade="true">
+                            <!--II-->
+                            <li style="padding-left: 20px;">
+                                <p>
+                                    We have an algebraic expression, \(x^2\), and a trigonometric function, \(\cos(x)\).
+                                    Following "LIATE," the algebraic expression, \(x^2\) in this case, 
+                                    is higher on the list than the trigonometric function is. 
+                                    Therefore, we let \(u = x^2\) and \(\dd v = \cos(x) \, \dd x.\)
+                                    Then, it follows that \(\dd u = 2x \, \dd x\) and \(v = \sin(x).\)
+                                    Plugging in these expressions, we get 
+                                    \[
+                                    \begin{aligned} 
+                                    \int u \, \dd v &= uv - \int v \, \dd u \\
+                                    \int x^2 \cos(x) \, \dd x &= x^2 \sin(x) - \int 2x \sin(x) \, \dd x \\
+                                    &= x^2 \sin(x) - 2\int x \sin(x) \, \dd x \\
+                                    \end{aligned}
+                                    \]
+                                </p>
+                                <p>
+                                    At this point, we will have to do integration by parts again in order to evaluate 
+                                    \(\int x \sin(x) \, \dd x\). 
+                                    Luckily, we have already evaluated it in part I., so we can plug it in to obtain
+                                    \[
+                                    \begin{aligned} 
+                                    &= x^2 \sin(x) - 2\int x \sin(x) \, \dd x \\
+                                    &= x^2 \sin(x) - 2(-x \cos(x) + \sin(x)) + C \\
+                                    &= \bbox[border: 2px solid white, 2pt]{x^2 \sin(x) + 2x \cos(x) - 2 \sin(x) + C.} 
+                                    \end{aligned}
+                                    \]
+                                </p>
+                            </li>  
+                            <hr size=6 noshade="true">
+                            <!--III-->
+                            <li style="padding-left: 20px;">
+                                <p>
+                                    In this case, because we have multiple algebraic expressions in the integrand,
+                                    "LIATE" does not help us. However, if we rewrite the integral as 
+                                    \[\int x^2 \cdot x \sqrt{9 - x^2} \, \dd x, \]
+                                    we can pick \(u = x^2\) and \(\dd v = x \sqrt{9 - x^2} \, \dd x\).
+                                    Then, \(\dd u = 2x \, \dd x\) and \(v\) can be evaluated by performing a substitution
+                                    (we have already used \(u\) and \(v\), so any other variable will work for the substitution—we 
+                                    will choose \(k\).)
+                                    
+                                    \[
+                                    \begin{aligned} 
+                                    \textrm{Let} \, \, k &= 9 - x^2 \\
+                                    \dd k &= -2x \, \dd x.
+                                    \end{aligned}
+                                    \]
+                                    \[
+                                    \begin{aligned}
+                                    v &= \int x \sqrt{9 - x^2} \, \dd x \\
+                                    &= -\frac{1}{2} \int \sqrt{k} \, \dd k \\
+                                    &= - \frac{1}{2} \left(\frac{2}{3} k^{3/2}\right) \\
+                                    &= - \frac{1}{3} \left(9 - x^2\right)^{3/2}. \\
+                                    \end{aligned}
+                                    \]
+                                    We have neglected the constant of integration for simplicity; it can simply be added at the end.
+                                    Therefore, we get 
+                                    \[
+                                    \begin{aligned} 
+                                    \int u \, \dd v &= uv - \int v \, \dd u \\
+                                    \int x^2 \cdot x \sqrt{9 - x^2} \, \dd x 
+                                    &= -\frac{1}{3}x^2 \left(9 - x^2\right)^{3/2} + \frac{2}{3} \int x \left(9 - x^2\right)^{3/2} \, \dd x. \\
+                                    \end{aligned}
+                                    \]
+                                    We now have one final task—to integrate \(\int x \left(9 - x^2\right)^{3/2} \, \dd x.\)
+                                    To do so, we can perform the substitution \(p = 9 - x^2\) 
+                                    (it's getting harder to think of variables to use!) 
+                                    Then, \(\dd p = -2x \, \dd x\) and the integral becomes 
+                                    \[
+                                    \begin{aligned}
+                                    -\frac{1}{2} \int p^{3/2} \, \dd p &= -\frac{1}{2} \left(\frac{2}{5} p^{5/2}\right) \\
+                                    &= -\frac{1}{5} \left(9 - x^2 \right)^{5/2}.
+                                    \end{aligned}
+                                    \]
+                                    Again, we will worry about the constant of integration later.
+                                    Therefore, plugging in, we obtain—for our final answer—
+                                    \[
+                                    \bbox[border: 2px solid white, 2pt]
+                                    {-\frac{1}{3} x^2 \left(9 - x^2\right)^{3/2} - \frac{2}{15} \left(9 - x^2\right)^{5/2} + C.}
+                                    \]
+                                </p>
+                            </li>
+                        </ol>
+                    </div>
+                </div>
+
+                <br>
+
+                <!--example 2-->
+                <div class="example-title"> EXAMPLE \(2\) </div>
+                <div class="example">
+                    <!--example 2 problem-->
+                    <div style="margin-left:5%; padding-top: 5%; padding-bottom: 5%;">
+                        <p>
+                            It is known that \(f'(4) = 2\), \(f(0) = 0\), and \(f(4) = 3\).
+                            Find the value of \(\displaystyle \int_0^4 x f''(x) \, \dd x.\)
+                        </p>
+                    </div>
+                </div>
+                <button onclick="toggle2()" class="solution-button"> SHOW SOLUTION ▼ </button>
+                <!--example 2 solution-->
+                <div id="solution2" class="solution">
+                    <p>
+                        Using integration by parts, we can rewrite the integral by choosing 
+                        \(u = x\) and \(\dd v = f''(x) \, \dd x.\)
+                        Then,
+                        \(\dd u = \dd x\) and \(v = f'(x)\) (note that \(1 \, \dd x = \dd x.\))
+                        Using the integration by parts formula,
+                        \[ \int u \, \dd v = uv - \int v \, \dd u,\]
+                        and plugging in each expression produce 
+                        \[ x f'(x) \Big|_0^4 - \int_0^4 f'(x) \, \dd x. \]
+                        Note that doing integration by parts is <u>not</u> performing a substitution.
+                        \(u\) and \(v\) are simply placeholders for our functions of \(x\).
+                        Therefore, we do not need to worry about changing the bounds, as we do with substitutions.
+                        We then get 
+                        \[ 4f'(4) - 0 - \left(f(4) - f(0)\right) \]
+                        \[
+                        \begin{aligned} 
+                        &= 4(2) - (3 - 0) \\
+                        &= \bbox[border: 2px solid white, 2pt]{5.}
+                        \end{aligned}
+                        \]
+                    </p>
+                </div>
+
+                <br>
+                <br>
+
+                <p>
+                    Using integration by parts, we can antidifferentiate functions such as 
+                    \(\ln(x),\) \(\sin^{-1}(x),\) and \(\tan^{-1}(x)\).
+                    For \(\int \ln(x) \, \dd x,\) it appears at first that there is only one part 
+                    (which is paradoxical because integration by parts requires two parts).
+                    However, we can choose \(u = \ln(x)\) and \(\dd v = 1 \, \dd x\). 
+                    We will then proceed to get \(\dd u = 1/x \, \dd x\) and \(v = x.\)
+                    Using the integration by parts formula,
+                    \[ \int u \, \dd v = uv - \int v \, \dd u,\]
+                    we obtain 
+                    \[x \ln(x) - \int x \cdot \frac{1}{x} \, \dd x\]
+                    \[
+                    \begin{aligned} 
+                    &= x \ln(x) - \int \, \dd x \\
+                    &= x \ln(x) - x + C.
+                    \end{aligned}
+                    \]
+                </p>
+
+                <br>
+
+                <!--example 3-->
+                <div class="example-title"> EXAMPLE \(3\) </div>
+                <div class="example">
+                    <!--example 3 problem-->
+                    <div style="margin-left:5%; padding-top: 5%; padding-bottom: 5%;">
+                        Evaluate the following integrals.
+                        <ol type="I" class="example-list">
+                            <!--I-->
+                            <li style="padding-left: 20px;">
+                                \(\displaystyle \int \sin^{-1}(x) \, \dd x\)
+                            </li>
+                            <!--II-->
+                            <li style="padding-left: 20px;">
+                                \(\displaystyle \int \cos^{-1}(x) \, \dd x\)
+                            </li>  
+                            <li style="padding-left: 20px;">
+                                \(\displaystyle \int \tan^{-1}(x) \, \dd x\)
+                            </li>
+                        </ol>
+                    </div>
+                </div>
+                <button onclick="toggle3()" class="solution-button"> SHOW SOLUTION ▼ </button>
+                <!--example 3 solution-->
+                <div id="solution3" class="solution">
+                    <ol type="I" class="example-list">
+                        <!--I-->
+                        <li style="padding-left: 20px;">
+                            We let \(u = \sin^{-1}(x)\) and \(\dd v = \dd x.\)
+                            Then, \(\displaystyle \dd u = \frac{1}{\sqrt{1 - x^2}} \, \dd x\) and \(v = x.\)
+                            We then get, from the integration by parts formula, 
+                            \[
+                            \begin{aligned} 
+                            \int u \, \dd v &= uv - \int v \, \dd u \\
+                            \int \sin^{-1}(x) \, \dd x &= x \sin^{-1}(x) - \int \frac{x}{\sqrt{1 - x^2}} \, \dd x. \\
+                            \end{aligned}
+                            \]
+                            We can evaluate \(\displaystyle \int \frac{x}{\sqrt{1 - x^2}}\) by performing the substitution 
+                            \(k = 1 - x^2.\) It then follows that \(\dd k = -2x \, \dd x,\)
+                            and the integral becomes 
+                            \[-\frac{1}{2} \int \frac{1}{\sqrt{k}} \, \dd k \]
+                            \[
+                            \begin{aligned} 
+                            &= -\frac{1}{2} (2 \sqrt{k}) \\
+                            &= - \sqrt{1 - x^2}.
+                            \end{aligned}
+                            \]
+                            Therefore, we get, for our final answer,
+                            \[\bbox[border: 2px solid white, 2pt]{x \sin^{-1}(x) + \sqrt{1 - x^2} + C.}\]
+                        </li>
+                        <hr size=6 noshade="true">
+                        <!--II-->
+                        <li style="padding-left: 20px;">
+                            We let \(u = \cos^{-1}(x)\) and \(\dd v = \dd x.\)
+                            Then, \(\displaystyle \dd u = \frac{-1}{\sqrt{1 - x^2}} \, \dd x\) and \(v = x.\)
+                            We then have, from the integration by parts formula,  
+                            \[
+                            \begin{aligned} 
+                            \int u \, \dd v &= uv - \int v \, \dd u \\
+                            \int \cos^{-1}(x) \, \dd x &= x \cos^{-1}(x) + \int \frac{x}{\sqrt{1 - x^2}} \, \dd x. \\
+                            &=\bbox[border: 2px solid white, 2pt]{x \cos^{-1}(x) - \sqrt{1 - x^2} + C.}
+                            \end{aligned}
+                            \]
+                        </li>  
+                        <hr size=6 noshade="true">
+                        <!--III-->
+                        <li style="padding-left: 20px;">
+                            Let \(u = \tan^{-1}(x)\) and \(v = \dd x.\)
+                            It follows that \(\displaystyle \dd u = \frac{1}{1 + x^2} \, \dd x\) and \(v = x.\)
+                            Then, we have 
+                            \[
+                            \begin{aligned} 
+                            \int u \, \dd v &= uv - \int v \, \dd u \\
+                            \int \tan^{-1}(x) \, \dd x &= x \tan^{-1}(x) - \int \frac{x}{1 + x^2} \, \dd x. \\
+                            \end{aligned}
+                            \]
+                            To evaluate \(\displaystyle \int \frac{x}{1 + x^2} \, \dd x,\)
+                            we can let \(k = 1 + x^2.\) Then, \(\dd k = 2x \, \dd x,\)
+                            and the integral becomes 
+                            \[\frac{1}{2} \int \frac{1}{k} \, \dd k\]
+                            \[
+                            \begin{aligned} 
+                            &= \frac{1}{2} \ln|k| + C \\
+                            &= \frac{1}{2} \ln(1 + x^2) + C.
+                            \end{aligned}
+                            \]
+                            We therefore get, for our final answer, 
+                            \[
+                            \bbox[border: 2px solid white, 2pt]{ x \tan^{-1}(x) - \frac{1}{2} \ln(1 + x^2) + C. }
+                            \]
+                            (The absolute value bars were extraneous because \(1 + x^2\) is always positive.)
+                        </li>
+                    </ol>
+                </div>
+
+                <br>
+                <br>
+
+                <p>
+                    There is a simpler way of performing integration by parts, known as the <u>tabular method</u>.
+                    This method is particularly useful for situations that warrant performing integration by parts multiple times.
+                    To utilize it, we draw a two-column table—with the left column (labeled "D") representing the quantities we differentiate 
+                    and the right column (labeled "I") representing the quantities we integrate.
+                    Consider the integral \(\int x^2 e^x \, \dd x,\) which would warrant performing integration by parts twice.
+                    Instead, we will utilize tabular integration.
+                    We will pick the quantity to differentiate to be \(x^2\) and the quantity to integrate to be \(e^x,\)
+                    which correspond to \(u\) and \(\dd v,\) respectively.
+                </p>
+
+                <br>
+
+
+                <!--table for int x^2 e^x dx -->   
+                    <table class="center">
+                        <!--D-->
+                        <tr>
+                            <th width="100/3%" style="border: none;"></th>
+                            <th width="100/3%" style="border-left: none;">\(D\)</th>
+                            <th width="100/3%" style="border-right: none; "> \(I\) </th>
+                        </tr>
+                        <!--I-->
+                        <tr>
+                            <th width="100/3%" style="border: none;"></th>
+                            <th width="100/3%" style="border-left: none; border-bottom: none; border-top: 1px solid white;">\(x^2\)</th>
+                            <th width="100/3%" style="border-right: none; border-bottom: none; border-top: 1px solid white;"> \(e^x\) </th>
+                        </tr>
+                    </table>
+
+                <br>
+
+                <p>
+                    We now add more rows. 
+                    In the second row, after differentiating \(x^2\) and integrating \(e^x,\)
+                    we obtain \(2x\) and \(e^x\) for the \(D\) and \(I\) columns, respectively.
+                    Then, for the third row—after repeating this procedure—we acquire \(2\) and \(e^x.\)
+                    Similarly, for the fourth row, we get \(0\) and \(e^x.\)
+                    We stop if we have \(0\) in the "\(D\)" column.
+                    Now, we assign signs to each row of the table, starting with positive and alternating on the way down.
+                    We then pair expressions by drawing arrows, as shown by Fig. 5.1-1.
+                </p>
+
+                <br>
+                <img src="../images/Calculus/5/5.1/5.1-1.jpg">
+            </section>
+    </body>
+    <script src="../js/hamburger-menu.js"></script>
+    <script src="../js/toggle-solutions.js"></script>
+    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+</html>

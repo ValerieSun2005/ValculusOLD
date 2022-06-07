@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>   
+    <head>
+        <link rel="stylesheet" href="../../css/hamburger-menu.css">
+        <link rel="stylesheet" href="../../css/layout.css">
+        <link rel="stylesheet" href="../../css/exercises-style.css">
+        <link rel="stylesheet" href="../../css/calculus/5.1-exercises.css">
+        <title> Problem 27 — 5.1 Exercises </title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <meta name="author" content="Valerie">
+    </head>
+    <!--Top Button Panel-->
+
+    <!--section tabs-->
+    <div class="tab">
+        <span class="tab-button-background"> <a href="26.html" class="tab-button"> < Previous Problem </a> </span>
+        <span class="tab-button-background"> <a href="../5.1.html" class="tab-button"> Notes </a> </span>
+        <span class="tab-button-background"> <a href="../5.1-exercises.html" class="tab-button"> Exercises </a> </span>
+        <span class="tab-button-background"> <a href="28.html" class="tab-button"> Next Problem > </a> </span>
+        <!--hamburger menu button-->
+        <span class="menu-button__background" style="text-align: left;">
+            <div class="menu-btn">
+                <div class="menu-btn__burger">
+                </div>
+            </div> 
+        </span>
+    </div>
+
+    <!--hamburger menu-->
+    <div class="menu-button__background">
+        <div class="menu-btn">
+            <div class="menu-btn__burger">
+            </div>
+        </div> 
+    </div>
+    <div id="popupMenuItems" class="menu-popup"> 
+        <div class="menu-list">
+            <hr class="menu-hr">
+            <p> 
+                <a class="menu-link" href="../../index.html"> 
+                    <div class="menu-item"> 
+                        <img src="../../images/icons/home-icon.png" class="menu-icon" alt="">
+                        Home 
+                    </div>
+                </a> 
+            </p>
+            <p> 
+                <a class="menu-link" href="../../about.html"> 
+                    <div class="menu-item"> 
+                        <img src="../../images/icons/about.png" class="menu-icon" alt="">
+                        About 
+                    </div>
+                </a> 
+            </p>
+            <p> 
+                <a class="menu-link" href="../../faq.html"> 
+                    <div class="menu-item"> 
+                        <img src="../../images/icons/question-mark-line.png" class="menu-icon" alt="">
+                        FAQ
+                    </div>
+                </a> 
+            </p>
+            <p> 
+                <a class="menu-link" href="../../contact.html"> 
+                    <div class="menu-item"> 
+                        <img src="../../images/icons/email.png" class="menu-icon" alt="">
+                        Contact
+                    </div>
+                </a> 
+            </p>
+            <hr class="menu-hr">
+            <p class="menu-link" style="color: gray;"> COURSES </p>
+            <p> <a class="menu-link" href="../algebra.html"> Algebra </a> </p>
+            <p> <a class="menu-link" href="../trig.html"> Trigonometry </a> </p>
+            <p> <a class="menu-link" href="../calculus.html"> Calculus </a> </p>
+            <p> <a class="menu-link" href="../statistics.html"> Statistics </a> </p>
+        </div>
+    </div>
+    <body class="background">
+        <h1> Problem 27 — 5.1 Exercises (Integration by Parts) </h1>
+        <!--section body-->
+        <section class="background-text">
+            <!--problem boxed-->
+            <div class="box-solution">
+                <div class="box-solution__problem">
+                    <div class="problem-body">
+                        <p>
+                            Evaluate 
+                            \(\displaystyle \int \ppkn^4 \ln(\ppkn) \left(5 \sin(3 \ln \ppkn) + 3 \cos (3 \ln \ppkn)\right) \, \dd \ppkn.\) 
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <!--solution-->
+            <div class="exercise-solution">
+                <p>
+                    <span class="solution-text">SOLUTION</span>
+                    First, we rewrite the integral as 
+                    \[\int \frac{\ppkn^5}{\ppkn} \ln(\ppkn) \left(5 \sin(3 \ln \ppkn) + 3 \cos (3 \ln \ppkn)\right) \, \dd \ppkn.\]
+                    Now, we will perform the substitution \(k = \ln(\ppkn)\) 
+                    because then \(\displaystyle \dd k = \frac{1}{\ppkn} \, \dd \ppkn\) and \(\ppkn = e^k.\)
+                    The integral then becomes
+                    \[\int k e^{5k} \left(5 \sin(3k) + 3 \cos(3k) \right) \, \dd k.\]
+                    At this point, we will use integration by parts. 
+                    Referencing the formula, 
+                    \[\int u \, \dd v = uv - \int v \, \dd u,\]
+                    we let \(u = k\) and \(\dd v = e^{5k} \left(5 \sin(3k) + 3 \cos(3k) \right) \, \dd k.\)
+                    Notice that 
+                    \[\frac{\dd}{\dd k} \left(e^{5k} \sin(3k) \right) = e^{5k} \left( 5\sin(3k) + 3 \cos(3k) \right). \]
+                    Therefore, \(\dd u = \dd k\) and \(v = e^{5k} \sin(3k)\) (reversing the product rule).
+                    Plugging in these expressions gives 
+                    \[
+                    \int k e^{5k} \left(5 \sin(3k) + 3 \cos(3k) \right) \, \dd k = ke^{5k} \sin(3k) - \int e^{5k} \sin(3k) \, \dd k.
+                    \]
+                    In order to evaluate \(\displaystyle \int e^{5k} \sin(3k) \, \dd k,\)
+                    we can perform tabular integration.
+                </p>
+
+                <br>
+
+                <div class="problem-27">
+                    <img src="../../images/Calculus/5/5.1/problem27.png" class="problem-27__image" alt="">
+                </div>
+
+                <br>
+
+                <p>
+                    Thus, we have
+                    \[
+                    \begin{aligned}
+                    \int e^{5k} \sin(3k) \, \dd k &= \frac{1}{5} e^{5k} \sin(3k) 
+                    - \frac{3}{25} e^{5k} \cos(3k) - \frac{9}{25} \int e^{5k} \sin(3k) \, \dd k \\
+                    \frac{34}{25} \int e^{5k} \sin(3k) \, \dd k &= \frac{1}{5} e^{5k} \sin(3k) 
+                    - \frac{3}{25} e^{5k} \cos(3k) + C \\
+                    \int e^{5k} \sin(3k) \, \dd k &= \frac{5}{34} e^{5k} \sin(3k) 
+                    - \frac{3}{34} e^{5k} \cos(3k) + C. \\
+                    \end{aligned}
+                    \]
+                    Plugging in this expression produces
+                    \[
+                    \begin{aligned}
+                    \int k e^{5k} \left(5 \sin(3k) + 3 \cos(3k) \right) \, \dd k 
+                    &= ke^{5k} \sin(3k) - \int e^{5k} \sin(3k) \, \dd k \\
+                    &= ke^{5k} \sin(3k) 
+                    - \left(\frac{5}{34} e^{5k} \sin(3k) - \frac{3}{34} e^{5k} \cos(3k)\right) + C \\
+                    &= ke^{5k} \sin(3k) + \frac{3}{34} e^{5k} \cos(3k) - \frac{5}{34} e^{5k} \sin(3k) + C \\
+                    &= \box{\ln(\ppkn) \ppkn^5 \sin(3 \ln \ppkn) + \frac{3}{34} \ppkn^5 \cos(3 \ln \ppkn) - \frac{5}{34} \ppkn^5 \sin(3 \ln \ppkn) + C.}
+                    \end{aligned} \\
+                    
+                    \]
+                </p>
+            </div>
+        </section>
+    </body>
+
+    <script src="../../js/hamburger-menu.js"></script>
+    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+    <script src="../../js/mathjax-config.js" defer></script>
+    <script type="text/javascript" id="MathJax-script" defer
+        src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js">
+    </script>
+    <script type="text/javascript" id="MathJax-script" async
+        src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js">
+    </script>
+</html> 
+

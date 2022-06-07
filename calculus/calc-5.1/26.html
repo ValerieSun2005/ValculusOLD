@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>   
+    <head>
+        <link rel="stylesheet" href="../../css/hamburger-menu.css">
+        <link rel="stylesheet" href="../../css/layout.css">
+        <link rel="stylesheet" href="../../css/exercises-style.css">
+        <link rel="stylesheet" href="../../css/calculus/5.1-exercises.css">
+        <title> Problem 26 — 5.1 Exercises </title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <meta name="author" content="Valerie">
+    </head>
+    <!--Top Button Panel-->
+
+    <!--section tabs-->
+    <div class="tab">
+        <span class="tab-button-background"> <a href="25.html" class="tab-button"> < Previous Problem </a> </span>
+        <span class="tab-button-background"> <a href="../5.1.html" class="tab-button"> Notes </a> </span>
+        <span class="tab-button-background"> <a href="../5.1-exercises.html" class="tab-button"> Exercises </a> </span>
+        <span class="tab-button-background"> <a href="27.html" class="tab-button"> Next Problem > </a> </span>
+        <!--hamburger menu button-->
+        <span class="menu-button__background" style="text-align: left;">
+            <div class="menu-btn">
+                <div class="menu-btn__burger">
+                </div>
+            </div> 
+        </span>
+    </div>
+
+    <!--hamburger menu-->
+    <div class="menu-button__background">
+        <div class="menu-btn">
+            <div class="menu-btn__burger">
+            </div>
+        </div> 
+    </div>
+    <div id="popupMenuItems" class="menu-popup"> 
+        <div class="menu-list">
+            <hr class="menu-hr">
+            <p> 
+                <a class="menu-link" href="../../index.html"> 
+                    <div class="menu-item"> 
+                        <img src="../../images/icons/home-icon.png" class="menu-icon" alt="">
+                        Home 
+                    </div>
+                </a> 
+            </p>
+            <p> 
+                <a class="menu-link" href="../../about.html"> 
+                    <div class="menu-item"> 
+                        <img src="../../images/icons/about.png" class="menu-icon" alt="">
+                        About 
+                    </div>
+                </a> 
+            </p>
+            <p> 
+                <a class="menu-link" href="../../faq.html"> 
+                    <div class="menu-item"> 
+                        <img src="../../images/icons/question-mark-line.png" class="menu-icon" alt="">
+                        FAQ
+                    </div>
+                </a> 
+            </p>
+            <p> 
+                <a class="menu-link" href="../../contact.html"> 
+                    <div class="menu-item"> 
+                        <img src="../../images/icons/email.png" class="menu-icon" alt="">
+                        Contact
+                    </div>
+                </a> 
+            </p>
+            <hr class="menu-hr">
+            <p class="menu-link" style="color: gray;"> COURSES </p>
+            <p> <a class="menu-link" href="../algebra.html"> Algebra </a> </p>
+            <p> <a class="menu-link" href="../trig.html"> Trigonometry </a> </p>
+            <p> <a class="menu-link" href="../calculus.html"> Calculus </a> </p>
+            <p> <a class="menu-link" href="../statistics.html"> Statistics </a> </p>
+        </div>
+    </div>
+    <body class="background">
+        <h1> Problem 26 — 5.1 Exercises (Integration by Parts) </h1>
+        <!--section body-->
+        <section class="background-text">
+            <!--problem boxed-->
+            <div class="box-solution">
+                <div class="box-solution__problem">
+                    <div class="problem-body">
+                        <p>
+                            Evaluate \(\displaystyle \int  Q^2 e^Q \left(\sin Q - \cos Q \right) \, \dd Q. \)
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <!--solution-->
+            <div class="exercise-solution">
+                <p>
+                    <span class="solution-text">SOLUTION</span>
+                    Using the formula for integration by parts, 
+                    \[\int u \, \dd v = uv - \int v \, \dd u,\]
+                    we let \(u = Q^2\) and \(\dd v = e^Q(\sin Q - \cos Q) \, \dd Q.\)
+                    Notice that, from the power rule, 
+                    \[\frac{\dd}{\dd Q} \left(-e^Q \cos(Q)\right) = e^Q(\sin Q - \cos Q).\]
+                    Therefore, integrating \(\dd v\) will reverse the power rule.
+                    Consequently, \(\dd u = 2 Q \, \dd Q\) and \(v = -e^Q \cos(Q).\)
+                    Plugging these expressions into the formula yield 
+                    \[
+                    \int  Q^2 e^Q \left(\sin Q - \cos Q \right) \, \dd Q = -Q^2 e^Q \cos(Q) + 2 \int Qe^Q \cos(Q) \, \dd Q. 
+                    \]
+                    At this point, in order to evaluate \(\displaystyle \int Q e^Q \cos(Q) \, \dd Q,\) 
+                    we must apply integration by parts again. 
+                    From the formula, 
+                    \[\int u \, \dd v = uv - \int v \, \dd u,\]
+                    we will select \(u = Q\) and \(\dd v = e^Q \cos(Q) \, \dd Q.\) 
+                    Then, \(\dd u = \dd Q\) and \(\displaystyle v = \frac{1}{2} e^Q (\sin Q + \cos Q). \)
+                    (Note that these choices of \(u\) and \(\dd v\) are new and not to be confused with the previous iteration.)
+                    The integral is therefore re-expressed as
+                    \[\frac{1}{2} Q e^Q(\sin Q + \cos Q) - \frac{1}{2} \int e^Q (\sin Q + \cos Q) \, \dd Q. \]
+                    Note that 
+                    \[\frac{\dd}{\dd Q} (e^Q \sin Q + C) = e^Q (\sin Q + \cos Q) \implies \int e^Q (\sin Q + \cos Q) \, \dd Q = e^Q \sin(Q) + C. \]
+                    Therefore, 
+                    \[
+                    \begin{aligned}
+                    \int Q e^Q \cos(Q) \, \dd Q &= \frac{1}{2} Q e^Q(\sin Q + \cos Q) - \frac{1}{2} \int e^Q (\sin Q + \cos Q) \, \dd Q \\
+                    &= \frac{1}{2} Q e^Q(\sin Q + \cos Q) - \frac{1}{2} e^Q \sin(Q) + C.
+                    \end{aligned}
+                    \]
+                    \[
+                    \begin{aligned}
+                    \int  Q^2 e^Q \left(\sin Q - \cos Q \right) \, \dd Q &= -Q^2 e^Q \cos(Q) + 2 \int Qe^Q \cos(Q) \, \dd Q. \\
+                    &= \box{-Q^2 e^Q \cos(Q) + Q e^Q(\sin Q + \cos Q) - e^Q \sin(Q) + C.}
+                    \end{aligned}
+                    \]
+                </p>
+            </div>
+        </section>
+    </body>
+
+    <script src="../../js/hamburger-menu.js"></script>
+    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+    <script src="../../js/mathjax-config.js" defer></script>
+    <script type="text/javascript" id="MathJax-script" defer
+        src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js">
+    </script>
+    <script type="text/javascript" id="MathJax-script" async
+        src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js">
+    </script>
+</html> 
+

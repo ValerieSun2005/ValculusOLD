@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>   
+    <head>
+        <link rel="stylesheet" href="../../css/hamburger-menu.css">
+        <link rel="stylesheet" href="../../css/layout.css">
+        <link rel="stylesheet" href="../../css/exercises-style.css">
+        <link rel="stylesheet" href="../../css/calculus/5.1-exercises.css">
+        <title> Problem 36 — 5.1 Exercises </title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <meta name="author" content="Valerie">
+    </head>
+    <!--Top Button Panel-->
+
+    <!--section tabs-->
+    <div class="tab">
+        <span class="tab-button-background"> <a href="35.html" class="tab-button"> < Previous Problem </a> </span>
+        <span class="tab-button-background"> <a href="../5.1.html" class="tab-button"> Notes </a> </span>
+        <span class="tab-button-background"> <a href="../5.1-exercises.html" class="tab-button"> Exercises </a> </span>
+        <span class="tab-button-background"> <a href="37.html" class="tab-button"> Next Problem > </a> </span>
+        <!--hamburger menu button-->
+        <span class="menu-button__background" style="text-align: left;">
+            <div class="menu-btn">
+                <div class="menu-btn__burger">
+                </div>
+            </div> 
+        </span>
+    </div>
+
+    <!--hamburger menu-->
+    <div class="menu-button__background">
+        <div class="menu-btn">
+            <div class="menu-btn__burger">
+            </div>
+        </div> 
+    </div>
+    <div id="popupMenuItems" class="menu-popup"> 
+        <div class="menu-list">
+            <hr class="menu-hr">
+            <p> 
+                <a class="menu-link" href="../../index.html"> 
+                    <div class="menu-item"> 
+                        <img src="../../images/icons/home-icon.png" class="menu-icon" alt="">
+                        Home 
+                    </div>
+                </a> 
+            </p>
+            <p> 
+                <a class="menu-link" href="../../about.html"> 
+                    <div class="menu-item"> 
+                        <img src="../../images/icons/about.png" class="menu-icon" alt="">
+                        About 
+                    </div>
+                </a> 
+            </p>
+            <p> 
+                <a class="menu-link" href="../../faq.html"> 
+                    <div class="menu-item"> 
+                        <img src="../../images/icons/question-mark-line.png" class="menu-icon" alt="">
+                        FAQ
+                    </div>
+                </a> 
+            </p>
+            <p> 
+                <a class="menu-link" href="../../contact.html"> 
+                    <div class="menu-item"> 
+                        <img src="../../images/icons/email.png" class="menu-icon" alt="">
+                        Contact
+                    </div>
+                </a> 
+            </p>
+            <hr class="menu-hr">
+            <p class="menu-link" style="color: gray;"> COURSES </p>
+            <p> <a class="menu-link" href="../algebra.html"> Algebra </a> </p>
+            <p> <a class="menu-link" href="../trig.html"> Trigonometry </a> </p>
+            <p> <a class="menu-link" href="../calculus.html"> Calculus </a> </p>
+            <p> <a class="menu-link" href="../statistics.html"> Statistics </a> </p>
+        </div>
+    </div>
+    <body class="background">
+        <h1> Problem 36 — 5.1 Exercises (Integration by Parts) </h1>
+        <!--section body-->
+        <section class="background-text">
+            <!--problem boxed-->
+            <div class="box-solution">
+                <div class="box-solution__problem">
+                    <div class="problem-body">
+                        <p>
+                            The rate at which the number of followers of a Twitter user changes as a function of time, \(t,\) is given by 
+                            \(\ell(t) = 10 - te^{-t/40},\) where \(t\) is measured in hours and \(\ell(t)\) is measured in followers per hour.
+                            The user initially has \(30\) followers. Find how many followers the user will have after \(6\) hours.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <!--solution-->
+            <div class="exercise-solution">
+                <p>
+                    <span class="solution-text">SOLUTION</span>
+                    The number of followers the user will have after \(6\) hours is given by 
+                    \[30 + \int_0^6 \ell(t) \, \dd t.\]
+                    To evaluate \(\displaystyle \int_0^6 (10 - te^{-t/40}) \, \dd t,\) we apply linearity 
+                    by splitting it up as \(\displaystyle \int_0^6 10 \, \dd t - \int_0^6 te^{-t/40} \, \dd t.\)
+                    At this point, to evaluate \(\displaystyle \int_0^6 te^{-t/40} \, \dd t,\)
+                    we will perform integration by parts. Referencing the formula, 
+                    \[\int u \, \dd v = uv - \int v \, \dd u,\]
+                    we choose \(u = t\) and \(\dd v = e^{-t/40} \, \dd t.\)
+                    Then, \(\dd u = \dd t\) and \(v = -40 e^{-t/40},\) and we obtain
+                    \[\int_0^6 te^{-t/40} \, \dd t = -40t e^{-t/40} \Big|_0^6 + 40 \int_0^6 e^{-t/40} \, \dd t. \]
+                    Therefore,
+                    \[
+                    \begin{aligned}
+                    30 + \int_0^6 \ell(t) \, \dd t &= 30 + \int_0^6 (10 - te^{-t/40}) \, \dd t \\
+                    &= 30 + \int_0^6 10 \, \dd t - \left(-40t e^{-t/40} \Big|_0^6 + 40 \int_0^6 e^{-t/40} \, \dd t \right)\\
+                    &= 30 + 10(6 - 0) - \Big(-40\left[6e^{-6/40} - 0\right] - 1600 \left[e^{-6/40} - e^0\right] \Big) \\
+                    &= 1840e^{-6/40} -1540 \\
+                    &\approx \box{73.7 \rightarrow 74.}
+                    \end{aligned}
+                    \]
+                </p>
+                <p>
+                    The user will have approximately \(74\) followers after \(6\) hours.
+                </p>
+            </div>
+        </section>
+    </body>
+
+    <script src="../../js/hamburger-menu.js"></script>
+    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+    <script src="../../js/mathjax-config.js" defer></script>
+    <script type="text/javascript" id="MathJax-script" defer
+        src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js">
+    </script>
+    <script type="text/javascript" id="MathJax-script" async
+        src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js">
+    </script>
+</html> 
+
