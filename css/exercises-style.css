@@ -6,13 +6,13 @@ table{
     table-layout: fixed;
 }
 
-td{ 
+.problems-grid td{ 
     border: none;
     text-align: left;
     padding-left: 0px;
 }
 
-td a{
+.problems-grid td a{
     flex: 0.1;
     width: 10%;
     margin-right: 20px;
