@@ -264,7 +264,8 @@
             <div class="example" id="ex-3">
                 <!--example 3 problem-->
                 <div class="example-problem" id="ex-3-problem">  
-                    Rainwater accumulates in a container at a rate given by the differentiable function \(R(t),\) 
+                    Rainwater accumulates in a container during a storm.
+                    The volume of the rainwater is given by the differentiable function \(R(t),\) 
                     where \(R(t)\) is measured in milliliters and \(t\) is measured in minutes.
                     Selected values of \(R(t)\) are shown in the table below for \(0 \leq t \leq 12.\)
                     <table class="table-full-width">
@@ -321,6 +322,8 @@
                             </td>
                         </tr>
                     </table>
+                    Must there be a time for \(0 \leq t \leq 12\) such that
+                    the volume of rainwater is increasing at a rate of \(\frac{1}{3} \; \textrm{mL}/\textrm{min} \ques\)
                 </div>
             </div>
             <button onclick="toggle3()" class="solution-button"> SHOW SOLUTION ▼ </button>
@@ -340,7 +343,7 @@
                         The Mean Value Theorem then guarantees a value \(c\) in \((0, 12)\)
                         such that 
                         \[R'(c) = \frac{1}{3} \; \textrm{mL}/\textrm{min} \, .\]
-                        Therefore, there is a time at which the water in the container changes at a rate of 
+                        Therefore, there is a time at which the water in the container is increasing at a rate of 
                         \(\frac{1}{3}\) mL/min.
                     </p>
                 </div>
@@ -386,19 +389,19 @@
                         We have 
                         \(f(0) = 4\) and \(f(4) = 0.\)
                         Thus, the average rate of change is 
-                        \[\frac{f(4) - f(0)}{4 - 0} = \boxed{-1 \per}\]
+                        \[\frac{f(4) - f(0)}{4 - 0} = \boxed{-1 \period}\]
                     </li>
                     <hr>
                     <li>
                         \(f\) is continuous on \([0, 4]\) and differentiable on \((0, 4).\)
                         Therefore, the Mean Value Theorem guarantees a value \(c\) in \((0, 4)\)
                         such that 
-                        \[f'(c) = \frac{f(4) - f(0)}{4 - 0} = -1 \per\]
+                        \[f'(c) = \frac{f(4) - f(0)}{4 - 0} = -1 \period\]
                     </li>
                     <hr>
                     <li>
                         The average rate of change of \(f\) on \([-4, 4]\) is 
-                        \[\frac{f(4) - f(-4)}{4 - (-4)} = \boxed{0 \per}\]
+                        \[\frac{f(4) - f(-4)}{4 - (-4)} = 0 \period\]
                         However, \(f\) does not meet the conditions of Rolle's Theorem 
                         because \(f(x)\) isn't differentiable over \(-4 \lt x \lt 4.\)
                         (\(f\) is not differentiable at \(x = 0 .\))

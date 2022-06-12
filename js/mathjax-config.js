@@ -1,10 +1,10 @@
 window.MathJax = {
     options: {
-        enableMenu: false,          
+        enableMenu: false,    
     },
-
+    
     svg: {
-        fontCache: 'global'
+        fontCache: 'global',
     },
 
     "fast-preview": { 
@@ -35,12 +35,13 @@ window.MathJax = {
             be: "\\begin{equation}",
             ee: "\\end{equation}",
             and:"\\qquad \\text{and} \\qquad",
-            com: "\\, ,",
-            comm: "\\; , \\;",
-            per: "\\, .",
+            comma: "\\, ,",
+            period: "\\, .",
             ques: "\\; ?",
             col: "\\! :",
-            scol: "\\, ; \\,"
+            scol: "\\, ; \\,",
+            eqRefer: ["\\text{Eq. } \\eqref{#1}", 1],
+            deriv: ["\\frac{\\dd #1}{\\dd #2}", 2]
         }
     },
 
